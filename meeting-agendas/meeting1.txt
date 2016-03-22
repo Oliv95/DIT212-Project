@@ -38,3 +38,5 @@ Meeting Agenda
 
    RAD not finished. Schedualed another group meeting for the next day (23/3-16) at 12:00 where we
    try to finish a preliminary RAD and our use cases.
+
+   Decided to also create a git workflow that everyone will follow next time we meet.
