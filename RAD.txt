@@ -4,29 +4,57 @@ Requirements and Analysis Document for NNN
 
   Version: 
 
-  Date 
+  Date: 2016-03-22
 
-  Author 
+  Author: Niclas Krause
 
 This version overrides all previous versions.
 
 1 Introduction
 
-This section gives a brief overview of the project.
-
 1.1 Purpose of application 
+
+The project aims to create a mobile application that solves the issue of finding lab partners for university projects.
 
 1.2 General characteristics of application 
 
+The project will be a mobile application developed for the android platform.
+It will require both a server and a client side, client side being the android application.
+The application will present all other unmatched users in the course,
+the user will be able to choose wether or not they might consider working together with that person.
+If two people match, they will be able to send a partner request and messages.
+If partner request is approved they will be considered lab partners of the course and removed from the pool 
+of unmatched users.
+ 
+
 1.3 Scope of application 
+
+  1. The application will only be avalible english
 
 1.4 Objectives and success criteria of the project 
 
+  1. It should be possible create and register to courses. 
+  2. A user should be able to view all other unmatched users in the same course.
+  3. Matched users should be able to chat and send partner requests to each other.
+
 1.5 Definitions, acronyms and abbreviations 
+
+Match - Two users who has agreed to consider each other as partners in the course.
+Partner request - A request which if accepted will result in the sender of the request to be paired with the recipent.
+Course - A collection of unmatched users, the course is idendifited by a unique code. Users can join the course using the code.
+Register - To enter the collection of unmatched users for a spesific course, to register you will need the unique code for that course.
+Swipe - To approve or disapprove the potenital match with another user
 
 2 Requirements
 
-In this section we specify all requirements
+  1. A admin can create courses and recive the unique code for the new course
+  2. A user can register for a course with a unique code
+  3. A user can swipe other users
+  4. Matched users can chat with each other
+  5. Matched users can send partner request to each other
+  6. Users that have recived a parter request can aprrove or deny it
+  7. A admin can see which users have matched for all the courses they are administrating
+  8. A admin can see all users for all the courses they are administrating
 
 2.1 Functional requirements
 
@@ -53,6 +81,97 @@ Possible NA (not applicable).
 2.3 Application models
 
 2.3.1 Use case model 
+
+Use Case Create:
+  Summary: This is how a course is created and the unique code is generated. This can only be done by an admin
+  Users that know the the unique code can register (see use case register).
+  Extends - 
+  Includes -
+  Participators: Admin users
+  Priority: High
+  
+  Actor | System
+  --------------
+ 1 Admin enters course details and clicks create button | 
+  --------------
+ 2      | The course is created and the admin recives the unique code for the new course
+  --------------
+ 3      | Users that know the code can now register(see use case register)
+
+Use case Register:
+  Summary: The users has recived the code for a course and enters it into the app.
+  The user can now start swipe and potentily match with other users in that course.
+  Extends - 
+  Includes -
+  Participators: Users
+  Priority: High
+  Actor | System
+  --------------
+ 1 User enters course code and clicks register button | 
+  --------------
+ 2.0      | The user is entered into the course and notified of this
+  --------------
+ 
+ Alternate flow
+ 2.1    | The course code is invalid, user is notified of this and is not registered to a new course
+ 2.2    | The user is all ready registered for the course, user is nofified of this and remains registered
+
+Use case Swipe unfinshed:
+  Summary: The users has recived the code for a course and enters it into the app.
+  The user can now start swipe and potentily match with other users in that course.
+  Extends - 
+  Includes -
+  Participators: Users
+  Priority: mid
+  Actor | System
+  --------------
+ 1 User enters course code and clicks register button | 
+  --------------
+ 2.0      | The user is entered into the course and notified of this
+  --------------
+ 
+ Alternate flow
+ 2.1    | The course code is invalid, user is notified of this and is not registered to a new course
+ 2.2    | The user is all ready registered for the course, user is nofified of this and remains registered
+
+
+Use case View Registerd unfinshed:
+  Summary: The users has recived the code for a course and enters it into the app.
+  The user can now start swipe and potentily match with other users in that course.
+  Extends - 
+  Includes -
+  Participators: Users
+  Priority: low
+  Actor | System
+  --------------
+ 1 User enters course code and clicks register button | 
+  --------------
+ 2.0      | The user is entered into the course and notified of this
+  --------------
+ 
+ Alternate flow
+ 2.1    | The course code is invalid, user is notified of this and is not registered to a new course
+ 2.2    | The user is all ready registered for the course, user is nofified of this and remains registered
+
+Use case Partner request unfinshed:
+  Summary: The users has recived the code for a course and enters it into the app.
+  The user can now start swipe and potentily match with other users in that course.
+  Extends - 
+  Includes -
+  Participators: Users
+  Priority: Mid
+  Actor | System
+  --------------
+ 1 User enters course code and clicks register button | 
+  --------------
+ 2.0      | The user is entered into the course and notified of this
+  --------------
+ 
+ Alternate flow
+ 2.1    | The course code is invalid, user is notified of this and is not registered to a new course
+ 2.2    | The user is all ready registered for the course, user is nofified of this and remains registered
+
+
 
 UML and a list of UC names (text for all in appendix)
 
