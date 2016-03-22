@@ -1,0 +1,40 @@
+Meeting Agenda
+
+  Date: 22/3-16 
+
+  Facilitator: Robert Krook
+
+  Participants: Robert Krook, Axel Olivecrona, Niclas Krause
+
+1. Objectives (5 min). Resolve any issues preventing the team to 
+  continue.
+
+   Objectives
+      Start working on the RAD
+   
+   Issues
+      No issues yet
+
+2. Reports (15 min) from previous meeting
+
+   This is the first meeting. Nothing to report here.
+
+3. Discussion items (35 min) 
+
+   Sat down and started discussing what our domain should look like.
+
+4. Outcomes and assignments (5 min) 
+
+   * We sat down and discussed what our domain should look like, made design decisions
+   and started writing our use cases.
+   * Decided on having a client/server pair. The client is an android application and the
+   server is a desktop application.
+   * There should be some adminstrative rights, and a person who creates a course
+   should be automatically be registered as a administrator for that course.
+   
+   No user was assigned a particular task/issue to tacke, as the RAD is not finished yet.
+   
+5. Wrap up
+
+   RAD not finished. Schedualed another group meeting for the next day (23/3-16) at 12:00 where we
+   try to finish a preliminary RAD and our use cases.
