@@ -1,0 +1,11 @@
+-- Vi skapar issues och man jobbar bara på de issues man har blivit tilldelad.
+-- Alla issues löses på en egen branch utefter workflowet nedan.
+
+1) git checkout master
+2) git pull
+3) git checkout myTask
+-- WORK --
+4) pull req
+-- Andra kollar igenom
+-- Den som gör en pull request bör ej accepta den själv. Någon/några andra i gruppen bör kolla igenom requesten.
+6) git branch -d myTask
