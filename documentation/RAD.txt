@@ -1,7 +1,5 @@
 Requirements and Analysis Document for NNN
 
-
-
   Version: 
 
   Date: 2016-03-22
@@ -33,7 +31,7 @@ of unmatched users.
 
 1.4 Objectives and success criteria of the project 
 
-  1. It should be possible create and register to courses. 
+  1. It should be possible create and join to courses. 
   2. A user should be able to view all other unmatched users in the same course.
   3. Matched users should be able to chat and send partner requests to each other.
 
@@ -42,13 +40,13 @@ of unmatched users.
 Match - Two users who has agreed to consider each other as partners in the course.
 Partner request - A request which if accepted will result in the sender of the request to be paired with the recipent.
 Course - A collection of unmatched users, the course is idendifited by a unique code. Users can join the course using the code.
-Register - To enter the collection of unmatched users for a spesific course, to register you will need the unique code for that course.
+join - To enter the collection of unmatched users for a spesific course, to join you will need the unique code for that course.
 Swipe - To approve or disapprove the potenital match with another user
 
 2 Requirements
 
   1. A admin can create courses and recive the unique code for the new course
-  2. A user can register for a course with a unique code
+  2. A user can join for a course with a unique code
   3. A user can swipe other users
   4. Matched users can chat with each other
   5. Matched users can send partner request to each other
@@ -84,7 +82,7 @@ Possible NA (not applicable).
 
 Use Case Create:
   Summary: This is how a course is created and the unique code is generated. This can only be done by an admin
-  Users that know the the unique code can register (see use case register).
+  Users that know the the unique code can join (see use case join).
   Extends - 
   Includes -
   Participators: Admin users
@@ -96,9 +94,9 @@ Use Case Create:
   --------------
  2      | The course is created and the admin recives the unique code for the new course
   --------------
- 3      | Users that know the code can now register(see use case register)
+ 3      | Users that know the code can now join(see use case join)
 
-Use case Register:
+Use case join:
   Summary: The users has recived the code for a course and enters it into the app.
   The user can now start swipe and potentily match with other users in that course.
   Extends - 
@@ -107,71 +105,70 @@ Use case Register:
   Priority: High
   Actor | System
   --------------
- 1 User enters course code and clicks register button | 
+ 1 User enters course code and clicks join button | 
   --------------
  2.0      | The user is entered into the course and notified of this
   --------------
  
  Alternate flow
- 2.1    | The course code is invalid, user is notified of this and is not registered to a new course
- 2.2    | The user is all ready registered for the course, user is nofified of this and remains registered
+ 2.1    | The course code is invalid, user is notified of this and is not joined to a new course
+ 2.2    | The user is all ready joined for the course, user is nofified of this and remains joined
 
-Use case Swipe unfinshed:
-  Summary: The users has recived the code for a course and enters it into the app.
-  The user can now start swipe and potentily match with other users in that course.
+Use case Swipe :
+  Summary: The user will be presented with other users from the same course, they can they swipe then to 
+  indicate if they could or could not consider working together.
   Extends - 
   Includes -
   Participators: Users
   Priority: mid
   Actor | System
   --------------
- 1 User enters course code and clicks register button | 
+ 1 The users swipes ok for another user | 
   --------------
- 2.0      | The user is entered into the course and notified of this
+ 2.0      | System makes a note that the that user have swiped ok and presents the user with another unmached user
   --------------
  
  Alternate flow
- 2.1    | The course code is invalid, user is notified of this and is not registered to a new course
- 2.2    | The user is all ready registered for the course, user is nofified of this and remains registered
+ 2.1    | The pool of unmached users have been exhausted and the user is not presented with another unmached user
 
-
-Use case View Registerd unfinshed:
-  Summary: The users has recived the code for a course and enters it into the app.
-  The user can now start swipe and potentily match with other users in that course.
+Use case View Joined :
+  Summary: The admin can view all the users in the courses they are administrating and view which people have been paired
   Extends - 
   Includes -
-  Participators: Users
+  Participators: Admin
   Priority: low
   Actor | System
   --------------
- 1 User enters course code and clicks register button | 
+ 1 Admin selects a course from the admin page
   --------------
- 2.0      | The user is entered into the course and notified of this
+ 2.0      | A list of all users that have join that course is displayed allong side with whom they are been paired with
   --------------
  
  Alternate flow
- 2.1    | The course code is invalid, user is notified of this and is not registered to a new course
- 2.2    | The user is all ready registered for the course, user is nofified of this and remains registered
+ 1.1    | A admin have not created a course and is not able to select one
 
-Use case Partner request unfinshed:
-  Summary: The users has recived the code for a course and enters it into the app.
-  The user can now start swipe and potentily match with other users in that course.
+Use case Partner request :
+  Summary: A user that has matched with someone can send a Partner request to that users, if accepted they will be
+  considered labpartners
   Extends - 
   Includes -
   Participators: Users
   Priority: Mid
   Actor | System
   --------------
- 1 User enters course code and clicks register button | 
+ 1 User 'A' sends a parnter request to user 'B' and waits for a respons
   --------------
- 2.0      | The user is entered into the course and notified of this
+ 2      | Notifys user 'B' (the recpient) that she has recvied a parnter request
   --------------
- 
+ 3.0 User 'B' accepts the partner request | 
+  --------------
+ 4.0    | Notifys user 'A' that the request have been approved
+
  Alternate flow
- 2.1    | The course code is invalid, user is notified of this and is not registered to a new course
- 2.2    | The user is all ready registered for the course, user is nofified of this and remains registered
-
-
+3.1 User 'B' declines the request 
+  --------------
+3.1.1    | User 'A' is notifyed that the request did not get approved
+ 
 
 UML and a list of UC names (text for all in appendix)
 
@@ -196,5 +193,4 @@ Text to motivate a picture.
   Domain model
 
   Use case texts
-
 
