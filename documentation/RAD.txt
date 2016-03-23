@@ -66,17 +66,44 @@ Possible NA (not applicable).
 
 2.2.1 Usability 
 
+  Usability is high priority. The app should load very quickly and operate smoothly.
+  The app communicates with a server that stores information about courses and groups.
+    When a user requets to join a course this request is sent, along with his ID, to the
+    server who then adds him to the course.
+  The communication between client and server should be very short and descriptive. No
+  complicated protocols.
+  A person should be able to download the app and intuitively know how it works, no
+  extensive tutorial should be required. The GUI should make it very clear how it works.
+
 2.2.2 Reliability 
 
 2.2.3 Performance 
 
+  10 seconds.
+
 2.2.4 Supportability
+
+  The application will be developed for the android platform alone, no IOS version.
+  If we however consider the posibility of two users using different systems, the type
+  of system should not affect anything when displaying users, matching and chatting etc.
+  All communication with the server should be tested through unit tests, and the GUI
+  should be tested manually. A description of how the GUI was tested and how it went should
+  be included in the final documentation.
 
 2.2.5 Implementation 
 
+  The app will run on the android system for mobile phones, and the server will run
+  on a remote host running JRE. The server is a command line application with a
+  small set of administrative commands (to help debugging).
+
 2.2.6 Packaging and installation
 
+  The server will be delivered as a jar file and the application will be available
+  as an APK file.
+
 2.2.7 Legal 
+
+  GPL 2.0
 
 2.3 Application models
 
@@ -177,7 +204,11 @@ UML and a list of UC names (text for all in appendix)
 
 2.3.2 Use cases priority
 
-A list
+ 1 - Create
+ 2 - Join
+ 3 - Swipe
+ 4 - Partner request
+ 5 - View joined
 
 2.3.3 Domain model
 
