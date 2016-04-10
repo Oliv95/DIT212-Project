@@ -225,3 +225,5 @@ Text to motivate a picture.
 
   Use case texts
 
+  Use case UML diagram can be seen in the file UCUML.dia
+
