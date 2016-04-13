@@ -1,0 +1,52 @@
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="125dp"
+        android:id="@+id/profile_picture"
+        android:layout_gravity="center_horizontal"
+        android:src="#ff00b9ff"
+        android:layout_marginTop="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/profile_name"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/profile_name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/profile_email"
+        android:id="@+id/profile_email"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/profile_phone"
+        android:id="@+id/profile_phone"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/profile_description"
+        android:id="@+id/profile_description"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.80"
+        android:gravity="center|top"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="25dp" />
+</LinearLayout>
