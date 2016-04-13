@@ -38,6 +38,7 @@ of unmatched users.
 1.5 Definitions, acronyms and abbreviations 
 
 Match - Two users who has agreed to consider each other as partners in the course.
+Match request - One users has considerned another as potenital partner
 Partner request - A request which if accepted will result in the sender of the request to be paired with the recipent.
 Course - A collection of unmatched users, the course is idendifited by a unique code. Users can join the course using the code.
 join - To enter the collection of unmatched users for a spesific course, to join you will need the unique code for that course.
