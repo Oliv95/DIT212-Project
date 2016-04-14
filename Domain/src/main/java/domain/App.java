@@ -34,8 +34,11 @@ public class App implements Domain {
         return admin.getEmail();
     }
 
-    public void createCourse(String name, String admin) {
-        courses.put(name, new Course(name, admin));
+    public Gcode createCourse(String name, String admin) {
+        //TODO proper course implementation
+        Course course = new Course(name,admin);
+        courses.put(name, course);
+        return new Gcode();
     }
 
     public boolean joinCourse(Gcode generatedCode, String email) {
