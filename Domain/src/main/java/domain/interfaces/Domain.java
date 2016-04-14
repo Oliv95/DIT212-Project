@@ -14,7 +14,7 @@ public interface Domain {
 
     public String createAdmin(String email,String name,String password);
 
-    public void createCourse(String name, String admin);
+    public Gcode createCourse(String name, String admin);
 
     public boolean joinCourse(Gcode generatedCode, String user);
 
