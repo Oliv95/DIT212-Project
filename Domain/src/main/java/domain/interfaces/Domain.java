@@ -5,9 +5,6 @@ import domain.Course;
 import domain.User;
 import domain.util.Gcode;
 
-/**
- * Created by robertkrook on 4/13/16.
- */
 public interface Domain {
 
     public String createUser(String email,String name,String password);
@@ -26,5 +23,7 @@ public interface Domain {
 
     public User[] getMatchedWithMe(String email,Gcode generatedCode);
 
-    Course getCourse(String tda755);
+    Course getCourse(Gcode courseCode);
+
+    Admin getAdmin(String email);
 }
