@@ -58,54 +58,84 @@ public class Promt {
             switch (code) {
                 //createUser
                 case 0:
+                    if (!checkArrayLength(4,options,"CreateUser")) {
+                        break;
+                    }
                     email = options[1];
                     name = options[2];
                     password = options[3];
                     result = domain.createUser(email,name,password);
-                    System.out.println(result);
+                    System.out.println("Created User with email " + result);
                     break;
                 //createAdmin
                 case 1:
+                    if (!checkArrayLength(4,options,"CreateAdmin")) {
+                        break;
+                    }
                     email = options[1];
                     name = options[2];
                     password = options[3];
                     result = domain.createAdmin(email,name,password);
-                    System.out.println(result);
+                    System.out.println("Created User with email " + result);
                     break;
                 //createCourse
+                //TODO return type should be gcode
                 case 2:
+                    if (!checkArrayLength(3,options,"CreateCourse")) {
+                        break;
+                    }
                     email = options[1];
                     courseName = options[2];
                     domain.createCourse(courseName,email);
                     break;
                 //joinCourse
                 case 3:
+                    if (!checkArrayLength(3,options,"joinCourse")) {
+                        break;
+                    }
                     int id = Integer.parseInt(options[1]);
                     gCode = Gcode.makeGcode(id);
                     email = options[2];
-                    domain.joinCourse(gCode,email);
+                    boolean joined = domain.joinCourse(gCode,email);
+                    if (joined) {
+                        System.out.println(email + " joined course " + gCode);
+                    }
                     break;
                 //matchRequest
+                //TODO if non void return type change output
                 case 4:
+                    if (!checkArrayLength(4,options,"MatchRequest")) {
+                        break;
+                    }
                     String sender = options[1];
                     String receiver = options[2];
                     Gcode gcode = Gcode.makeGcode(Integer.parseInt(options[3]));
                     domain.matchRequest(sender,receiver,gcode);
                     break;
-                //getUsers
+                //getUser
                 case 5:
+                    if (!checkArrayLength(2,options,"getUser")) {
+                        break;
+                    }
                     email = options[1];
                     User user = domain.getUser(email);
-                    System.out.println(user);
+                    result = (user == null) ? ("No User with that email") : user.toString();
+                    System.out.println(result);
                     break;
                 //getAllUsers
                 case 6:
+                    if (!checkArrayLength(2,options,"getAllUsers")) {
+                        break;
+                    }
                     gcode = Gcode.makeGcode(Integer.parseInt(options[1]));
                     User[] users = domain.getAllUsers(gcode);
                     System.out.println(Arrays.toString(users));
                     break;
                 //getMatchedWithMe
                 case 7:
+                    if (!checkArrayLength(2,options,"getMatchedWithMe")) {
+                        break;
+                    }
                     email = options[1];
                     gcode = Gcode.makeGcode(Integer.parseInt(options[2]));
                     User[] matches = domain.getMatchedWithMe(email,gcode);
@@ -119,6 +149,15 @@ public class Promt {
                     break;
             }
         }
+    }
+
+    private boolean checkArrayLength(int desiredLength,String[] array,String methodName){
+        if ( array.length < desiredLength) {
+            desiredLength--; //error msg should not include the method code as length
+            System.out.println(methodName + " needs " + desiredLength + " arguments");
+            return false;
+        }
+        return true;
     }
 
     private void parseErrorMsg(){
