@@ -5,5 +5,7 @@ package domain;
  * Created by robertkrook on 4/13/16.
  */
 public class Course {
+    public Course(String name, String admin) {
 
+    }
 }

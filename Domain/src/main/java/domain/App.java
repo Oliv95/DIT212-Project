@@ -3,9 +3,7 @@ package domain;
 import domain.interfaces.Domain;
 import domain.util.Gcode;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -36,7 +34,7 @@ public class App implements Domain {
     }
 
     public void createCourse(String name, String admin) {
-
+        new Course(name, admin);
     }
 
     public boolean joinCourse(Gcode generatedCode, String email) {
@@ -58,5 +56,9 @@ public class App implements Domain {
 
     public User[] getMatchedWithMe(String email, Gcode generatedCode) {
         return new User[0];
+    }
+
+    public Admin getAdmin(String email) {
+        return admins.get(email);
     }
 }
