@@ -20,20 +20,19 @@ public class AppTest {
 
     @Test
     public void createUser(){
-        String email = app.createUser("j_almen@hotmail.com");
+        String email = app.createUser("j_almen@hotmail.com", "Jonatan", "password");
         assertFalse(email.equals(""));
     }
 
     @Test
     public void shouldBeAbleTogetUserIdAfterCreation(){
-        String email = app.createUser("rewbert93@gmail.com");
+        String email = app.createUser("rewbert93@gmail.com", "Robert", "password");
         User user = app.getUser(email);
-        assertEquals(email, user.getEmail(), 0);
+        assertTrue(user.getEmail().equals(email));
     }
 
     @Test
     public void createAdminUser() {
-        String email = app.createAdmin("j_almen@hotmail.com");
-        assertTrue(app.getUser(email).admin());
+        String email = app.createAdmin("j_almen@hotmail.com", "Jonatan", "password");
     }
 }
