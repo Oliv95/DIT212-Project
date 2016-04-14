@@ -13,6 +13,12 @@ public class Gcode {
         id = counter;
     }
 
+    public static Gcode makeGcode(int destinationId) {
+        Gcode result = new Gcode();
+        result.id = destinationId;
+        return result;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

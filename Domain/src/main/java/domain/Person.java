@@ -47,4 +47,9 @@ public abstract class Person {
         result = 31 * result + (email != null ? email.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Email: " + email + " Name:" + name;
+    }
 }

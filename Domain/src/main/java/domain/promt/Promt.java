@@ -1,7 +1,9 @@
 package domain.promt;
 
 import domain.App;
+import domain.User;
 import domain.interfaces.Domain;
+import domain.util.Gcode;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,9 +15,19 @@ import java.util.Arrays;
  */
 public class Promt {
 
+    //TODO protect vs indexoutofbounds
+
     private final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     private final String prompt = "> ";
-    private final String helpText   = "This is help text";
+    private final String helpText   = "0 CreateUser email,name,password" + System.lineSeparator() +
+                                      "1 CreateAdmin email,name,password" + System.lineSeparator() +
+                                      "2 createCourse courseName, email" + System.lineSeparator() +
+                                      "3 joinCourse gcode, email" + System.lineSeparator() +
+                                      "4 matchRequest sender, receiver,gcode" + System.lineSeparator() +
+                                      "5 getUser email" + System.lineSeparator() +
+                                      "6 getAllUsers gcode" + System.lineSeparator() +
+                                      "7 getMatchedWithMe email gcode" + System.lineSeparator();
+
     private final String separator = " ";
     private Domain domain;
 
@@ -27,77 +39,84 @@ public class Promt {
 
         while (true){
             String input = next().trim();
-            if (input.equals("-1")){
-                break;
-            }
+            checkTermination(input);
             int code;
             try {
-                code = Character.getNumericValue(input.charAt(0));
+                code = Integer.parseInt(input.split(separator)[0]);
             } catch (NumberFormatException e) {
                 parseErrorMsg();
                 continue;
             }
             String[] options = input.split(separator);
             String email;
+            String name;
+            String password;
             String result;
             String courseName;
-            String gCode;
+            Gcode gCode;
             switch (code) {
                 //createUser
                 case 0:
                     email = options[1];
-                    result = domain.createUser(email);
+                    name = options[2];
+                    password = options[3];
+                    result = domain.createUser(email,name,password);
                     System.out.println(result);
                     break;
                 //createAdmin
                 case 1:
                     email = options[1];
-                    result = domain.createAdmin(email);
+                    name = options[2];
+                    password = options[3];
+                    result = domain.createAdmin(email,name,password);
                     System.out.println(result);
                     break;
                 //createCourse
                 case 2:
                     email = options[1];
                     courseName = options[2];
-                    domain.createCourse(email,null);
+                    domain.createCourse(courseName,email);
                     break;
                 //joinCourse
                 case 3:
-                    gCode = options[1];
+                    int id = Integer.parseInt(options[1]);
+                    gCode = Gcode.makeGcode(id);
                     email = options[2];
-                    domain.joinCourse(gCode,null);
+                    domain.joinCourse(gCode,email);
                     break;
                 //matchRequest
                 case 4:
                     String sender = options[1];
-                    String reciver = options[2];
-                    String gcode = options[3];
-                    domain.matchRequest(0,0,gcode);
+                    String receiver = options[2];
+                    Gcode gcode = Gcode.makeGcode(Integer.parseInt(options[3]));
+                    domain.matchRequest(sender,receiver,gcode);
                     break;
                 //getUsers
                 case 5:
                     email = options[1];
-                    domain.getUser(email);
+                    User user = domain.getUser(email);
+                    System.out.println(user);
                     break;
                 //getAllUsers
                 case 6:
-                    gcode = options[1];
-                    String[] users = null;//domain.getAllUsers(0);
+                    gcode = Gcode.makeGcode(Integer.parseInt(options[1]));
+                    User[] users = domain.getAllUsers(gcode);
                     System.out.println(Arrays.toString(users));
                     break;
                 //getMatchedWithMe
                 case 7:
                     email = options[1];
-                    String[] matches = null; //domain.getMatchedWithMe(0);
+                    gcode = Gcode.makeGcode(Integer.parseInt(options[2]));
+                    User[] matches = domain.getMatchedWithMe(email,gcode);
                     System.out.println(Arrays.toString(matches));
                     break;
                 case 8:
                     System.out.println(helpText);
                     break;
                 default:
+                    System.out.println("Enter number between 0-8 inclusive");
                     break;
             }
-
         }
     }
 
@@ -105,7 +124,15 @@ public class Promt {
         System.out.println("Invalid code, enter digit between 0 and 7 inclusive");
     }
 
+    private void checkTermination(String input) {
+        if (input.equals("-1")) {
+            System.out.println("Goodbye");
+            System.exit(0);
+        }
+    }
+
     private String next() throws IOException{
+        System.out.println("enter '8' for help");
         System.out.print(prompt);
         return reader.readLine();
     }
@@ -117,80 +144,4 @@ public class Promt {
             e.printStackTrace();
         }
     }
-
-    /*
-
-    class createUser implements Function<String,String> {
-
-        @Override
-        public String apply(String s) {
-            return domain.createUser(s);
-        }
-    }
-
-    class createAdmin implements Function<String,String> {
-
-        @Override
-        public String apply(String s) {
-            return domain.createAdmin(s);
-        }
-    }
-
-    // String,String  inout
-    class createCourse implements Function<Pair<String,Admin>,Void> {
-
-        @Override
-        public Void apply(Pair<String,Admin> pair) {
-            String email = pair.getLeft();
-            Admin admin = pair.getRight();
-            return domain.createCourse(email,admin);
-        }
-    }
-
-    //String inout String inout return bool
-    class joinCourse implements Function<Pair<String,User>,Boolean> {
-
-        @Override
-        public Boolean apply(Pair<String,User> pair) {
-            String gcode = pair.getLeft();
-            User email = pair.getRight();
-            return domain.joinCourse(gcode,email);
-        }
-    }
-
-    // inout String String  Gcode outout return void
-    class matchRequest implements Function<Triplet<String,String,String>,Void> {
-
-        @Override
-        public Void apply(Triplet<String, String, String> stringStringStringTriplet) {
-            return null;
-        }
-    }
-    //input string return user
-    class getUsers implements Function<String, User> {
-
-        @Override
-        public User apply(String s) {
-            return null;
-        }
-    }
-    //input string Gcode return User[]
-    class getAllUsers implements Function<String,User[]> {
-
-        @Override
-        public User[] apply(String s) {
-            return null;
-        }
-    }
-
-    //input String , Gcode return user[]
-    class getMatchedWithMe implements Function<String,User[]> {
-
-        @Override
-        public User[] apply(String s) {
-            return null;
-        }
-    }
-
-*/
 }
