@@ -1,6 +1,7 @@
 package domain.interfaces;
 
 import domain.Admin;
+import domain.Course;
 import domain.User;
 import domain.util.Gcode;
 
@@ -13,7 +14,7 @@ public interface Domain {
 
     public String createAdmin(String email,String name,String password);
 
-    public void createCourse(String name, String admin);
+    public Gcode createCourse(String name, String admin);
 
     public boolean joinCourse(Gcode generatedCode, String user);
 
@@ -25,4 +26,5 @@ public interface Domain {
 
     public User[] getMatchedWithMe(String email,Gcode generatedCode);
 
+    Course getCourse(String tda755);
 }

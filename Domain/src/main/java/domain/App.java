@@ -13,6 +13,7 @@ public class App implements Domain {
 
     Map<String, User> users = new HashMap<>(); // All registered users
     Map<String, Admin> admins = new HashMap<>(); // All registered admins
+    Map<String, Course> courses = new HashMap<>();
 
     public static void main(String[] arg) {
         System.out.println("hi");
@@ -34,7 +35,7 @@ public class App implements Domain {
     }
 
     public void createCourse(String name, String admin) {
-        new Course(name, admin);
+        courses.put(name, new Course(name, admin));
     }
 
     public boolean joinCourse(Gcode generatedCode, String email) {
@@ -58,7 +59,9 @@ public class App implements Domain {
         return new User[0];
     }
 
-    public Admin getAdmin(String email) {
-        return admins.get(email);
+    @Override
+    public Course getCourse(String courseCode) {
+        return courses.get(courseCode);
     }
+
 }
