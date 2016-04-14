@@ -33,6 +33,8 @@ public class AppTest {
 
     @Test
     public void createAdminUser() {
-        String email = app.createAdmin("j_almen@hotmail.com", "Jonatan", "password");
+        String signup = "j_almen@hotmail.com";
+        String email = app.createAdmin(signup, "Jonatan", "password");
+        System.out.println(email);
     }
 }

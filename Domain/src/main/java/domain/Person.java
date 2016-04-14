@@ -9,7 +9,7 @@ public abstract class Person {
     private String name;
     private String email;
 
-    public Person(String password,String name, String email) {
+    public Person(String email, String name, String password) {
         this.password = password;
         this.name = name;
         this.email = email;

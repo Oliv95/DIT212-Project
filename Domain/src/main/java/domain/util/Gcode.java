@@ -5,8 +5,8 @@ package domain.util;
  * Created by robertkrook 4/14/16.
  */
 public class Gcode {
-    static int counter = 0;
-    private int id = 0;
+    private static int counter = 0;
+    final private int id;
 
     public Gcode(){
         counter++;

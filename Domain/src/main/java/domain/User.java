@@ -5,11 +5,8 @@ package domain;
  */
 public class User extends Person{
 
-    private boolean privileged_user;
-
     public User(String email,String name,String password) {
-        super(password,name,email);
+        super(email, name, password);
     }
-
 
 }
