@@ -26,7 +26,8 @@ public class Promt {
                                       "4 matchRequest sender, receiver,gcode" + System.lineSeparator() +
                                       "5 getUser email" + System.lineSeparator() +
                                       "6 getAllUsers gcode" + System.lineSeparator() +
-                                      "7 getMatchedWithMe email gcode" + System.lineSeparator();
+                                      "7 getMatchedWithMe email gcode" + System.lineSeparator() +
+                                      "-1 for exit" + System.lineSeparator();
 
     private final String separator = " ";
     private Domain domain;
