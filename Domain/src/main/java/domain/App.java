@@ -47,7 +47,7 @@ public class App implements Domain {
         }
 
         return code;
-    }
+   }
 
     @Override
     public boolean joinCourse(Gcode generatedCode, String email) {
