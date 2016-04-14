@@ -1,6 +1,7 @@
 package domain.interfaces;
 
 import domain.Admin;
+import domain.Course;
 import domain.User;
 import domain.util.Gcode;
 
@@ -25,4 +26,5 @@ public interface Domain {
 
     public User[] getMatchedWithMe(String email,Gcode generatedCode);
 
+    Course getCourse(String tda755);
 }
