@@ -2,14 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="ice.client.Register"
-    android:id="@+id/"
+    android:id="@+id/activity_register"
     android:nestedScrollingEnabled="true"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    android:gravity="center_horizontal">
 
     <EditText
         android:layout_width="wrap_content"
@@ -19,23 +15,9 @@
         android:id="@+id/register_password"
         android:layout_column="4"
         android:text="Password"
-        android:layout_below="@+id/register_email"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:padding="10dp"
-        android:layout_margin="10dp" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Admin"
-        android:id="@+id/register_admin_checkbox"
-        android:layout_column="4"
-        android:layout_below="@+id/register_ssn"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:checked="false"
-        android:layout_margin="10dp" />
+        android:gravity="center_vertical"
+        android:layout_below="@+id/register_email" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -45,11 +27,11 @@
         android:id="@+id/register_email"
         android:layout_column="4"
         android:text="Email"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:padding="10dp"
-        android:layout_margin="10dp" />
+        android:gravity="center_vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/register_password"
+        android:layout_alignStart="@+id/register_password" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -59,18 +41,18 @@
         android:id="@+id/register_ssn"
         android:layout_column="4"
         android:text="xxxxxxxx-nnnn"
+        android:gravity="center_vertical"
         android:layout_below="@+id/register_password"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_margin="10dp" />
+        android:layout_alignLeft="@+id/register_password"
+        android:layout_alignStart="@+id/register_password" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
         android:id="@+id/register_register_button"
-        android:layout_below="@+id/register_admin_checkbox"
-        android:layout_alignLeft="@+id/register_admin_checkbox"
-        android:layout_alignStart="@+id/register_admin_checkbox"
-        android:layout_margin="10dp" />
+        android:gravity="center_vertical"
+        android:layout_below="@+id/register_ssn"
+        android:layout_alignLeft="@+id/register_ssn"
+        android:layout_alignStart="@+id/register_ssn" />
 </RelativeLayout>
