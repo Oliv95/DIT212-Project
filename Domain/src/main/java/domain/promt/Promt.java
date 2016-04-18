@@ -15,18 +15,16 @@ import java.util.Arrays;
  */
 public class Promt {
 
-    //TODO protect vs indexoutofbounds
-
     private final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     private final String prompt = "> ";
     private final String helpText   = "0 CreateUser email,name,password" + System.lineSeparator() +
                                       "1 CreateAdmin email,name,password" + System.lineSeparator() +
                                       "2 createCourse courseName, email" + System.lineSeparator() +
-                                      "3 joinCourse gcode, email" + System.lineSeparator() +
-                                      "4 matchRequest sender, receiver,gcode" + System.lineSeparator() +
+                                      "3 joinCourse gCode, email" + System.lineSeparator() +
+                                      "4 matchRequest sender, receiver,gCode" + System.lineSeparator() +
                                       "5 getUser email" + System.lineSeparator() +
-                                      "6 getAllUsers gcode" + System.lineSeparator() +
-                                      "7 getMatchedWithMe email gcode" + System.lineSeparator() +
+                                      "6 getAllUsers gCode" + System.lineSeparator() +
+                                      "7 getMatchedWithMe email gCode" + System.lineSeparator() +
                                       "-1 for exit" + System.lineSeparator();
 
     private final String separator = " ";
@@ -79,14 +77,14 @@ public class Promt {
                     System.out.println("Created User with email " + result);
                     break;
                 //createCourse
-                //TODO return type should be gcode
                 case 2:
                     if (!checkArrayLength(3,options,"CreateCourse")) {
                         break;
                     }
                     email = options[1];
                     courseName = options[2];
-                    domain.createCourse(courseName,email);
+                    gCode = domain.createCourse(courseName,email);
+                    System.out.println("Code for course " + courseName + " is " + gCode);
                     break;
                 //joinCourse
                 case 3:
@@ -109,8 +107,8 @@ public class Promt {
                     }
                     String sender = options[1];
                     String receiver = options[2];
-                    Gcode gcode = Gcode.makeGcode(Integer.parseInt(options[3]));
-                    domain.matchRequest(sender,receiver,gcode);
+                    gCode = Gcode.makeGcode(Integer.parseInt(options[3]));
+                    domain.matchRequest(sender,receiver,gCode);
                     break;
                 //getUser
                 case 5:
@@ -127,8 +125,8 @@ public class Promt {
                     if (!checkArrayLength(2,options,"getAllUsers")) {
                         break;
                     }
-                    gcode = Gcode.makeGcode(Integer.parseInt(options[1]));
-                    User[] users = domain.getAllUsers(gcode);
+                    gCode = Gcode.makeGcode(Integer.parseInt(options[1]));
+                    User[] users = domain.getAllUsers(gCode);
                     System.out.println(Arrays.toString(users));
                     break;
                 //getMatchedWithMe
@@ -137,8 +135,8 @@ public class Promt {
                         break;
                     }
                     email = options[1];
-                    gcode = Gcode.makeGcode(Integer.parseInt(options[2]));
-                    User[] matches = domain.getMatchedWithMe(email,gcode);
+                    gCode = Gcode.makeGcode(Integer.parseInt(options[2]));
+                    User[] matches = domain.getMatchedWithMe(email,gCode);
                     System.out.println(Arrays.toString(matches));
                     break;
                 case 8:
