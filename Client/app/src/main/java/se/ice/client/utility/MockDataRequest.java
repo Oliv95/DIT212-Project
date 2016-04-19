@@ -1,5 +1,9 @@
 package se.ice.client.utility;
 
+import se.ice.client.models.Admin;
+import se.ice.client.models.Course;
+import se.ice.client.models.User;
+
 /**
  * Created by Simon on 2016-04-13.
  */

@@ -1,4 +1,4 @@
-package se.ice.client.utility;
+package se.ice.client.models;
 
 public abstract class Person {
     private String password;

@@ -1,5 +1,8 @@
-package se.ice.client.utility;
+package se.ice.client.models;
 import java.util.*;
+
+import se.ice.client.models.User;
+import se.ice.client.utility.Gcode;
 
 /**
  * This class represents a course, or a 'circle' of people to be matched in groups.

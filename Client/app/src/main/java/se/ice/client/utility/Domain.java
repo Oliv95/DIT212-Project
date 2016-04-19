@@ -1,5 +1,9 @@
 package se.ice.client.utility;
 
+import se.ice.client.models.Admin;
+import se.ice.client.models.Course;
+import se.ice.client.models.User;
+
 public interface Domain {
 
     public String createUser(String email,String name,String password);
