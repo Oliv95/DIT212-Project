@@ -13,10 +13,8 @@ public class Gcode {
         id = counter;
     }
 
-    public static Gcode makeGcode(int destinationId) {
-        Gcode result = new Gcode();
-        result.id = destinationId;
-        return result;
+    public int getId() {
+        return id;
     }
 
     @Override
