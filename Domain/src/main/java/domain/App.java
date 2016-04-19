@@ -78,12 +78,11 @@ public class App implements Domain {
     }
 
     @Override
-    public void matchRequest(String sender, String from, Gcode generatedCode) {
-        throw new NotImplementedException();
+    public void matchRequest(String from, String to, Gcode generatedCode) {
+        Course course = courses.get(generatedCode);
+        course.putMatchRequest(from, to);
     }
 
-
-    //have get Admin??
     public User getUser(String email) {
         return users.get(email); // returns null if no such user is present
     }
