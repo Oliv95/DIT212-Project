@@ -4,7 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-public class ServerRequestService extends Service implements DataRequest{
+public class ServerRequestService extends Service implements Model {
     public ServerRequestService() {
     }
 
