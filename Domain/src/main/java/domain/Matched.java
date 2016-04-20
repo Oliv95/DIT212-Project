@@ -14,25 +14,20 @@ import java.util.List;
  * Created by robertkrook on 4/13/16.
  */
 public class Matched {
-    List<String> matched;
-    Gcode course;
+    private String member1;
+    private String member2;
+    private Gcode course;
 
-    public Matched(String[] partners, Gcode course) {
-        matched = Arrays.asList(partners);
+    public Matched(String user1, String user2, Gcode course) {
+        member1 = user1;
+        member2 = user2;
         this.course = course;
     }
 
-    /**
-     * Just here to simplify testing // Robert
-     * @param members
-     * @return
-     */
-    public boolean isEqualTo(String[] members) {
-        for(String s : members) {
-            if(!matched.contains(s)) {
-                return false;
-            }
-        }
-        return true;
+    public List<String> getMembers() {
+        List<String> list = new ArrayList<>();
+        list.add(member1);
+        list.add(member2);
+        return list;
     }
 }

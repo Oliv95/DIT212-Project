@@ -2,10 +2,7 @@
  * Created by robert on 4/19/16.
  */
 
-import domain.App;
-import domain.Course;
-import domain.MatchRequest;
-import domain.Matched;
+import domain.*;
 import domain.util.Gcode;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,8 +29,12 @@ public class MatchTest {
         user1 = app.createUser("Axel@axel.se", "axel", "hackwell");
         user2 = app.createUser("robert@sweglord.se", "robert", "krook");
         user3 = app.createUser("nickeboi", "niklas", "krause");
+        app.joinCourse(code,user1);
+        app.joinCourse(code,user2);
+        app.joinCourse(code,user3);
     }
 
+    /*-----------------------------tests for sendMatchRequest()-------------------------*/
     @Test
     public void testSendMatchRequest() {
         app.matchRequest(user1, user2, code);
@@ -63,7 +64,8 @@ public class MatchTest {
         app.matchRequest(user1, user2, code);
         app.matchRequest(user2, user1, code);
         List<Matched> matches = app.getCourse(code).returnMatched();
-        assertTrue(matches.size() == 1 && matches.get(0).isEqualTo(new String[]{user2, user1}));
+        List<String> members = matches.get(0).getMembers();
+        assertTrue(matches.size() == 1 && members.contains(user1) && members.contains(user2));
     }
 
     @Test
@@ -84,4 +86,69 @@ public class MatchTest {
         assertTrue(requests.size() == 0 && matches.size() == 1);
     }
 
+    /*----------------------------Tests for getMatchedWithMe()----------------------------------------*/
+
+    @Test
+    public void testNoMatches() {
+        app.matchRequest(user1, user2, code);
+        assertTrue(app.getMatchedWithMe(user1, code).length == 0);
+    }
+
+    @Test
+    public void testNoMatchesOtherUser() {
+        app.matchRequest(user1, user2, code);
+        assertTrue(app.getMatchedWithMe(user2, code).length == 0);
+    }
+
+    @Test
+    public void testGoodMatch() {
+        app.matchRequest(user1, user2, code);
+        app.matchRequest(user2, user1, code);
+        User[] res = app.getMatchedWithMe(user1, code);
+        assertTrue(res.length == 1 && res[0].getEmail().equals(user2));
+    }
+
+    @Test
+    public void testGoodMatchTwo() {
+        app.matchRequest(user1, user2, code);
+        app.matchRequest(user1,user3,code);
+        app.matchRequest(user2, user1, code);
+        app.matchRequest(user3, user1, code);
+
+        User[] res = app.getMatchedWithMe(user1,code);
+        assertTrue(res.length == 2 && res[0].getEmail().equals(user2) && res[1].getEmail().equals(user3));
+    }
+
+    @Test
+    public void testGoodMatchThree() {
+        app.matchRequest(user1, user2, code);
+        app.matchRequest(user1,user3,code);
+        app.matchRequest(user2, user1, code);
+        app.matchRequest(user3, user1, code);
+
+        User[] res2 = app.getMatchedWithMe(user2, code);
+        assertTrue(res2.length == 1 && res2[0].getEmail().equals(user1));
+    }
+
+    @Test
+    public void testGoodMatchFour() {
+        app.matchRequest(user1, user2, code);
+        app.matchRequest(user1,user3,code);
+        app.matchRequest(user2, user1, code);
+        app.matchRequest(user3, user1, code);
+
+        User[] res3 = app.getMatchedWithMe(user3,code);
+        assertTrue(res3.length == 1 && res3[0].getEmail().equals(user1));
+    }
+
+    @Test
+    public void testAllMatchesNoRequests() {
+        app.matchRequest(user1, user2, code);
+        app.matchRequest(user1,user3,code);
+        app.matchRequest(user2, user1, code);
+        app.matchRequest(user3, user1, code);
+
+        List<MatchRequest> requests = app.getCourse(code).returnMatchRequests();
+        assertTrue(requests.size() == 0);
+    }
 }
