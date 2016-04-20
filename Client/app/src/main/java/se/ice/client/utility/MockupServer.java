@@ -1,8 +1,12 @@
 package se.ice.client.utility;
 
 import java.util.HashMap;
-import java.util.Map;
+import se.ice.client.models.Admin;
+import se.ice.client.models.Course;
+import se.ice.client.models.User;
+
 import java.lang.UnsupportedOperationException;
+import java.util.Map;
 
 
 public class MockupServer implements Domain {
