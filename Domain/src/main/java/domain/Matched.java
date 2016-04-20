@@ -24,6 +24,9 @@ public class Matched {
         this.course = course;
     }
 
+    /**
+     * @return a list containing all the members in this match
+     */
     public List<String> getMembers() {
         List<String> list = new ArrayList<>();
         list.add(member1);

@@ -17,10 +17,6 @@ public class App implements Domain {
     Map<String, Admin> admins = new HashMap<>(); // All registered admins
     Map<Gcode, Course> courses = new HashMap<>();
 
-    public static void main(String[] arg) {
-        System.out.println("hi");
-    }
-
     @Override
     public String createUser(String email, String name, String password) {
         if (users.containsKey(email) || admins.containsKey(email)) {
@@ -41,12 +37,6 @@ public class App implements Domain {
         return admin.getEmail();
     }
 
-    /**
-     * Creates a course
-     * @param name name of the course
-     * @param admin admin of the course
-     * @return null if admin is not admin, else the generated code for the course
-     */
     @Override
     public Gcode createCourse(String name, String admin) {
         Gcode code = null;
@@ -59,12 +49,7 @@ public class App implements Domain {
         return code;
    }
 
-    /**
-     * Registeres the given user to the requested course
-     * @param generatedCode the code of the course of which user wishes to register itself to
-     * @param email the email of the user wishing to register to a course
-     * @return false if the user is an admin, there is no such course or no such user, else true
-     */
+
     @Override
     public boolean joinCourse(Gcode generatedCode, String email) {
         if(admins.containsKey(email) || !(courses.containsKey(generatedCode))) { // admins can't join
@@ -77,12 +62,6 @@ public class App implements Domain {
         }
     }
 
-    /**
-     * Sends a match request to the course corresponding to generatedCode, and matches them if both have said yes.
-     * @param from this user says he's willing to work with
-     * @param to this user
-     * @param generatedCode in this course
-     */
     @Override
     public void matchRequest(String from, String to, Gcode generatedCode) {
         Course course = courses.get(generatedCode);
@@ -97,11 +76,7 @@ public class App implements Domain {
     public Admin getAdmin(String email) {
         return admins.get(email);
     }
-    /**
-     * Returns all users registered to the given coursecode.
-     * @param generatedCode the generated code which is queried for a list of its registered users
-     * @return an array of User if course has registered users and null if no such course exists
-     */
+
     public User[] getAllUsers(Gcode generatedCode) {
         if(courses.containsKey(generatedCode)) {
             return courses.get(generatedCode).getRegistered();

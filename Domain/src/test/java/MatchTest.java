@@ -3,6 +3,7 @@
  */
 
 import domain.*;
+import domain.interfaces.Domain;
 import domain.util.Gcode;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,7 +15,7 @@ import static org.junit.Assert.*;
 public class MatchTest {
 
 
-    private App app;
+    private Domain app;
     private String admin;
     private Gcode code;
     private String user1;
@@ -150,5 +151,10 @@ public class MatchTest {
 
         List<MatchRequest> requests = app.getCourse(code).returnMatchRequests();
         assertTrue(requests.size() == 0);
+    }
+
+    @Test
+    public void getALlUsersBadGcode() {
+        assertNull(app.getAllUsers(new Gcode()));
     }
 }

@@ -27,19 +27,32 @@ public class Course {
         matches = new ArrayList<>();
     }
 
+    /**
+     * @return the generated code associated with this course object
+     */
     public Gcode getCode() {
         return code;
     }
 
+    /**
+     * registers a user to this course
+     * @param user who wishes to be registered
+     */
     public void registerUser(User user) {
         listed.put(user.getEmail(), user);
     }
 
+    /**
+     * @return all users registered to this course
+     */
     public User[] getRegistered() {
         Collection<User> users = listed.values();
         return users.toArray(new User[users.size()]);
     }
 
+    /**
+     * @return the admin of this course
+     */
     public String getAdmin() {
         return admin;
     }
@@ -71,6 +84,11 @@ public class Course {
         }
     }
 
+    /**
+     * returns an array containing the emails of all the users who have matched with you in this course
+     * @param email user who wishes to know who he has been matched with
+     * @return an array of the emails correspendoing to the users he has been matched with
+     */
     public String[] getMatchedWith(String email) {
         List<String> users = new ArrayList<>();
         for(Matched m : this.matches) { // for every match in this course

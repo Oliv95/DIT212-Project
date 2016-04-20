@@ -8,9 +8,10 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 /* Add any testclass you add to this suite, and execute the entire suite */
 @Suite.SuiteClasses({
-        AppTest.class,
         CourseTest.class,
-        MatchTest.class
+        MatchTest.class,
+        UserAdminTest.class,
+        EqualsTest.class
 })
 public class TestSuite {
 }
