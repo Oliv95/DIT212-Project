@@ -5,12 +5,12 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:id="@+id/course_create_textview"
+        android:id="@+id/create_course_textfield"
         android:layout_gravity="center_horizontal"
-        android:password="false"
-        android:text="Course name" />
+        android:text="Course"
+        android:gravity="center_horizontal" />
 
     <Button
         android:layout_width="wrap_content"
