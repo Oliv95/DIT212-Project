@@ -14,29 +14,25 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_height="match_parent">
 
-        <ImageButton
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/no"
-            android:layout_gravity="left"
-            android:clickable="false"
-            android:src="@drawable/no"
-            android:maxHeight="20px"
-            android:maxWidth="20px"
-            android:onClick="no" />
+            android:text="No"
+            android:id="@+id/noButton"
+            android:onClick="no"
+            android:layout_row="0"
+            android:layout_column="12"
+            android:layout_gravity="right" />
 
-        <ImageButton
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/yes"
-            android:layout_gravity="right"
-            android:src="@drawable/yes"
-            android:maxWidth="20px"
-            android:maxHeight="20px"
-            android:onClick="yes" />
+            android:text="Yes"
+            android:id="@+id/yesButton"
+            android:onClick="yes"
+            android:layout_gravity="right" />
     </LinearLayout>
 
 </LinearLayout>
