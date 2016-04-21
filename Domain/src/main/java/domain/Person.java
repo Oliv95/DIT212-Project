@@ -5,7 +5,6 @@ package domain;
  */
 public abstract class Person {
     private String password;
-    private String username;
     private String name;
     private String email;
 
