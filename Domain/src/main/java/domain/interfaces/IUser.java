@@ -1,7 +1,11 @@
 package domain.interfaces;
 
 import domain.Admin;
+import domain.Course;
 import domain.User;
+import domain.util.Gcode;
+
+import java.util.List;
 
 /**
  * Created by oliv on 4/21/16.
@@ -39,4 +43,12 @@ public interface IUser {
      * @return information about the admin
      */
     Admin getAdmin(String email);
+
+
+    /**
+     * @param gcode for the requested course
+     * @return all Course this student is enrolled in
+     */
+    List<Gcode> getEnrolledIn(Gcode gcode);
+
 }

@@ -10,7 +10,12 @@ import domain.util.Gcode;
  * Created by oliv on 4/23/16.
  */
 public class CourseDomain implements ICourse{
+
     private ICourseRepo repo;
+
+    public CourseDomain(ICourseRepo repo){
+        this.repo = repo;
+    }
 
     @Override
     public Gcode createCourse(String name, String admin) {
