@@ -19,9 +19,14 @@ public class MockupServer implements Domain {
     public static final String name = "name";
     public static final String password = "password";
 
-    public MockupServer(){
-        createAdmin(MockupServer.email, MockupServer.name, MockupServer.password);
-        System.out.println(admins.get(email).getName() + "is an admin");
+
+    private static Domain instance;
+
+    public static Domain getInstance() {
+        if(instance == null) {
+            instance = new MockupServer();
+        }
+        return instance;
     }
 
     @Override
@@ -69,7 +74,7 @@ public class MockupServer implements Domain {
      * @return false if the user is an admin, there is no such course or no such user, else true
      */
     @Override
-    public boolean joinCourse(Gcode generatedCode, String email) {
+    public boolean joinCourse(String generatedCode, String email) {
         if(admins.containsKey(email) || !(courses.containsKey(generatedCode))) { // admins can't join
             return false;
         } else if (users.containsKey(email)){ // User has to be registered
