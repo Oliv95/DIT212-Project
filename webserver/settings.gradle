@@ -1,2 +1,5 @@
 rootProject.name = 'webserver'
 
+include 'webserver'
+include 'domain'
+

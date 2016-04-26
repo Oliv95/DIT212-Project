@@ -19,6 +19,7 @@ jar {
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 sourceCompatibility = 1.8
@@ -26,7 +27,10 @@ targetCompatibility = 1.8
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile "io.springfox:springfox-swagger2:2.4.0"
+    compile("io.springfox:springfox-swagger-ui:2.1.1")
     testCompile("junit:junit")
+    compile project(':core')
 }
 
 task wrapper(type: Wrapper) {
