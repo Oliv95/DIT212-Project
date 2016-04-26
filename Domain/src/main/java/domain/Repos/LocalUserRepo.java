@@ -118,4 +118,14 @@ public class LocalUserRepo implements IUserRepo{
         saveState(ADMINSFILENAME,admins);
     }
 
+    @Override
+    public List<User> getAllUsers() {
+        return users;
+    }
+
+    @Override
+    public List<Admin> getAllAdmins() {
+        return admins;
+    }
+
 }

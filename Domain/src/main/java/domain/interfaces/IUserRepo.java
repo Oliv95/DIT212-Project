@@ -37,4 +37,14 @@ public interface IUserRepo {
      */
     void createAdmin(String email,String name, String pw);
 
+    /**
+     * @return returns all existing users
+     */
+    List<User> getAllUsers();
+
+    /**
+     * @return returns all existing admins
+     */
+    List<Admin> getAllAdmins();
+
 }

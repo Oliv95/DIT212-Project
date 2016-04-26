@@ -45,10 +45,5 @@ public interface IUser {
     Admin getAdmin(String email);
 
 
-    /**
-     * @param gcode for the requested course
-     * @return all Course this student is enrolled in
-     */
-    List<Gcode> getEnrolledIn(Gcode gcode);
 
 }
