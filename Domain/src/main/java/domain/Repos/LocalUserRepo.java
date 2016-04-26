@@ -15,16 +15,26 @@ public class LocalUserRepo implements IUserRepo{
 
     private List<User> users = new ArrayList<>();
     private List<Admin> admins = new ArrayList<>();
+    public static LocalUserRepo repo;
     private final String SEPERATOR = File.separator;
     private final String PATH = "src"+SEPERATOR+"main"+SEPERATOR+"java"+SEPERATOR+"domain"+SEPERATOR+"SaveFiles"+SEPERATOR;
     private final String USERSFILENAME = "Users.ser";
     private final String ADMINSFILENAME = "Admins.ser";
 
-    public LocalUserRepo(){
+    private LocalUserRepo(){
         saveState(USERSFILENAME,users);
         saveState(ADMINSFILENAME,admins);
         readUsers();
         readAdmins();
+    }
+
+    public static synchronized LocalUserRepo getInstance() {
+        if(repo == null) {
+            repo = new LocalUserRepo();
+            return repo;
+        } else {
+            return repo;
+        }
     }
 
 
