@@ -9,6 +9,11 @@ import se.ice.client.models.Course;
 import se.ice.client.models.User;
 
 public class ServerRequestService extends Service implements Domain {
+
+    private final String server = "localhost:8080";
+    private final String users = "/users";
+    private final String courses = "/courses";
+
     public ServerRequestService() {
     }
 
@@ -30,7 +35,6 @@ public class ServerRequestService extends Service implements Domain {
 
     @Override
     public Gcode createCourse(String name, String admin) {
-        return null;
     }
 
     @Override
