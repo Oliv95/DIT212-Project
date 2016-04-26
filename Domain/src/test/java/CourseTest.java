@@ -1,7 +1,6 @@
 /**
  * Created by skyw on 4/14/16.
  */
-import domain.App;
 import domain.Course;
 import domain.Repos.LocalCourseRepo;
 import domain.Repos.LocalUserRepo;
