@@ -14,7 +14,7 @@ public class Course {
     private String name;
     private String admin; // email of admin
 
-    private Map<String,User> listed;
+    private List<String> listed;
     private List<MatchRequest> match_requests; // Map<From,To>
     private List<Matched> matches;
 
@@ -22,7 +22,7 @@ public class Course {
         this.name = name;
         this.admin = admin;
         code = gcode;
-        listed = new HashMap<>();
+        listed = new ArrayList<>();
         match_requests = new ArrayList<>();
         matches = new ArrayList<>();
     }
@@ -38,26 +38,13 @@ public class Course {
      * registers a user to this course
      * @param user who wishes to be registered
      */
-    public void registerUser(User user) {
-        listed.put(user.getEmail(), user);
+    public void registerUser(String user) {
+        listed.add(user);
     }
 
-    /**
-     * MAYBE WE SHOULD REMOVE THIS? Course should not have a reference to users
-     * @return all users registered to this course
-     */
-    public User[] getRegistered() {
-        Collection<User> users = listed.values();
-        return users.toArray(new User[users.size()]);
-    }
 
     public List<String> getRegisteredEmails() {
-        List<String> users = new ArrayList<>();
-        Set<String> strings = listed.keySet();
-        for(String s : strings) {
-            users.add(s);
-        }
-        return users;
+        return listed;
     }
 
     /**
@@ -77,7 +64,7 @@ public class Course {
      * @param to
      */
     public void putMatchRequest(String from, String to) {
-        if(listed.containsKey(from) && listed.containsKey(to)) {
+        if(listed.contains(from) && listed.contains(to)) {
             for (Matched m : matches) {
                 if (m.getMembers().contains(from) && m.getMembers().contains(to)) { // if users are matched, should not be able to send another request
                     return;
@@ -114,7 +101,6 @@ public class Course {
         return users.toArray(new String[users.size()]);
     }
 
-    // Just to simplify testing
     public List<MatchRequest> returnMatchRequests() {
         return match_requests;
     }
