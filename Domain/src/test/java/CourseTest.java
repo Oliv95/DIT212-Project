@@ -1,6 +1,3 @@
-/**
- * Created by skyw on 4/14/16.
- */
 import domain.Course;
 import domain.Repos.LocalCourseRepo;
 import domain.Repos.LocalUserRepo;
@@ -70,6 +67,7 @@ public class CourseTest {
         assertNull(course.createCourse("databases", email));
     }
 
+    /*
     @Test
     public void createTwoCourses() {
         String admin = app.createAdmin("j_almen@hotmail.com", "jonathan", "password");
@@ -91,6 +89,8 @@ public class CourseTest {
     }
 
     /*----------------------Tests for registering to courses---------------------------*/
+
+    /*
     @Test
     public void registerUser() {
         String user = app.createUser("j_almen@hotmail.com", "jonathan", "password");
@@ -138,4 +138,5 @@ public class CourseTest {
         app.joinCourse(code, user);
         assertTrue(app.getAllUsers(code)[0].equals(app.getUser("j_almen@hotmail.com")));
     }
+    */
 }
