@@ -7,6 +7,7 @@ import domain.User;
 import domain.interfaces.ICourseRepo;
 import domain.util.Gcode;
 
+import java.io.*;
 import java.util.*;
 
 /**
@@ -14,13 +15,57 @@ import java.util.*;
  */
 public class LocalCourseRepo implements ICourseRepo{
 
-    private final Map<Gcode, Course> courses;
+    private Map<Gcode, Course> courses;
     private static LocalCourseRepo repo;
+
+    private final String SEPERATOR = File.separator;
+    private final String PATH = "src"+SEPERATOR+"main"+SEPERATOR+"java"+SEPERATOR+"domain"+SEPERATOR+"SaveFiles"+SEPERATOR;
+    private final String COURSESFILENAME = "Courses.ser";
+
+    private void saveState(String fileName, Object toSave){
+        //TODO what to do about exceptions
+        ObjectOutputStream objectStream = null; FileOutputStream outStream = null;
+        try {
+            outStream = new FileOutputStream(PATH+fileName);
+            objectStream = new ObjectOutputStream(outStream);
+            objectStream.writeObject(toSave);
+            objectStream.close();
+            outStream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private Object readState(String fileName){
+        FileInputStream inStream = null;
+        ObjectInputStream objectInStream = null;
+        Object result = null;
+        try {
+            inStream = new FileInputStream(PATH+fileName);
+            objectInStream = new ObjectInputStream(inStream); result = objectInStream.readObject();
+            objectInStream.close();
+            inStream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    private void readCourses() {
+        courses = (Map<Gcode,Course>) readState(COURSESFILENAME);
+    }
 
     /**
      * private constructor
      */
     private LocalCourseRepo() {
+        readCourses();
         courses = new HashMap<>();
     }
 
@@ -52,6 +97,7 @@ public class LocalCourseRepo implements ICourseRepo{
         Gcode code = new Gcode();
         Course course = new Course(admin, name, code);
         courses.put(code, course);
+        saveState(COURSESFILENAME,courses);
     }
 
     @Override
@@ -62,6 +108,7 @@ public class LocalCourseRepo implements ICourseRepo{
     @Override
     public void matchWith(List<String> toMatch, Gcode course) {
         courses.get(course).putMatchRequest(toMatch.get(0), toMatch.get(1));
+        saveState(COURSESFILENAME,courses);
     }
 
     @Override
