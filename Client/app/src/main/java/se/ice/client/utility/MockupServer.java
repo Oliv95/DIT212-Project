@@ -14,19 +14,19 @@ public class MockupServer implements Domain {
     Map<String, Admin> admins = new HashMap<>(); // All registered admins
     Map<Gcode, Course> courses = new HashMap<>();
 
-    // Session specifics
-    public static final String email = "name@mail.com";
-    public static final String name = "name";
-    public static final String password = "password";
-
-
     private static Domain instance;
 
     public static Domain getInstance() {
         if(instance == null) {
             instance = new MockupServer();
+            instance.init();
         }
         return instance;
+    }
+
+    public void init(){
+        // Adding initial data to the server
+        createAdmin("admin@mail.com","name","password");
     }
 
     @Override

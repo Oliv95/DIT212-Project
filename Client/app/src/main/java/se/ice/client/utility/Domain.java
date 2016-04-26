@@ -25,4 +25,6 @@ public interface Domain {
     Course getCourse(Gcode courseCode);
 
     Admin getAdmin(String email);
+
+    void init();
 }
