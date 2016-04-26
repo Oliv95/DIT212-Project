@@ -1,6 +1,7 @@
 package domain.interfaces;
 
 import domain.Admin;
+import domain.Course;
 import domain.Matched;
 import domain.User;
 import domain.util.Gcode;
@@ -28,7 +29,7 @@ public interface ICourseRepo {
      * @param admin admin for the new course
      * @param name name for the new course
      */
-    void createCourse(String admin, String name);
+    Gcode createCourse(String admin, String name);
 
     /**
      * @param gcode gcode for the course
@@ -44,4 +45,8 @@ public interface ICourseRepo {
     List<Gcode> getEnrolledIn(String email);
 
     List<Gcode> getAllAdministrating(String email);
+
+    List<Course> getAllCourses();
+
+    Course getCourse(Gcode code);
 }

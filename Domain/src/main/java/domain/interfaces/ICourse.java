@@ -4,6 +4,8 @@ import domain.Course;
 import domain.User;
 import domain.util.Gcode;
 
+import java.util.List;
+
 /**
  * Created by oliv on 4/21/16.
  */
@@ -38,7 +40,7 @@ public interface ICourse {
      * @param generatedCode the generated code which is queried for a list of its registered users
      * @return an array of User if course has registered users and null if no such course exists
      */
-    User[] getAllUsers(Gcode generatedCode);
+    List<String> getAllUsers(Gcode generatedCode);
 
     /**
      * Returns all users the user associated with the email is matched with in the given course associated with generatedCode.
@@ -46,7 +48,7 @@ public interface ICourse {
      * @param generatedCode the generated coode associated with the course
      * @return an array containing all the users this user is matched with in the course
      */
-    User[] getMatchedWithMe(String email,Gcode generatedCode);
+    List<String> getMatchedWithMe(String email,Gcode generatedCode);
 
     /**
      * Returns the course information associated with the given courseCode
@@ -54,4 +56,6 @@ public interface ICourse {
      * @return the course information
      */
     Course getCourse(Gcode courseCode);
+
+    List<Gcode> getEnrolledIn(String user);
 }

@@ -63,21 +63,24 @@ public class Course {
      * @param from
      * @param to
      */
-    public void putMatchRequest(String from, String to) {
+    public boolean putMatchRequest(String from, String to) {
         if(listed.contains(from) && listed.contains(to)) {
             for (Matched m : matches) {
                 if (m.getMembers().contains(from) && m.getMembers().contains(to)) { // if users are matched, should not be able to send another request
-                    return;
+                    return true; // ????
                 }
             }
             for (MatchRequest m : match_requests) {
                 if (m.getTo().equals(from) && m.getTo().equals(from)) {
                     match_requests.remove(m);
                     matches.add(new Matched(from, to));
-                    return;
+                    return true;
                 }
             }
             match_requests.add(new MatchRequest(from, to));
+            return true;
+        } else {
+            return false;
         }
     }
 
@@ -86,7 +89,7 @@ public class Course {
      * @param email user who wishes to know who he has been matched with
      * @return an array of the emails correspendoing to the users he has been matched with
      */
-    public String[] getMatchedWith(String email) {
+    public List<String> getMatchedWith(String email) {
         List<String> users = new ArrayList<>();
         for(Matched m : this.matches) { // for every match in this course
             if(m.getMembers().contains(email)) { // if email is a member of that match
@@ -98,7 +101,7 @@ public class Course {
 
             }
         }
-        return users.toArray(new String[users.size()]);
+        return users;
     }
 
     public List<MatchRequest> returnMatchRequests() {

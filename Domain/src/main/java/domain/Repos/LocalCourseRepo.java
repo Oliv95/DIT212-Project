@@ -93,11 +93,12 @@ public class LocalCourseRepo implements ICourseRepo{
     }
 
     @Override
-    public void createCourse(String admin, String name) {
+    public Gcode createCourse(String admin, String name) {
         Gcode code = new Gcode();
         Course course = new Course(admin, name, code);
         courses.put(code, course);
         saveState(COURSESFILENAME,courses);
+        return code;
     }
 
     @Override
@@ -135,4 +136,20 @@ public class LocalCourseRepo implements ICourseRepo{
         }
         return administrating;
     }
+
+    @Override
+    public List<Course> getAllCourses() {
+        List<Course> list = new ArrayList<>();
+        for(Course c : courses.values()) {
+            list.add(c);
+        }
+        return list;
+    }
+
+    @Override
+    public Course getCourse(Gcode code) {
+        return courses.get(code);
+    }
+
+
 }
