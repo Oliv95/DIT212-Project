@@ -19,8 +19,13 @@ public class MockupServer implements Domain {
     public static final String name = "name";
     public static final String password = "password";
 
-    public static void main(String[] arg) {
-        System.out.println("hi");
+    private static Domain instance;
+
+    public static Domain getInstance() {
+        if(instance == null) {
+            instance = new MockupServer();
+        }
+        return instance;
     }
 
     @Override
