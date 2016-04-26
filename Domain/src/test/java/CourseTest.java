@@ -1,9 +1,13 @@
 /**
  * Created by skyw on 4/14/16.
  */
-import domain.App;
 import domain.Course;
-import domain.interfaces.Domain;
+import domain.Repos.LocalCourseRepo;
+import domain.Repos.LocalUserRepo;
+import domain.domains.CourseDomain;
+import domain.domains.UserDomain;
+import domain.interfaces.ICourse;
+import domain.interfaces.IUser;
 import domain.util.Gcode;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,18 +16,20 @@ import static org.junit.Assert.*;
 
 public class CourseTest {
 
-    private Domain app;
+    private ICourse course;
+    private IUser user;
 
     @Before
     public void setup(){
-        app = new App();
+        course = new CourseDomain(LocalCourseRepo.getInstance());
+        user = new UserDomain(LocalUserRepo.getInstance());
     }
 
     @Test
     public void shouldNotBeAbleUnlessAdmin(){
 
-        Gcode code = app.createCourse("TDA755", "j_almen@hotmail.com");
-        Course c   = app.getCourse(code);
+        Gcode code = course.createCourse("TDA755", "j_almen@hotmail.com");
+        Course c   = course.getCourse(code);
 
         assertNull(c);
     }
@@ -31,33 +37,37 @@ public class CourseTest {
     @Test
     public void shouldBeAbleToCreateCourseAsAdmin(){
 
-        app.createAdmin("j_almen@hotmail.com", "jonatan", "password");
+        user.createAdmin("j_almen@hotmail.com", "jonatan", "password");
 
-        Gcode code = app.createCourse("TDA755", "j_almen@hotmail.com");
-        Course c   = app.getCourse(code);
+        Gcode code = course.createCourse("TDA755", "j_almen@hotmail.com");
+        Course c   = course.getCourse(code);
 
         assertTrue(code.equals(c.getCode()));
     }
 
     @Test
     public void createCourse() {
-        String admin = app.createAdmin("j_almen@hotmail.com", "jonathan", "password");
-        Gcode code = app.createCourse("Databases", admin);
+        user.createAdmin("j_almen@hotmail.com", "jonathan", "password");
+        String admin = user.getAdmin("j_almen@hotmail.com").getEmail();
+
+        Gcode code = course.createCourse("Databases", admin);
         assertTrue(code != null);
     }
 
     @Test
     public void createCourseTestAdmin() {
         String email = "j_almen@hotmail.com";
-        String admin = app.createAdmin(email, "jonathan", "password");
-        Gcode code = app.createCourse("Databases", admin);
-        assertTrue(app.getCourse(code).getAdmin().equals(email));
+        user.createAdmin(email, "jonathan", "password");
+        String admin = user.getAdmin(email).getEmail();
+        Gcode code = course.createCourse("Databases", admin);
+        assertTrue(course.getCourse(code).getAdmin().equals(email));
     }
 
     @Test
     public void createCourseWithUser() {
-        String user = app.createUser("j_almen@hotmail.com", "jonathan", "password");
-        assertNull(app.createCourse("databases", user));
+        user.createUser("j_almen@hotmail.com", "jonathan", "password");
+        String email = user.getUser("j_almen@hotmail.com").getEmail();
+        assertNull(course.createCourse("databases", email));
     }
 
     @Test

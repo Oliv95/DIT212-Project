@@ -14,7 +14,7 @@ public class Course {
     private String name;
     private String admin; // email of admin
 
-    private Map<String,User> listed;
+    private List<String> listed;
     private List<MatchRequest> match_requests; // Map<From,To>
     private List<Matched> matches;
 
@@ -22,7 +22,7 @@ public class Course {
         this.name = name;
         this.admin = admin;
         code = gcode;
-        listed = new HashMap<>();
+        listed = new ArrayList<>();
         match_requests = new ArrayList<>();
         matches = new ArrayList<>();
     }
@@ -38,16 +38,13 @@ public class Course {
      * registers a user to this course
      * @param user who wishes to be registered
      */
-    public void registerUser(User user) {
-        listed.put(user.getEmail(), user);
+    public void registerUser(String user) {
+        listed.add(user);
     }
 
-    /**
-     * @return all users registered to this course
-     */
-    public User[] getRegistered() {
-        Collection<User> users = listed.values();
-        return users.toArray(new User[users.size()]);
+
+    public List<String> getRegisteredEmails() {
+        return listed;
     }
 
     /**
@@ -66,21 +63,24 @@ public class Course {
      * @param from
      * @param to
      */
-    public void putMatchRequest(String from, String to) {
-        if(listed.containsKey(from) && listed.containsKey(to)) {
+    public boolean putMatchRequest(String from, String to) {
+        if(listed.contains(from) && listed.contains(to)) {
             for (Matched m : matches) {
                 if (m.getMembers().contains(from) && m.getMembers().contains(to)) { // if users are matched, should not be able to send another request
-                    return;
+                    return true; // ????
                 }
             }
             for (MatchRequest m : match_requests) {
                 if (m.getTo().equals(from) && m.getTo().equals(from)) {
                     match_requests.remove(m);
-                    matches.add(new Matched(from, to, code));
-                    return;
+                    matches.add(new Matched(from, to));
+                    return true;
                 }
             }
             match_requests.add(new MatchRequest(from, to));
+            return true;
+        } else {
+            return false;
         }
     }
 
@@ -89,7 +89,7 @@ public class Course {
      * @param email user who wishes to know who he has been matched with
      * @return an array of the emails correspendoing to the users he has been matched with
      */
-    public String[] getMatchedWith(String email) {
+    public List<String> getMatchedWith(String email) {
         List<String> users = new ArrayList<>();
         for(Matched m : this.matches) { // for every match in this course
             if(m.getMembers().contains(email)) { // if email is a member of that match
@@ -101,10 +101,9 @@ public class Course {
 
             }
         }
-        return users.toArray(new String[users.size()]);
+        return users;
     }
 
-    // Just to simplify testing
     public List<MatchRequest> returnMatchRequests() {
         return match_requests;
     }
