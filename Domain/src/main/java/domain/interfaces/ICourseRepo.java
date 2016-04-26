@@ -16,19 +16,19 @@ public interface ICourseRepo {
      * @param gcode The gcode for the course
      * @return Admin for the course with the gcode
      */
-    Admin getCourseAdmin(Gcode gcode);
+    String getCourseAdmin(Gcode gcode);
 
     /**
      * @param gcode the gcode for the course
      * @return all users in the course with that gcode
      */
-    List<User> getAllEnrolled(Gcode gcode);
+    List<String> getAllEnrolled(Gcode gcode);
 
     /**
      * @param admin admin for the new course
      * @param name name for the new course
      */
-    void createCourse(Admin admin, String name);
+    void createCourse(String admin, String name);
 
     /**
      * @param gcode gcode for the course
@@ -39,5 +39,9 @@ public interface ICourseRepo {
     /**
      * @param toMatch All the users that should be matched together
      */
-    void matchWith(List<String> toMatch);
+    void matchWith(List<String> toMatch, Gcode course);
+
+    List<Gcode> getEnrolledIn(String email);
+
+    List<Gcode> getAllAdministrating(String email);
 }

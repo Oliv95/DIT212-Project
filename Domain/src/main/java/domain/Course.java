@@ -43,11 +43,21 @@ public class Course {
     }
 
     /**
+     * MAYBE WE SHOULD REMOVE THIS? Course should not have a reference to users
      * @return all users registered to this course
      */
     public User[] getRegistered() {
         Collection<User> users = listed.values();
         return users.toArray(new User[users.size()]);
+    }
+
+    public List<String> getRegisteredEmails() {
+        List<String> users = new ArrayList<>();
+        Set<String> strings = listed.keySet();
+        for(String s : strings) {
+            users.add(s);
+        }
+        return users;
     }
 
     /**
@@ -76,7 +86,7 @@ public class Course {
             for (MatchRequest m : match_requests) {
                 if (m.getTo().equals(from) && m.getTo().equals(from)) {
                     match_requests.remove(m);
-                    matches.add(new Matched(from, to, code));
+                    matches.add(new Matched(from, to));
                     return;
                 }
             }

@@ -16,12 +16,10 @@ import java.util.List;
 public class Matched {
     private String member1;
     private String member2;
-    private Gcode course;
 
-    public Matched(String user1, String user2, Gcode course) {
+    public Matched(String user1, String user2) {
         member1 = user1;
         member2 = user2;
-        this.course = course;
     }
 
     /**
