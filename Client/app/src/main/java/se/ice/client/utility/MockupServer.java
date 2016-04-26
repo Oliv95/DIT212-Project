@@ -1,12 +1,11 @@
 package se.ice.client.utility;
 
 import java.util.HashMap;
+import java.util.Map;
+
 import se.ice.client.models.Admin;
 import se.ice.client.models.Course;
 import se.ice.client.models.User;
-
-import java.lang.UnsupportedOperationException;
-import java.util.Map;
 
 
 public class MockupServer implements Domain {
@@ -15,12 +14,14 @@ public class MockupServer implements Domain {
     Map<String, Admin> admins = new HashMap<>(); // All registered admins
     Map<Gcode, Course> courses = new HashMap<>();
 
+    // Session specifics
     public static final String email = "name@mail.com";
     public static final String name = "name";
     public static final String password = "password";
 
-    public static void main(String[] arg) {
-        System.out.println("hi");
+    public MockupServer(){
+        createAdmin(MockupServer.email, MockupServer.name, MockupServer.password);
+        System.out.println(admins.get(email).getName() + "is an admin");
     }
 
     @Override

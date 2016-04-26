@@ -12,7 +12,7 @@ public interface Domain {
 
     public Gcode createCourse(String name, String admin);
 
-    public boolean joinCourse(Gcode generatedCode, String user);
+    public boolean joinCourse(String generatedCode, String user);
 
     public void matchRequest(String sender, String receiver, Gcode generatedCode);
 

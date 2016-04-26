@@ -15,7 +15,7 @@ public class CreateCourseActivity extends Activity implements View.OnClickListen
 
     TextView courseName;
     Button createButton;
-    MockupServer server = new MockupServer();
+    MockupServer server;
     private static final String TAG = "CreateCourse";
 
     @Override
@@ -23,9 +23,9 @@ public class CreateCourseActivity extends Activity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_create);
 
-        courseName = (TextView) findViewById(R.id.course_create_textview);
+        server = new MockupServer();
+        courseName = (TextView) findViewById(R.id.create_course_textfield);
         createButton = (Button) findViewById(R.id.course_create_button);
-
         createButton.setOnClickListener(this);
 
     }
@@ -33,7 +33,7 @@ public class CreateCourseActivity extends Activity implements View.OnClickListen
     @Override
     public void onClick(View view) {
         if(view.equals(createButton)){
-            Gcode code = server.createCourse("test_course",MockupServer.name);
+            Gcode code = server.createCourse("test_course",MockupServer.email);
             Log.d(TAG,code + " was created");
         }
 

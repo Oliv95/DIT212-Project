@@ -23,4 +23,9 @@ public class Gcode {
     public int hashCode() {
         return id;
     }
+
+    @Override
+    public String toString(){
+        return this.id + "";
+    }
 }
