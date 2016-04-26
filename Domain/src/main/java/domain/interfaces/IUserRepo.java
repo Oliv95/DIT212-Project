@@ -24,14 +24,17 @@ public interface IUserRepo {
     Admin getAdmin(String email);
 
     /**
-     * @param email user email
-     * @return All codes for the courses the user is enrolled in
+     * @param email email for the new user
+     * @param name name for the new user
+     * @param pw password for the new user
      */
-    List<Gcode> getEnrolledIn(String email);
+    void createUser(String email,String name, String pw);
 
     /**
-     * @param admin admin email
-     * @return All codes for the courses the admin is administrating
+     * @param email email for the new admin
+     * @param name name for the new admin
+     * @param pw password for the new admin
      */
-    List<Gcode> getAllAdministrating(String admin);
+    void createAdmin(String email,String name, String pw);
+
 }
