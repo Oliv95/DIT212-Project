@@ -1,30 +1,45 @@
 package se.ice.client.utility;
 
+import java.util.List;
+
 import se.ice.client.models.Admin;
 import se.ice.client.models.Course;
 import se.ice.client.models.User;
 
 public interface Domain {
 
-    public String createUser(String email,String name,String password);
+    String createUser(String email,String name,String password);
 
-    public String createAdmin(String email,String name,String password);
+    String createAdmin(String email,String name,String password);
 
-    public Gcode createCourse(String name, String admin);
+    Gcode createCourse(String courseName, String adminEmail);
 
-    public boolean joinCourse(String generatedCode, String user);
+    boolean joinCourse(String generatedCourseCode, String user);
 
-    public void matchRequest(String sender, String receiver, Gcode generatedCode);
+    boolean sendMatchRequest(String senderEmail, String receiverEmail, String generatedCourseCode);
 
-    public User getUser(String email);
+    List<User> getMatchedWith(String email, String generatedCourseCode);
 
-    public User[] getAllUsers(Gcode generatedCode);
+    User getUser(String email);
 
-    public User[] getMatchedWithMe(String email,Gcode generatedCode);
+    List<User> getAllUsers(String generatedCourseCode);
 
-    Course getCourse(Gcode courseCode);
+    List<User> getMatchedWithMe(String email,String generatedCourseCode);
+
+    Course getCourse(String generatedCourseCode);
 
     Admin getAdmin(String email);
 
     void init();
+
+    boolean login(String email, String password);
+
+    boolean sendPartnerRequest(String generatedCourseCode, String fromEmail, String toEmail);
+
+    List<User> getPartnerRequest(String email, String generatedCourseCode);
+
+    boolean respondToPartner(String fromEmail, String toEmail, String generatedCourseCode, boolean response);
+
+    User getPartner(String email, String generatedCourseCode);
+
 }
