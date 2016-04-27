@@ -18,6 +18,8 @@ public interface Domain {
 
     boolean sendMatchRequest(String senderEmail, String receiverEmail, String generatedCourseCode);
 
+    boolean joinCourse(String generatedCode, String user);
+
     List<User> getMatchedWith(String email, String generatedCourseCode);
 
     User getUser(String email);
@@ -40,5 +42,5 @@ public interface Domain {
 
     User getPartner(String email, String generatedCourseCode);
 
-
+    void init();
 }

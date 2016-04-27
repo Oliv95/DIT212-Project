@@ -1,12 +1,11 @@
 package se.ice.client.utility;
 
 import java.util.HashMap;
+import java.util.Map;
+
 import se.ice.client.models.Admin;
 import se.ice.client.models.Course;
 import se.ice.client.models.User;
-
-import java.lang.UnsupportedOperationException;
-import java.util.Map;
 
 
 public class MockupServer implements Domain {
@@ -15,12 +14,19 @@ public class MockupServer implements Domain {
     Map<String, Admin> admins = new HashMap<>(); // All registered admins
     Map<Gcode, Course> courses = new HashMap<>();
 
-    public static final String email = "name@mail.com";
-    public static final String name = "name";
-    public static final String password = "password";
+    private static Domain instance;
 
-    public static void main(String[] arg) {
-        System.out.println("hi");
+    public static Domain getInstance() {
+        if(instance == null) {
+            instance = new MockupServer();
+            instance.init();
+        }
+        return instance;
+    }
+
+    public void init(){
+        // Adding initial data to the server
+        createAdmin("admin@mail.com","name","password");
     }
 
     @Override
@@ -68,7 +74,7 @@ public class MockupServer implements Domain {
      * @return false if the user is an admin, there is no such course or no such user, else true
      */
     @Override
-    public boolean joinCourse(Gcode generatedCode, String email) {
+    public boolean joinCourse(String generatedCode, String email) {
         if(admins.containsKey(email) || !(courses.containsKey(generatedCode))) { // admins can't join
             return false;
         } else if (users.containsKey(email)){ // User has to be registered
