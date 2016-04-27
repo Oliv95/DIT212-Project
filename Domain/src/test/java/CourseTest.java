@@ -1,7 +1,6 @@
 /**
  * Created by skyw on 4/14/16.
  */
-import domain.App;
 import domain.Course;
 import domain.Repos.LocalCourseRepo;
 import domain.Repos.LocalUserRepo;
@@ -73,20 +72,22 @@ public class CourseTest {
 
     @Test
     public void createTwoCourses() {
-        String admin = app.createAdmin("j_almen@hotmail.com", "jonathan", "password");
-        Gcode code = app.createCourse("databases", admin);
-        Gcode code2 = app.createCourse("testing, debugging and verification", admin);
+        user.createAdmin("j_almen@hotmail.com", "jonathan", "password");
+        String admin = user.getAdmin("j_almen@hotmail.com").getEmail();
+        Gcode code = course.createCourse("databases", admin);
+        Gcode code2 = course.createCourse("testing, debugging and verification", admin);
         assertFalse(code.equals(code2));
     }
 
     @Test
     public void createTwoCoursesSameAdmin() {
-        String admin = app.createAdmin("j_almen@hotmail.com", "jonathan", "password");
-        Gcode code = app.createCourse("databases", admin);
-        Gcode code2 = app.createCourse("testing, debugging and verification", admin);
+        user.createAdmin("j_almen@hotmail.com", "jonathan", "password");
+        String admin = user.getAdmin("j_almen@hotmail.com").getEmail();
+        Gcode code = course.createCourse("databases", admin);
+        Gcode code2 = course.createCourse("testing, debugging and verification", admin);
 
-        Course one = app.getCourse(code);
-        Course two = app.getCourse(code2);
+        Course one = course.getCourse(code);
+        Course two = course.getCourse(code2);
 
         assertTrue(one.getAdmin().equals(two.getAdmin()));
     }
@@ -94,49 +95,59 @@ public class CourseTest {
     /*----------------------Tests for registering to courses---------------------------*/
     @Test
     public void registerUser() {
-        String user = app.createUser("j_almen@hotmail.com", "jonathan", "password");
-        String admin = app.createAdmin("krausman@kraus.hubbe", "hubbe", "overlord");
-        Gcode code = app.createCourse("Databases", admin);
-        assertTrue(app.joinCourse(code, user));
+        user.createUser("j_almen@hotmail.com", "jonathan", "password");
+        String userEmail = user.getUser("j_almen@hotmail.com").getEmail();
+        user.createAdmin("krausman@kraus.hubbe", "hubbe", "overlord");
+        String admin = user.getAdmin("krausman@kraus.hubbe").getEmail();
+        Gcode code = course.createCourse("Databases", admin);
+        assertTrue(course.joinCourse(code, userEmail));
     }
 
     @Test
     public void registerAdmin() {
-        String admin = app.createAdmin("krausman@kraus.hubbe", "hubbe", "overlord");
-        Gcode code = app.createCourse("Databases", admin);
-        assertFalse(app.joinCourse(code, admin));
+        user.createAdmin("krausman@kraus.hubbe", "hubbe", "overlord");
+        String admin = user.getAdmin("krausman@kraus.hubbe").getEmail();
+        Gcode code = course.createCourse("Databases", admin);
+        assertFalse(course.joinCourse(code, admin));
     }
 
     @Test
     public void registerBadUser() {
-        String admin = app.createAdmin("krausman@kraus.hubbe", "hubbe", "overlord");
-        Gcode code = app.createCourse("Databases", admin);
-        assertFalse(app.joinCourse(code, "not_registered@chalmers.se"));
+        user.createAdmin("krausman@kraus.hubbe", "hubbe", "overlord");
+        String admin = user.getAdmin("krausman@kraus.hubbe").getEmail();
+        Gcode code = course.createCourse("Databases", admin);
+        assertFalse(course.joinCourse(code, "not_registered@chalmers.se"));
     }
 
     @Test
     public void registerBadCourse() {
-        String user = app.createUser("j_almen@hotmail.com", "jonathan", "password");
-        String admin = app.createAdmin("krausman@kraus.hubbe", "hubbe", "overlord");
-        app.createCourse("Databases", admin);
-        assertFalse(app.joinCourse(new Gcode(), user));
+        user.createUser("j_almen@hotmail.com", "jonathan", "password");
+        String email = user.getUser("j_almen@hotmail.com").getEmail();
+        user.createAdmin("krausman@kraus.hubbe", "hubbe", "overlord");
+        String admin = user.getAdmin("krausman@kraus.hubbe").getEmail();
+        course.createCourse("Databases", admin);
+        assertFalse(course.joinCourse(new Gcode(), email));
     }
 
     @Test
     public void registerGoodUserAndCheckJoined() {
-        String user = app.createUser("j_almen@hotmail.com", "jonathan", "password");
-        String admin = app.createAdmin("krausman@kraus.hubbe", "hubbe", "overlord");
-        Gcode code = app.createCourse("Databases", admin);
-        app.joinCourse(code, user);
-        assertTrue(app.getAllUsers(code).length == 1);
+        user.createUser("j_almen@hotmail.com", "jonathan", "password");
+        String email = user.getUser("j_almen@hotmail.com").getEmail();
+        user.createAdmin("krausman@kraus.hubbe", "hubbe", "overlord");
+        String admin = user.getAdmin("krausman@kraus.hubbe").getEmail();
+        Gcode code = course.createCourse("Databases", admin);
+        course.joinCourse(code, email);
+        assertTrue(course.getAllUsers(code).size() == 1);
     }
 
     @Test
     public void registerGoodUserAndCheckEmail() {
-        String user = app.createUser("j_almen@hotmail.com", "jonathan", "password");
-        String admin = app.createAdmin("krausman@kraus.hubbe", "hubbe", "overlord");
-        Gcode code = app.createCourse("Databases", admin);
-        app.joinCourse(code, user);
-        assertTrue(app.getAllUsers(code)[0].equals(app.getUser("j_almen@hotmail.com")));
+        user.createUser("j_almen@hotmail.com", "jonathan", "password");
+        String email = user.getUser("j_almen@hotmail.com").getEmail();
+        user.createAdmin("krausman@kraus.hubbe", "hubbe", "overlord");
+        String admin = user.getAdmin("krausman@kraus.hubbe").getEmail();
+        Gcode code = course.createCourse("Databases", admin);
+        course.joinCourse(code, email);
+        assertTrue(course.getAllUsers(code).get(0).equals(user.getUser("j_almen@hotmail.com")));
     }
 }
