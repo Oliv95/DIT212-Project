@@ -11,7 +11,7 @@ import org.junit.runners.Suite;
         CourseTest.class,
         MatchTest.class,
         UserAdminTest.class,
-        EqualsTest.class
+        //EqualsTest.class
 })
 public class TestSuite {
 }
