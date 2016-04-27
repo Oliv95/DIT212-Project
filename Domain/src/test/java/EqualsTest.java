@@ -59,5 +59,5 @@ public class EqualsTest {
         User robert = app.getUser(nulluser);;
         assertFalse(robert.equals(user2));
     }
-*/
+    */
 }
