@@ -1,6 +1,7 @@
 package domain.domains;
 
 import domain.Admin;
+import domain.Repos.LocalCourseRepo;
 import domain.Repos.LocalUserRepo;
 import domain.User;
 import domain.interfaces.IUser;
@@ -67,26 +68,11 @@ public class UserDomain implements IUser{
 
     @Override
     public User getUser(String email) {
-        List<User> allUsers = repo.getAllUsers();
-        for (User user : allUsers) {
-            String UserEmail =  user.getEmail();
-            if (UserEmail.equals(email )) {
-                return repo.getUser(email);
-            }
-        }
-        return null;
+        return repo.getUser(email);
     }
 
     @Override
     public Admin getAdmin(String email) {
-        List<Admin> allAdmins = repo.getAllAdmins();
-        for (Admin admin : allAdmins) {
-            String adminEmail =  admin.getEmail();
-            if (adminEmail.equals(email )) {
-                return repo.getAdmin(email);
-            }
-        }
-        return null;
+        return repo.getAdmin(email);
     }
-
 }

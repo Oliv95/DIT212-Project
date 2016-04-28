@@ -19,12 +19,13 @@ public class LocalCourseRepo implements ICourseRepo{
     private static LocalCourseRepo repo;
 
     private final String SEPERATOR = File.separator;
-    private final String PATH = "src"+SEPERATOR+"main"+SEPERATOR+"java"+SEPERATOR+"domain"+SEPERATOR+"SaveFiles"+SEPERATOR;
+    private final String PATH = System.getProperty("user.home")+SEPERATOR;
     private final String COURSESFILENAME = "Courses.ser";
 
     private void saveState(String fileName, Object toSave){
         //TODO what to do about exceptions
-        ObjectOutputStream objectStream = null; FileOutputStream outStream = null;
+        ObjectOutputStream objectStream = null;
+        FileOutputStream outStream = null;
         try {
             outStream = new FileOutputStream(PATH+fileName);
             objectStream = new ObjectOutputStream(outStream);
@@ -44,7 +45,8 @@ public class LocalCourseRepo implements ICourseRepo{
         Object result = null;
         try {
             inStream = new FileInputStream(PATH+fileName);
-            objectInStream = new ObjectInputStream(inStream); result = objectInStream.readObject();
+            objectInStream = new ObjectInputStream(inStream);
+            result = objectInStream.readObject();
             objectInStream.close();
             inStream.close();
         } catch (FileNotFoundException e) {
@@ -65,8 +67,14 @@ public class LocalCourseRepo implements ICourseRepo{
      * private constructor
      */
     private LocalCourseRepo() {
+        if(!(new File(PATH + COURSESFILENAME).exists()))
+            try {
+                new File(PATH + COURSESFILENAME).createNewFile();
+                saveState(COURSESFILENAME,courses);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         readCourses();
-        courses = new HashMap<>();
     }
 
     /**

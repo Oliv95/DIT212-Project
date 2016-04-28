@@ -2,6 +2,7 @@ package domain;
 
 import domain.util.Gcode;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
  * Class is using a list instead of simple user1 and user2 variables to simplify extending groups from 2 to more members later.
  * Created by robertkrook on 4/13/16.
  */
-public class Matched {
+public class Matched implements Serializable{
     private String member1;
     private String member2;
 

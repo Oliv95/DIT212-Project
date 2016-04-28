@@ -1,3 +1,5 @@
+.idea/
+*.ser
 ### https://raw.github.com/github/gitignore/b87d2a984952d884b838172f5380fca222d84642/Global/JetBrains.gitignore
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm

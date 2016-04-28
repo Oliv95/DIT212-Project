@@ -1,5 +1,4 @@
 package domain.Repos;
-
 import domain.Admin;
 import domain.User;
 import domain.interfaces.IUserRepo;
@@ -10,20 +9,30 @@ import java.util.List;
 
 /**
  * Created by oliv on 4/23/16.
- */
-public class LocalUserRepo implements IUserRepo{
-
+*/ public class LocalUserRepo implements IUserRepo{
     private List<User> users = new ArrayList<>();
     private List<Admin> admins = new ArrayList<>();
     public static LocalUserRepo repo;
     private final String SEPERATOR = File.separator;
-    private final String PATH = "src"+SEPERATOR+"main"+SEPERATOR+"java"+SEPERATOR+"domain"+SEPERATOR+"SaveFiles"+SEPERATOR;
+    private final String PATH = System.getProperty("user.home")+SEPERATOR;
     private final String USERSFILENAME = "Users.ser";
     private final String ADMINSFILENAME = "Admins.ser";
 
     private LocalUserRepo(){
-        saveState(USERSFILENAME,users);
-        saveState(ADMINSFILENAME,admins);
+        if(!(new File(PATH + USERSFILENAME).exists()))
+            try {
+                new File(PATH + USERSFILENAME).createNewFile();
+                saveState(USERSFILENAME,users);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        if(!(new File(PATH + ADMINSFILENAME).exists()))
+            try {
+                new File(PATH + ADMINSFILENAME).createNewFile();
+                saveState(ADMINSFILENAME,users);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         readUsers();
         readAdmins();
     }
@@ -56,12 +65,13 @@ public class LocalUserRepo implements IUserRepo{
     }
 
     private Object readState(String fileName){
-        FileInputStream inStream = null;
-        ObjectInputStream objectInStream = null;
+        FileInputStream inStream;
+        ObjectInputStream objectInStream;
         Object result = null;
         try {
             inStream = new FileInputStream(PATH+fileName);
-            objectInStream = new ObjectInputStream(inStream); result = objectInStream.readObject();
+            objectInStream = new ObjectInputStream(inStream);
+            result = objectInStream.readObject();
             objectInStream.close();
             inStream.close();
         } catch (FileNotFoundException e) {

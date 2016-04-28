@@ -1,9 +1,11 @@
 package domain;
 
+import java.io.Serializable;
+
 /**
  * Created by oliv on 4/14/16.
  */
-public abstract class Person {
+public abstract class Person implements Serializable{
     private String password;
     private String name;
     private String email;
