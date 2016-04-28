@@ -30,8 +30,8 @@
         android:padding="10dp"
         android:gravity="center_vertical"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/register_password"
-        android:layout_alignStart="@+id/register_password" />
+        android:layout_alignLeft="@+id/register_password1"
+        android:layout_alignStart="@+id/register_password1" />
 
     <Button
         android:layout_width="wrap_content"
@@ -40,8 +40,8 @@
         android:id="@+id/register_register_button"
         android:gravity="center_vertical"
         android:layout_below="@+id/login_password"
-        android:layout_alignLeft="@+id/register_password"
-        android:layout_alignStart="@+id/register_password" />
+        android:layout_alignLeft="@+id/register_password1"
+        android:layout_alignStart="@+id/register_password1" />
 
     <TextView
         android:layout_width="wrap_content"

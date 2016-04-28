@@ -2,8 +2,10 @@ package se.ice.client.android.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import se.ice.client.R;
@@ -11,9 +13,10 @@ import se.ice.client.utility.MockupServer;
 
 public class RegisterActivity extends Activity implements View.OnClickListener {
 
-    TextView mail;
-    TextView name;
-    TextView password;
+    EditText mail;
+    EditText name;
+    EditText password1;
+    EditText password2;
     Button registerButton;
 
     MockupServer server = (MockupServer) MockupServer.getInstance();
@@ -26,9 +29,9 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        mail = (TextView) findViewById(R.id.register_email);
-        name = (TextView) findViewById(R.id.register_name);
-        password = (TextView) findViewById(R.id.register_password);
+        mail = (EditText) findViewById(R.id.register_email);
+        name = (EditText) findViewById(R.id.register_name);
+        password1 = (EditText) findViewById(R.id.register_password1);
         registerButton = (Button) findViewById(R.id.register_register_button);
         registerButton.setOnClickListener(this);
 
@@ -37,7 +40,15 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if(view.equals(registerButton)){
-            server.createUser((String) mail.getText(), (String) name.getText(), (String)password.getText())
+            String pw1 = ((Editable) password1.getText()).toString();
+            String pw2 = ((Editable) password2.getText()).toString();
+            if( pw1.equals(pw2) ){
+                server.createUser(mail.getText().toString(), name.getText().toString(),
+                        password1.getText().toString());
+            }else{
+
+            }
+
         }
     }
 }
