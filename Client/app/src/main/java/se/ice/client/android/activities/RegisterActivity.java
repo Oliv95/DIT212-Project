@@ -3,6 +3,7 @@ package se.ice.client.android.activities;
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +18,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
     EditText name;
     EditText password1;
     EditText password2;
+    TextView passwordNotMatch;
     Button registerButton;
 
     MockupServer server = (MockupServer) MockupServer.getInstance();
@@ -32,7 +34,9 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
         mail = (EditText) findViewById(R.id.register_email);
         name = (EditText) findViewById(R.id.register_name);
         password1 = (EditText) findViewById(R.id.register_password1);
+        password2 = (EditText) findViewById(R.id.register_password2);
         registerButton = (Button) findViewById(R.id.register_register_button);
+        passwordNotMatch = (TextView) findViewById(R.id.register_password_incorrect);
         registerButton.setOnClickListener(this);
 
     }
@@ -44,9 +48,10 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
             String pw2 = ((Editable) password2.getText()).toString();
             if( pw1.equals(pw2) ){
                 server.createUser(mail.getText().toString(), name.getText().toString(),
-                        password1.getText().toString());
+                        pw1);
+                Log.d(TAG, name.getText().toString() + "registered");
             }else{
-
+                passwordNotMatch.setText("Passwords does not match");
             }
 
         }
