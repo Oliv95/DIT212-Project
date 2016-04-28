@@ -1,12 +1,10 @@
 package nu.monaden;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import jdk.nashorn.internal.parser.JSONParser;
+import domain.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import springfox.documentation.spring.web.json.Json;
 
 @RestController
 public class UserController {
@@ -14,6 +12,7 @@ public class UserController {
     @RequestMapping(value = "/users", method = RequestMethod.POST)
     public User createUsers(@RequestParam(value = "name") String name,
                             @RequestParam(value = "email") String email){
+        Admin admin = new Admin("Jonatan", "Something", "somethng");
         return new User(name, email);
     }
 }

@@ -1,3 +1,4 @@
+package domain.test;
 
 import domain.Repos.LocalCourseRepo;
 import domain.Repos.LocalUserRepo;

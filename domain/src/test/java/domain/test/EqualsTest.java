@@ -1,4 +1,4 @@
-// import domain.App;
+package domain.test;// import domain.App;
 import domain.User;
 import org.junit.Before;
 import org.junit.Test;

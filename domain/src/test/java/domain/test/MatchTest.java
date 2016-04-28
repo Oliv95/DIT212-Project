@@ -1,4 +1,4 @@
-/**
+package domain.test; /**
  * Created by robert on 4/19/16.
  */
 
