@@ -30,18 +30,13 @@ public class CreateCourseActivity extends Activity implements View.OnClickListen
         createButton = (Button) findViewById(R.id.course_create_button);
         createButton.setOnClickListener(this);
 
-        Intent newActivity = new Intent(this, JoinCourseActivity.class);
-
-        newActivity.putExtras();
-        startActivity(newActivity);
-
     }
 
     @Override
     public void onClick(View view) {
         String course = (String) courseName.getText();
         if(view.equals(createButton)){
-            Gcode code = server.createCourse(course,MockupServer.email);
+            Gcode code = server.createCourse(course,"admin@mail.com");
             Log.d(TAG, code.toString() + " was created");
         }
 

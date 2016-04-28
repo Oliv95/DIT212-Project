@@ -38,9 +38,9 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/register_ssn"
+        android:id="@+id/register_name"
         android:layout_column="4"
-        android:text="xxxxxxxx-nnnn"
+        android:text="Name"
         android:gravity="center_vertical"
         android:layout_below="@+id/register_password"
         android:layout_alignLeft="@+id/register_password"
@@ -52,7 +52,7 @@
         android:text="Register"
         android:id="@+id/register_register_button"
         android:gravity="center_vertical"
-        android:layout_below="@+id/register_ssn"
-        android:layout_alignLeft="@+id/register_ssn"
-        android:layout_alignStart="@+id/register_ssn" />
+        android:layout_below="@+id/register_name"
+        android:layout_alignLeft="@+id/register_name"
+        android:layout_alignStart="@+id/register_name" />
 </RelativeLayout>

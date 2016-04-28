@@ -34,7 +34,7 @@ public class JoinCourseActivity extends Activity implements View.OnClickListener
     public void onClick(View view) {
         if(view.equals(joinButton)){
             String courseCode = (String) codeView.getText();
-            boolean joined = server.joinCourse(courseCode,MockupServer.email);
+            boolean joined = server.joinCourse(courseCode,"admin@mail.com");
             Log.d(TAG, joined + " courseCode");
         }
     }
