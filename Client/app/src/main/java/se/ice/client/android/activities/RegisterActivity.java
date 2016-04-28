@@ -49,9 +49,9 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
             if( pw1.equals(pw2) ){
                 server.createUser(mail.getText().toString(), name.getText().toString(),
                         pw1);
-                Log.d(TAG, name.getText().toString() + "registered");
+                Log.d(TAG, name.getText().toString() + " registered");
             }else{
-                passwordNotMatch.setText("Passwords does not match");
+                passwordNotMatch.setText(" Passwords does not match");
             }
 
         }
