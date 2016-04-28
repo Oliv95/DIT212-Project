@@ -1,6 +1,7 @@
 package se.ice.client.android.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,7 +16,9 @@ public class CreateCourseActivity extends Activity implements View.OnClickListen
 
     TextView courseName;
     Button createButton;
-    MockupServer server;
+    MockupServer server = (MockupServer) MockupServer.getInstance();
+
+    // Used for loggin
     private static final String TAG = "CreateCourse";
 
     @Override
@@ -23,18 +26,23 @@ public class CreateCourseActivity extends Activity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_create);
 
-        server = new MockupServer();
         courseName = (TextView) findViewById(R.id.create_course_textfield);
         createButton = (Button) findViewById(R.id.course_create_button);
         createButton.setOnClickListener(this);
+
+        Intent newActivity = new Intent(this, JoinCourseActivity.class);
+
+        newActivity.putExtras();
+        startActivity(newActivity);
 
     }
 
     @Override
     public void onClick(View view) {
+        String course = (String) courseName.getText();
         if(view.equals(createButton)){
-            Gcode code = server.createCourse("test_course",MockupServer.email);
-            Log.d(TAG,code + " was created");
+            Gcode code = server.createCourse(course,MockupServer.email);
+            Log.d(TAG, code.toString() + " was created");
         }
 
     }
