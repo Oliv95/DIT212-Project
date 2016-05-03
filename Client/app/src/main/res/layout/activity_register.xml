@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/register_password"
+        android:id="@+id/register_password1"
         android:layout_column="4"
         android:text="Password"
         android:padding="10dp"
@@ -30,21 +30,20 @@
         android:padding="10dp"
         android:gravity="center_vertical"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/register_password"
-        android:layout_alignStart="@+id/register_password" />
+        android:layout_alignLeft="@+id/register_password1"
+        android:layout_alignStart="@+id/register_password1" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:ems="10"
-        android:id="@+id/register_ssn"
+        android:id="@+id/register_name"
         android:layout_column="4"
-        android:text="xxxxxxxx-nnnn"
+        android:text="Name"
         android:gravity="center_vertical"
-        android:layout_below="@+id/register_password"
-        android:layout_alignLeft="@+id/register_password"
-        android:layout_alignStart="@+id/register_password" />
+        android:layout_below="@+id/register_password2"
+        android:layout_alignLeft="@+id/register_password2"
+        android:layout_alignStart="@+id/register_password2" />
 
     <Button
         android:layout_width="wrap_content"
@@ -52,7 +51,28 @@
         android:text="Register"
         android:id="@+id/register_register_button"
         android:gravity="center_vertical"
-        android:layout_below="@+id/register_ssn"
-        android:layout_alignLeft="@+id/register_ssn"
-        android:layout_alignStart="@+id/register_ssn" />
+        android:layout_below="@+id/register_name"
+        android:layout_alignLeft="@+id/register_name"
+        android:layout_alignStart="@+id/register_name" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/register_password2"
+        android:text="Password"
+        android:layout_below="@+id/register_password1"
+        android:layout_alignLeft="@+id/register_password1"
+        android:layout_alignStart="@+id/register_password1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/register_password_incorrect"
+        android:layout_below="@+id/register_register_button"
+        android:layout_alignLeft="@+id/register_register_button"
+        android:layout_alignStart="@+id/register_register_button"
+        android:text="                              " />
 </RelativeLayout>
