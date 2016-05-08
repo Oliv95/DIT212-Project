@@ -1,0 +1,5 @@
+rootProject.name = 'webserver'
+
+include ':domain'
+project(':domain').projectDir = new File(settingsDir, '../domain')
+
