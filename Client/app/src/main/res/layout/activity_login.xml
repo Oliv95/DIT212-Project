@@ -14,7 +14,7 @@
         android:ems="10"
         android:id="@+id/login_password"
         android:layout_column="4"
-        android:text="Password"
+        android:text="password"
         android:padding="10dp"
         android:gravity="center_vertical"
         android:layout_below="@+id/login_email" />
@@ -26,7 +26,7 @@
         android:ems="10"
         android:id="@+id/login_email"
         android:layout_column="4"
-        android:text="Email"
+        android:text="admin@mail.com"
         android:padding="10dp"
         android:gravity="center_vertical"
         android:layout_alignParentTop="true"

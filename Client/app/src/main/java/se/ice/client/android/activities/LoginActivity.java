@@ -31,17 +31,18 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         loginButton = (Button) findViewById(R.id.login_login_button);
         loginButton.setOnClickListener(this);
         incorrectPassword = (TextView) findViewById(R.id.login_incorrect_password);
-        System.out.println("Login created");
     }
 
     @Override
     public void onClick(View view) {
-        Editable email = emailField.getText();
+        Editable emailField = this.emailField.getText();
         Editable password = passwordField.getText();
 
         if(view.equals(loginButton)){
-            if(server.login(email.toString(),password.toString())){
-                Intent i = new Intent(this,CreateCourseActivity.class);
+            if(server.login(emailField.toString(),password.toString())){
+                String email = emailField.toString();
+                Intent i = new Intent(this,ProfileActivity.class);
+                i.putExtra(new String("email"),email);
                 startActivity(i);
             }else{
                 incorrectPassword.setText("incorrect username or password");

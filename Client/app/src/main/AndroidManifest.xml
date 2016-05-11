@@ -15,7 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="se.ice.client.android.activities.CreateCourseActivity" >
+        <activity android:name="se.ice.client.android.activities.ProfileActivity" >
         </activity>
     </application>
 
