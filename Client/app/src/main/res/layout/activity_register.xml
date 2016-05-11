@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
-        android:id="@+id/register_register_button"
+        android:id="@+id/login_login_button"
         android:gravity="center_vertical"
         android:layout_below="@+id/register_name"
         android:layout_alignLeft="@+id/register_name"
@@ -71,8 +71,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:id="@+id/register_password_incorrect"
-        android:layout_below="@+id/register_register_button"
-        android:layout_alignLeft="@+id/register_register_button"
-        android:layout_alignStart="@+id/register_register_button"
+        android:layout_below="@+id/login_login_button"
+        android:layout_alignLeft="@+id/login_login_button"
+        android:layout_alignStart="@+id/login_login_button"
         android:text="                              " />
 </RelativeLayout>

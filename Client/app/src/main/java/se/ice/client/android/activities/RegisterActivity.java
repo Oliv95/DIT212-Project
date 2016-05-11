@@ -9,20 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Arrays;
-
-import cz.msebera.android.httpclient.Header;
 import se.ice.client.R;
 import se.ice.client.utility.MockupServer;
 
@@ -35,10 +21,10 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
     TextView passwordNotMatch;
     Button registerButton;
 
-    //URL url = new URL("localhost:8080/users/");
-    HttpURLConnection urlConnection;
+    // URL url = new URL("localhost:8080/users/");
+    // HttpURLConnection urlConnection;
 
-    //  MockupServer server = (MockupServer) MockupServer.getInstance();
+    MockupServer server = (MockupServer) MockupServer.getInstance();
 
     // Used for log
     private static final String TAG = "Register";
@@ -52,46 +38,15 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
         name = (EditText) findViewById(R.id.register_name);
         password1 = (EditText) findViewById(R.id.register_password1);
         password2 = (EditText) findViewById(R.id.register_password2);
-        registerButton = (Button) findViewById(R.id.register_register_button);
+        registerButton = (Button) findViewById(R.id.login_login_button);
         passwordNotMatch = (TextView) findViewById(R.id.register_password_incorrect);
         registerButton.setOnClickListener(this);
-
-        /*
-        try {
-            URL url = new URL("localhost:8080");
-
-            urlConnection = (HttpURLConnection) url.openConnection();
-
-            urlConnection.setDoOutput(true);
-            urlConnection.setChunkedStreamingMode(0);
-
-            OutputStream out = new BufferedOutputStream(urlConnection.getOutputStream());
-            writeStream(out);
-
-            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-            readStream(in);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-                urlConnection.disconnect();
-            }
-            */
-
-
-
-
     }
-
-    private void writeStream(OutputStream out) {
-    }
-
-    private void readStream(InputStream in) {
-    }
-
     @Override
     public void onClick(View view) {
+
+        /*
+        Jonatans bös
 
         System.out.println("Trycker ...");
 
@@ -121,18 +76,15 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
             public void onRetry(int retryNo) {
                 // called when request is retried
             }
-        });
+        });*/
 
         if(view.equals(registerButton)){
             String pw1 = ((Editable) password1.getText()).toString();
             String pw2 = ((Editable) password2.getText()).toString();
             if( pw1.equals(pw2) ){
-
-
-                /*server.createUser(mail.getText().toString(), name.getText().toString(),
+                server.createUser(mail.getText().toString(), name.getText().toString(),
                         pw1);
                 Log.d(TAG, name.getText().toString() + " registered");
-                */
             }else{
                 passwordNotMatch.setText(" Passwords does not match");
             }
