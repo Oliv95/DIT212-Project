@@ -30,7 +30,7 @@ dependencies {
     compile "io.springfox:springfox-swagger2:2.4.0"
     compile("io.springfox:springfox-swagger-ui:2.1.1")
     testCompile("junit:junit")
-    compile project(':Domain')
+    compile project(':domain')
 }
 
 task wrapper(type: Wrapper) {

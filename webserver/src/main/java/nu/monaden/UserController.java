@@ -1,20 +1,31 @@
 package nu.monaden;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import jdk.nashorn.internal.parser.JSONParser;
+import domain.Repos.LocalUserRepo;
+import domain.domains.UserDomain;
+import domain.interfaces.IUser;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import springfox.documentation.spring.web.json.Json;
 
 @RestController
 public class UserController {
 
+    IUser user = new UserDomain(LocalUserRepo.getInstance());
+
     @RequestMapping(value = "/users", method = RequestMethod.POST)
-    public User createUsers(@RequestParam(value = "name") String name,
-                            @RequestParam(value = "email") String email){
-        return new User(name, email);
+    public void createUsers(@RequestParam(value = "name") String name,
+                            @RequestParam(value = "email") String email,
+                            @RequestParam(value = "password" ) String password){
+
+        System.out.println("hafha" + user.createUser(email, name, password));
+    }
+
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    public domain.User getUser(@RequestParam(value = "email") String email){
+        domain.User u = user.getUser(email);
+        System.out.println(u);
+        return u;
     }
 }
 

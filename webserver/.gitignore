@@ -1,4 +1,12 @@
+Domain/.gitignore
+### https://raw.github.com/github/gitignore/b87d2a984952d884b838172f5380fca222d84642/Gradle.gitignore
+
+.gradle
+build/
+domain.iml
+=======
 ### https://raw.github.com/github/gitignore/b87d2a984952d884b838172f5380fca222d84642/Java.gitignore
+
 
 *.class
 
