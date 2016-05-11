@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:id="@+id/register_register_button"
+        android:id="@+id/login_login_button"
         android:gravity="center_vertical"
         android:layout_below="@+id/login_password"
         android:layout_alignLeft="@+id/register_password1"
@@ -52,4 +52,13 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/login_incorrect_password"
+        android:layout_below="@+id/login_login_button"
+        android:layout_alignLeft="@+id/login_login_button"
+        android:layout_alignStart="@+id/login_login_button" />
 </RelativeLayout>

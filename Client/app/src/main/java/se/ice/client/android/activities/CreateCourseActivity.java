@@ -18,6 +18,7 @@ public class CreateCourseActivity extends Activity implements View.OnClickListen
 
     EditText courseName;
     Button createButton;
+    TextView createSuccessful;
     MockupServer server = (MockupServer) MockupServer.getInstance();
 
     // Used for loggin
@@ -30,6 +31,7 @@ public class CreateCourseActivity extends Activity implements View.OnClickListen
 
         courseName = (EditText) findViewById(R.id.create_course_textfield);
         createButton = (Button) findViewById(R.id.course_create_button);
+        createSuccessful = (TextView) findViewById(R.id.course_create_succesful);
         createButton.setOnClickListener(this);
 
     }
@@ -39,6 +41,7 @@ public class CreateCourseActivity extends Activity implements View.OnClickListen
         Editable course = courseName.getText();
         if(view.equals(createButton)){
             Gcode code = server.createCourse(course.toString(),"admin@mail.com");
+            createSuccessful.setText(course.toString() + " was created");
             Log.d(TAG, code.toString() + " was created");
         }
 
