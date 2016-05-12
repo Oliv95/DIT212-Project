@@ -14,7 +14,7 @@
         android:ems="10"
         android:id="@+id/login_password"
         android:layout_column="4"
-        android:text="Password"
+        android:text="password"
         android:padding="10dp"
         android:gravity="center_vertical"
         android:layout_below="@+id/login_email" />
@@ -26,22 +26,22 @@
         android:ems="10"
         android:id="@+id/login_email"
         android:layout_column="4"
-        android:text="Email"
+        android:text="admin@mail.com"
         android:padding="10dp"
         android:gravity="center_vertical"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/register_password"
-        android:layout_alignStart="@+id/register_password" />
+        android:layout_alignLeft="@+id/register_password1"
+        android:layout_alignStart="@+id/register_password1" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:id="@+id/register_register_button"
+        android:id="@+id/login_login_button"
         android:gravity="center_vertical"
         android:layout_below="@+id/login_password"
-        android:layout_alignLeft="@+id/register_password"
-        android:layout_alignStart="@+id/register_password" />
+        android:layout_alignLeft="@+id/register_password1"
+        android:layout_alignStart="@+id/register_password1" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,4 +52,13 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/login_incorrect_password"
+        android:layout_below="@+id/login_login_button"
+        android:layout_alignLeft="@+id/login_login_button"
+        android:layout_alignStart="@+id/login_login_button" />
 </RelativeLayout>
