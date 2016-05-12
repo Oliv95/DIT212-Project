@@ -17,17 +17,24 @@ public class CourseTest {
 
     private ICourse course;
     private IUser user;
+    private String email;
+    private String name;
+    private String password;
+    private String courseName;
 
     @Before
     public void setup(){
         course = new CourseDomain(LocalCourseRepo.getInstance());
         user = new UserDomain(LocalUserRepo.getInstance());
+        email = "j_almen@hotmail.com";
+        name = "jonatan";
+        password = "password";
+        courseName = "TDA755";
     }
 
     @Test
     public void shouldNotBeAbleUnlessAdmin(){
-
-        Gcode code = course.createCourse("TDA755", "j_almen@hotmail.com");
+        Gcode code = course.createCourse(courseName, email);
         Course c   = course.getCourse(code);
 
         assertNull(c);
@@ -35,10 +42,8 @@ public class CourseTest {
 
     @Test
     public void shouldBeAbleToCreateCourseAsAdmin(){
-
-        user.createAdmin("j_almen@hotmail.com", "jonatan", "password");
-
-        Gcode code = course.createCourse("TDA755", "j_almen@hotmail.com");
+        user.createAdmin(email, name, password);
+        Gcode code = course.createCourse(courseName, email);
         Course c   = course.getCourse(code);
 
         assertTrue(code.equals(c.getCode()));
