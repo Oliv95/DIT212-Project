@@ -13,6 +13,23 @@ public class Gcode {
         id = counter;
     }
 
+    private Gcode(int id) {
+        this.id = id;
+    }
+
+    public static Gcode fromString(String id) {
+        int parsed = Integer.parseInt(id);
+        if(0 < parsed && parsed <= counter) {
+            return new Gcode(parsed);
+        } else {
+            return null;
+        }
+    }
+
+    public String toString() {
+        return id + "";
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
