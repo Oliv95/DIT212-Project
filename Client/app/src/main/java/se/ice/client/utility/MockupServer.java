@@ -11,6 +11,10 @@ import se.ice.client.models.User;
 
 public class MockupServer implements Domain {
 
+    // Session specific data - Is this the best place?
+    User u;
+    //--------------------------------------------------
+
     Map<String, User> users = new HashMap<>(); // All registered users
     Map<String, Admin> admins = new HashMap<>(); // All registered admins
     Map<Gcode, Course> courses = new HashMap<>();

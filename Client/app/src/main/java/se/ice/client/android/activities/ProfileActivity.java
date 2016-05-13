@@ -16,6 +16,7 @@ public class ProfileActivity extends Activity{
         setContentView(R.layout.activity_profile);
 
         emailView = (TextView) findViewById(R.id.profile_email);
+
         String email = getIntent().getExtras().getString("email");
         emailView.setText(email);
     }

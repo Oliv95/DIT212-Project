@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,7 +19,8 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     MockupServer server = (MockupServer) MockupServer.getInstance();
     EditText emailField;
     EditText passwordField;
-    TextView incorrectPassword;
+    Button registerButton;
+    TextView statusView;
 
 
     @Override
@@ -30,22 +32,43 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         passwordField = (EditText) findViewById(R.id.login_password);
         loginButton = (Button) findViewById(R.id.login_login_button);
         loginButton.setOnClickListener(this);
-        incorrectPassword = (TextView) findViewById(R.id.login_incorrect_password);
+        registerButton = (Button) findViewById(R.id.login_register);
+        registerButton.setOnClickListener(this);
+        statusView = (TextView) findViewById(R.id.login_status);
     }
 
     @Override
     public void onClick(View view) {
         Editable emailField = this.emailField.getText();
         Editable password = passwordField.getText();
-
+        Log.d("TAG", "onClick: ");
+        System.out.println("onClick");
         if(view.equals(loginButton)){
+            System.out.println("onClick login");
             if(server.login(emailField.toString(),password.toString())){
                 String email = emailField.toString();
                 Intent i = new Intent(this,ProfileActivity.class);
                 i.putExtra(new String("email"),email);
                 startActivity(i);
             }else{
-                incorrectPassword.setText("incorrect username or password");
+                statusView.setText("incorrect username or password");
+            }
+        }
+        if(view.equals(registerButton)){
+            System.out.println("onClick register");
+            Intent i = new Intent(this,RegisterActivity.class);
+            startActivityForResult(i,1);
+        }
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 1) {
+            if(resultCode == Activity.RESULT_OK){
+                String status = data.getStringExtra("status");
+                statusView.setText(status);
             }
         }
     }

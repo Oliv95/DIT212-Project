@@ -17,6 +17,8 @@
         </activity>
         <activity android:name="se.ice.client.android.activities.ProfileActivity" >
         </activity>
+        <activity android:name="se.ice.client.android.activities.RegisterActivity" >
+        </activity>
     </application>
 
 </manifest>
