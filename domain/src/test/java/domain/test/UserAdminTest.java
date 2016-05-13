@@ -36,15 +36,15 @@ public class UserAdminTest {
     //--= new User(email2,"hube","pw")---------------------Create user/admin tests----------------------------------
     @Test
     public void createUser(){
-        userDomain.createUser(email,"jon","pw");
-        String e = userDomain.getUser(email).getEmail();
-        assertTrue(email.equals(e));
+        userDomain.createUser("bla@test.com","jon","pw");
+        String e = userDomain.getUser("bla@test.com").getEmail();
+        assertTrue("bla@test.com".equals(e));
     }
 
 
     @Test
     public void createUserPersistentInformation(){
-        String useremail= "j_almen@hotmail.com";
+        String useremail= "jonis@hotmail.com";
         String name = "Jonatan";
         String password = "password";
         userDomain.createUser(useremail,name,password);
@@ -71,7 +71,7 @@ public class UserAdminTest {
         User user = userDomain.getUser(email);
         assertTrue(user.getEmail().equals(email));
     }
-/*
+
 
     @Test
     public void createAdminUser() {
@@ -82,19 +82,19 @@ public class UserAdminTest {
 
     @Test
     public void createAdminWithUsersEmail() {
-        String signup = "j_almen@hotmail.com";
-        boolean userMade = userDomain.createUser(signup, "Jonatan", "password");
-        boolean adminMade = userDomain.createAdmin(signup, "Jonatan", "password");
+        String signup = "user@hotmail.com";
+        userDomain.createUser(signup, "Jonatan", "password");
+        userDomain.createAdmin(signup, "Jonatan", "password");
         assertTrue(userDomain.getAdmin(signup) == null); // was equals "" before
     }
 
 
     @Test
     public void createUserWithAdminsEmail() {
-        String signup = "j_almen@hotmail.com";
-        app.createAdmin(signup, "Jonatan", "password");
-        app.createUser(signup, "Jonatan", "password");
-        assertTrue(app.getUser(signup) == null);
+        String signup = "almen@hotmail.com";
+        userDomain.createAdmin(signup, "Jonatan", "password");
+        userDomain.createUser(signup, "Jonatan", "password");
+        assertTrue(userDomain.getUser(signup) == null);
     }
-    */
+
 }
