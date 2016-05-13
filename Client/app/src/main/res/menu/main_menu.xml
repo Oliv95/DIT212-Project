@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Profile/Home -->
+    <item
+        android:id="@+id/menu_profile"
+        android:title="Profile"
+        android:showAsAction="never"
+        android:visible="true"/>
+
+    <!-- Courses -->
+    <item android:id="@+id/menu_courses"
+        android:title="Courses"
+        android:showAsAction="ifRoom"
+        android:visible="true"/>
+
+    <!-- Courses -->
+    <item android:id="@+id/menu_requests"
+        android:title="Requests"
+        android:showAsAction="ifRoom"
+        android:visible="true"/>
+
+    <!-- Courses -->
+    <item android:id="@+id/menu_matches"
+        android:title="Matches"
+        android:showAsAction="ifRoom"
+        android:visible="true"/>
+
+    <!-- Courses -->
+    <item android:id="@+id/menu_log_out"
+        android:title="Log out"
+        android:showAsAction="ifRoom"
+        android:visible="true"/>
+
+</menu>

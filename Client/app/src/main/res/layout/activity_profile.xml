@@ -1,9 +1,10 @@
-<LinearLayout
-    android:orientation="vertical"
+<LinearLayout android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:weightSum="1">
+
+    <include layout="@layout/main_toolbar"/>
 
     <ImageView
         android:layout_width="100dp"
@@ -37,16 +38,4 @@
         android:layout_gravity="center_horizontal"
         android:text="xxx-xxxxxxx" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/profile_description"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.80"
-        android:gravity="center|top"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:text="lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum "
-        android:layout_marginTop="25dp" />
 </LinearLayout>

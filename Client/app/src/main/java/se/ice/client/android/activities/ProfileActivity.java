@@ -1,12 +1,12 @@
 package se.ice.client.android.activities;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import se.ice.client.R;
 
-public class ProfileActivity extends Activity{
+public class ProfileActivity extends AppCompatActivity{
 
     TextView emailView;
 
@@ -19,6 +19,7 @@ public class ProfileActivity extends Activity{
 
         String email = getIntent().getExtras().getString("email");
         emailView.setText(email);
+
     }
 
 }
