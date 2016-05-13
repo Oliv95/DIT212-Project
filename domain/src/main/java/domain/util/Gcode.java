@@ -47,11 +47,6 @@ public class Gcode implements Serializable{
         return id;
     }
 
-    @Override
-    public String toString() {
-        return Integer.toString(counter);
-    }
-
     public static Gcode fromString(int i){
         Gcode result = new Gcode();
         result.id = i;

@@ -17,8 +17,8 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    IUser user = new UserDomain(LocalUserRepo.getInstance());
-    ICourse course = new CourseDomain(LocalCourseRepo.getInstance());
+    IUser user = new UserDomain();
+    ICourse course = new CourseDomain();
 
     /****************************Methods on /users******************************/
 
