@@ -38,14 +38,14 @@ public class UserController {
         return u;
     }
 
-    @RequestMapping(value = "/users", method = RequestMethod.POST)
+    @RequestMapping(value = "/admins", method = RequestMethod.POST)
     public boolean createAdmin(@RequestParam(value = "name") String name,
                             @RequestParam(value = "email") String email,
                             @RequestParam(value = "password") String password) {
         return user.createAdmin(email,name,password);
     }
 
-    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    @RequestMapping(value = "/admins", method = RequestMethod.GET)
     public domain.Admin getAdmin(@RequestParam(value = "email") String email) {
         return user.getAdmin(email);
     }
