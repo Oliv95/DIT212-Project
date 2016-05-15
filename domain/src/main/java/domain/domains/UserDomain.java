@@ -19,11 +19,9 @@ import java.util.List;
 public class UserDomain implements IUser{
 
     private IUserRepo userRepo;
-    private ICourseRepo courseRepo;
 
     public UserDomain(){
         userRepo   = LocalUserRepo.getInstance();
-        courseRepo = LocalCourseRepo.getInstance();
     }
 
     @Override

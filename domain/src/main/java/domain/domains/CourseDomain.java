@@ -32,7 +32,6 @@ public class CourseDomain implements ICourse{
         return courseRepo.createCourse(admin, name);
     }
 
-    /* No way to check if user is a proper, registered user for now */
     @Override
     public boolean joinCourse(Gcode generatedCode, String email) {
         Course c = courseRepo.getCourse(generatedCode);

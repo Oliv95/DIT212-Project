@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -50,11 +51,18 @@ public class UserController {
         return user.getAdmin(email);
     }
 
+    /*
+     * CHANGED RETURNTYPE FROM List<Gcode> TO List<String>
+     */
     @RequestMapping(value = "/users/email", method = RequestMethod.GET)
-    public List<Gcode> getEnrolledIn(@RequestParam(value = "email") String email) {
+    public List<String> getEnrolledIn(@RequestParam(value = "email") String email) {
         List<Gcode> list = course.getEnrolledIn(email);
+        List<String> stringList = new ArrayList<>();
+        for(Gcode g : list) {
+            stringList.add(g.toString());
+        }
         System.out.println(list);
-        return list;
+        return stringList;
     }
 
     @RequestMapping(value = "/users/email/course/match", method = RequestMethod.GET)
@@ -68,11 +76,14 @@ public class UserController {
 
     /***********************************Methods on /course*******************************/
 
+    /**
+     * CHANGED RETURNTYPE FROM Gcode TO STRING / Robert
+     */
     @RequestMapping(value = "/course", method = RequestMethod.POST)
-    public Gcode createCourse(@RequestParam(value = "name") String name,
+    public String createCourse(@RequestParam(value = "name") String name,
                               @RequestParam(value = "admin") String admin) {
         Gcode code = course.createCourse(name, admin);
-        return code;
+        return code.toString();
     }
 
     @RequestMapping(value = "/course/gcode/join/user", method = RequestMethod.POST)
