@@ -1,13 +1,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/activity_login"
     android:nestedScrollingEnabled="true"
     android:focusableInTouchMode="true"
     android:gravity="center_horizontal">
-
-    <include layout="@layout/main_toolbar"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -19,10 +16,9 @@
         android:text="password"
         android:padding="10dp"
         android:gravity="center_vertical|center_horizontal"
-        android:layout_below="@+id/include"
-        android:layout_toRightOf="@+id/login_register"
-        android:layout_toEndOf="@+id/login_register"
-        android:layout_marginTop="44dp" />
+        android:layout_below="@+id/login_email"
+        android:layout_alignLeft="@+id/login_register"
+        android:layout_alignStart="@+id/login_register" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -33,9 +29,10 @@
         android:layout_column="4"
         android:text="admin@mail.com"
         android:padding="10dp"
-        android:gravity="center_vertical|center_horizontal"
-        android:layout_below="@+id/include"
-        android:layout_centerHorizontal="true" />
+        android:gravity="center_horizontal"
+        android:layout_marginTop="52dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -44,8 +41,8 @@
         android:id="@+id/login_login_button"
         android:gravity="center_vertical"
         android:layout_below="@+id/login_password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="79dp" />
+        android:layout_alignLeft="@+id/login_password"
+        android:layout_alignStart="@+id/login_password" />
 
     <Button
         android:layout_width="wrap_content"

@@ -6,9 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
-import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +14,11 @@ import android.widget.TextView;
 
 import se.ice.client.R;
 import se.ice.client.utility.MockupServer;
+
+/*
+Main activity and login activity
+ */
+
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -50,8 +53,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         Editable emailField = this.emailField.getText();
         Editable password = passwordField.getText();
-        Log.d("TAG", "onClick: ");
-        System.out.println("onClick");
         if(view.equals(loginButton)){
             System.out.println("onClick login");
             if(server.login(emailField.toString(),password.toString())){
@@ -70,8 +71,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_menu, menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 

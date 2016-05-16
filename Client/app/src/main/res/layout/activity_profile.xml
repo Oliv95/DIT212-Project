@@ -4,7 +4,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:weightSum="1">
 
-    <include layout="@layout/main_toolbar"/>
+    <include
+        layout="@layout/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <ImageView
         android:layout_width="100dp"
