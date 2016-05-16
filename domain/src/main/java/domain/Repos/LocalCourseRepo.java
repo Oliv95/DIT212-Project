@@ -104,7 +104,7 @@ public class LocalCourseRepo implements ICourseRepo{
     @Override
     public Gcode createCourse(String admin, String name) {
         Gcode code = new Gcode();
-        Course course = new Course(admin, name, code);
+        Course course = new Course(name, admin, code);
         courses.put(code, course);
         saveState(COURSESFILENAME,courses);
         return code;

@@ -1,11 +1,8 @@
 package domain.domains;
 
-import domain.Course;
-import domain.MatchRequest;
-import domain.Matched;
+import domain.*;
 import domain.Repos.LocalCourseRepo;
 import domain.Repos.LocalUserRepo;
-import domain.User;
 import domain.interfaces.ICourse;
 import domain.interfaces.ICourseRepo;
 import domain.interfaces.IUserRepo;
@@ -29,12 +26,41 @@ public class CourseDomain implements ICourse{
 
     @Override
     public Gcode createCourse(String name, String admin) {
-        return courseRepo.createCourse(admin, name);
+
+        List<Admin> allAdmins = userRepo.getAllAdmins();
+        for (Admin a : allAdmins) {
+            if (a.getEmail().equals(admin)) {
+                return courseRepo.createCourse(admin,name);
+            }
+        }
+        return null;
+
     }
 
     /* No way to check if user is a proper, registered user for now */
     @Override
     public boolean joinCourse(Gcode generatedCode, String email) {
+        List<Admin> allAdmins = userRepo.getAllAdmins();
+        for (Admin admin : allAdmins) {
+            if (admin.getEmail().equals(email)) {
+                return false;
+            }
+        }
+
+        //email is an actual user
+        List<User> allUsers =  userRepo.getAllUsers();
+        boolean found = false;
+        for (User user : allUsers) {
+            if (user.getEmail().equals(email)) {
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            return false;
+        }
+
+
         Course c = courseRepo.getCourse(generatedCode);
         if(c == null) {
             return false;
@@ -51,10 +77,15 @@ public class CourseDomain implements ICourse{
         List<MatchRequest> match_requests = c.returnMatchRequests(); // Map<From,To>
         List<Matched> matches = c.returnMatched();
         boolean result = false;
+
+        //are they both in the domain.interfacessame course?
         if(listed.contains(sender) && listed.contains(receiver)) {
             for (Matched m : matches) {
-                if (m.getMembers().contains(sender) && m.getMembers().contains(receiver)) { // if users are matched, should not be able to send another request
+                //match users sending matchRequst?? to each other
+                if (m.getMembers().contains(sender)
+                    && m.getMembers().contains(receiver)) { // if users are matched, should not be able to send another request
                     result = true;
+                    return result;
                 }
             }
             for (MatchRequest m : match_requests) {
@@ -62,9 +93,9 @@ public class CourseDomain implements ICourse{
                     match_requests.remove(m);
                     matches.add(new Matched(sender, receiver));
                     result = true;
+                    return result;
                 }
             }
-            match_requests.add(new MatchRequest(sender, receiver));
             result = true;
         } else {
             result = false;
@@ -76,6 +107,9 @@ public class CourseDomain implements ICourse{
     @Override
     public List<String> getAllUsers(Gcode generatedCode) {
         Course c = courseRepo.getCourse(generatedCode);
+        if (c == null) {
+            return null;
+        }
         return c.getRegisteredEmails();
     }
 
