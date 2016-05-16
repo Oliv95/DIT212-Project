@@ -6,13 +6,14 @@ import java.util.Map;
 
 import se.ice.client.models.Admin;
 import se.ice.client.models.Course;
+import se.ice.client.models.Person;
 import se.ice.client.models.User;
 
 
 public class MockupServer implements Domain {
 
     // Session specific data - Is this the best place?
-    User u;
+    private Person currentP;
     //--------------------------------------------------
 
     Map<String, User> users = new HashMap<>(); // All registered users
@@ -20,6 +21,10 @@ public class MockupServer implements Domain {
     Map<Gcode, Course> courses = new HashMap<>();
 
     private static Domain instance;
+
+    public Person getCurrent(){
+        return currentP;
+    }
 
     public static Domain getInstance() {
         if(instance == null) {
@@ -42,8 +47,10 @@ public class MockupServer implements Domain {
         if(u == null && a == null){
             return false;
         }else if(a == null){
+            currentP = u;
             return password.equals(u.getPassword());
         }else{
+            currentP = a;
             return password.equals(a.getPassword());
         }
     }
