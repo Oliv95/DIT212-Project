@@ -60,6 +60,10 @@ public class CourseDomain implements ICourse{
             return false;
         }
 
+        List<String> inCourse = courseRepo.getAllEnrolled(generatedCode);
+        if (inCourse.contains(email)) {
+            return false;
+        }
 
         Course c = courseRepo.getCourse(generatedCode);
         if(c == null) {

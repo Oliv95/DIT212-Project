@@ -17,8 +17,8 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    IUser user = new UserDomain(LocalUserRepo.getInstance());
-    ICourse course = new CourseDomain(LocalCourseRepo.getInstance());
+    IUser user = new UserDomain();
+    ICourse course = new CourseDomain();
 
     /****************************Methods on /users******************************/
 
@@ -27,42 +27,36 @@ public class UserController {
     public boolean createUser(@RequestParam(value = "name") String name,
                             @RequestParam(value = "email") String email,
                             @RequestParam(value = "password" ) String password){
-        boolean u = user.createUser(email,name,password);
-        return u;
+        return user.createUser(email,name,password);
     }
 
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public domain.User getUser(@RequestParam(value = "email") String email){
         domain.User u = user.getUser(email);
-        System.out.println(u);
         return u;
     }
 
-    @RequestMapping(value = "/users", method = RequestMethod.POST)
+    @RequestMapping(value = "/admin", method = RequestMethod.POST)
     public boolean createAdmin(@RequestParam(value = "name") String name,
                             @RequestParam(value = "email") String email,
                             @RequestParam(value = "password") String password) {
         return user.createAdmin(email,name,password);
     }
 
-    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public domain.Admin getAdmin(@RequestParam(value = "email") String email) {
         return user.getAdmin(email);
     }
 
     @RequestMapping(value = "/users/email", method = RequestMethod.GET)
     public List<Gcode> getEnrolledIn(@RequestParam(value = "email") String email) {
-        List<Gcode> list = course.getEnrolledIn(email);
-        System.out.println(list);
-        return list;
+        return course.getEnrolledIn(email);
     }
 
     @RequestMapping(value = "/users/email/course/match", method = RequestMethod.GET)
     public List<String> getMatchedWithMe(@RequestParam(value = "email") String email,
                                          @RequestParam(value = "gcode") String gcode) {
-        List<String> list = course.getMatchedWithMe(email, Gcode.fromString(gcode));
-        System.out.println(list);
-        return list;
+        return course.getMatchedWithMe(email, Gcode.fromString(gcode));
 
     }
 
@@ -71,8 +65,7 @@ public class UserController {
     @RequestMapping(value = "/course", method = RequestMethod.POST)
     public Gcode createCourse(@RequestParam(value = "name") String name,
                               @RequestParam(value = "admin") String admin) {
-        Gcode code = course.createCourse(name, admin);
-        return code;
+        return course.createCourse(name, admin);
     }
 
     @RequestMapping(value = "/course/gcode/join/user", method = RequestMethod.POST)
@@ -83,8 +76,7 @@ public class UserController {
 
     @RequestMapping(value = "/course/gcode/users", method = RequestMethod.GET)
     public List<String> getAllUsers(@RequestParam(value = "gcode") String gcode) {
-        List<String> list = course.getAllUsers(Gcode.fromString(gcode));
-        return list;
+        return course.getAllUsers(Gcode.fromString(gcode));
     }
 
     @RequestMapping(value = "/course/gcode/matches", method = RequestMethod.GET)

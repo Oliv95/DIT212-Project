@@ -15,6 +15,10 @@ public class Gcode implements Serializable{
         id = counter;
     }
 
+    public int getId() {
+        return id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -35,9 +39,9 @@ public class Gcode implements Serializable{
         return Integer.toString(counter);
     }
 
-    public static Gcode fromString(int i){
+    public static Gcode fromString(String i){
         Gcode result = new Gcode();
-        result.id = i;
+        result.id = Integer.parseInt(i);
         return result;
     }
 }
