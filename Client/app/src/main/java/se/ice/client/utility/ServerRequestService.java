@@ -87,6 +87,7 @@ public class ServerRequestService extends Service implements Domain {
         ObjectMapper mapper = new ObjectMapper();
 
         Gcode courseCode = mapper.readValue(url, Gcode.class);
+
             return courseCode;
         } catch (Exception e) {
             e.printStackTrace();

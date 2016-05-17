@@ -2,6 +2,7 @@ package se.ice.client.android.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,8 +12,8 @@ import java.util.List;
 
 import se.ice.client.R;
 import se.ice.client.models.User;
+import se.ice.client.utility.Constants;
 import se.ice.client.utility.Domain;
-import se.ice.client.utility.Gcode;
 import se.ice.client.utility.MockupServer;
 
 /**
@@ -33,7 +34,8 @@ public class UserSwipeActivity extends Activity {
      */
     private String course;
     private List<User> users;
-    private int next = 1;
+    private int currentUser = 0;
+    private String email;
 
     private final Domain domain = MockupServer.getInstance();
 
@@ -55,6 +57,9 @@ public class UserSwipeActivity extends Activity {
 
         name.setText(users.get(0).getName());
 
+        SharedPreferences settings = getSharedPreferences(Constants.SETTINGS_FILE, 0);
+
+        email = settings.getString(Constants.EMAIL_FIELD, "");
 
     }
 
@@ -63,24 +68,22 @@ public class UserSwipeActivity extends Activity {
     }
 
     public void yes(View view) {
-
-        //TODO need the user's email from login
-        //domain.sendMatchRequest()
+        domain.sendMatchRequest(email, users.get(currentUser).getEmail(), course);
         nextUser();
-        if (users.size() > 0) {
-            users.remove(next - 1);
-        }
 
     }
 
     private boolean nextUser() {
-        if(next < users.size()) {
-            name.setText(users.get(next).getName());
-            next++;
+        if(currentUser < users.size()) {
+            name.setText(users.get(currentUser).getName());
+            currentUser++;
         } else {
-            next = 0;
-            name.setText(users.get(next).getName());
-            next++;
+            currentUser = 0;
+            name.setText(users.get(currentUser).getName());
+            currentUser++;
+        }
+        if (users.size() > 0) {
+            users.remove(currentUser - 1);
         }
         return true;
     }
