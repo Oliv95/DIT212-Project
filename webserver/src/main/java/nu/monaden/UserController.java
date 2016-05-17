@@ -66,6 +66,7 @@ public class UserController {
                                          @RequestParam(value = "gcode") String gcode) {
         List<String> users = course.getAllUsers(Gcode.fromString(gcode));
         users.removeAll(course.getMatchedWithMe(email,Gcode.fromString(gcode)));
+        users.remove(email);
         return users;
 
     }

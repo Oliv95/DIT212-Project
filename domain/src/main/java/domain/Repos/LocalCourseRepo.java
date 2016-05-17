@@ -75,7 +75,6 @@ public class LocalCourseRepo implements ICourseRepo{
                 e.printStackTrace();
             }
         readCourses();
-        courses = new LinkedHashMap<>();
     }
 
     /**

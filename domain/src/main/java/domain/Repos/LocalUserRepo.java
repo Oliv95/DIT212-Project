@@ -35,8 +35,6 @@ import java.util.List;
             }
         readUsers();
         readAdmins();
-        users = new ArrayList<>();
-        admins = new ArrayList<>();
     }
 
     public static synchronized LocalUserRepo getInstance() {
