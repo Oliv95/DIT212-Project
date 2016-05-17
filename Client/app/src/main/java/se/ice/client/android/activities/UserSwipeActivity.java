@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.List;
+
 import se.ice.client.R;
 import se.ice.client.models.User;
 import se.ice.client.utility.Domain;
@@ -28,8 +31,8 @@ public class UserSwipeActivity extends Activity {
     /**
      * Class variables
      */
-    private Gcode course;
-    private User[] users;
+    private String course;
+    private List<User> users;
     private int next = 1;
 
     private final Domain domain = MockupServer.getInstance();
@@ -43,17 +46,16 @@ public class UserSwipeActivity extends Activity {
     }
 
     private void populateData() {
-        /*
+
         Intent intent = getIntent();
 
-        course = (Gcode) intent.getExtras().get("course");
+        course =  (String) intent.getExtras().get("course");
 
         users = domain.getAllUsers(course);
 
-        name.setText(users[0].getName());
+        name.setText(users.get(0).getName());
 
-        Dont want to fix simons errors
-        */
+
     }
 
     public void no(View view) {
@@ -61,20 +63,23 @@ public class UserSwipeActivity extends Activity {
     }
 
     public void yes(View view) {
-       /*
-        domain.matchRequest(MockupServer.email, users[next-1].getEmail(), course);
+
+        //TODO need the user's email from login
+        //domain.sendMatchRequest()
         nextUser();
-        Dont want to fix simons errors :)
-        */
+        if (users.size() > 0) {
+            users.remove(next - 1);
+        }
+
     }
 
     private boolean nextUser() {
-        if(next < users.length) {
-            name.setText(users[next].getName());
+        if(next < users.size()) {
+            name.setText(users.get(next).getName());
             next++;
         } else {
             next = 0;
-            name.setText(users[next].getName());
+            name.setText(users.get(next).getName());
             next++;
         }
         return true;
