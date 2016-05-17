@@ -18,15 +18,15 @@
         android:layout_height="wrap_content"
         android:text="Create"
         android:id="@+id/courses_create_button"
-        android:layout_alignTop="@+id/courses_join"
-        android:layout_toLeftOf="@+id/courses_join"
-        android:layout_toStartOf="@+id/courses_join" />
+        android:layout_alignTop="@+id/courses_join_button"
+        android:layout_toLeftOf="@+id/courses_join_button"
+        android:layout_toStartOf="@+id/courses_join_button" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Join"
-        android:id="@+id/courses_join"
+        android:id="@+id/courses_join_button"
         android:layout_below="@+id/courses_course_fragment"
         android:layout_centerHorizontal="true" />
 

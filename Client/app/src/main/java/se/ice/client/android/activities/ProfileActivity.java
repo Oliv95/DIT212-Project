@@ -1,9 +1,12 @@
 package se.ice.client.android.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.Toolbar.OnMenuItemClickListener;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import se.ice.client.R;
@@ -41,4 +44,21 @@ public class ProfileActivity extends AppCompatActivity{
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        System.out.println("menu clicked");
+        switch (item.getItemId()) {
+            case R.id.menu_courses:
+                Intent i = new Intent(this, CoursesActivity.class);
+                startActivity(i);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
+
+
 }
