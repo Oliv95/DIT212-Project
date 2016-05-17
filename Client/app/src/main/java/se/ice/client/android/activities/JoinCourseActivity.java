@@ -31,7 +31,6 @@ public class JoinCourseActivity extends Activity implements View.OnClickListener
         joinButton.setOnClickListener(this);
     }
 
-
     @Override
     public void onClick(View view) {
         if(view.equals(joinButton)){

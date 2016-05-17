@@ -5,6 +5,10 @@
     android:id="@+id/activity_courses"
     android:gravity="center_horizontal">
 
+    <include
+        layout="@layout/main_toolbar"
+        android:id="@+id/main_toolbar" />
+
     <fragment
         android:layout_width="275dp"
         android:layout_height="350dp"
