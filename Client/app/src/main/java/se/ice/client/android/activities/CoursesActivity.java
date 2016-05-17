@@ -31,7 +31,7 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
         joinButton.setOnClickListener(this);
 
         Toolbar t = (Toolbar)findViewById(R.id.main_toolbar);
-        t.setTitle("ICE");
+        t.setTitle("Courses");
         setSupportActionBar(t);
     }
 
@@ -63,12 +63,13 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
                 i = new Intent(this, ProfileActivity.class);
                 startActivity(i);
                 return true;
-            /* When in course activity we dont want to start a new courses activity
             case R.id.menu_courses:
+                //When in course activity we don't want to start a new courses activity
                 i = new Intent(this, CoursesActivity.class);
                 startActivity(i);
+                finish();
                 return true;
-            */
+
             case R.id.menu_log_out:
                 i= new Intent(getApplicationContext(), LoginActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

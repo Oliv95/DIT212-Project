@@ -14,24 +14,26 @@
         android:layout_height="350dp"
         android:name="android.support.v4.app.ListFragment"
         android:id="@+id/courses_course_fragment"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="60dp"></fragment>
+        android:layout_alignParentLeft="false"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"></fragment>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create"
         android:id="@+id/courses_create_button"
-        android:layout_alignTop="@+id/courses_join_button"
-        android:layout_toLeftOf="@+id/courses_join_button"
-        android:layout_toStartOf="@+id/courses_join_button" />
+        android:layout_below="@+id/courses_course_fragment"
+        android:layout_alignLeft="@+id/courses_course_fragment"
+        android:layout_alignStart="@+id/courses_course_fragment" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Join"
         android:id="@+id/courses_join_button"
-        android:layout_below="@+id/courses_course_fragment"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignTop="@+id/courses_create_button"
+        android:layout_alignRight="@+id/courses_course_fragment"
+        android:layout_alignEnd="@+id/courses_course_fragment" />
 
 </RelativeLayout>

@@ -31,7 +31,7 @@ public class ProfileActivity extends AppCompatActivity{
         populateData();
 
         Toolbar t = (Toolbar)findViewById(R.id.main_toolbar);
-        t.setTitle("ICE");
+        t.setTitle(server.getCurrent().getName());
         setSupportActionBar(t);
     }
 
@@ -44,12 +44,12 @@ public class ProfileActivity extends AppCompatActivity{
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent i;
         switch (item.getItemId()) {
-            /* When in profile we dont want to start a new profile activity
             case R.id.menu_profile:
+                // When in profile we dont want to start a new profile activity
                 i = new Intent(this, ProfileActivity.class);
                 startActivity(i);
+                finish();
                 return true;
-            */
             case R.id.menu_courses:
                 i = new Intent(this, CoursesActivity.class);
                 startActivity(i);
