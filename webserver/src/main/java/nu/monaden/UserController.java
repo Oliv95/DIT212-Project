@@ -2,6 +2,7 @@ package nu.monaden;
 
 import domain.Repos.LocalCourseRepo;
 import domain.Repos.LocalUserRepo;
+import domain.User;
 import domain.domains.CourseDomain;
 import domain.domains.UserDomain;
 import domain.interfaces.ICourse;
@@ -57,6 +58,15 @@ public class UserController {
     public List<String> getMatchedWithMe(@RequestParam(value = "email") String email,
                                          @RequestParam(value = "gcode") String gcode) {
         return course.getMatchedWithMe(email, Gcode.fromString(gcode));
+
+    }
+
+    @RequestMapping(value = "/users/email/course/notmatch", method = RequestMethod.GET)
+    public List<String> getMatchedNotWithMe(@RequestParam(value = "email") String email,
+                                         @RequestParam(value = "gcode") String gcode) {
+        List<String> users = course.getAllUsers(Gcode.fromString(gcode));
+        users.removeAll(course.getMatchedWithMe(email,Gcode.fromString(gcode)));
+        return users;
 
     }
 
