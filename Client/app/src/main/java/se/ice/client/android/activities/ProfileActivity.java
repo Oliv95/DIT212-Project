@@ -31,7 +31,7 @@ public class ProfileActivity extends AppCompatActivity{
         populateData();
 
         Toolbar t = (Toolbar)findViewById(R.id.main_toolbar);
-        t.setTitle("ICE");
+        t.setTitle(server.getCurrent().getName());
         setSupportActionBar(t);
     }
 
@@ -40,24 +40,34 @@ public class ProfileActivity extends AppCompatActivity{
         nameView.setText(server.getCurrent().getName());
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        System.out.println("menu clicked");
+        Intent i;
         switch (item.getItemId()) {
+            case R.id.menu_profile:
+                // When in profile we dont want to start a new profile activity
+                i = new Intent(this, ProfileActivity.class);
+                startActivity(i);
+                finish();
+                return true;
             case R.id.menu_courses:
-                Intent i = new Intent(this, CoursesActivity.class);
+                i = new Intent(this, CoursesActivity.class);
                 startActivity(i);
                 return true;
-
+            case R.id.menu_log_out:
+                i= new Intent(getApplicationContext(), LoginActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
 
         }
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
     }
 
 

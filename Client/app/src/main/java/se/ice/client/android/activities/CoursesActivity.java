@@ -2,14 +2,13 @@ package se.ice.client.android.activities;
 
 
 import android.content.Intent;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.util.Log;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
 import se.ice.client.R;
 import se.ice.client.utility.MockupServer;
@@ -19,7 +18,7 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
     MockupServer server = (MockupServer) MockupServer.getInstance();
     Button createButton;
     Button joinButton;
-
+    Toolbar t;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -30,6 +29,10 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
         joinButton = (Button) findViewById(R.id.courses_join_button);
         createButton.setOnClickListener(this);
         joinButton.setOnClickListener(this);
+
+        Toolbar t = (Toolbar)findViewById(R.id.main_toolbar);
+        t.setTitle("Courses");
+        setSupportActionBar(t);
     }
 
 
@@ -44,5 +47,37 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
             startActivity(i);
         }
 
+    }
+
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent i;
+        switch (item.getItemId()) {
+            case R.id.menu_profile:
+                i = new Intent(this, ProfileActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.menu_courses:
+                //When in course activity we don't want to start a new courses activity
+                i = new Intent(this, CoursesActivity.class);
+                startActivity(i);
+                finish();
+                return true;
+
+            case R.id.menu_log_out:
+                i= new Intent(getApplicationContext(), LoginActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 }
