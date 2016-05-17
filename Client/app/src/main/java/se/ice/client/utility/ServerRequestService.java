@@ -2,6 +2,7 @@ package se.ice.client.utility;
 
 import android.app.Service;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.IBinder;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -81,7 +82,6 @@ public class ServerRequestService extends Service implements Domain {
            URL url = new URL(String.format(server + courses + "name=%s&email=%s",
                     URLEncoder.encode(courseName, charset),
                     URLEncoder.encode(adminEmail, charset)));
-
 
 
         ObjectMapper mapper = new ObjectMapper();
@@ -198,25 +198,7 @@ public class ServerRequestService extends Service implements Domain {
         }
     }
 
-    @Override
-    public List<User> getMatchedWithMe(String email, String generatedCourseCode) {
-        try {
-            URL url = new URL(String.format(server + users + "email=%s&gcode=%s",
-                    URLEncoder.encode(email, charset),
-                    URLEncoder.encode(generatedCourseCode, charset)));
 
-            ObjectMapper mapper = new ObjectMapper();
-
-            // This should convert to a list with User
-            List<User> user = mapper.readValue(url, List.class);
-
-            return user;
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            return new ArrayList<>();
-        }
-    }
 
     @Override
     public Course getCourse(String generatedCourseCode) {
@@ -359,6 +341,26 @@ public class ServerRequestService extends Service implements Domain {
         } catch (Exception e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    @Override
+    public List<User> getNotMatchedWith(String email, String generatedCourseCode) {
+        try {
+            URL url = new URL(String.format(server + courses + "email=%s&gcode=%s",
+                    URLEncoder.encode(email, charset),
+                    URLEncoder.encode(generatedCourseCode, charset)));
+
+            ObjectMapper mapper = new ObjectMapper();
+
+            // This should convert to a list with User
+            List<User> user = mapper.readValue(url, List.class);
+
+            return user;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ArrayList<>();
         }
     }
 }
