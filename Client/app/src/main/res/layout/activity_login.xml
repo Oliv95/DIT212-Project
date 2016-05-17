@@ -1,11 +1,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/activity_login"
     android:nestedScrollingEnabled="true"
     android:focusableInTouchMode="true"
     android:gravity="center_horizontal">
+
+    <include
+        layout="@layout/main_toolbar"
+        android:id="@+id/main_toolbar" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -16,8 +19,9 @@
         android:layout_column="4"
         android:text="password"
         android:padding="10dp"
-        android:gravity="center_vertical"
-        android:layout_below="@+id/login_email" />
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_below="@+id/login_email"
+        android:layout_toRightOf="@+id/login_register" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -28,10 +32,10 @@
         android:layout_column="4"
         android:text="admin@mail.com"
         android:padding="10dp"
-        android:gravity="center_vertical"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/register_password1"
-        android:layout_alignStart="@+id/register_password1" />
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/main_toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -39,25 +43,24 @@
         android:text="Login"
         android:id="@+id/login_login_button"
         android:gravity="center_vertical"
-        android:layout_below="@+id/login_password"
-        android:layout_alignLeft="@+id/register_password1"
-        android:layout_alignStart="@+id/register_password1" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/login_password"/>
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Register"
         android:id="@+id/login_register"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/login_incorrect_password"
+        android:id="@+id/login_status"
         android:layout_below="@+id/login_login_button"
         android:layout_alignLeft="@+id/login_login_button"
         android:layout_alignStart="@+id/login_login_button" />
