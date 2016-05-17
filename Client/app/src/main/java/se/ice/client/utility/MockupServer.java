@@ -32,7 +32,16 @@ public class MockupServer implements Domain {
 
     @Override
     public boolean login(String email, String password) {
-        return false;
+       User u = users.get(email);
+       Admin a = admins.get(email);
+
+        if(u == null && a == null){
+            return false;
+        }else if(a == null){
+            return password.equals(u.getPassword());
+        }else{
+            return password.equals(a.getPassword());
+        }
     }
 
     @Override

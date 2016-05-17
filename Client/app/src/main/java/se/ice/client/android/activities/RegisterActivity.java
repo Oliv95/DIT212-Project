@@ -21,6 +21,9 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
     TextView passwordNotMatch;
     Button registerButton;
 
+    // URL url = new URL("localhost:8080/users/");
+    // HttpURLConnection urlConnection;
+
     MockupServer server = (MockupServer) MockupServer.getInstance();
 
     // Used for log
@@ -35,14 +38,46 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
         name = (EditText) findViewById(R.id.register_name);
         password1 = (EditText) findViewById(R.id.register_password1);
         password2 = (EditText) findViewById(R.id.register_password2);
-        registerButton = (Button) findViewById(R.id.register_register_button);
+        registerButton = (Button) findViewById(R.id.login_login_button);
         passwordNotMatch = (TextView) findViewById(R.id.register_password_incorrect);
         registerButton.setOnClickListener(this);
-
     }
-
     @Override
     public void onClick(View view) {
+
+        /*
+        Jonatans bös
+
+        System.out.println("Trycker ...");
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get("http://www.google.com", new AsyncHttpResponseHandler() {
+
+            @Override
+            public void onStart() {
+                System.out.println("Making a request");
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] response) {
+                System.out.println(statusCode);
+                for(Header h : headers){
+                    System.out.println(h.getName() + " : " + h.getValue());
+                }
+                System.out.println(Arrays.toString(response));
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] errorResponse, Throwable e) {
+                System.out.println("FAILED");
+            }
+
+            @Override
+            public void onRetry(int retryNo) {
+                // called when request is retried
+            }
+        });*/
+
         if(view.equals(registerButton)){
             String pw1 = ((Editable) password1.getText()).toString();
             String pw2 = ((Editable) password2.getText()).toString();
