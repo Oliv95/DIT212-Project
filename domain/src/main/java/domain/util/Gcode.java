@@ -1,12 +1,14 @@
 package domain.util;
 
+import java.io.Serializable;
+
 /**
  * class for generating a random coursecode.
  * Created by robertkrook 4/14/16.
  */
-public class Gcode {
+public class Gcode implements Serializable{
     private static int counter = 0;
-    final private int id;
+    private int id;
 
     public Gcode(){
         counter++;
@@ -26,5 +28,16 @@ public class Gcode {
     @Override
     public int hashCode() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return Integer.toString(counter);
+    }
+
+    public static Gcode fromString(int i){
+        Gcode result = new Gcode();
+        result.id = i;
+        return result;
     }
 }

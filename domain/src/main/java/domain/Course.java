@@ -65,24 +65,7 @@ public class Course implements Serializable{
      * @param to
      */
     public boolean putMatchRequest(String from, String to) {
-        if(listed.contains(from) && listed.contains(to)) {
-            for (Matched m : matches) {
-                if (m.getMembers().contains(from) && m.getMembers().contains(to)) { // if users are matched, should not be able to send another request
-                    return true; // ????
-                }
-            }
-            for (MatchRequest m : match_requests) {
-                if (m.getTo().equals(from) && m.getTo().equals(from)) {
-                    match_requests.remove(m);
-                    matches.add(new Matched(from, to));
-                    return true;
-                }
-            }
-            match_requests.add(new MatchRequest(from, to));
-            return true;
-        } else {
-            return false;
-        }
+        return match_requests.add(new MatchRequest(from, to));
     }
 
     /**
@@ -90,6 +73,7 @@ public class Course implements Serializable{
      * @param email user who wishes to know who he has been matched with
      * @return an array of the emails correspendoing to the users he has been matched with
      */
+    //TODO maybe remove from here, moved to courseDomain for the moment
     public List<String> getMatchedWith(String email) {
         List<String> users = new ArrayList<>();
         for(Matched m : this.matches) { // for every match in this course
