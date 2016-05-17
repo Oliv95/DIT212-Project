@@ -1,11 +1,13 @@
 package se.ice.client.android.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -20,6 +22,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
     EditText password2;
     TextView passwordNotMatch;
     Button registerButton;
+    CheckBox adminBox;
 
     // URL url = new URL("localhost:8080/users/");
     // HttpURLConnection urlConnection;
@@ -41,6 +44,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
         registerButton = (Button) findViewById(R.id.login_login_button);
         passwordNotMatch = (TextView) findViewById(R.id.register_password_incorrect);
         registerButton.setOnClickListener(this);
+        adminBox = (CheckBox) findViewById(R.id.register_admin_box);
     }
     @Override
     public void onClick(View view) {
@@ -82,11 +86,19 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
             String pw1 = ((Editable) password1.getText()).toString();
             String pw2 = ((Editable) password2.getText()).toString();
             if( pw1.equals(pw2) ){
-                server.createUser(mail.getText().toString(), name.getText().toString(),
-                        pw1);
-                Log.d(TAG, name.getText().toString() + " registered");
+                if(adminBox.isChecked()){
+                    server.createAdmin(mail.getText().toString(), name.getText().toString(),
+                            pw1);
+                }else{
+                    server.createUser(mail.getText().toString(), name.getText().toString(),
+                            pw1);
+                }
+                Intent i = new Intent(this,LoginActivity.class);
+                i.putExtra(new String("status"),"registration successful");
+                setResult(Activity.RESULT_OK,i);
+                finish();
             }else{
-                passwordNotMatch.setText(" Passwords does not match");
+                passwordNotMatch.setText("Passwords does not match");
             }
 
         }
