@@ -56,7 +56,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Editable emailField = this.emailField.getText();
         Editable password = passwordField.getText();
         if(view.equals(loginButton)){
-            System.out.println("onClick login");
             if(server.login(emailField.toString(),password.toString())){
 
                 String email = emailField.toString();
@@ -69,17 +68,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 editor.apply();
 
                 Intent i = new Intent(this,ProfileActivity.class);
-                /*
-                String email = emailField.toString();
-                i.putExtra(new String("email"),email);
-                */
                 startActivity(i);
             }else{
                 statusView.setText("incorrect username or password");
             }
         }
         if(view.equals(registerButton)){
-            System.out.println("onClick register");
             Intent i = new Intent(this,RegisterActivity.class);
             startActivityForResult(i,1);
         }

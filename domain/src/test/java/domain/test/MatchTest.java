@@ -10,15 +10,16 @@ import domain.domains.UserDomain;
 import domain.interfaces.ICourse;
 import domain.interfaces.IUser;
 import domain.util.Gcode;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.regex.MatchResult;
 
 import static org.junit.Assert.*;
 
 public class MatchTest {
-
 
     private ICourse courseDomain;
     private IUser userDomain;
@@ -30,29 +31,30 @@ public class MatchTest {
 
     @Before
     public void setup() {
-        courseDomain = (ICourse) new CourseDomain(LocalCourseRepo.getInstance());
-        userDomain = (IUser) new UserDomain(LocalUserRepo.getInstance());
-        admin = "jonathan@almen.se";
-        userDomain.createAdmin("jonathan@almen.se", "jonathan", "almen");
+        courseDomain = new CourseDomain();
+        userDomain = new UserDomain();
+        admin = "jonathannn@almen.se";
+        userDomain.createAdmin(admin, "jonathan", "almen");
         code = courseDomain.createCourse("Databases", admin);
         user1 = "Axel@axel.se";
         user2 = "robert@sweglord.se";
         user3 = "nickeboi";
-        userDomain.createUser("Axel@axel.se", "axel", "hackwell");
-        userDomain.createUser("robert@sweglord.se", "robert", "krook");
-        userDomain.createUser("nickeboi", "niklas", "krause");
+        userDomain.createUser(user1, "axel", "hackwell");
+        userDomain.createUser(user2, "robert", "krook");
+        userDomain.createUser(user3, "niklas", "krause");
         courseDomain.joinCourse(code,user1);
         courseDomain.joinCourse(code,user2);
         courseDomain.joinCourse(code,user3);
     }
 
-    /*-----------------------------tests for sendMatchRequest()-------------------------*/
+    //-----------------------------tests for sendMatchRequest()-------------------------
     @Test
     public void testSendMatchRequest() {
         courseDomain.matchRequest(user1, user2, code);
+        MatchRequest mr = new MatchRequest(user1,user2);
         Course course = courseDomain.getCourse(code);
         List<MatchRequest> requests = course.returnMatchRequests();
-        assertTrue(requests.size() == 1);
+        assertTrue(requests.contains(mr));
     }
 
     @Test
@@ -68,7 +70,7 @@ public class MatchTest {
         courseDomain.matchRequest(user1, user2, code);
         courseDomain.matchRequest(user1, user3, code);
         List<MatchRequest> requests = courseDomain.getCourse(code).returnMatchRequests();
-        assertTrue(requests.size() == 2 && requests.get(0).getFrom().equals(requests.get(1).getFrom()));
+        assertTrue(requests.size() >= 2 && requests.get(0).getFrom().equals(requests.get(1).getFrom()));
     }
 
     @Test
@@ -84,8 +86,9 @@ public class MatchTest {
     public void testGetAMatchNoRequests() {
         courseDomain.matchRequest(user1, user2, code);
         courseDomain.matchRequest(user2, user1, code);
+        MatchRequest mr = new MatchRequest(user1,user2);
         List<MatchRequest> requests = courseDomain.getCourse(code).returnMatchRequests();
-        assertTrue(requests.size() == 0);
+        assertFalse(requests.contains(mr));
     }
 
     @Test
@@ -93,12 +96,14 @@ public class MatchTest {
         courseDomain.matchRequest(user1,user2,code);
         courseDomain.matchRequest(user2,user1,code);
         courseDomain.matchRequest(user1,user2,code);
+        MatchRequest mr = new MatchRequest(user1,user2);
+        Matched md = new Matched(user1,user2);
         List<MatchRequest> requests = courseDomain.getCourse(code).returnMatchRequests();
         List<Matched> matches = courseDomain.getCourse(code).returnMatched();
-        assertTrue(requests.size() == 0 && matches.size() == 1);
+        assertTrue(!requests.contains(mr) && matches.contains(md));
     }
 
-    /*----------------------------Tests for getMatchedWithMe()----------------------------------------*/
+    //----------------------------Tests for getMatchedWithMe()----------------------------------------
 
     @Test
     public void testNoMatches() {
@@ -166,6 +171,8 @@ public class MatchTest {
 
     @Test
     public void getALlUsersBadGcode() {
-        assertNull(courseDomain.getAllUsers(new Gcode()));
+        List<String> users = courseDomain.getAllUsers(new Gcode());
+        assertTrue(null == users);
     }
+
 }

@@ -19,6 +19,12 @@
         </activity>
         <activity android:name="se.ice.client.android.activities.RegisterActivity" >
         </activity>
+        <activity android:name="se.ice.client.android.activities.CreateCourseActivity" >
+        </activity>
+        <activity android:name="se.ice.client.android.activities.JoinCourseActivity" >
+        </activity>
+        <activity android:name="se.ice.client.android.activities.CoursesActivity" >
+        </activity>
 
     </application>
 
