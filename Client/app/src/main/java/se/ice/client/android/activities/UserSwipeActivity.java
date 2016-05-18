@@ -2,14 +2,18 @@ package se.ice.client.android.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.List;
+
 import se.ice.client.R;
 import se.ice.client.models.User;
+import se.ice.client.utility.Constants;
 import se.ice.client.utility.Domain;
-import se.ice.client.utility.Gcode;
 import se.ice.client.utility.MockupServer;
 
 /**
@@ -28,9 +32,10 @@ public class UserSwipeActivity extends Activity {
     /**
      * Class variables
      */
-    private Gcode course;
-    private User[] users;
-    private int next = 1;
+    private String course;
+    private List<User> users;
+    private int currentUser = 0;
+    private String email;
 
     private final Domain domain = MockupServer.getInstance();
 
@@ -43,17 +48,19 @@ public class UserSwipeActivity extends Activity {
     }
 
     private void populateData() {
-        /*
+
         Intent intent = getIntent();
 
-        course = (Gcode) intent.getExtras().get("course");
+        course =  (String) intent.getExtras().get("course");
 
         users = domain.getAllUsers(course);
 
-        name.setText(users[0].getName());
+        name.setText(users.get(0).getName());
 
-        Dont want to fix simons errors
-        */
+        SharedPreferences settings = getSharedPreferences(Constants.SETTINGS_FILE, 0);
+
+        email = settings.getString(Constants.EMAIL_FIELD, "");
+
     }
 
     public void no(View view) {
@@ -61,21 +68,22 @@ public class UserSwipeActivity extends Activity {
     }
 
     public void yes(View view) {
-       /*
-        domain.matchRequest(MockupServer.email, users[next-1].getEmail(), course);
+        domain.sendMatchRequest(email, users.get(currentUser).getEmail(), course);
         nextUser();
-        Dont want to fix simons errors :)
-        */
+
     }
 
     private boolean nextUser() {
-        if(next < users.length) {
-            name.setText(users[next].getName());
-            next++;
+        if(currentUser < users.size()) {
+            name.setText(users.get(currentUser).getName());
+            currentUser++;
         } else {
-            next = 0;
-            name.setText(users[next].getName());
-            next++;
+            currentUser = 0;
+            name.setText(users.get(currentUser).getName());
+            currentUser++;
+        }
+        if (users.size() > 0) {
+            users.remove(currentUser - 1);
         }
         return true;
     }

@@ -9,12 +9,17 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="User&apos;s name"
         android:id="@+id/name"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="100dp"
+        android:layout_marginTop="50dp" />
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="200dp"
+        android:layout_height="417dp"
+        android:showDividers="middle"
+        android:divider="@color/abc_input_method_navigation_guard"
+        android:layout_gravity="center">
 
         <Button
             android:layout_width="wrap_content"
@@ -24,7 +29,7 @@
             android:onClick="no"
             android:layout_row="0"
             android:layout_column="12"
-            android:layout_gravity="right" />
+            android:layout_gravity="center_horizontal" />
 
         <Button
             android:layout_width="wrap_content"
@@ -32,7 +37,7 @@
             android:text="Yes"
             android:id="@+id/yesButton"
             android:onClick="yes"
-            android:layout_gravity="right" />
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
 
 </LinearLayout>
