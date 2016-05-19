@@ -15,11 +15,6 @@ import android.widget.TextView;
 import se.ice.client.R;
 import se.ice.client.utility.MockupServer;
 
-/*
-Main activity and login activity
- */
-
-
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button loginButton;
