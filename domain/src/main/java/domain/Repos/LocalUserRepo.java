@@ -10,26 +10,26 @@ import java.util.List;
 /**
  * Created by oliv on 4/23/16.
 */ public class LocalUserRepo implements IUserRepo{
-    private List<User> users = new ArrayList<>();
-    private List<Admin> admins = new ArrayList<>();
+    private List<User>  users;
+    private List<Admin> admins;
     public static LocalUserRepo repo;
     private final String SEPERATOR = File.separator;
     private final String PATH = System.getProperty("user.home")+SEPERATOR;
     private final String USERSFILENAME = "Users.ser";
     private final String ADMINSFILENAME = "Admins.ser";
 
-    private LocalUserRepo(){
-        if(!(new File(PATH + USERSFILENAME).exists()))
+    private LocalUserRepo() {
+        if (!(new File(PATH + USERSFILENAME).exists()))
             try {
                 new File(PATH + USERSFILENAME).createNewFile();
-                saveState(USERSFILENAME,users);
+                saveState(USERSFILENAME, users);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        if(!(new File(PATH + ADMINSFILENAME).exists()))
+        if (!(new File(PATH + ADMINSFILENAME).exists()))
             try {
                 new File(PATH + ADMINSFILENAME).createNewFile();
-                saveState(ADMINSFILENAME,users);
+                saveState(ADMINSFILENAME, users);
             } catch (IOException e) {
                 e.printStackTrace();
             }

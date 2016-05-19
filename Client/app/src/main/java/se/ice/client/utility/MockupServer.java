@@ -76,6 +76,11 @@ public class MockupServer implements Domain {
     }
 
     @Override
+    public List<User> getNotMatchedWith(String email, String generatedCourseCode) {
+        return null;
+    }
+
+    @Override
     public String createUser(String email, String name, String password) {
         if (users.containsKey(email) || admins.containsKey(email)) {
             return "";
@@ -158,10 +163,6 @@ public class MockupServer implements Domain {
         return null;
     }
 
-    @Override
-    public List<User> getMatchedWithMe(String email, String generatedCourseCode) {
-        return null;
-    }
 
     @Override
     public Admin getAdmin(String email) {

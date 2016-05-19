@@ -4,6 +4,8 @@ import domain.Admin;
 import domain.Repos.LocalCourseRepo;
 import domain.Repos.LocalUserRepo;
 import domain.User;
+import domain.interfaces.ICourse;
+import domain.interfaces.ICourseRepo;
 import domain.interfaces.IUser;
 import domain.interfaces.IUserRepo;
 import domain.util.Gcode;
@@ -16,20 +18,22 @@ import java.util.List;
  */
 public class UserDomain implements IUser{
 
-    private IUserRepo repo;
+    private IUserRepo userRepo;
+    private ICourseRepo courseRepo;
 
-    public UserDomain(IUserRepo repo){
-        this.repo = repo;
+    public UserDomain(){
+        userRepo   = LocalUserRepo.getInstance();
+        courseRepo = LocalCourseRepo.getInstance();
     }
 
     @Override
     public boolean createUser(String email, String name, String password) {
-        List<User> allUsers = repo.getAllUsers();
-        List<Admin> allAdmins = repo.getAllAdmins();
+        List<User> allUsers = userRepo.getAllUsers();
+        List<Admin> allAdmins = userRepo.getAllAdmins();
 
         for (Admin admin : allAdmins) {
             String adminEmail = admin.getEmail();
-            if (admin.equals(email)) {
+            if (adminEmail.equals(email)) {
                 return false;
             }
         }
@@ -40,18 +44,18 @@ public class UserDomain implements IUser{
                 return false;
             }
         }
-        repo.createUser(email,name,password);
+        userRepo.createUser(email,name,password);
         return true;
     }
 
     @Override
     public boolean createAdmin(String email, String name, String password) {
-        List<Admin> allAdmins = repo.getAllAdmins();
-        List<User> allUsers = repo.getAllUsers();
+        List<Admin> allAdmins = userRepo.getAllAdmins();
+        List<User> allUsers = userRepo.getAllUsers();
 
         for (Admin admin : allAdmins) {
             String adminEmail = admin.getEmail();
-            if (admin.equals(email)) {
+            if (adminEmail.equals(email)) {
                 return false;
             }
         }
@@ -62,17 +66,17 @@ public class UserDomain implements IUser{
                 return false;
             }
         }
-        repo.createAdmin(email,name,password);
+        userRepo.createAdmin(email,name,password);
         return true;
     }
 
     @Override
     public User getUser(String email) {
-        return repo.getUser(email);
+        return userRepo.getUser(email);
     }
 
     @Override
     public Admin getAdmin(String email) {
-        return repo.getAdmin(email);
+        return userRepo.getAdmin(email);
     }
 }

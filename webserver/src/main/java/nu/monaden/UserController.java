@@ -1,48 +1,100 @@
 package nu.monaden;
 
+import domain.Repos.LocalCourseRepo;
 import domain.Repos.LocalUserRepo;
+import domain.User;
+import domain.domains.CourseDomain;
 import domain.domains.UserDomain;
+import domain.interfaces.ICourse;
 import domain.interfaces.IUser;
+import domain.util.Gcode;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class UserController {
 
-    IUser user = new UserDomain(LocalUserRepo.getInstance());
+    IUser user = new UserDomain();
+    ICourse course = new CourseDomain();
+
+    /****************************Methods on /users******************************/
+
 
     @RequestMapping(value = "/users", method = RequestMethod.POST)
-    public void createUsers(@RequestParam(value = "name") String name,
+    public boolean createUser(@RequestParam(value = "name") String name,
                             @RequestParam(value = "email") String email,
                             @RequestParam(value = "password" ) String password){
-
-        System.out.println("hafha" + user.createUser(email, name, password));
+        return user.createUser(email,name,password);
     }
 
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public domain.User getUser(@RequestParam(value = "email") String email){
         domain.User u = user.getUser(email);
-        System.out.println(u);
         return u;
     }
-}
 
-class User {
-    private final String name;
-    private final String email;
-
-    public User(String name, String email){
-        this.name = name;
-        this.email = email;
+    @RequestMapping(value = "/admin", method = RequestMethod.POST)
+    public boolean createAdmin(@RequestParam(value = "name") String name,
+                            @RequestParam(value = "email") String email,
+                            @RequestParam(value = "password") String password) {
+        return user.createAdmin(email,name,password);
     }
 
-    public String getEmail() {
-        return email;
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public domain.Admin getAdmin(@RequestParam(value = "email") String email) {
+        return user.getAdmin(email);
     }
 
-    public String getName() {
-        return name;
+    @RequestMapping(value = "/users/email", method = RequestMethod.GET)
+    public List<Gcode> getEnrolledIn(@RequestParam(value = "email") String email) {
+        return course.getEnrolledIn(email);
     }
+
+    @RequestMapping(value = "/users/email/course/match", method = RequestMethod.GET)
+    public List<String> getMatchedWithMe(@RequestParam(value = "email") String email,
+                                         @RequestParam(value = "gcode") String gcode) {
+        return course.getMatchedWithMe(email, Gcode.fromString(gcode));
+
+    }
+
+    @RequestMapping(value = "/users/email/course/notmatch", method = RequestMethod.GET)
+    public List<String> getMatchedNotWithMe(@RequestParam(value = "email") String email,
+                                         @RequestParam(value = "gcode") String gcode) {
+        List<String> users = course.getAllUsers(Gcode.fromString(gcode));
+        users.removeAll(course.getMatchedWithMe(email,Gcode.fromString(gcode)));
+        users.remove(email);
+        return users;
+
+    }
+
+    /***********************************Methods on /course*******************************/
+
+    @RequestMapping(value = "/course", method = RequestMethod.POST)
+    public Gcode createCourse(@RequestParam(value = "name") String name,
+                              @RequestParam(value = "admin") String admin) {
+        return course.createCourse(name, admin);
+    }
+
+    @RequestMapping(value = "/course/gcode/join/user", method = RequestMethod.POST)
+    public boolean joinCourse(@RequestParam(value = "gcode") String code,
+                              @RequestParam(value = "email") String email) {
+        return course.joinCourse(Gcode.fromString(code), email);
+    }
+
+    @RequestMapping(value = "/course/gcode/users", method = RequestMethod.GET)
+    public List<String> getAllUsers(@RequestParam(value = "gcode") String gcode) {
+        return course.getAllUsers(Gcode.fromString(gcode));
+    }
+
+    @RequestMapping(value = "/course/gcode/matches", method = RequestMethod.GET)
+    public boolean matchRequest(@RequestParam(value = "sender") String sender,
+                                @RequestParam(value = "receiver") String receiver,
+                                @RequestParam(value = "gcode") String code) {
+        return course.matchRequest(sender,receiver,Gcode.fromString(code));
+    }
+
 }

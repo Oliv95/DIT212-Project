@@ -32,4 +32,24 @@ public class Matched implements Serializable{
         list.add(member2);
         return list;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Matched other = (Matched) o;
+        boolean result = false;
+
+        //It does not mather in what order the members are stored
+        result = member1.equals(other.member1) || member1.equals(other.member2);
+        result = result || member2.equals(other.member2) || member2.equals(other.member2);
+        return result;
+    }
+
+    @Override
+    public int hashCode() {
+        //TODO
+        return 42;
+    }
 }

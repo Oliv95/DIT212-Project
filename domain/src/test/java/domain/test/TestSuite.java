@@ -1,10 +1,13 @@
 package domain.test;
 
+//TODO test might fail due to save files...
+//TODO copy to some other place then move back??
+
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 /**
- * Test suite
+ * Test suites
  * Created by robert on 4/20/16.
  */
 @RunWith(Suite.class)
@@ -13,7 +16,7 @@ import org.junit.runners.Suite;
          CourseTest.class,
          MatchTest.class,
          UserAdminTest.class,
-        EqualsTest.class
+         EqualsTest.class
 })
 public class TestSuite {
 }
