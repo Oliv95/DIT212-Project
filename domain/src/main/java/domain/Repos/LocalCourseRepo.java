@@ -6,6 +6,7 @@ import domain.Matched;
 import domain.User;
 import domain.interfaces.ICourseRepo;
 import domain.util.Gcode;
+import sun.misc.GC;
 
 import java.io.*;
 import java.util.*;
@@ -21,6 +22,11 @@ public class LocalCourseRepo implements ICourseRepo{
     private final String SEPERATOR = File.separator;
     private final String PATH = System.getProperty("user.home")+SEPERATOR;
     private final String COURSESFILENAME = "Courses.ser";
+    private final String GCODEFILENAME = "Gcode.txt";
+
+    public void saveCourses(){
+        saveState(COURSESFILENAME, courses);
+    }
 
     private void saveState(String fileName, Object toSave){
         //TODO what to do about exceptions
@@ -63,18 +69,62 @@ public class LocalCourseRepo implements ICourseRepo{
         courses = (Map<Gcode,Course>) readState(COURSESFILENAME);
     }
 
+    private void readCounter() {
+        try {
+            FileReader fileReader = new FileReader(PATH + GCODEFILENAME);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String counter = bufferedReader.readLine();
+            bufferedReader.close();
+            fileReader.close();
+            if (counter.trim().equals("")) {
+                Gcode.setCounter(0);
+            }
+            else {
+                int c = Integer.parseInt(counter.trim());
+                Gcode.setCounter(c);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void saveCounter(int toWrite){
+            File f = new File(PATH + GCODEFILENAME);
+        try {
+            BufferedWriter b = new BufferedWriter(new FileWriter(f));
+            b.write(String.valueOf(toWrite));
+            b.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * private constructor
      */
     private LocalCourseRepo() {
-        if(!(new File(PATH + COURSESFILENAME).exists()))
+        if(!(new File(PATH + COURSESFILENAME).exists())) {
             try {
                 new File(PATH + COURSESFILENAME).createNewFile();
-                saveState(COURSESFILENAME,courses);
+                courses = new LinkedHashMap<>();
+                saveState(COURSESFILENAME, courses);
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+        if(!(new File(PATH + GCODEFILENAME).exists())) {
+            try {
+                new File(PATH + GCODEFILENAME).createNewFile();
+                saveCounter(0);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        readCounter();
         readCourses();
+
     }
 
     /**
@@ -97,7 +147,11 @@ public class LocalCourseRepo implements ICourseRepo{
 
     @Override
     public List<String> getAllEnrolled(Gcode gcode) {
-        return courses.get(gcode).getRegisteredEmails();
+        Course c = courses.get(gcode);
+        if (c == null) {
+            return null;
+        }
+        return c.getRegisteredEmails();
     }
 
     @Override
@@ -105,6 +159,7 @@ public class LocalCourseRepo implements ICourseRepo{
         Gcode code = new Gcode();
         Course course = new Course(name, admin, code);
         courses.put(code, course);
+        saveCounter(Gcode.getCounter());
         saveState(COURSESFILENAME,courses);
         return code;
     }
@@ -158,6 +213,5 @@ public class LocalCourseRepo implements ICourseRepo{
     public Course getCourse(Gcode code) {
         return courses.get(code);
     }
-
 
 }

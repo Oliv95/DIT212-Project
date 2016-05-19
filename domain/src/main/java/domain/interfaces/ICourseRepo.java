@@ -49,4 +49,6 @@ public interface ICourseRepo {
     List<Course> getAllCourses();
 
     Course getCourse(Gcode code);
+
+    void saveCourses();
 }

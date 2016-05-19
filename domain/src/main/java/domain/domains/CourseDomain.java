@@ -61,15 +61,18 @@ public class CourseDomain implements ICourse{
         }
 
         List<String> inCourse = courseRepo.getAllEnrolled(generatedCode);
+        if (inCourse == null) {
+            return false;
+        }
         if (inCourse.contains(email)) {
             return false;
         }
-
         Course c = courseRepo.getCourse(generatedCode);
         if(c == null) {
             return false;
         } else {
             c.registerUser(email);
+            courseRepo.saveCourses();
             return true;
         }
     }
