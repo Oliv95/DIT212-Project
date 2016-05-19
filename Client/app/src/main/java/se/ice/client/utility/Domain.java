@@ -24,8 +24,6 @@ public interface Domain {
 
     List<User> getAllUsers(String generatedCourseCode);
 
-    List<User> getMatchedWithMe(String email,String generatedCourseCode);
-
     Course getCourse(String generatedCourseCode);
 
     Admin getAdmin(String email);
@@ -41,5 +39,7 @@ public interface Domain {
     boolean respondToPartner(String fromEmail, String toEmail, String generatedCourseCode, boolean response);
 
     User getPartner(String email, String generatedCourseCode);
+
+    List<User> getNotMatchedWith(String email, String generatedCourseCode);
 
 }
