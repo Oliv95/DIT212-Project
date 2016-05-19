@@ -1,5 +1,6 @@
 package nu.monaden;
 
+import domain.Course;
 import domain.Repos.LocalCourseRepo;
 import domain.Repos.LocalUserRepo;
 import domain.User;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -71,6 +73,23 @@ public class UserController {
 
     }
 
+    @RequestMapping(value = "/admin/allAdministrating",method = RequestMethod.GET)
+    public List<Gcode> getAllAdministrating(@RequestParam(value = "admin") String admin) {
+        return course.getAllAdministrating(admin);
+    }
+
+    @RequestMapping(value = "/admin/course/allAdministrating",method = RequestMethod.GET)
+    public List<Course> getAllAdministratingCourse(@RequestParam(value = "admin") String admin) {
+        List<Course> allCourses = course.getAllCourses();
+        List<Course> result = new ArrayList<>();
+        for (Course course : allCourses) {
+            if (course.getAdmin().equals(admin)) {
+                result.add(course);
+            }
+        }
+        return result;
+    }
+
     /***********************************Methods on /course*******************************/
 
     @RequestMapping(value = "/course", method = RequestMethod.POST)
@@ -97,4 +116,15 @@ public class UserController {
         return course.matchRequest(sender,receiver,Gcode.fromString(code));
     }
 
+    @RequestMapping(value = "/course/getCourse",method = RequestMethod.GET)
+    public Course getCourse(@RequestParam(value = "gcode") String code) {
+        return course.getCourse(Gcode.fromString(code));
+    }
+
+    @RequestMapping(value = "/course/all", method = RequestMethod.GET)
+    public List<Course> getAllCourses(){
+        return course.getAllCourses();
+    }
+
 }
+

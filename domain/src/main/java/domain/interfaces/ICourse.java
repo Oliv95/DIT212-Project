@@ -1,6 +1,7 @@
 package domain.interfaces;
 
 import domain.Course;
+import domain.Matched;
 import domain.User;
 import domain.util.Gcode;
 
@@ -57,5 +58,9 @@ public interface ICourse {
      */
     Course getCourse(Gcode courseCode);
 
-    List<Gcode> getEnrolledIn(String user);
+    List<Gcode> getEnrolledIn(String email);
+
+    List<Gcode> getAllAdministrating(String email);
+
+    List<Course> getAllCourses();
 }
