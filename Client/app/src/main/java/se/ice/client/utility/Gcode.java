@@ -2,7 +2,7 @@ package se.ice.client.utility;
 
 public class Gcode {
     private static int counter = 0;
-    final private int id;
+    private int id;
 
     public Gcode(){
         counter++;
@@ -27,5 +27,11 @@ public class Gcode {
     @Override
     public String toString(){
         return this.id + "";
+    }
+
+    public static Gcode fromString(String i){
+        Gcode result = new Gcode();
+        result.id = Integer.parseInt(i);
+        return result;
     }
 }

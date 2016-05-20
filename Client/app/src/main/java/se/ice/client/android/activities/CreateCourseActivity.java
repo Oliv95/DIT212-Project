@@ -1,6 +1,5 @@
 package se.ice.client.android.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +21,7 @@ public class CreateCourseActivity extends AppCompatActivity implements View.OnCl
 
     EditText courseName;
     Button createButton;
-    TextView createSuccessful;
+    TextView status;
     Toolbar t;
     MockupServer server = (MockupServer) MockupServer.getInstance();
 
@@ -36,7 +35,7 @@ public class CreateCourseActivity extends AppCompatActivity implements View.OnCl
 
         courseName = (EditText) findViewById(R.id.create_course_textfield);
         createButton = (Button) findViewById(R.id.course_create_button);
-        createSuccessful = (TextView) findViewById(R.id.course_create_succesful);
+        status = (TextView) findViewById(R.id.course_create_status);
         createButton.setOnClickListener(this);
 
         t = (Toolbar) findViewById(R.id.main_toolbar);
@@ -49,8 +48,7 @@ public class CreateCourseActivity extends AppCompatActivity implements View.OnCl
         Editable course = courseName.getText();
         if(view.equals(createButton)){
             Gcode code = server.createCourse(course.toString(),"admin@mail.com");
-            createSuccessful.setText(course.toString() + " was created");
-            Log.d(TAG, code.toString() + " was created");
+            status.setText(code.toString());
         }
     }
 

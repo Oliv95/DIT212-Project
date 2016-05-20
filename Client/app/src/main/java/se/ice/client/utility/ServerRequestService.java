@@ -363,4 +363,9 @@ public class ServerRequestService extends Service implements Domain {
             return new ArrayList<>();
         }
     }
+
+    @Override
+    public List<Course> getEnrolledIn(String user) {
+        return null;
+    }
 }

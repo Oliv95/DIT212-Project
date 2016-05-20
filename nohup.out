@@ -1,0 +1,1136 @@
+07:05:15.776 I [breakpad.cpp:110                ] Registered Breakpad for product: spotify
+
+07:05:15.894 I [translate.cpp:152               ] Reloading language file
+07:05:16.221 I [translate.cpp:152               ] Reloading language file
+07:05:16.222 I [breakpad.cpp:269                ] Searching for crashdumps: /home/niclas/.cache/spotify/*.dmp
+
+07:05:19.179 D [spirc_manager.cpp:230           ] GAIA: SpircManager::SpircManager, ident_=125146ba6678f9e02699ba2d710d90d995d45716
+07:05:20.292 I [MainView.cpp:1097               ] Registering bundled framework bridge-desktop with version 0.30.0
+07:05:20.292 I [MainView.cpp:1097               ] Registering bundled framework import with version 0.1.0
+07:05:20.292 I [MainView.cpp:1097               ] Registering bundled framework shared with version 0.2.3
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app share with version 3.3.4
+07:05:20.292 I [MainView.cpp:1097               ] Registering bundled framework views with version 1.54.8
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app collection with version 2.18.0
+07:05:20.292 I [MainView.cpp:1097               ] Registering bundled framework resources with version 0.6.1
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app genre with version 7.0.43
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app artist with version 2.3.6
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app article with version 7.0.43
+07:05:20.292 I [MainView.cpp:1097               ] Registering bundled framework logging-utils with version 0.0.11
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app finder with version 1.4.2
+07:05:20.292 I [MainView.cpp:1097               ] Registering bundled framework artist-shared with version 0.5.3
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app collection-album with version 1.7.0
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app install with version 1.1.0
+07:05:20.292 I [MainView.cpp:1097               ] Registering bundled framework unstable with version 0.13.2
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app bundles with version 1.3.0
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app search with version 8.2.0
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app charts with version 1.0.0
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app messages with version 1.7.1
+07:05:20.292 I [MainView.cpp:1097               ] Registering bundled framework social-artist-shared with version 0.1.5
+07:05:20.292 I [MainView.cpp:1097               ] Registering bundled framework util with version 0.2.4
+07:05:20.292 I [MainView.cpp:1097               ] Registering bundled framework revgen-shared with version 0.0.14
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app profile with version 2.4.18
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app html with version 0.1.0
+07:05:20.292 I [MainView.cpp:1097               ] Registering bundled framework recommendations-shared with version 0.7.13
+07:05:20.292 I [MainView.cpp:1097               ] Registering bundled framework recommendations-shared with version 1.0.0
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app feed with version 2.0.17
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app browse with version 7.0.49
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app chart with version 1.0.0
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app notification-center with version 2.6.2
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app discover with version 2.1.15
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app error with version 1.1.0
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app follow with version 2.4.10
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app radio with version 4.1.7
+07:05:20.292 I [MainView.cpp:1097               ] Registering bundled framework test-utils with version 0.2.0
+07:05:20.292 I [MainView.cpp:1097               ] Registering bundled framework api with version 1.38.0
+07:05:20.292 I [MainView.cpp:1097               ] Registering bundled framework api with version 0.3.1
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app test-runner with version 0.2.1
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app onboarding-popup with version 1.0.36
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app collection-artist with version 1.11.0
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app playlist-header with version 2.8.0
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app album with version 2.5.5
+07:05:20.292 I [MainView.cpp:1094               ] Registering bundled app suggest with version 7.2.0
+07:05:22.707 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:krausmeistr:rootlist] Synchronization starting: DIFF (from revision 622,7c5621f77c9f2b1f40b6eaee59e746ea9e0d728d) 
+07:05:22.709 D [spirc_manager.cpp:604           ] GAIA: SpircManager::setShuffle, enabled=true
+07:05:22.886 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:mrjeltsin:playlist:1fyEQKVNA25xAb3A7B47iU] Synchronization starting: DIFF (from revision 1933,99bc1d726e5c222c33ad37192bade2ee311ffae6) 
+07:05:23.048 I [AppManager.cpp:258              ] Creating instance of the application browse.
+07:05:23.150 I [AppManager.cpp:258              ] Creating instance of the application suggest.
+07:05:23.243 I [AppManager.cpp:258              ] Creating instance of the application notification-center.
+07:05:23.244 I [AppManager.cpp:541              ] Removing instance of application notification-center.
+
+07:05:23.258 I [AppManager.cpp:258              ] Creating instance of the application notification-center.
+07:05:23.323 E [watchdog.cpp:199                ] High-latency (gui, 3207)
+07:05:23.351 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotifydiscover:playlist:1s0haYPMcrweaGjxmtnqig] Synchronization starting: DIFF (from revision 44,1581c441afc747574e1de85f0558255155103aaa) 
+07:05:23.362 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:krausmeistr:playlist:3H6ryDItooK3JI3uXSSVWB] Synchronization starting: DIFF (from revision 6,f8d7949f80d97fe0ec05cdc437b230cb9bc5bd41) 
+07:05:23.398 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:krausmeistr:inbox] Synchronization starting: DIFF (from revision 4,78d2bffc4cd18543352c3aeb00d85e887d0b48bd) 
+07:05:23.398 3 [playlist_be_toplist.cpp:233     ] [spotify:user:krausmeistr:top:tracks] Synchronization starting
+07:05:23.527 I [ap_connection_impl.cpp:901      ] Connecting to AP sto3-accesspoint-a58.ap.spotify.com:4070
+07:05:23.547 I [ap_connection_impl.cpp:530      ] Connected to AP: 194.132.162.5:4070
+07:05:23.589 I [offline_manager.cpp:2353        ] Storage has been cleaned
+07:05:23.892 I [AppManager.cpp:258              ] Creating instance of the application feed.
+07:05:23.937 D [spirc_manager.cpp:469           ] GAIA: TIMING(1686820) SpircManager::start, _service_status=kServiceStatusStopped
+07:05:23.966 D [spirc_manager.cpp:1249          ] GAIA: TIMING(1686850) SpircManager::sendSubscribe
+07:05:23.967 D [spirc_manager.cpp:267           ] GAIA: SpircManager::stateTransition, kServiceStatusStopped->kServiceStatusInSubscribeTx
+07:05:23.991 D [spirc_manager.cpp:469           ] GAIA: TIMING(1686874) SpircManager::start, _service_status=kServiceStatusInSubscribeTx
+07:05:23.993 3 [playlist_be_toplist.cpp:136     ] [spotify:user:krausmeistr:top:tracks] Updated
+07:05:24.030 I [sliding_window_prefetch_strategy.cpp:329] Prefetch: looks like new context - resetting window size to 1
+07:05:24.388 D [spirc_manager.cpp:469           ] GAIA: TIMING(1687271) SpircManager::start, _service_status=kServiceStatusInSubscribeTx
+07:05:24.388 D [spirc_manager.cpp:469           ] GAIA: TIMING(1687271) SpircManager::start, _service_status=kServiceStatusInSubscribeTx
+07:05:24.389 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:krausmeistr:rootlist] Delta-updated to revision 622,7c5621f77c9f2b1f40b6eaee59e746ea9e0d728d (no new changes)
+07:05:24.399 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:mrjeltsin:playlist:1fyEQKVNA25xAb3A7B47iU] Delta-updated to revision 1933,99bc1d726e5c222c33ad37192bade2ee311ffae6 (no new changes)
+07:05:24.412 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:krausmeistr:inbox] Delta-updated to revision 4,78d2bffc4cd18543352c3aeb00d85e887d0b48bd (no new changes)
+07:05:24.412 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:krausmeistr:playlist:3H6ryDItooK3JI3uXSSVWB] Delta-updated to revision 6,f8d7949f80d97fe0ec05cdc437b230cb9bc5bd41 (no new changes)
+07:05:24.412 D [spirc_manager.cpp:1312          ] GAIA: TIMING(1687296) SpircManager::onSubscriptionSuccess
+07:05:24.412 D [spirc_manager.cpp:267           ] GAIA: SpircManager::stateTransition, kServiceStatusInSubscribeTx->kServiceStatusRunning
+07:05:24.412 D [spirc_manager.cpp:1378          ] GAIA: TIMING(1687296) SpircManager::sendHelloHelper
+07:05:24.431 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotifydiscover:playlist:1s0haYPMcrweaGjxmtnqig] Delta-updated to revision 46,a278bcee9dad231ef0dd36b262f1985b65013e2f
+07:05:24.487 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:krausmeistr:publishedrootlist] Synchronization starting: DIFF (from revision 622,7c5621f77c9f2b1f40b6eaee59e746ea9e0d728d) 
+07:05:24.487 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:krausmeistr:collectionrootlist] Synchronization starting: DIFF (from revision 3,e05c9b821022607dedafa2690bffff2304b1f2c8) 
+07:05:24.946 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:krausmeistr:playlist:4g66igfDsuf0NrRy7TuxVA] Synchronization starting: DIFF (from revision 51,00ffa7c953b718ac9a008f660802f439dfe6f422) 
+07:05:25.146 3 [playlist_be_pl4_context.cpp:607 ] [spotify:user:krausmeistr:publishedrootlist]  synchronization error: Hermes error code 405 (unknown)
+07:05:25.146 3 [playlist_be_pl4_context.cpp:716 ] [spotify:user:krausmeistr:publishedrootlist]   - requesting HEAD from remote.
+07:05:25.146 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:krausmeistr:collectionrootlist] Delta-updated to revision 3,e05c9b821022607dedafa2690bffff2304b1f2c8 (no new changes)
+07:05:25.148 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:krausmeistr:publishedrootlist] Synchronization starting: GET (full reset) (cannot send dump) (from revision 622,7c5621f77c9f2b1f40b6eaee59e746ea9e0d728d) 
+07:05:25.161 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:krausmeistr:playlist:4g66igfDsuf0NrRy7TuxVA] Delta-updated to revision 53,67a1279943c29570eff2601ddccc847dc1551a2a
+07:05:25.210 3 [playlist_be_pl4_context.cpp:1002] [spotify:user:krausmeistr:publishedrootlist] Snapshot-updated to revision 622,7c5621f77c9f2b1f40b6eaee59e746ea9e0d728d
+07:05:25.769 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:carbo:playlist:3oxicFdiyimk5zsMEmORTB] Synchronization starting: DIFF (from revision 3511,55f95b85f97bd0ece40b472f2a013e98405f5f46) 
+07:05:26.309 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:carbo:playlist:3oxicFdiyimk5zsMEmORTB] Delta-updated to revision 3512,3a99b348b6007c39065445f404dc8a7f307f7574
+07:05:26.523 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:galkatten:playlist:55iOicLTwLmtDl9jWo35rA] Synchronization starting: DIFF (from revision 861,777235cd815d76fa6f21d7e5aa3dd7445a0ae0c4) 
+07:05:26.860 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:galkatten:playlist:55iOicLTwLmtDl9jWo35rA] Delta-updated to revision 870,67f9fa90a5a6fed1d79156434facaf00cafb3e89
+07:05:27.250 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:krausmeistr:collectiontracklist:2ajm4ELmgVTCSQygwgwOk7] Synchronization starting: DIFF (from revision 3,92df7f3ed69423e0c69d6c0075faf7e8a2cda337) 
+07:05:27.292 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:krausmeistr:collectiontracklist:2ajm4ELmgVTCSQygwgwOk7] Delta-updated to revision 4,7af4e1d69e0b2f9f940a79511c95a73604ecde1f
+07:05:27.413 D [spirc_manager.cpp:1407          ] GAIA: SpircManager::hermesDeviceCheck
+07:05:28.196 I [audio_driver_linux.cpp:19       ] Using PulseAudio
+07:05:28.337 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:2zHn9VErQcuYohwhUDxT99, index=248, position=345699, paused=0
+07:05:28.337 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:05:28.337 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942318194
+07:05:28.338 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942318193
+07:05:29.347 I [MainView.cpp:6828               ] Load complete (0) url: sp://709a6fe59d2ca3c84f1158c0459d9b84b23e7f54.feed/index.html
+ATTENTION: default value of option force_s3tc_enable overridden by environment.
+07:05:30.129 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942316402
+07:05:30.379 I [MainView.cpp:6828               ] Load complete (0) url: sp://846aea661b2bc5dff518b256510c08002f33b7ff.browse/index.html
+07:05:32.780 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942313751
+07:05:32.795 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942313737
+07:05:34.516 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942312016
+07:05:34.524 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942312007
+07:05:36.065 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942310466
+07:05:36.073 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942310458
+07:05:37.226 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942309305
+07:05:37.235 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942309296
+07:05:38.280 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942308251
+07:05:40.441 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942306090
+07:05:40.451 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942306081
+07:05:41.430 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942305101
+07:05:41.439 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942305092
+07:05:42.388 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942304143
+07:05:42.397 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942304134
+07:05:43.045 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942303486
+07:05:43.053 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942303478
+07:05:43.718 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942302813
+07:05:43.728 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942302803
+07:05:44.538 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942301993
+07:05:44.549 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942301982
+07:05:45.187 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942301344
+07:05:45.196 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942301336
+07:05:45.911 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942300621
+07:05:45.919 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942300612
+07:05:46.829 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942299702
+07:05:46.839 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942299692
+07:05:47.170 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942299362
+07:05:47.178 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942299353
+07:05:47.772 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942298759
+07:05:47.781 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942298751
+07:05:48.264 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942298267
+07:05:48.273 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942298259
+07:05:49.046 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942297485
+07:05:49.056 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942297475
+07:05:49.438 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942297094
+07:05:49.446 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942297086
+07:05:49.851 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942296680
+07:05:49.862 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942296669
+07:05:50.327 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942296204
+07:05:50.336 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942296195
+07:05:50.677 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942295854
+07:05:50.685 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942295846
+07:05:50.873 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942295658
+07:05:50.881 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942295650
+07:05:51.009 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942295522
+07:05:51.018 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942295513
+07:05:51.225 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942295306
+07:05:51.233 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942295299
+07:05:51.239 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:1Wl8eGdNRODM6p8LYP2ACB, index=1075, position=0, paused=0
+07:05:51.239 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:05:51.239 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942295292
+07:05:51.248 I [sliding_window_prefetch_strategy.cpp:333] Prefetch: looks like a skip or partial context change - halving window size to 1
+07:05:51.254 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942295277
+07:05:51.449 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  Trains - Rose, Mary and Time - from SWEET WILLIAM EP : 49c9ecf6651dcf6230dfa58cf785c8d76cd2e339
+07:05:51.449 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file 49c9ecf6651dcf6230dfa58cf785c8d76cd2e339
+07:05:51.464 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/49c9ecf6651dcf6230dfa58cf785c8d76cd2e339?1463645153_6HVDt0UTYA0WKURdETEnoFqx9v7QaDUrYoyr0I8zcbs= 
+07:05:51.547 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942294984
+07:05:51.636 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:05:51.751 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942294781
+07:05:53.868 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942294585
+07:05:54.009 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942294444
+07:05:54.009 I [cdn_chunk_downloader.cpp:200    ] Request for file 49c9ecf6651dcf6230dfa58cf785c8d76cd2e339 complete (code: 0)
+07:05:54.009 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/49c9ecf6651dcf6230dfa58cf785c8d76cd2e339?1463645153_6HVDt0UTYA0WKURdETEnoFqx9v7QaDUrYoyr0I8zcbs= 
+07:05:54.019 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:05:54.172 I [cdn_chunk_downloader.cpp:200    ] Request for file 49c9ecf6651dcf6230dfa58cf785c8d76cd2e339 complete (code: 0)
+07:05:54.172 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/49c9ecf6651dcf6230dfa58cf785c8d76cd2e339?1463645153_6HVDt0UTYA0WKURdETEnoFqx9v7QaDUrYoyr0I8zcbs= 
+07:05:54.179 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942294274
+07:05:54.183 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:05:54.310 I [cdn_chunk_downloader.cpp:200    ] Request for file 49c9ecf6651dcf6230dfa58cf785c8d76cd2e339 complete (code: 0)
+07:05:54.310 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/49c9ecf6651dcf6230dfa58cf785c8d76cd2e339?1463645153_6HVDt0UTYA0WKURdETEnoFqx9v7QaDUrYoyr0I8zcbs= 
+07:05:54.322 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:05:54.332 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942294121
+07:05:54.420 I [cdn_chunk_downloader.cpp:200    ] Request for file 49c9ecf6651dcf6230dfa58cf785c8d76cd2e339 complete (code: 0)
+07:05:54.420 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/49c9ecf6651dcf6230dfa58cf785c8d76cd2e339?1463645153_6HVDt0UTYA0WKURdETEnoFqx9v7QaDUrYoyr0I8zcbs= 
+07:05:54.430 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:05:54.467 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942293986
+07:05:54.523 I [cdn_chunk_downloader.cpp:200    ] Request for file 49c9ecf6651dcf6230dfa58cf785c8d76cd2e339 complete (code: 0)
+07:05:54.523 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3145728) from CDN url: http://audio-sp-sto.spotify.com/audio/49c9ecf6651dcf6230dfa58cf785c8d76cd2e339?1463645153_6HVDt0UTYA0WKURdETEnoFqx9v7QaDUrYoyr0I8zcbs= 
+07:05:54.534 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:05:54.598 I [cdn_chunk_downloader.cpp:200    ] Request for file 49c9ecf6651dcf6230dfa58cf785c8d76cd2e339 complete (code: 0)
+07:05:54.599 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3145728 -> 3670016) from CDN url: http://audio-sp-sto.spotify.com/audio/49c9ecf6651dcf6230dfa58cf785c8d76cd2e339?1463645153_6HVDt0UTYA0WKURdETEnoFqx9v7QaDUrYoyr0I8zcbs= 
+07:05:54.608 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942293845
+07:05:54.617 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:05:54.686 I [cdn_chunk_downloader.cpp:200    ] Request for file 49c9ecf6651dcf6230dfa58cf785c8d76cd2e339 complete (code: 0)
+07:05:54.686 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3670016 -> 4194304) from CDN url: http://audio-sp-sto.spotify.com/audio/49c9ecf6651dcf6230dfa58cf785c8d76cd2e339?1463645153_6HVDt0UTYA0WKURdETEnoFqx9v7QaDUrYoyr0I8zcbs= 
+07:05:54.697 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:05:54.754 I [cdn_chunk_downloader.cpp:200    ] Request for file 49c9ecf6651dcf6230dfa58cf785c8d76cd2e339 complete (code: 0)
+07:05:54.754 I [cdn_chunk_downloader.cpp:72     ] Requesting data (4194304 -> 4492892) from CDN url: http://audio-sp-sto.spotify.com/audio/49c9ecf6651dcf6230dfa58cf785c8d76cd2e339?1463645153_6HVDt0UTYA0WKURdETEnoFqx9v7QaDUrYoyr0I8zcbs= 
+07:05:54.763 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942293690
+07:05:54.772 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942293680
+07:05:54.774 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:05:54.806 I [cdn_chunk_downloader.cpp:200    ] Request for file 49c9ecf6651dcf6230dfa58cf785c8d76cd2e339 complete (code: 0)
+07:05:54.918 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942293535
+07:05:54.928 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942293525
+07:05:55.141 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942293312
+07:05:55.306 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942293146
+07:05:55.438 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942293014
+07:05:55.902 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942292551
+07:05:56.065 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942292387
+07:05:56.236 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942292217
+07:05:56.366 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942292087
+07:05:56.493 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942291960
+07:05:56.697 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942291755
+07:05:56.831 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942291622
+07:05:57.014 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942291439
+07:05:57.023 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942291430
+07:05:57.169 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942291284
+07:05:57.179 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942291273
+07:05:57.280 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942291173
+07:05:57.310 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942291143
+07:05:57.457 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942290996
+07:05:57.466 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942290987
+07:05:57.595 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942290858
+07:05:57.603 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942290850
+07:05:57.741 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942290711
+07:05:57.754 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942290698
+07:05:58.346 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942290106
+07:05:59.435 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:4wtLaWQcPct5tlAWTxqjMD] Synchronization starting: DIFF (from revision 833,c1ef5dc0da2b6a6950fbdfc22fbd49fb9cba7b89) 
+07:05:59.437 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:72R3C79AOfbXrtSc7FL6b4] Synchronization starting: GET (from revision 0,726f6f7400000000000000000000000000000000) 
+07:05:59.443 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942289009
+07:05:59.450 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942289003
+07:05:59.456 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942288996
+07:05:59.552 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:4wtLaWQcPct5tlAWTxqjMD] Delta-updated to revision 840,dd32b48cbd72e5fb89a039b0af2170670667bb1d
+07:05:59.572 3 [playlist_be_pl4_context.cpp:1002] [spotify:user:spotify:playlist:72R3C79AOfbXrtSc7FL6b4] Snapshot-updated to revision 14,c2530adda3b118dbd6a405169814350bc5c571b7
+07:05:59.581 I [kindling.js:6                   ] Success client-log
+07:05:59.582 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:klarasara:playlist:709A0yiyjkpRf0UZwRtHtD] Synchronization starting: HEAD (from revision 0,726f6f7400000000000000000000000000000000) 
+07:05:59.582 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:1116592061:playlist:0xGk0xR6fI88NsmiHZZMPE] Synchronization starting: HEAD (from revision 0,726f6f7400000000000000000000000000000000) 
+07:05:59.583 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:kieron:playlist:74pVAF4YN9IST86CY1zTci] Synchronization starting: HEAD (from revision 0,726f6f7400000000000000000000000000000000) 
+07:05:59.605 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942288848
+07:05:59.739 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:2DIkzkPnHOIK6VtFPx8ciD] Synchronization starting: DIFF (from revision 373,4a16f53498746a719cae069295c21e975cea9ff4) 
+07:05:59.742 3 [playlist_be_pl4_context.cpp:1002] [spotify:user:klarasara:playlist:709A0yiyjkpRf0UZwRtHtD] Snapshot-updated to revision 0,726f6f7400000000000000000000000000000000
+07:05:59.743 3 [playlist_be_pl4_context.cpp:1002] [spotify:user:kieron:playlist:74pVAF4YN9IST86CY1zTci] Snapshot-updated to revision 0,726f6f7400000000000000000000000000000000
+07:05:59.744 3 [playlist_be_pl4_context.cpp:1002] [spotify:user:1116592061:playlist:0xGk0xR6fI88NsmiHZZMPE] Snapshot-updated to revision 0,726f6f7400000000000000000000000000000000
+07:05:59.772 I [MainView.cpp:6828               ] Load complete (0) url: sp://846aea661b2bc5dff518b256510c08002f33b7ff.browse/index.html
+07:05:59.786 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:2DIkzkPnHOIK6VtFPx8ciD] Delta-updated to revision 420,f6ac144ac92a01f8d2501385f3d6f46a744f165a
+07:05:59.982 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify__sverige:playlist:5Mw95LVmEUmS8Z3ejDnrti] Synchronization starting: DIFF (from revision 92,60b97c7d32766d0efb66a22a28484ccf76b6f5ef) 
+07:06:00.143 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify__sverige:playlist:4fg5VMjk31LSyC7RmGlcSB] Synchronization starting: DIFF (from revision 399,d7ecff7a9c840e7267c4fa23390ec0261004e60b) 
+07:06:00.281 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:2uAichKSjJSyrmal8Kb3W9] Synchronization starting: DIFF (from revision 445,605e1dd8347d6d0891775d83dc274ed46deac773) 
+07:06:00.287 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify__sverige:playlist:5Mw95LVmEUmS8Z3ejDnrti] Delta-updated to revision 178,05ba0de2f9978eb16e7a734294695ff1b8eb7593
+07:06:00.623 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:4BKT5olNFqLB1FAa8OtC8k] Synchronization starting: DIFF (from revision 656,9c98eb7691bd6c6b72586842e4b0c83f6633e151) 
+07:06:00.627 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify__sverige:playlist:4fg5VMjk31LSyC7RmGlcSB] Delta-updated to revision 445,02cadd67908bd569b6c83d773d7246f39900f581
+07:06:00.642 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942287811
+07:06:00.648 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:5UAgPvIHt0s9fom7AG83NQ] Synchronization starting: GET (from revision 0,726f6f7400000000000000000000000000000000) 
+07:06:00.678 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:2uAichKSjJSyrmal8Kb3W9] Delta-updated to revision 1053,1fba7f9871b06d8b098dca113cc2eb78eb9c36a0
+07:06:00.825 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:61X7TuXAKnrnXEMjytixHg] Synchronization starting: DIFF (from revision 485,a064c75ba1a039d0e2bf4773e4aa1478640cc1e7) 
+07:06:00.893 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:5yolys8XG4q7YfjYGl5Lff] Synchronization starting: DIFF (from revision 3264,1072a3fc6a6fd044a04ca96470c3729f31834734) 
+07:06:00.893 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:4BKT5olNFqLB1FAa8OtC8k] Delta-updated to revision 656,9c98eb7691bd6c6b72586842e4b0c83f6633e151 (no new changes)
+07:06:00.894 3 [playlist_be_pl4_context.cpp:1002] [spotify:user:spotify:playlist:5UAgPvIHt0s9fom7AG83NQ] Snapshot-updated to revision 100,f8dd64b97d5f0091d81c51674eb6e2f0969df0bb
+07:06:00.938 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify__sverige:playlist:6Vhshb6ci7shXkxNRKLgDV] Synchronization starting: DIFF (from revision 405,e14191aa17fc5ae93a47023dc1ef1be6c435297a) 
+07:06:01.047 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:0UHbhCjKlXnFfv98bKrtKv] Synchronization starting: DIFF (from revision 843,8fa48767e02d001a854841f65fee66a200d0480d) 
+07:06:01.055 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:61X7TuXAKnrnXEMjytixHg] Delta-updated to revision 635,ce7f00b29931dd930d298c1c3ac8d8e6d0cef83c
+07:06:01.062 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify__sverige:playlist:6Vhshb6ci7shXkxNRKLgDV] Delta-updated to revision 457,f83fe368bb805b7df1345263d60b28a86105d704
+07:06:01.077 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:5yolys8XG4q7YfjYGl5Lff] Delta-updated to revision 3577,53aa2a91361d8813eb0210e851572a2f6dd47e38
+07:06:01.088 I [MainView.cpp:6828               ] Load complete (0) url: sp://846aea661b2bc5dff518b256510c08002f33b7ff.browse/index.html
+07:06:01.100 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:0UHbhCjKlXnFfv98bKrtKv] Delta-updated to revision 892,757d993faf5c39d7cca395fc9f47bd8e58466083
+07:06:01.416 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942287037
+[0519/090602:FATAL:vpx_video_decoder.cc(381)] Check failed: vpx_image->d_h % 2 == 0U (1 vs. 0)
+07:06:02.495 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942285957
+07:06:03.391 I [ApplicationPage.cpp:185         ] Keeping application browse alive for 60000 ms.
+07:06:03.403 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942285050
+07:06:03.413 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942285040
+07:06:03.431 I [AppManager.cpp:258              ] Creating instance of the application playlist-header.
+07:06:03.436 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:mrjeltsin:playlist:1fyEQKVNA25xAb3A7B47iU] Synchronization starting: DIFF (from revision 1933,99bc1d726e5c222c33ad37192bade2ee311ffae6) 
+07:06:03.558 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942284895
+07:06:03.570 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942284883
+07:06:03.573 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:mrjeltsin:playlist:1fyEQKVNA25xAb3A7B47iU] Delta-updated to revision 1933,99bc1d726e5c222c33ad37192bade2ee311ffae6 (no new changes)
+07:06:03.796 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942284657
+07:06:04.119 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942284333
+07:06:04.668 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942283785
+07:06:09.519 I [AppManager.cpp:258              ] Creating instance of the application search.
+07:06:09.543 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:krausmeistr:rootlist] Synchronization starting: POST (1/1 pending deltas on top of revision 622,7c5621f77c9f2b1f40b6eaee59e746ea9e0d728d) 
+07:06:09.591 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:krausmeistr:rootlist] Delta-updated to revision 623,cfde19129e458d9181382b9791720ab3058807ad
+07:06:09.954 I [MainView.cpp:6828               ] Load complete (0) url: sp://4d15cb7de174e114176e2719a25ce0bbc7e1e767.search/index.html
+07:06:10.005 I [kindling.js:8                   ] root.catalogue: expected a string but found
+07:06:10.310 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify_france:playlist:0rFJf8hoVnmtexNiaEZsv8] Synchronization starting: HEAD (from revision 0,726f6f7400000000000000000000000000000000) 
+07:06:10.373 3 [playlist_be_pl4_context.cpp:1002] [spotify:user:spotify_france:playlist:0rFJf8hoVnmtexNiaEZsv8] Snapshot-updated to revision 0,726f6f7400000000000000000000000000000000
+07:06:10.535 I [kindling.js:7                   ] scroll-request
+07:06:18.187 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942270266
+07:06:18.360 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  L'amour toujours - Tiesto Radio Edit : 8c839a82f9d6c3ff4e30985b525a4f6d5c8c7e8f
+07:06:18.360 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file 8c839a82f9d6c3ff4e30985b525a4f6d5c8c7e8f
+07:06:18.379 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/8c839a82f9d6c3ff4e30985b525a4f6d5c8c7e8f?1463645178_UPtaMr8mqYO6eFpXc/kxA0ROpVYUy8ww3+T4qCwg4GY= 
+07:06:18.389 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:06:18.447 I [cdn_chunk_downloader.cpp:200    ] Request for file 8c839a82f9d6c3ff4e30985b525a4f6d5c8c7e8f complete (code: 0)
+07:06:18.447 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/8c839a82f9d6c3ff4e30985b525a4f6d5c8c7e8f?1463645178_UPtaMr8mqYO6eFpXc/kxA0ROpVYUy8ww3+T4qCwg4GY= 
+07:06:18.461 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:06:18.516 I [cdn_chunk_downloader.cpp:200    ] Request for file 8c839a82f9d6c3ff4e30985b525a4f6d5c8c7e8f complete (code: 0)
+07:06:18.516 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/8c839a82f9d6c3ff4e30985b525a4f6d5c8c7e8f?1463645178_UPtaMr8mqYO6eFpXc/kxA0ROpVYUy8ww3+T4qCwg4GY= 
+07:06:18.529 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:06:18.606 I [cdn_chunk_downloader.cpp:200    ] Request for file 8c839a82f9d6c3ff4e30985b525a4f6d5c8c7e8f complete (code: 0)
+07:06:18.607 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/8c839a82f9d6c3ff4e30985b525a4f6d5c8c7e8f?1463645178_UPtaMr8mqYO6eFpXc/kxA0ROpVYUy8ww3+T4qCwg4GY= 
+07:06:18.617 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:06:18.669 I [cdn_chunk_downloader.cpp:200    ] Request for file 8c839a82f9d6c3ff4e30985b525a4f6d5c8c7e8f complete (code: 0)
+07:06:18.669 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/8c839a82f9d6c3ff4e30985b525a4f6d5c8c7e8f?1463645178_UPtaMr8mqYO6eFpXc/kxA0ROpVYUy8ww3+T4qCwg4GY= 
+07:06:18.683 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:06:18.740 I [cdn_chunk_downloader.cpp:200    ] Request for file 8c839a82f9d6c3ff4e30985b525a4f6d5c8c7e8f complete (code: 0)
+07:06:18.740 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3145728) from CDN url: http://audio-sp-sto.spotify.com/audio/8c839a82f9d6c3ff4e30985b525a4f6d5c8c7e8f?1463645178_UPtaMr8mqYO6eFpXc/kxA0ROpVYUy8ww3+T4qCwg4GY= 
+07:06:18.774 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:4wtLaWQcPct5tlAWTxqjMD] Synchronization starting: DIFF (from revision 840,dd32b48cbd72e5fb89a039b0af2170670667bb1d) 
+07:06:18.788 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:06:18.864 I [cdn_chunk_downloader.cpp:200    ] Request for file 8c839a82f9d6c3ff4e30985b525a4f6d5c8c7e8f complete (code: 0)
+07:06:18.864 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3145728 -> 3670016) from CDN url: http://audio-sp-sto.spotify.com/audio/8c839a82f9d6c3ff4e30985b525a4f6d5c8c7e8f?1463645178_UPtaMr8mqYO6eFpXc/kxA0ROpVYUy8ww3+T4qCwg4GY= 
+07:06:18.875 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:06:18.903 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942269550
+07:06:18.941 I [cdn_chunk_downloader.cpp:200    ] Request for file 8c839a82f9d6c3ff4e30985b525a4f6d5c8c7e8f complete (code: 0)
+07:06:18.942 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3670016 -> 3679792) from CDN url: http://audio-sp-sto.spotify.com/audio/8c839a82f9d6c3ff4e30985b525a4f6d5c8c7e8f?1463645178_UPtaMr8mqYO6eFpXc/kxA0ROpVYUy8ww3+T4qCwg4GY= 
+07:06:18.942 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:4wtLaWQcPct5tlAWTxqjMD] Delta-updated to revision 840,dd32b48cbd72e5fb89a039b0af2170670667bb1d (no new changes)
+07:06:18.954 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:06:18.956 I [cdn_chunk_downloader.cpp:200    ] Request for file 8c839a82f9d6c3ff4e30985b525a4f6d5c8c7e8f complete (code: 0)
+07:06:18.956 I [sliding_window_prefetch_strategy.cpp:252] Prefetch window maxed and full, waiting for 0 track changes
+07:06:18.974 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:72R3C79AOfbXrtSc7FL6b4] Synchronization starting: DIFF (from revision 14,c2530adda3b118dbd6a405169814350bc5c571b7) 
+07:06:19.034 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:72R3C79AOfbXrtSc7FL6b4] Delta-updated to revision 14,c2530adda3b118dbd6a405169814350bc5c571b7 (no new changes)
+07:06:19.071 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:2DIkzkPnHOIK6VtFPx8ciD] Synchronization starting: DIFF (from revision 420,f6ac144ac92a01f8d2501385f3d6f46a744f165a) 
+07:06:19.075 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify__sverige:playlist:5Mw95LVmEUmS8Z3ejDnrti] Synchronization starting: DIFF (from revision 178,05ba0de2f9978eb16e7a734294695ff1b8eb7593) 
+07:06:19.084 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify__sverige:playlist:4fg5VMjk31LSyC7RmGlcSB] Synchronization starting: DIFF (from revision 445,02cadd67908bd569b6c83d773d7246f39900f581) 
+07:06:19.089 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:2uAichKSjJSyrmal8Kb3W9] Synchronization starting: DIFF (from revision 1053,1fba7f9871b06d8b098dca113cc2eb78eb9c36a0) 
+07:06:19.095 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:4BKT5olNFqLB1FAa8OtC8k] Synchronization starting: DIFF (from revision 656,9c98eb7691bd6c6b72586842e4b0c83f6633e151) 
+07:06:19.123 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:2DIkzkPnHOIK6VtFPx8ciD] Delta-updated to revision 420,f6ac144ac92a01f8d2501385f3d6f46a744f165a (no new changes)
+07:06:19.133 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify__sverige:playlist:5Mw95LVmEUmS8Z3ejDnrti] Delta-updated to revision 178,05ba0de2f9978eb16e7a734294695ff1b8eb7593 (no new changes)
+07:06:19.143 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify__sverige:playlist:4fg5VMjk31LSyC7RmGlcSB] Delta-updated to revision 445,02cadd67908bd569b6c83d773d7246f39900f581 (no new changes)
+07:06:19.143 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:2uAichKSjJSyrmal8Kb3W9] Delta-updated to revision 1053,1fba7f9871b06d8b098dca113cc2eb78eb9c36a0 (no new changes)
+07:06:19.144 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:0UHbhCjKlXnFfv98bKrtKv] Synchronization starting: DIFF (from revision 892,757d993faf5c39d7cca395fc9f47bd8e58466083) 
+07:06:19.154 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify__sverige:playlist:6Vhshb6ci7shXkxNRKLgDV] Synchronization starting: DIFF (from revision 457,f83fe368bb805b7df1345263d60b28a86105d704) 
+07:06:19.160 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:4BKT5olNFqLB1FAa8OtC8k] Delta-updated to revision 656,9c98eb7691bd6c6b72586842e4b0c83f6633e151 (no new changes)
+07:06:19.164 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:5yolys8XG4q7YfjYGl5Lff] Synchronization starting: DIFF (from revision 3577,53aa2a91361d8813eb0210e851572a2f6dd47e38) 
+07:06:19.164 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:61X7TuXAKnrnXEMjytixHg] Synchronization starting: DIFF (from revision 635,ce7f00b29931dd930d298c1c3ac8d8e6d0cef83c) 
+07:06:19.181 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:5UAgPvIHt0s9fom7AG83NQ] Synchronization starting: DIFF (from revision 100,f8dd64b97d5f0091d81c51674eb6e2f0969df0bb) 
+07:06:19.208 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942269245
+07:06:19.213 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:0UHbhCjKlXnFfv98bKrtKv] Delta-updated to revision 892,757d993faf5c39d7cca395fc9f47bd8e58466083 (no new changes)
+07:06:19.248 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify__sverige:playlist:6Vhshb6ci7shXkxNRKLgDV] Delta-updated to revision 457,f83fe368bb805b7df1345263d60b28a86105d704 (no new changes)
+07:06:19.249 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:61X7TuXAKnrnXEMjytixHg] Delta-updated to revision 635,ce7f00b29931dd930d298c1c3ac8d8e6d0cef83c (no new changes)
+07:06:19.250 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:5UAgPvIHt0s9fom7AG83NQ] Delta-updated to revision 100,f8dd64b97d5f0091d81c51674eb6e2f0969df0bb (no new changes)
+07:06:19.250 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:5yolys8XG4q7YfjYGl5Lff] Delta-updated to revision 3577,53aa2a91361d8813eb0210e851572a2f6dd47e38 (no new changes)
+[0519/090620:FATAL:vpx_video_decoder.cc(381)] Check failed: vpx_image->d_h % 2 == 0U (1 vs. 0)
+07:06:22.573 I [ApplicationPage.cpp:185         ] Keeping application search alive for 60000 ms.
+07:06:22.903 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify_mexico:playlist:1ItUMO8bxI4L2WeYNrPM2j] Synchronization starting: HEAD (from revision 0,726f6f7400000000000000000000000000000000) 
+07:06:22.904 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:1250237892:playlist:3IRKYRJfKhBLcNTlCkFjRH] Synchronization starting: HEAD (from revision 0,726f6f7400000000000000000000000000000000) 
+07:06:22.904 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify_france:playlist:1c1NyazFiQPonWzNtxWd5M] Synchronization starting: HEAD (from revision 0,726f6f7400000000000000000000000000000000) 
+07:06:22.973 I [kindling.js:7                   ] scroll-request
+07:06:22.997 3 [playlist_be_pl4_context.cpp:1002] [spotify:user:spotify_france:playlist:1c1NyazFiQPonWzNtxWd5M] Snapshot-updated to revision 0,726f6f7400000000000000000000000000000000
+07:06:22.998 3 [playlist_be_pl4_context.cpp:1002] [spotify:user:spotify_mexico:playlist:1ItUMO8bxI4L2WeYNrPM2j] Snapshot-updated to revision 0,726f6f7400000000000000000000000000000000
+07:06:22.999 3 [playlist_be_pl4_context.cpp:1002] [spotify:user:1250237892:playlist:3IRKYRJfKhBLcNTlCkFjRH] Snapshot-updated to revision 0,726f6f7400000000000000000000000000000000
+07:06:22.999 I [kindling.js:7                   ] scroll-request
+07:06:23.840 I [kindling.js:7                   ] scroll-request
+07:06:23.876 I [kindling.js:7                   ] scroll-request
+07:06:23.902 I [kindling.js:7                   ] scroll-request
+07:06:23.953 I [kindling.js:7                   ] scroll-request
+07:06:24.088 I [kindling.js:7                   ] scroll-request
+07:06:24.971 I [kindling.js:7                   ] scroll-request
+07:06:25.021 I [kindling.js:7                   ] scroll-request
+07:06:30.905 I [kindling.js:7                   ] scroll-request
+07:06:30.978 I [kindling.js:7                   ] scroll-request
+07:06:31.198 I [kindling.js:7                   ] scroll-request
+07:06:31.889 I [kindling.js:7                   ] scroll-request
+07:06:31.926 I [kindling.js:7                   ] scroll-request
+07:06:31.967 I [kindling.js:7                   ] scroll-request
+07:06:34.437 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:4wtLaWQcPct5tlAWTxqjMD] Synchronization starting: DIFF (from revision 840,dd32b48cbd72e5fb89a039b0af2170670667bb1d) 
+07:06:34.496 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:4wtLaWQcPct5tlAWTxqjMD] Delta-updated to revision 840,dd32b48cbd72e5fb89a039b0af2170670667bb1d (no new changes)
+07:06:34.560 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942253893
+07:06:34.636 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:72R3C79AOfbXrtSc7FL6b4] Synchronization starting: DIFF (from revision 14,c2530adda3b118dbd6a405169814350bc5c571b7) 
+07:06:34.681 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:72R3C79AOfbXrtSc7FL6b4] Delta-updated to revision 14,c2530adda3b118dbd6a405169814350bc5c571b7 (no new changes)
+07:06:34.699 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:2DIkzkPnHOIK6VtFPx8ciD] Synchronization starting: DIFF (from revision 420,f6ac144ac92a01f8d2501385f3d6f46a744f165a) 
+07:06:34.702 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify__sverige:playlist:5Mw95LVmEUmS8Z3ejDnrti] Synchronization starting: DIFF (from revision 178,05ba0de2f9978eb16e7a734294695ff1b8eb7593) 
+07:06:34.706 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify__sverige:playlist:4fg5VMjk31LSyC7RmGlcSB] Synchronization starting: DIFF (from revision 445,02cadd67908bd569b6c83d773d7246f39900f581) 
+07:06:34.711 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:2uAichKSjJSyrmal8Kb3W9] Synchronization starting: DIFF (from revision 1053,1fba7f9871b06d8b098dca113cc2eb78eb9c36a0) 
+07:06:34.715 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:4BKT5olNFqLB1FAa8OtC8k] Synchronization starting: DIFF (from revision 656,9c98eb7691bd6c6b72586842e4b0c83f6633e151) 
+07:06:34.750 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:2DIkzkPnHOIK6VtFPx8ciD] Delta-updated to revision 420,f6ac144ac92a01f8d2501385f3d6f46a744f165a (no new changes)
+07:06:34.771 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:61X7TuXAKnrnXEMjytixHg] Synchronization starting: DIFF (from revision 635,ce7f00b29931dd930d298c1c3ac8d8e6d0cef83c) 
+07:06:34.804 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:2uAichKSjJSyrmal8Kb3W9] Delta-updated to revision 1053,1fba7f9871b06d8b098dca113cc2eb78eb9c36a0 (no new changes)
+07:06:34.804 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify__sverige:playlist:4fg5VMjk31LSyC7RmGlcSB] Delta-updated to revision 445,02cadd67908bd569b6c83d773d7246f39900f581 (no new changes)
+07:06:34.804 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:4BKT5olNFqLB1FAa8OtC8k] Delta-updated to revision 656,9c98eb7691bd6c6b72586842e4b0c83f6633e151 (no new changes)
+07:06:34.829 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942253624
+07:06:34.832 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:5yolys8XG4q7YfjYGl5Lff] Synchronization starting: DIFF (from revision 3577,53aa2a91361d8813eb0210e851572a2f6dd47e38) 
+07:06:34.832 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:0UHbhCjKlXnFfv98bKrtKv] Synchronization starting: DIFF (from revision 892,757d993faf5c39d7cca395fc9f47bd8e58466083) 
+07:06:34.832 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify__sverige:playlist:6Vhshb6ci7shXkxNRKLgDV] Synchronization starting: DIFF (from revision 457,f83fe368bb805b7df1345263d60b28a86105d704) 
+07:06:34.833 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify__sverige:playlist:5Mw95LVmEUmS8Z3ejDnrti] Delta-updated to revision 178,05ba0de2f9978eb16e7a734294695ff1b8eb7593 (no new changes)
+07:06:34.844 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:61X7TuXAKnrnXEMjytixHg] Delta-updated to revision 635,ce7f00b29931dd930d298c1c3ac8d8e6d0cef83c (no new changes)
+07:06:34.855 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotify:playlist:5UAgPvIHt0s9fom7AG83NQ] Synchronization starting: DIFF (from revision 100,f8dd64b97d5f0091d81c51674eb6e2f0969df0bb) 
+07:06:34.879 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:0UHbhCjKlXnFfv98bKrtKv] Delta-updated to revision 892,757d993faf5c39d7cca395fc9f47bd8e58466083 (no new changes)
+07:06:34.888 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:5yolys8XG4q7YfjYGl5Lff] Delta-updated to revision 3577,53aa2a91361d8813eb0210e851572a2f6dd47e38 (no new changes)
+07:06:34.888 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify__sverige:playlist:6Vhshb6ci7shXkxNRKLgDV] Delta-updated to revision 457,f83fe368bb805b7df1345263d60b28a86105d704 (no new changes)
+07:06:34.937 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:spotify:playlist:5UAgPvIHt0s9fom7AG83NQ] Delta-updated to revision 100,f8dd64b97d5f0091d81c51674eb6e2f0969df0bb (no new changes)
+[0519/090635:FATAL:vpx_video_decoder.cc(381)] Check failed: vpx_image->d_h % 2 == 0U (1 vs. 0)
+07:06:37.820 I [kindling.js:7                   ] scroll-request
+07:06:37.853 I [kindling.js:7                   ] scroll-request
+07:06:37.894 I [kindling.js:7                   ] scroll-request
+07:06:37.933 I [kindling.js:7                   ] scroll-request
+07:06:37.975 I [kindling.js:7                   ] scroll-request
+07:06:38.086 I [kindling.js:7                   ] scroll-request
+07:06:41.166 I [kindling.js:7                   ] scroll-request
+07:06:41.876 I [kindling.js:7                   ] scroll-request
+07:06:46.558 I [ApplicationPage.cpp:185         ] Keeping application search alive for 60000 ms.
+07:06:46.752 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:sdhamilton-gb:playlist:47d4RJBeobevdthjwdXUIX] Synchronization starting: HEAD (from revision 0,726f6f7400000000000000000000000000000000) 
+07:06:46.752 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:drknow21:playlist:63uV8MEscRso6jrvCch2D9] Synchronization starting: HEAD (from revision 0,726f6f7400000000000000000000000000000000) 
+07:06:46.809 I [kindling.js:7                   ] scroll-request
+07:06:46.846 3 [playlist_be_pl4_context.cpp:1002] [spotify:user:sdhamilton-gb:playlist:47d4RJBeobevdthjwdXUIX] Snapshot-updated to revision 0,726f6f7400000000000000000000000000000000
+07:06:46.847 3 [playlist_be_pl4_context.cpp:1002] [spotify:user:drknow21:playlist:63uV8MEscRso6jrvCch2D9] Snapshot-updated to revision 0,726f6f7400000000000000000000000000000000
+07:06:50.994 I [sliding_window_prefetch_strategy.cpp:333] Prefetch: looks like a skip or partial context change - halving window size to 1
+07:06:50.995 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:4nYKcVxSChmk3RvFbZjYob, index=0, position=0, paused=0
+07:06:50.995 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:06:50.995 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942237458
+07:06:51.031 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942237422
+07:06:58.162 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942230291
+07:06:58.352 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  In For The Kill - That Doesn't Sound Like Skream's Remix : 3c33313eb13c4a23152c680a1526554085c47697
+07:06:58.352 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file 3c33313eb13c4a23152c680a1526554085c47697
+07:06:58.364 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/3c33313eb13c4a23152c680a1526554085c47697?1463645218_s//sGxI/Na9V2SggORPS4CtN7PpWuM42ivHkEGw2hqk= 
+07:06:58.375 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:06:58.433 I [cdn_chunk_downloader.cpp:200    ] Request for file 3c33313eb13c4a23152c680a1526554085c47697 complete (code: 0)
+07:06:58.434 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/3c33313eb13c4a23152c680a1526554085c47697?1463645218_s//sGxI/Na9V2SggORPS4CtN7PpWuM42ivHkEGw2hqk= 
+07:06:58.500 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:06:58.551 I [cdn_chunk_downloader.cpp:200    ] Request for file 3c33313eb13c4a23152c680a1526554085c47697 complete (code: 0)
+07:06:58.552 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/3c33313eb13c4a23152c680a1526554085c47697?1463645218_s//sGxI/Na9V2SggORPS4CtN7PpWuM42ivHkEGw2hqk= 
+07:06:58.568 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:06:58.626 I [cdn_chunk_downloader.cpp:200    ] Request for file 3c33313eb13c4a23152c680a1526554085c47697 complete (code: 0)
+07:06:58.626 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/3c33313eb13c4a23152c680a1526554085c47697?1463645218_s//sGxI/Na9V2SggORPS4CtN7PpWuM42ivHkEGw2hqk= 
+07:06:58.639 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:06:58.726 I [cdn_chunk_downloader.cpp:200    ] Request for file 3c33313eb13c4a23152c680a1526554085c47697 complete (code: 0)
+07:06:58.726 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/3c33313eb13c4a23152c680a1526554085c47697?1463645218_s//sGxI/Na9V2SggORPS4CtN7PpWuM42ivHkEGw2hqk= 
+07:06:58.738 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:06:58.836 I [cdn_chunk_downloader.cpp:200    ] Request for file 3c33313eb13c4a23152c680a1526554085c47697 complete (code: 0)
+07:06:58.836 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3145728) from CDN url: http://audio-sp-sto.spotify.com/audio/3c33313eb13c4a23152c680a1526554085c47697?1463645218_s//sGxI/Na9V2SggORPS4CtN7PpWuM42ivHkEGw2hqk= 
+07:06:58.846 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:06:58.899 I [cdn_chunk_downloader.cpp:200    ] Request for file 3c33313eb13c4a23152c680a1526554085c47697 complete (code: 0)
+07:06:58.899 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3145728 -> 3670016) from CDN url: http://audio-sp-sto.spotify.com/audio/3c33313eb13c4a23152c680a1526554085c47697?1463645218_s//sGxI/Na9V2SggORPS4CtN7PpWuM42ivHkEGw2hqk= 
+07:06:58.915 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:06:59.033 I [cdn_chunk_downloader.cpp:200    ] Request for file 3c33313eb13c4a23152c680a1526554085c47697 complete (code: 0)
+07:06:59.033 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3670016 -> 4194304) from CDN url: http://audio-sp-sto.spotify.com/audio/3c33313eb13c4a23152c680a1526554085c47697?1463645218_s//sGxI/Na9V2SggORPS4CtN7PpWuM42ivHkEGw2hqk= 
+07:06:59.043 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:06:59.113 I [cdn_chunk_downloader.cpp:200    ] Request for file 3c33313eb13c4a23152c680a1526554085c47697 complete (code: 0)
+07:06:59.113 I [cdn_chunk_downloader.cpp:72     ] Requesting data (4194304 -> 4258856) from CDN url: http://audio-sp-sto.spotify.com/audio/3c33313eb13c4a23152c680a1526554085c47697?1463645218_s//sGxI/Na9V2SggORPS4CtN7PpWuM42ivHkEGw2hqk= 
+07:06:59.131 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:06:59.138 I [cdn_chunk_downloader.cpp:200    ] Request for file 3c33313eb13c4a23152c680a1526554085c47697 complete (code: 0)
+07:06:59.141 I [sliding_window_prefetch_strategy.cpp:252] Prefetch window maxed and full, waiting for 0 track changes
+07:07:00.487 I [sliding_window_prefetch_strategy.cpp:333] Prefetch: looks like a skip or partial context change - halving window size to 1
+07:07:00.487 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:1bpnIYlSdvQRXcpjW0Mfw5, index=0, position=0, paused=0
+07:07:00.487 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:07:00.488 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942227965
+07:07:00.513 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942227940
+07:07:02.980 I [kindling.js:7                   ] scroll-request
+07:07:03.276 I [kindling.js:7                   ] scroll-request
+07:07:03.391 I [ApplicationPage.cpp:66          ] Unloading application browse.
+07:07:03.391 I [AppManager.cpp:541              ] Removing instance of application browse.
+
+07:07:03.457 I [kindling.js:7                   ] scroll-request
+07:07:14.665 I [kindling.js:7                   ] scroll-request
+07:07:14.700 I [kindling.js:7                   ] scroll-request
+07:07:14.727 I [kindling.js:7                   ] scroll-request
+07:07:14.753 I [kindling.js:7                   ] scroll-request
+07:07:14.799 I [kindling.js:7                   ] scroll-request
+07:07:14.836 I [kindling.js:7                   ] scroll-request
+07:07:14.876 I [kindling.js:7                   ] scroll-request
+07:07:14.920 I [kindling.js:7                   ] scroll-request
+07:07:14.955 I [kindling.js:7                   ] scroll-request
+07:07:14.996 I [kindling.js:7                   ] scroll-request
+07:07:19.962 I [ApplicationPage.cpp:185         ] Keeping application search alive for 60000 ms.
+07:07:22.573 I [ApplicationPage.cpp:66          ] Unloading application search.
+07:07:39.092 I [ApplicationPage.cpp:185         ] Keeping application search alive for 60000 ms.
+07:07:40.443 I [ApplicationPage.cpp:185         ] Keeping application search alive for 60000 ms.
+07:07:40.447 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:krausmeistr:playlist:4g66igfDsuf0NrRy7TuxVA] Synchronization starting: DIFF (from revision 53,67a1279943c29570eff2601ddccc847dc1551a2a) 
+07:07:40.502 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:krausmeistr:playlist:4g66igfDsuf0NrRy7TuxVA] Delta-updated to revision 53,67a1279943c29570eff2601ddccc847dc1551a2a (no new changes)
+07:07:41.973 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:krausmeistr:rootlist] Synchronization starting: POST (1/1 pending deltas on top of revision 623,cfde19129e458d9181382b9791720ab3058807ad) 
+07:07:42.020 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:krausmeistr:rootlist] Delta-updated to revision 624,e5832f8ef2a49e2d37ca76bc7ebe3e817a1688a8
+07:07:46.559 I [ApplicationPage.cpp:66          ] Unloading application search.
+07:07:51.697 I [ApplicationPage.cpp:185         ] Keeping application search alive for 60000 ms.
+07:07:52.030 I [kindling.js:7                   ] scroll-request
+07:08:19.962 I [ApplicationPage.cpp:66          ] Unloading application search.
+07:08:39.093 I [ApplicationPage.cpp:66          ] Unloading application search.
+07:08:40.443 I [ApplicationPage.cpp:66          ] Unloading application search.
+07:08:51.696 I [ApplicationPage.cpp:66          ] Unloading application search.
+07:10:27.944 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:1hKcCQOCv6rOqvyJtm0LIU, index=1299, position=0, paused=0
+07:10:27.944 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:10:27.944 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942020521
+07:10:27.966 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -942020498
+07:10:28.156 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  Lonely Boy : afa02eea5754d6d8c3b756df81327c0224e498bb
+07:10:28.156 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file afa02eea5754d6d8c3b756df81327c0224e498bb
+07:10:28.169 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/afa02eea5754d6d8c3b756df81327c0224e498bb?1463645428_zu3PCUqlttO1wEbasbSnFnrp6fEsTD/2Syg7ADMto3s= 
+07:10:28.180 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:10:28.227 I [cdn_chunk_downloader.cpp:200    ] Request for file afa02eea5754d6d8c3b756df81327c0224e498bb complete (code: 0)
+07:10:28.227 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/afa02eea5754d6d8c3b756df81327c0224e498bb?1463645428_zu3PCUqlttO1wEbasbSnFnrp6fEsTD/2Syg7ADMto3s= 
+07:10:28.317 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:10:28.382 I [cdn_chunk_downloader.cpp:200    ] Request for file afa02eea5754d6d8c3b756df81327c0224e498bb complete (code: 0)
+07:10:28.382 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/afa02eea5754d6d8c3b756df81327c0224e498bb?1463645428_zu3PCUqlttO1wEbasbSnFnrp6fEsTD/2Syg7ADMto3s= 
+07:10:28.393 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:10:28.451 I [cdn_chunk_downloader.cpp:200    ] Request for file afa02eea5754d6d8c3b756df81327c0224e498bb complete (code: 0)
+07:10:28.451 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/afa02eea5754d6d8c3b756df81327c0224e498bb?1463645428_zu3PCUqlttO1wEbasbSnFnrp6fEsTD/2Syg7ADMto3s= 
+07:10:28.464 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:10:28.542 I [cdn_chunk_downloader.cpp:200    ] Request for file afa02eea5754d6d8c3b756df81327c0224e498bb complete (code: 0)
+07:10:28.542 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/afa02eea5754d6d8c3b756df81327c0224e498bb?1463645428_zu3PCUqlttO1wEbasbSnFnrp6fEsTD/2Syg7ADMto3s= 
+07:10:28.557 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:10:28.643 I [cdn_chunk_downloader.cpp:200    ] Request for file afa02eea5754d6d8c3b756df81327c0224e498bb complete (code: 0)
+07:10:28.643 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3081928) from CDN url: http://audio-sp-sto.spotify.com/audio/afa02eea5754d6d8c3b756df81327c0224e498bb?1463645428_zu3PCUqlttO1wEbasbSnFnrp6fEsTD/2Syg7ADMto3s= 
+07:10:28.668 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:10:28.749 I [cdn_chunk_downloader.cpp:200    ] Request for file afa02eea5754d6d8c3b756df81327c0224e498bb complete (code: 0)
+07:10:28.751 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  Give A Little Bit : 81349e3c008fef4c80914ae2d49d3199c8f5e035
+07:10:28.752 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file 81349e3c008fef4c80914ae2d49d3199c8f5e035
+07:10:28.772 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/81349e3c008fef4c80914ae2d49d3199c8f5e035?1463645428_cfinSAdg+DIlvOoIv0BMDaGSsPIB5nDvPnfw3l/kOg4= 
+07:10:28.790 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:10:28.861 I [cdn_chunk_downloader.cpp:200    ] Request for file 81349e3c008fef4c80914ae2d49d3199c8f5e035 complete (code: 0)
+07:10:28.861 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/81349e3c008fef4c80914ae2d49d3199c8f5e035?1463645428_cfinSAdg+DIlvOoIv0BMDaGSsPIB5nDvPnfw3l/kOg4= 
+07:10:28.885 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:10:28.979 I [cdn_chunk_downloader.cpp:200    ] Request for file 81349e3c008fef4c80914ae2d49d3199c8f5e035 complete (code: 0)
+07:10:28.979 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/81349e3c008fef4c80914ae2d49d3199c8f5e035?1463645428_cfinSAdg+DIlvOoIv0BMDaGSsPIB5nDvPnfw3l/kOg4= 
+07:10:28.994 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:10:29.079 I [cdn_chunk_downloader.cpp:200    ] Request for file 81349e3c008fef4c80914ae2d49d3199c8f5e035 complete (code: 0)
+07:10:29.079 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/81349e3c008fef4c80914ae2d49d3199c8f5e035?1463645428_cfinSAdg+DIlvOoIv0BMDaGSsPIB5nDvPnfw3l/kOg4= 
+07:10:29.125 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:10:29.215 I [cdn_chunk_downloader.cpp:200    ] Request for file 81349e3c008fef4c80914ae2d49d3199c8f5e035 complete (code: 0)
+07:10:29.216 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/81349e3c008fef4c80914ae2d49d3199c8f5e035?1463645428_cfinSAdg+DIlvOoIv0BMDaGSsPIB5nDvPnfw3l/kOg4= 
+07:10:29.252 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:10:29.348 I [cdn_chunk_downloader.cpp:200    ] Request for file 81349e3c008fef4c80914ae2d49d3199c8f5e035 complete (code: 0)
+07:10:29.349 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3145728) from CDN url: http://audio-sp-sto.spotify.com/audio/81349e3c008fef4c80914ae2d49d3199c8f5e035?1463645428_cfinSAdg+DIlvOoIv0BMDaGSsPIB5nDvPnfw3l/kOg4= 
+07:10:29.424 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:10:29.489 I [cdn_chunk_downloader.cpp:200    ] Request for file 81349e3c008fef4c80914ae2d49d3199c8f5e035 complete (code: 0)
+07:10:29.489 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3145728 -> 3670016) from CDN url: http://audio-sp-sto.spotify.com/audio/81349e3c008fef4c80914ae2d49d3199c8f5e035?1463645428_cfinSAdg+DIlvOoIv0BMDaGSsPIB5nDvPnfw3l/kOg4= 
+07:10:29.506 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:10:29.574 I [cdn_chunk_downloader.cpp:200    ] Request for file 81349e3c008fef4c80914ae2d49d3199c8f5e035 complete (code: 0)
+07:10:29.574 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3670016 -> 4194304) from CDN url: http://audio-sp-sto.spotify.com/audio/81349e3c008fef4c80914ae2d49d3199c8f5e035?1463645428_cfinSAdg+DIlvOoIv0BMDaGSsPIB5nDvPnfw3l/kOg4= 
+07:10:29.590 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:10:29.655 I [cdn_chunk_downloader.cpp:200    ] Request for file 81349e3c008fef4c80914ae2d49d3199c8f5e035 complete (code: 0)
+07:10:29.656 I [cdn_chunk_downloader.cpp:72     ] Requesting data (4194304 -> 4718592) from CDN url: http://audio-sp-sto.spotify.com/audio/81349e3c008fef4c80914ae2d49d3199c8f5e035?1463645428_cfinSAdg+DIlvOoIv0BMDaGSsPIB5nDvPnfw3l/kOg4= 
+07:10:29.673 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:10:29.769 I [cdn_chunk_downloader.cpp:200    ] Request for file 81349e3c008fef4c80914ae2d49d3199c8f5e035 complete (code: 0)
+07:10:29.769 I [cdn_chunk_downloader.cpp:72     ] Requesting data (4718592 -> 5202796) from CDN url: http://audio-sp-sto.spotify.com/audio/81349e3c008fef4c80914ae2d49d3199c8f5e035?1463645428_cfinSAdg+DIlvOoIv0BMDaGSsPIB5nDvPnfw3l/kOg4= 
+07:10:29.813 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:10:29.903 I [cdn_chunk_downloader.cpp:200    ] Request for file 81349e3c008fef4c80914ae2d49d3199c8f5e035 complete (code: 0)
+07:10:29.904 I [sliding_window_prefetch_strategy.cpp:252] Prefetch window maxed and full, waiting for 0 track changes
+07:14:07.161 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -941801323
+07:14:07.175 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -941801308
+07:14:07.178 I [ApplicationPage.cpp:185         ] Keeping application search alive for 60000 ms.
+07:14:07.182 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:mrjeltsin:playlist:1fyEQKVNA25xAb3A7B47iU] Synchronization starting: DIFF (from revision 1933,99bc1d726e5c222c33ad37192bade2ee311ffae6) 
+07:14:07.264 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -941801220
+07:14:07.277 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -941801207
+07:14:07.279 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:mrjeltsin:playlist:1fyEQKVNA25xAb3A7B47iU] Delta-updated to revision 1933,99bc1d726e5c222c33ad37192bade2ee311ffae6 (no new changes)
+07:14:08.842 I [head_file_streamer.cpp:106      ] Requesting head file from CDN url: http://heads-fab.spotify.com/head/9bae15f6d8ae0db8e501ed078b7433efaff4d8af 
+07:14:08.842 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:5HeNSAnUo2PMw8fwLrub9a, index=1298, position=0, paused=0
+07:14:08.842 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:14:08.842 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -941799642
+07:14:08.842 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file 9bae15f6d8ae0db8e501ed078b7433efaff4d8af
+07:14:08.851 I [sliding_window_prefetch_strategy.cpp:329] Prefetch: looks like new context - resetting window size to 1
+07:14:08.859 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -941799625
+07:14:08.900 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/9bae15f6d8ae0db8e501ed078b7433efaff4d8af?1463645648_g7Jh51/rJz0HLB0tX1KpMD8pDId/DpThnA7svu0A6QQ= 
+07:14:08.930 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:09.032 I [cdn_chunk_downloader.cpp:200    ] Request for file 9bae15f6d8ae0db8e501ed078b7433efaff4d8af complete (code: 0)
+07:14:09.138 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/9bae15f6d8ae0db8e501ed078b7433efaff4d8af?1463645648_g7Jh51/rJz0HLB0tX1KpMD8pDId/DpThnA7svu0A6QQ= 
+07:14:09.173 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:09.227 I [cdn_chunk_downloader.cpp:200    ] Request for file 9bae15f6d8ae0db8e501ed078b7433efaff4d8af complete (code: 0)
+07:14:09.372 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/9bae15f6d8ae0db8e501ed078b7433efaff4d8af?1463645648_g7Jh51/rJz0HLB0tX1KpMD8pDId/DpThnA7svu0A6QQ= 
+07:14:09.383 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:09.432 I [cdn_chunk_downloader.cpp:200    ] Request for file 9bae15f6d8ae0db8e501ed078b7433efaff4d8af complete (code: 0)
+07:14:09.538 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/9bae15f6d8ae0db8e501ed078b7433efaff4d8af?1463645648_g7Jh51/rJz0HLB0tX1KpMD8pDId/DpThnA7svu0A6QQ= 
+07:14:09.549 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:09.595 I [cdn_chunk_downloader.cpp:200    ] Request for file 9bae15f6d8ae0db8e501ed078b7433efaff4d8af complete (code: 0)
+07:14:09.738 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/9bae15f6d8ae0db8e501ed078b7433efaff4d8af?1463645648_g7Jh51/rJz0HLB0tX1KpMD8pDId/DpThnA7svu0A6QQ= 
+07:14:09.749 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:09.802 I [cdn_chunk_downloader.cpp:200    ] Request for file 9bae15f6d8ae0db8e501ed078b7433efaff4d8af complete (code: 0)
+07:14:09.938 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3145728) from CDN url: http://audio-sp-sto.spotify.com/audio/9bae15f6d8ae0db8e501ed078b7433efaff4d8af?1463645648_g7Jh51/rJz0HLB0tX1KpMD8pDId/DpThnA7svu0A6QQ= 
+07:14:09.954 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:10.008 I [cdn_chunk_downloader.cpp:200    ] Request for file 9bae15f6d8ae0db8e501ed078b7433efaff4d8af complete (code: 0)
+07:14:10.139 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3145728 -> 3670016) from CDN url: http://audio-sp-sto.spotify.com/audio/9bae15f6d8ae0db8e501ed078b7433efaff4d8af?1463645648_g7Jh51/rJz0HLB0tX1KpMD8pDId/DpThnA7svu0A6QQ= 
+07:14:10.153 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:10.209 I [cdn_chunk_downloader.cpp:200    ] Request for file 9bae15f6d8ae0db8e501ed078b7433efaff4d8af complete (code: 0)
+07:14:10.338 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3670016 -> 4194304) from CDN url: http://audio-sp-sto.spotify.com/audio/9bae15f6d8ae0db8e501ed078b7433efaff4d8af?1463645648_g7Jh51/rJz0HLB0tX1KpMD8pDId/DpThnA7svu0A6QQ= 
+07:14:10.355 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:10.401 I [cdn_chunk_downloader.cpp:200    ] Request for file 9bae15f6d8ae0db8e501ed078b7433efaff4d8af complete (code: 0)
+07:14:10.538 I [cdn_chunk_downloader.cpp:72     ] Requesting data (4194304 -> 4657204) from CDN url: http://audio-sp-sto.spotify.com/audio/9bae15f6d8ae0db8e501ed078b7433efaff4d8af?1463645648_g7Jh51/rJz0HLB0tX1KpMD8pDId/DpThnA7svu0A6QQ= 
+07:14:10.552 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:10.594 I [cdn_chunk_downloader.cpp:200    ] Request for file 9bae15f6d8ae0db8e501ed078b7433efaff4d8af complete (code: 0)
+07:14:19.056 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  Skimret : 2b5e425a877197843441152b69654344b36798f2
+07:14:19.056 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file 2b5e425a877197843441152b69654344b36798f2
+07:14:19.070 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/2b5e425a877197843441152b69654344b36798f2?1463645659_Fpr3FrIq0KldFY7VfWvhbJ4IDrUEJx13Iwwa2ly+dYk= 
+07:14:19.180 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:19.528 I [cdn_chunk_downloader.cpp:200    ] Request for file 2b5e425a877197843441152b69654344b36798f2 complete (code: 0)
+07:14:19.528 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/2b5e425a877197843441152b69654344b36798f2?1463645659_Fpr3FrIq0KldFY7VfWvhbJ4IDrUEJx13Iwwa2ly+dYk= 
+07:14:19.538 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:19.707 I [cdn_chunk_downloader.cpp:200    ] Request for file 2b5e425a877197843441152b69654344b36798f2 complete (code: 0)
+07:14:19.707 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/2b5e425a877197843441152b69654344b36798f2?1463645659_Fpr3FrIq0KldFY7VfWvhbJ4IDrUEJx13Iwwa2ly+dYk= 
+07:14:19.720 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:19.852 I [cdn_chunk_downloader.cpp:200    ] Request for file 2b5e425a877197843441152b69654344b36798f2 complete (code: 0)
+07:14:19.852 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/2b5e425a877197843441152b69654344b36798f2?1463645659_Fpr3FrIq0KldFY7VfWvhbJ4IDrUEJx13Iwwa2ly+dYk= 
+07:14:19.864 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:19.961 I [cdn_chunk_downloader.cpp:200    ] Request for file 2b5e425a877197843441152b69654344b36798f2 complete (code: 0)
+07:14:19.962 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/2b5e425a877197843441152b69654344b36798f2?1463645659_Fpr3FrIq0KldFY7VfWvhbJ4IDrUEJx13Iwwa2ly+dYk= 
+07:14:19.972 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:20.043 I [cdn_chunk_downloader.cpp:200    ] Request for file 2b5e425a877197843441152b69654344b36798f2 complete (code: 0)
+07:14:20.043 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3145728) from CDN url: http://audio-sp-sto.spotify.com/audio/2b5e425a877197843441152b69654344b36798f2?1463645659_Fpr3FrIq0KldFY7VfWvhbJ4IDrUEJx13Iwwa2ly+dYk= 
+07:14:20.057 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:20.118 I [cdn_chunk_downloader.cpp:200    ] Request for file 2b5e425a877197843441152b69654344b36798f2 complete (code: 0)
+07:14:20.118 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3145728 -> 3670016) from CDN url: http://audio-sp-sto.spotify.com/audio/2b5e425a877197843441152b69654344b36798f2?1463645659_Fpr3FrIq0KldFY7VfWvhbJ4IDrUEJx13Iwwa2ly+dYk= 
+07:14:20.196 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:20.255 I [cdn_chunk_downloader.cpp:200    ] Request for file 2b5e425a877197843441152b69654344b36798f2 complete (code: 0)
+07:14:20.255 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3670016 -> 4194304) from CDN url: http://audio-sp-sto.spotify.com/audio/2b5e425a877197843441152b69654344b36798f2?1463645659_Fpr3FrIq0KldFY7VfWvhbJ4IDrUEJx13Iwwa2ly+dYk= 
+07:14:20.271 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:20.324 I [cdn_chunk_downloader.cpp:200    ] Request for file 2b5e425a877197843441152b69654344b36798f2 complete (code: 0)
+07:14:20.324 I [cdn_chunk_downloader.cpp:72     ] Requesting data (4194304 -> 4718592) from CDN url: http://audio-sp-sto.spotify.com/audio/2b5e425a877197843441152b69654344b36798f2?1463645659_Fpr3FrIq0KldFY7VfWvhbJ4IDrUEJx13Iwwa2ly+dYk= 
+07:14:20.339 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:20.401 I [cdn_chunk_downloader.cpp:200    ] Request for file 2b5e425a877197843441152b69654344b36798f2 complete (code: 0)
+07:14:20.401 I [cdn_chunk_downloader.cpp:72     ] Requesting data (4718592 -> 4950936) from CDN url: http://audio-sp-sto.spotify.com/audio/2b5e425a877197843441152b69654344b36798f2?1463645659_Fpr3FrIq0KldFY7VfWvhbJ4IDrUEJx13Iwwa2ly+dYk= 
+07:14:20.413 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:14:20.437 I [cdn_chunk_downloader.cpp:200    ] Request for file 2b5e425a877197843441152b69654344b36798f2 complete (code: 0)
+07:14:20.438 I [sliding_window_prefetch_strategy.cpp:252] Prefetch window maxed and full, waiting for 0 track changes
+07:15:07.178 I [ApplicationPage.cpp:66          ] Unloading application search.
+07:15:08.994 I [offline_manager.cpp:2353        ] Storage has been cleaned
+07:18:23.749 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:4LtFDiHjVGCAyGpDfOiTIv, index=578, position=0, paused=0
+07:18:23.749 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:18:23.749 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -941544722
+07:18:23.766 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -941544705
+07:22:26.064 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotifydiscover:playlist:3H8fVihtqKas5zprKL0B5x] Synchronization starting: DIFF (from revision 38,15592142a289bc5a5819392e4cda00c8e11c69ee) 
+07:22:26.116 3 [playlist_be_pl4_context.cpp:607 ] [spotify:user:spotifydiscover:playlist:3H8fVihtqKas5zprKL0B5x]  synchronization error: Hermes error code 509 (revision too old)
+07:22:26.116 3 [playlist_be_pl4_context.cpp:716 ] [spotify:user:spotifydiscover:playlist:3H8fVihtqKas5zprKL0B5x]   - requesting HEAD from remote.
+07:22:26.116 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:spotifydiscover:playlist:3H8fVihtqKas5zprKL0B5x] Synchronization starting: GET (full reset) (cannot send dump) (from revision 38,15592142a289bc5a5819392e4cda00c8e11c69ee) 
+07:22:26.163 3 [playlist_be_pl4_context.cpp:1002] [spotify:user:spotifydiscover:playlist:3H8fVihtqKas5zprKL0B5x] Snapshot-updated to revision 46,302f783be37c277842cbc05ab539b1dccf1c585f
+07:22:27.251 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:0ZkLBauXOMQLQAdzQKawSl, index=472, position=0, paused=0
+07:22:27.251 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:22:27.251 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -941301242
+07:22:27.266 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -941301226
+07:26:05.535 3 [playlist_be_pl4_context.cpp:405 ] [spotify:user:klarasara:playlist:0hnkY5WhmVn896pcauNcRT] Synchronization starting: DIFF (from revision 164,93e5f3c98d5d26d34806ee1e56ebeeac0b45f8be) 
+07:26:05.582 3 [playlist_be_pl4_context.cpp:904 ] [spotify:user:klarasara:playlist:0hnkY5WhmVn896pcauNcRT] Delta-updated to revision 164,93e5f3c98d5d26d34806ee1e56ebeeac0b45f8be (no new changes)
+07:26:05.696 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -941082792
+07:26:05.953 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -941082535
+07:26:06.570 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:0RaEqkxeaUFwNhvcD9pAit, index=33, position=0, paused=0
+07:26:06.570 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:26:06.570 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -941081918
+07:26:06.618 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -941081870
+07:26:07.024 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file 42608c339261af799005cb06e9f824cfc6a524d8
+07:26:07.024 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  July : 42608c339261af799005cb06e9f824cfc6a524d8
+07:26:07.035 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/42608c339261af799005cb06e9f824cfc6a524d8?1463646367_QT7t/utOxIO1Enl6zgZVqq/aUbD1rFdMBzuQsOvhsvw= 
+07:26:07.065 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:26:07.208 I [cdn_chunk_downloader.cpp:200    ] Request for file 42608c339261af799005cb06e9f824cfc6a524d8 complete (code: 0)
+07:26:07.208 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/42608c339261af799005cb06e9f824cfc6a524d8?1463646367_QT7t/utOxIO1Enl6zgZVqq/aUbD1rFdMBzuQsOvhsvw= 
+07:26:07.221 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:26:07.300 I [cdn_chunk_downloader.cpp:200    ] Request for file 42608c339261af799005cb06e9f824cfc6a524d8 complete (code: 0)
+07:26:07.300 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/42608c339261af799005cb06e9f824cfc6a524d8?1463646367_QT7t/utOxIO1Enl6zgZVqq/aUbD1rFdMBzuQsOvhsvw= 
+07:26:07.311 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:26:07.380 I [cdn_chunk_downloader.cpp:200    ] Request for file 42608c339261af799005cb06e9f824cfc6a524d8 complete (code: 0)
+07:26:07.380 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/42608c339261af799005cb06e9f824cfc6a524d8?1463646367_QT7t/utOxIO1Enl6zgZVqq/aUbD1rFdMBzuQsOvhsvw= 
+07:26:07.390 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:26:07.471 I [cdn_chunk_downloader.cpp:200    ] Request for file 42608c339261af799005cb06e9f824cfc6a524d8 complete (code: 0)
+07:26:07.471 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/42608c339261af799005cb06e9f824cfc6a524d8?1463646367_QT7t/utOxIO1Enl6zgZVqq/aUbD1rFdMBzuQsOvhsvw= 
+07:26:07.482 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:26:07.540 I [cdn_chunk_downloader.cpp:200    ] Request for file 42608c339261af799005cb06e9f824cfc6a524d8 complete (code: 0)
+07:26:07.540 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3145728) from CDN url: http://audio-sp-sto.spotify.com/audio/42608c339261af799005cb06e9f824cfc6a524d8?1463646367_QT7t/utOxIO1Enl6zgZVqq/aUbD1rFdMBzuQsOvhsvw= 
+07:26:07.552 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:26:07.615 I [cdn_chunk_downloader.cpp:200    ] Request for file 42608c339261af799005cb06e9f824cfc6a524d8 complete (code: 0)
+07:26:07.615 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3145728 -> 3552544) from CDN url: http://audio-sp-sto.spotify.com/audio/42608c339261af799005cb06e9f824cfc6a524d8?1463646367_QT7t/utOxIO1Enl6zgZVqq/aUbD1rFdMBzuQsOvhsvw= 
+07:26:07.626 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:26:07.668 I [cdn_chunk_downloader.cpp:200    ] Request for file 42608c339261af799005cb06e9f824cfc6a524d8 complete (code: 0)
+07:26:07.668 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  The Kiss : 286313173f680c40ca600840b30f0fb054430a40
+07:26:07.668 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file 286313173f680c40ca600840b30f0fb054430a40
+07:26:07.680 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/286313173f680c40ca600840b30f0fb054430a40?1463646367_9QHLvQcP6HpvSsjZW3Qg4K1lUECDZh5gcjvEFRovijE= 
+07:26:07.691 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:26:07.750 I [cdn_chunk_downloader.cpp:200    ] Request for file 286313173f680c40ca600840b30f0fb054430a40 complete (code: 0)
+07:26:07.750 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/286313173f680c40ca600840b30f0fb054430a40?1463646367_9QHLvQcP6HpvSsjZW3Qg4K1lUECDZh5gcjvEFRovijE= 
+07:26:07.762 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:26:07.825 I [cdn_chunk_downloader.cpp:200    ] Request for file 286313173f680c40ca600840b30f0fb054430a40 complete (code: 0)
+07:26:07.825 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/286313173f680c40ca600840b30f0fb054430a40?1463646367_9QHLvQcP6HpvSsjZW3Qg4K1lUECDZh5gcjvEFRovijE= 
+07:26:07.872 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:26:08.004 I [cdn_chunk_downloader.cpp:200    ] Request for file 286313173f680c40ca600840b30f0fb054430a40 complete (code: 0)
+07:26:08.004 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/286313173f680c40ca600840b30f0fb054430a40?1463646367_9QHLvQcP6HpvSsjZW3Qg4K1lUECDZh5gcjvEFRovijE= 
+07:26:08.018 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:26:08.165 I [cdn_chunk_downloader.cpp:200    ] Request for file 286313173f680c40ca600840b30f0fb054430a40 complete (code: 0)
+07:26:08.165 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/286313173f680c40ca600840b30f0fb054430a40?1463646367_9QHLvQcP6HpvSsjZW3Qg4K1lUECDZh5gcjvEFRovijE= 
+07:26:08.181 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:26:08.250 I [cdn_chunk_downloader.cpp:200    ] Request for file 286313173f680c40ca600840b30f0fb054430a40 complete (code: 0)
+07:26:08.250 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3145728) from CDN url: http://audio-sp-sto.spotify.com/audio/286313173f680c40ca600840b30f0fb054430a40?1463646367_9QHLvQcP6HpvSsjZW3Qg4K1lUECDZh5gcjvEFRovijE= 
+07:26:08.328 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:26:08.389 I [cdn_chunk_downloader.cpp:200    ] Request for file 286313173f680c40ca600840b30f0fb054430a40 complete (code: 0)
+07:26:08.389 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3145728 -> 3244224) from CDN url: http://audio-sp-sto.spotify.com/audio/286313173f680c40ca600840b30f0fb054430a40?1463646367_9QHLvQcP6HpvSsjZW3Qg4K1lUECDZh5gcjvEFRovijE= 
+07:26:08.400 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:26:08.410 I [cdn_chunk_downloader.cpp:200    ] Request for file 286313173f680c40ca600840b30f0fb054430a40 complete (code: 0)
+07:26:08.411 I [sliding_window_prefetch_strategy.cpp:252] Prefetch window maxed and full, waiting for 0 track changes
+07:27:24.457 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:3vfG9ucWJPkQltYbkZVunx, index=1025, position=0, paused=0
+07:27:24.457 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:27:24.457 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -941004031
+07:27:24.497 I [sliding_window_prefetch_strategy.cpp:333] Prefetch: looks like a skip or partial context change - halving window size to 1
+07:27:24.590 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -941003898
+07:27:26.596 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:5umoZmJLW98rlImZulfLp5, index=1011, position=0, paused=0
+07:27:26.596 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:27:26.597 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -941001896
+07:27:26.637 I [sliding_window_prefetch_strategy.cpp:333] Prefetch: looks like a skip or partial context change - halving window size to 1
+07:27:26.673 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -941001820
+07:27:26.994 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  Police and Thieves : 678ab266e473a33b38a94c13715f1c1b438dd132
+07:27:26.994 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file 678ab266e473a33b38a94c13715f1c1b438dd132
+07:27:27.008 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/678ab266e473a33b38a94c13715f1c1b438dd132?1463646446_YHK5ZiybfREUfp14JPXBvuZrs/6B57VIfCSw5PC1XOQ= 
+07:27:27.021 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:27:27.072 I [cdn_chunk_downloader.cpp:200    ] Request for file 678ab266e473a33b38a94c13715f1c1b438dd132 complete (code: 0)
+07:27:27.072 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/678ab266e473a33b38a94c13715f1c1b438dd132?1463646446_YHK5ZiybfREUfp14JPXBvuZrs/6B57VIfCSw5PC1XOQ= 
+07:27:27.085 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:27:27.147 I [cdn_chunk_downloader.cpp:200    ] Request for file 678ab266e473a33b38a94c13715f1c1b438dd132 complete (code: 0)
+07:27:27.147 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/678ab266e473a33b38a94c13715f1c1b438dd132?1463646446_YHK5ZiybfREUfp14JPXBvuZrs/6B57VIfCSw5PC1XOQ= 
+07:27:27.158 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:27:27.224 I [cdn_chunk_downloader.cpp:200    ] Request for file 678ab266e473a33b38a94c13715f1c1b438dd132 complete (code: 0)
+07:27:27.224 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/678ab266e473a33b38a94c13715f1c1b438dd132?1463646446_YHK5ZiybfREUfp14JPXBvuZrs/6B57VIfCSw5PC1XOQ= 
+07:27:27.237 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:27:27.281 I [cdn_chunk_downloader.cpp:200    ] Request for file 678ab266e473a33b38a94c13715f1c1b438dd132 complete (code: 0)
+07:27:27.281 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/678ab266e473a33b38a94c13715f1c1b438dd132?1463646446_YHK5ZiybfREUfp14JPXBvuZrs/6B57VIfCSw5PC1XOQ= 
+07:27:27.294 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:27:27.351 I [cdn_chunk_downloader.cpp:200    ] Request for file 678ab266e473a33b38a94c13715f1c1b438dd132 complete (code: 0)
+07:27:27.351 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3145728) from CDN url: http://audio-sp-sto.spotify.com/audio/678ab266e473a33b38a94c13715f1c1b438dd132?1463646446_YHK5ZiybfREUfp14JPXBvuZrs/6B57VIfCSw5PC1XOQ= 
+07:27:27.362 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:27:27.451 I [cdn_chunk_downloader.cpp:200    ] Request for file 678ab266e473a33b38a94c13715f1c1b438dd132 complete (code: 0)
+07:27:27.451 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3145728 -> 3670016) from CDN url: http://audio-sp-sto.spotify.com/audio/678ab266e473a33b38a94c13715f1c1b438dd132?1463646446_YHK5ZiybfREUfp14JPXBvuZrs/6B57VIfCSw5PC1XOQ= 
+07:27:27.462 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:27:27.561 I [cdn_chunk_downloader.cpp:200    ] Request for file 678ab266e473a33b38a94c13715f1c1b438dd132 complete (code: 0)
+07:27:27.561 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3670016 -> 4194304) from CDN url: http://audio-sp-sto.spotify.com/audio/678ab266e473a33b38a94c13715f1c1b438dd132?1463646446_YHK5ZiybfREUfp14JPXBvuZrs/6B57VIfCSw5PC1XOQ= 
+07:27:27.579 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:27:27.670 I [cdn_chunk_downloader.cpp:200    ] Request for file 678ab266e473a33b38a94c13715f1c1b438dd132 complete (code: 0)
+07:27:27.670 I [cdn_chunk_downloader.cpp:72     ] Requesting data (4194304 -> 4718592) from CDN url: http://audio-sp-sto.spotify.com/audio/678ab266e473a33b38a94c13715f1c1b438dd132?1463646446_YHK5ZiybfREUfp14JPXBvuZrs/6B57VIfCSw5PC1XOQ= 
+07:27:27.693 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:27:27.798 I [cdn_chunk_downloader.cpp:200    ] Request for file 678ab266e473a33b38a94c13715f1c1b438dd132 complete (code: 0)
+07:27:27.798 I [cdn_chunk_downloader.cpp:72     ] Requesting data (4718592 -> 5242880) from CDN url: http://audio-sp-sto.spotify.com/audio/678ab266e473a33b38a94c13715f1c1b438dd132?1463646446_YHK5ZiybfREUfp14JPXBvuZrs/6B57VIfCSw5PC1XOQ= 
+07:27:27.824 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:27:27.913 I [cdn_chunk_downloader.cpp:200    ] Request for file 678ab266e473a33b38a94c13715f1c1b438dd132 complete (code: 0)
+07:27:27.913 I [cdn_chunk_downloader.cpp:72     ] Requesting data (5242880 -> 5767168) from CDN url: http://audio-sp-sto.spotify.com/audio/678ab266e473a33b38a94c13715f1c1b438dd132?1463646446_YHK5ZiybfREUfp14JPXBvuZrs/6B57VIfCSw5PC1XOQ= 
+07:27:27.929 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:27:28.036 I [cdn_chunk_downloader.cpp:200    ] Request for file 678ab266e473a33b38a94c13715f1c1b438dd132 complete (code: 0)
+07:27:28.036 I [cdn_chunk_downloader.cpp:72     ] Requesting data (5767168 -> 6291456) from CDN url: http://audio-sp-sto.spotify.com/audio/678ab266e473a33b38a94c13715f1c1b438dd132?1463646446_YHK5ZiybfREUfp14JPXBvuZrs/6B57VIfCSw5PC1XOQ= 
+07:27:28.063 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:27:28.137 I [cdn_chunk_downloader.cpp:200    ] Request for file 678ab266e473a33b38a94c13715f1c1b438dd132 complete (code: 0)
+07:27:28.137 I [cdn_chunk_downloader.cpp:72     ] Requesting data (6291456 -> 6815744) from CDN url: http://audio-sp-sto.spotify.com/audio/678ab266e473a33b38a94c13715f1c1b438dd132?1463646446_YHK5ZiybfREUfp14JPXBvuZrs/6B57VIfCSw5PC1XOQ= 
+07:27:28.174 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:27:28.245 I [cdn_chunk_downloader.cpp:200    ] Request for file 678ab266e473a33b38a94c13715f1c1b438dd132 complete (code: 0)
+07:27:28.245 I [cdn_chunk_downloader.cpp:72     ] Requesting data (6815744 -> 6931092) from CDN url: http://audio-sp-sto.spotify.com/audio/678ab266e473a33b38a94c13715f1c1b438dd132?1463646446_YHK5ZiybfREUfp14JPXBvuZrs/6B57VIfCSw5PC1XOQ= 
+07:27:28.305 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:27:28.333 I [cdn_chunk_downloader.cpp:200    ] Request for file 678ab266e473a33b38a94c13715f1c1b438dd132 complete (code: 0)
+07:30:15.241 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:2PdLxA4OOrX1MLsgb5Gu0W, index=1089, position=0, paused=0
+07:30:15.241 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:30:15.241 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -940833255
+07:30:15.261 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -940833235
+07:30:15.452 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  Tell Me This Night Is Over : c53ff688a94941408b07ac1811c5149d5725f613
+07:30:15.452 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file c53ff688a94941408b07ac1811c5149d5725f613
+07:30:15.464 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/c53ff688a94941408b07ac1811c5149d5725f613?1463646615_DasvKeHnXCLGnXVMHZlfOiixQKYEZ9lvmt+nWjaI/5E= 
+07:30:15.475 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:30:15.533 I [cdn_chunk_downloader.cpp:200    ] Request for file c53ff688a94941408b07ac1811c5149d5725f613 complete (code: 0)
+07:30:15.533 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/c53ff688a94941408b07ac1811c5149d5725f613?1463646615_DasvKeHnXCLGnXVMHZlfOiixQKYEZ9lvmt+nWjaI/5E= 
+07:30:15.548 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:30:15.600 I [cdn_chunk_downloader.cpp:200    ] Request for file c53ff688a94941408b07ac1811c5149d5725f613 complete (code: 0)
+07:30:15.600 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/c53ff688a94941408b07ac1811c5149d5725f613?1463646615_DasvKeHnXCLGnXVMHZlfOiixQKYEZ9lvmt+nWjaI/5E= 
+07:30:15.620 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:30:15.672 I [cdn_chunk_downloader.cpp:200    ] Request for file c53ff688a94941408b07ac1811c5149d5725f613 complete (code: 0)
+07:30:15.672 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/c53ff688a94941408b07ac1811c5149d5725f613?1463646615_DasvKeHnXCLGnXVMHZlfOiixQKYEZ9lvmt+nWjaI/5E= 
+07:30:15.692 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:30:15.749 I [cdn_chunk_downloader.cpp:200    ] Request for file c53ff688a94941408b07ac1811c5149d5725f613 complete (code: 0)
+07:30:15.749 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/c53ff688a94941408b07ac1811c5149d5725f613?1463646615_DasvKeHnXCLGnXVMHZlfOiixQKYEZ9lvmt+nWjaI/5E= 
+07:30:15.817 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:30:15.883 I [cdn_chunk_downloader.cpp:200    ] Request for file c53ff688a94941408b07ac1811c5149d5725f613 complete (code: 0)
+07:30:15.883 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3145728) from CDN url: http://audio-sp-sto.spotify.com/audio/c53ff688a94941408b07ac1811c5149d5725f613?1463646615_DasvKeHnXCLGnXVMHZlfOiixQKYEZ9lvmt+nWjaI/5E= 
+07:30:15.899 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:30:15.954 I [cdn_chunk_downloader.cpp:200    ] Request for file c53ff688a94941408b07ac1811c5149d5725f613 complete (code: 0)
+07:30:15.954 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3145728 -> 3670016) from CDN url: http://audio-sp-sto.spotify.com/audio/c53ff688a94941408b07ac1811c5149d5725f613?1463646615_DasvKeHnXCLGnXVMHZlfOiixQKYEZ9lvmt+nWjaI/5E= 
+07:30:15.968 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:30:16.030 I [cdn_chunk_downloader.cpp:200    ] Request for file c53ff688a94941408b07ac1811c5149d5725f613 complete (code: 0)
+07:30:16.030 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3670016 -> 4194304) from CDN url: http://audio-sp-sto.spotify.com/audio/c53ff688a94941408b07ac1811c5149d5725f613?1463646615_DasvKeHnXCLGnXVMHZlfOiixQKYEZ9lvmt+nWjaI/5E= 
+07:30:16.047 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:30:16.100 I [cdn_chunk_downloader.cpp:200    ] Request for file c53ff688a94941408b07ac1811c5149d5725f613 complete (code: 0)
+07:30:16.100 I [cdn_chunk_downloader.cpp:72     ] Requesting data (4194304 -> 4718592) from CDN url: http://audio-sp-sto.spotify.com/audio/c53ff688a94941408b07ac1811c5149d5725f613?1463646615_DasvKeHnXCLGnXVMHZlfOiixQKYEZ9lvmt+nWjaI/5E= 
+07:30:16.118 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:30:16.179 I [cdn_chunk_downloader.cpp:200    ] Request for file c53ff688a94941408b07ac1811c5149d5725f613 complete (code: 0)
+07:30:16.179 I [cdn_chunk_downloader.cpp:72     ] Requesting data (4718592 -> 5242880) from CDN url: http://audio-sp-sto.spotify.com/audio/c53ff688a94941408b07ac1811c5149d5725f613?1463646615_DasvKeHnXCLGnXVMHZlfOiixQKYEZ9lvmt+nWjaI/5E= 
+07:30:16.201 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:30:16.262 I [cdn_chunk_downloader.cpp:200    ] Request for file c53ff688a94941408b07ac1811c5149d5725f613 complete (code: 0)
+07:30:16.262 I [cdn_chunk_downloader.cpp:72     ] Requesting data (5242880 -> 5767168) from CDN url: http://audio-sp-sto.spotify.com/audio/c53ff688a94941408b07ac1811c5149d5725f613?1463646615_DasvKeHnXCLGnXVMHZlfOiixQKYEZ9lvmt+nWjaI/5E= 
+07:30:16.278 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:30:16.339 I [cdn_chunk_downloader.cpp:200    ] Request for file c53ff688a94941408b07ac1811c5149d5725f613 complete (code: 0)
+07:30:16.339 I [cdn_chunk_downloader.cpp:72     ] Requesting data (5767168 -> 5850772) from CDN url: http://audio-sp-sto.spotify.com/audio/c53ff688a94941408b07ac1811c5149d5725f613?1463646615_DasvKeHnXCLGnXVMHZlfOiixQKYEZ9lvmt+nWjaI/5E= 
+07:30:16.357 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:30:16.365 I [cdn_chunk_downloader.cpp:200    ] Request for file c53ff688a94941408b07ac1811c5149d5725f613 complete (code: 0)
+07:30:16.365 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  Den siste mohikanen : a2e321a8bd5bb5dce5e5b17ec31eba559c2cbe66
+07:30:16.365 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file a2e321a8bd5bb5dce5e5b17ec31eba559c2cbe66
+07:30:16.379 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/a2e321a8bd5bb5dce5e5b17ec31eba559c2cbe66?1463646616_CkzbaG6enA4Ve5u/vIw02N9HoQ/D6APmuLa8ZCkp1QQ= 
+07:30:16.390 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:30:16.438 I [cdn_chunk_downloader.cpp:200    ] Request for file a2e321a8bd5bb5dce5e5b17ec31eba559c2cbe66 complete (code: 0)
+07:30:16.438 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/a2e321a8bd5bb5dce5e5b17ec31eba559c2cbe66?1463646616_CkzbaG6enA4Ve5u/vIw02N9HoQ/D6APmuLa8ZCkp1QQ= 
+07:30:16.458 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:30:16.531 I [cdn_chunk_downloader.cpp:200    ] Request for file a2e321a8bd5bb5dce5e5b17ec31eba559c2cbe66 complete (code: 0)
+07:30:16.531 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/a2e321a8bd5bb5dce5e5b17ec31eba559c2cbe66?1463646616_CkzbaG6enA4Ve5u/vIw02N9HoQ/D6APmuLa8ZCkp1QQ= 
+07:30:16.552 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:30:16.611 I [cdn_chunk_downloader.cpp:200    ] Request for file a2e321a8bd5bb5dce5e5b17ec31eba559c2cbe66 complete (code: 0)
+07:30:16.611 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/a2e321a8bd5bb5dce5e5b17ec31eba559c2cbe66?1463646616_CkzbaG6enA4Ve5u/vIw02N9HoQ/D6APmuLa8ZCkp1QQ= 
+07:30:16.627 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:30:16.683 I [cdn_chunk_downloader.cpp:200    ] Request for file a2e321a8bd5bb5dce5e5b17ec31eba559c2cbe66 complete (code: 0)
+07:30:16.683 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2345840) from CDN url: http://audio-sp-sto.spotify.com/audio/a2e321a8bd5bb5dce5e5b17ec31eba559c2cbe66?1463646616_CkzbaG6enA4Ve5u/vIw02N9HoQ/D6APmuLa8ZCkp1QQ= 
+07:30:16.701 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:30:16.731 I [cdn_chunk_downloader.cpp:200    ] Request for file a2e321a8bd5bb5dce5e5b17ec31eba559c2cbe66 complete (code: 0)
+07:30:16.731 I [sliding_window_prefetch_strategy.cpp:252] Prefetch window maxed and full, waiting for 0 track changes
+07:35:25.451 I [offline_manager.cpp:2353        ] Storage has been cleaned
+07:36:19.142 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:6KYEFxFwAyuf6AsLTHn1cv, index=290, position=0, paused=0
+07:36:19.142 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:36:19.142 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -940469370
+07:36:19.177 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -940469335
+07:36:19.368 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  Mountain Dew : 05fae2c184253e2d8ac01bd11ec9ca9dc34d8b1b
+07:36:19.368 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file 05fae2c184253e2d8ac01bd11ec9ca9dc34d8b1b
+07:36:19.382 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/05fae2c184253e2d8ac01bd11ec9ca9dc34d8b1b?1463646979_TXcIpxKzpj3g61mRZ5h/B4NXW707EtUqvk6EM5FduMs= 
+07:36:19.393 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:36:19.451 I [cdn_chunk_downloader.cpp:200    ] Request for file 05fae2c184253e2d8ac01bd11ec9ca9dc34d8b1b complete (code: 0)
+07:36:19.451 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/05fae2c184253e2d8ac01bd11ec9ca9dc34d8b1b?1463646979_TXcIpxKzpj3g61mRZ5h/B4NXW707EtUqvk6EM5FduMs= 
+07:36:19.469 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:36:19.530 I [cdn_chunk_downloader.cpp:200    ] Request for file 05fae2c184253e2d8ac01bd11ec9ca9dc34d8b1b complete (code: 0)
+07:36:19.531 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/05fae2c184253e2d8ac01bd11ec9ca9dc34d8b1b?1463646979_TXcIpxKzpj3g61mRZ5h/B4NXW707EtUqvk6EM5FduMs= 
+07:36:19.551 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:36:19.618 I [cdn_chunk_downloader.cpp:200    ] Request for file 05fae2c184253e2d8ac01bd11ec9ca9dc34d8b1b complete (code: 0)
+07:36:19.618 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/05fae2c184253e2d8ac01bd11ec9ca9dc34d8b1b?1463646979_TXcIpxKzpj3g61mRZ5h/B4NXW707EtUqvk6EM5FduMs= 
+07:36:19.633 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:36:19.683 I [cdn_chunk_downloader.cpp:200    ] Request for file 05fae2c184253e2d8ac01bd11ec9ca9dc34d8b1b complete (code: 0)
+07:36:19.683 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/05fae2c184253e2d8ac01bd11ec9ca9dc34d8b1b?1463646979_TXcIpxKzpj3g61mRZ5h/B4NXW707EtUqvk6EM5FduMs= 
+07:36:19.767 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:36:19.823 I [cdn_chunk_downloader.cpp:200    ] Request for file 05fae2c184253e2d8ac01bd11ec9ca9dc34d8b1b complete (code: 0)
+07:36:19.823 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 2788476) from CDN url: http://audio-sp-sto.spotify.com/audio/05fae2c184253e2d8ac01bd11ec9ca9dc34d8b1b?1463646979_TXcIpxKzpj3g61mRZ5h/B4NXW707EtUqvk6EM5FduMs= 
+07:36:19.849 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:36:19.865 I [cdn_chunk_downloader.cpp:200    ] Request for file 05fae2c184253e2d8ac01bd11ec9ca9dc34d8b1b complete (code: 0)
+07:36:19.865 I [sliding_window_prefetch_strategy.cpp:252] Prefetch window maxed and full, waiting for 0 track changes
+07:36:34.971 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:6q8AvEr7oG3tgmmtI6O2uS, index=1314, position=0, paused=0
+07:36:34.971 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:36:34.971 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -940453540
+07:36:34.982 I [sliding_window_prefetch_strategy.cpp:333] Prefetch: looks like a skip or partial context change - halving window size to 1
+07:36:34.992 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -940453520
+07:36:36.127 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:1t2NRCaPgdCScicuzq8tjG, index=168, position=0, paused=0
+07:36:36.127 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:36:36.128 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -940452384
+07:36:36.136 I [sliding_window_prefetch_strategy.cpp:333] Prefetch: looks like a skip or partial context change - halving window size to 1
+07:36:36.149 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -940452363
+07:36:36.336 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  Let Your Love Flow : 156b4c7028eeab23dc820c019b4596b3e4f14e8f
+07:36:36.336 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file 156b4c7028eeab23dc820c019b4596b3e4f14e8f
+07:36:36.366 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/156b4c7028eeab23dc820c019b4596b3e4f14e8f?1463646996_ERag4+yQhYbnc/vOyr+hvjVlh8RtFcfvXDomSx67Kmc= 
+07:36:36.396 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:36:36.504 I [cdn_chunk_downloader.cpp:200    ] Request for file 156b4c7028eeab23dc820c019b4596b3e4f14e8f complete (code: 0)
+07:36:36.504 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/156b4c7028eeab23dc820c019b4596b3e4f14e8f?1463646996_ERag4+yQhYbnc/vOyr+hvjVlh8RtFcfvXDomSx67Kmc= 
+07:36:36.529 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:36:36.627 I [cdn_chunk_downloader.cpp:200    ] Request for file 156b4c7028eeab23dc820c019b4596b3e4f14e8f complete (code: 0)
+07:36:36.627 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/156b4c7028eeab23dc820c019b4596b3e4f14e8f?1463646996_ERag4+yQhYbnc/vOyr+hvjVlh8RtFcfvXDomSx67Kmc= 
+07:36:36.744 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:36:36.844 I [cdn_chunk_downloader.cpp:200    ] Request for file 156b4c7028eeab23dc820c019b4596b3e4f14e8f complete (code: 0)
+07:36:36.845 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/156b4c7028eeab23dc820c019b4596b3e4f14e8f?1463646996_ERag4+yQhYbnc/vOyr+hvjVlh8RtFcfvXDomSx67Kmc= 
+07:36:36.879 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:36:36.988 I [cdn_chunk_downloader.cpp:200    ] Request for file 156b4c7028eeab23dc820c019b4596b3e4f14e8f complete (code: 0)
+07:36:36.988 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/156b4c7028eeab23dc820c019b4596b3e4f14e8f?1463646996_ERag4+yQhYbnc/vOyr+hvjVlh8RtFcfvXDomSx67Kmc= 
+07:36:37.096 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:36:37.179 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:0MGO9t2qWvKClhjVtzE8tA, index=612, position=0, paused=0
+07:36:37.179 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:36:37.179 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -940451332
+07:36:37.187 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2588672 -> 3112960) from CDN url: http://audio-sp-sto.spotify.com/audio/156b4c7028eeab23dc820c019b4596b3e4f14e8f?1463646996_ERag4+yQhYbnc/vOyr+hvjVlh8RtFcfvXDomSx67Kmc= 
+07:36:37.195 I [sliding_window_prefetch_strategy.cpp:333] Prefetch: looks like a skip or partial context change - halving window size to 1
+07:36:37.205 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -940451306
+07:36:37.231 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:36:37.360 I [cdn_chunk_downloader.cpp:200    ] Request for file 156b4c7028eeab23dc820c019b4596b3e4f14e8f complete (code: 0)
+07:36:37.360 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3112960 -> 3466128) from CDN url: http://audio-sp-sto.spotify.com/audio/156b4c7028eeab23dc820c019b4596b3e4f14e8f?1463646996_ERag4+yQhYbnc/vOyr+hvjVlh8RtFcfvXDomSx67Kmc= 
+07:36:37.378 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:36:37.395 I [sliding_window_prefetch_strategy.cpp:435] Prefetch: canceling previous download for file : 156b4c7028eeab23dc820c019b4596b3e4f14e8f
+07:36:37.448 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3211264 -> 3466128) from CDN url: http://audio-sp-sto.spotify.com/audio/156b4c7028eeab23dc820c019b4596b3e4f14e8f?1463646996_ERag4+yQhYbnc/vOyr+hvjVlh8RtFcfvXDomSx67Kmc= 
+07:36:37.491 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:36:37.587 I [cdn_chunk_downloader.cpp:200    ] Request for file 156b4c7028eeab23dc820c019b4596b3e4f14e8f complete (code: 0)
+07:39:24.450 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:5xNuL3RZuJqZe0MExYk1A0, index=1100, position=0, paused=0
+07:39:24.450 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:39:24.450 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -940284066
+07:39:24.473 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -940284043
+07:39:24.680 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file 1d0a8794dd217499bd3db452cfb5041e15709bd4
+07:39:24.680 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  Djangar : 1d0a8794dd217499bd3db452cfb5041e15709bd4
+07:39:24.692 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/1d0a8794dd217499bd3db452cfb5041e15709bd4?1463647164_UiSe4uE4dTMFXJ/zvJqpSfqIOgy6QsWgHPIQ1qv55LE= 
+07:39:24.810 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:39:24.913 I [cdn_chunk_downloader.cpp:200    ] Request for file 1d0a8794dd217499bd3db452cfb5041e15709bd4 complete (code: 0)
+07:39:24.913 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/1d0a8794dd217499bd3db452cfb5041e15709bd4?1463647164_UiSe4uE4dTMFXJ/zvJqpSfqIOgy6QsWgHPIQ1qv55LE= 
+07:39:24.924 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:39:25.010 I [cdn_chunk_downloader.cpp:200    ] Request for file 1d0a8794dd217499bd3db452cfb5041e15709bd4 complete (code: 0)
+07:39:25.010 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/1d0a8794dd217499bd3db452cfb5041e15709bd4?1463647164_UiSe4uE4dTMFXJ/zvJqpSfqIOgy6QsWgHPIQ1qv55LE= 
+07:39:25.021 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:39:25.176 I [cdn_chunk_downloader.cpp:200    ] Request for file 1d0a8794dd217499bd3db452cfb5041e15709bd4 complete (code: 0)
+07:39:25.176 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/1d0a8794dd217499bd3db452cfb5041e15709bd4?1463647164_UiSe4uE4dTMFXJ/zvJqpSfqIOgy6QsWgHPIQ1qv55LE= 
+07:39:25.188 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:39:25.261 I [cdn_chunk_downloader.cpp:200    ] Request for file 1d0a8794dd217499bd3db452cfb5041e15709bd4 complete (code: 0)
+07:39:25.262 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/1d0a8794dd217499bd3db452cfb5041e15709bd4?1463647164_UiSe4uE4dTMFXJ/zvJqpSfqIOgy6QsWgHPIQ1qv55LE= 
+07:39:25.273 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:39:25.374 I [cdn_chunk_downloader.cpp:200    ] Request for file 1d0a8794dd217499bd3db452cfb5041e15709bd4 complete (code: 0)
+07:39:25.375 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3145728) from CDN url: http://audio-sp-sto.spotify.com/audio/1d0a8794dd217499bd3db452cfb5041e15709bd4?1463647164_UiSe4uE4dTMFXJ/zvJqpSfqIOgy6QsWgHPIQ1qv55LE= 
+07:39:25.390 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:39:25.460 I [cdn_chunk_downloader.cpp:200    ] Request for file 1d0a8794dd217499bd3db452cfb5041e15709bd4 complete (code: 0)
+07:39:25.460 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3145728 -> 3670016) from CDN url: http://audio-sp-sto.spotify.com/audio/1d0a8794dd217499bd3db452cfb5041e15709bd4?1463647164_UiSe4uE4dTMFXJ/zvJqpSfqIOgy6QsWgHPIQ1qv55LE= 
+07:39:25.471 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:39:25.531 I [cdn_chunk_downloader.cpp:200    ] Request for file 1d0a8794dd217499bd3db452cfb5041e15709bd4 complete (code: 0)
+07:39:25.531 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3670016 -> 3831100) from CDN url: http://audio-sp-sto.spotify.com/audio/1d0a8794dd217499bd3db452cfb5041e15709bd4?1463647164_UiSe4uE4dTMFXJ/zvJqpSfqIOgy6QsWgHPIQ1qv55LE= 
+07:39:25.543 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:39:25.560 I [cdn_chunk_downloader.cpp:200    ] Request for file 1d0a8794dd217499bd3db452cfb5041e15709bd4 complete (code: 0)
+07:39:25.560 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  Växeln hallå : 7079e10aaf4e99a004e616d136a308426db99d4e
+07:39:25.560 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file 7079e10aaf4e99a004e616d136a308426db99d4e
+07:39:25.578 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/7079e10aaf4e99a004e616d136a308426db99d4e?1463647165_sbR8vOmnLSEofSeKcB/grRRRTSy41MG+y04JPjlFR8s= 
+07:39:25.589 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:39:25.650 I [cdn_chunk_downloader.cpp:200    ] Request for file 7079e10aaf4e99a004e616d136a308426db99d4e complete (code: 0)
+07:39:25.650 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/7079e10aaf4e99a004e616d136a308426db99d4e?1463647165_sbR8vOmnLSEofSeKcB/grRRRTSy41MG+y04JPjlFR8s= 
+07:39:25.664 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:39:25.729 I [cdn_chunk_downloader.cpp:200    ] Request for file 7079e10aaf4e99a004e616d136a308426db99d4e complete (code: 0)
+07:39:25.729 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/7079e10aaf4e99a004e616d136a308426db99d4e?1463647165_sbR8vOmnLSEofSeKcB/grRRRTSy41MG+y04JPjlFR8s= 
+07:39:25.744 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:39:25.802 I [cdn_chunk_downloader.cpp:200    ] Request for file 7079e10aaf4e99a004e616d136a308426db99d4e complete (code: 0)
+07:39:25.802 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/7079e10aaf4e99a004e616d136a308426db99d4e?1463647165_sbR8vOmnLSEofSeKcB/grRRRTSy41MG+y04JPjlFR8s= 
+07:39:25.816 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:39:25.887 I [cdn_chunk_downloader.cpp:200    ] Request for file 7079e10aaf4e99a004e616d136a308426db99d4e complete (code: 0)
+07:39:25.887 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/7079e10aaf4e99a004e616d136a308426db99d4e?1463647165_sbR8vOmnLSEofSeKcB/grRRRTSy41MG+y04JPjlFR8s= 
+07:39:25.960 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:39:26.031 I [cdn_chunk_downloader.cpp:200    ] Request for file 7079e10aaf4e99a004e616d136a308426db99d4e complete (code: 0)
+07:39:26.031 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3145728) from CDN url: http://audio-sp-sto.spotify.com/audio/7079e10aaf4e99a004e616d136a308426db99d4e?1463647165_sbR8vOmnLSEofSeKcB/grRRRTSy41MG+y04JPjlFR8s= 
+07:39:26.043 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:39:26.109 I [cdn_chunk_downloader.cpp:200    ] Request for file 7079e10aaf4e99a004e616d136a308426db99d4e complete (code: 0)
+07:39:26.109 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3145728 -> 3670016) from CDN url: http://audio-sp-sto.spotify.com/audio/7079e10aaf4e99a004e616d136a308426db99d4e?1463647165_sbR8vOmnLSEofSeKcB/grRRRTSy41MG+y04JPjlFR8s= 
+07:39:26.123 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:39:26.204 I [cdn_chunk_downloader.cpp:200    ] Request for file 7079e10aaf4e99a004e616d136a308426db99d4e complete (code: 0)
+07:39:26.204 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3670016 -> 3676008) from CDN url: http://audio-sp-sto.spotify.com/audio/7079e10aaf4e99a004e616d136a308426db99d4e?1463647165_sbR8vOmnLSEofSeKcB/grRRRTSy41MG+y04JPjlFR8s= 
+07:39:26.214 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:39:26.215 I [cdn_chunk_downloader.cpp:200    ] Request for file 7079e10aaf4e99a004e616d136a308426db99d4e complete (code: 0)
+07:39:26.215 I [sliding_window_prefetch_strategy.cpp:252] Prefetch window maxed and full, waiting for 0 track changes
+07:40:24.208 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -940224316
+07:40:59.969 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:40:59.969 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -940188554
+07:41:00.572 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:7pP1SJSZDJvqgI1qtQbkhp, index=1458, position=0, paused=0
+07:41:00.572 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:41:00.572 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -940187952
+07:41:00.583 I [sliding_window_prefetch_strategy.cpp:333] Prefetch: looks like a skip or partial context change - halving window size to 1
+07:41:00.599 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -940187925
+07:44:19.846 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:2l7xCjpL3Wm3s5v6KWEF9S, index=101, position=0, paused=0
+07:44:19.846 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:44:19.847 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -939988677
+07:44:19.872 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -939988652
+07:44:20.061 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  Ridiculous Thoughts : a329924ce193a28ffe38bc1f69ba995f1adb69f5
+07:44:20.061 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file a329924ce193a28ffe38bc1f69ba995f1adb69f5
+07:44:20.074 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/a329924ce193a28ffe38bc1f69ba995f1adb69f5?1463647460_PsL8QdDqInYxiSq88e2NrkDOoLBpNF71q5kfXKh/h4c= 
+07:44:20.245 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:44:20.331 I [cdn_chunk_downloader.cpp:200    ] Request for file a329924ce193a28ffe38bc1f69ba995f1adb69f5 complete (code: 0)
+07:44:20.331 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/a329924ce193a28ffe38bc1f69ba995f1adb69f5?1463647460_PsL8QdDqInYxiSq88e2NrkDOoLBpNF71q5kfXKh/h4c= 
+07:44:20.346 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:44:20.411 I [cdn_chunk_downloader.cpp:200    ] Request for file a329924ce193a28ffe38bc1f69ba995f1adb69f5 complete (code: 0)
+07:44:20.411 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/a329924ce193a28ffe38bc1f69ba995f1adb69f5?1463647460_PsL8QdDqInYxiSq88e2NrkDOoLBpNF71q5kfXKh/h4c= 
+07:44:20.422 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:44:20.497 I [cdn_chunk_downloader.cpp:200    ] Request for file a329924ce193a28ffe38bc1f69ba995f1adb69f5 complete (code: 0)
+07:44:20.497 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/a329924ce193a28ffe38bc1f69ba995f1adb69f5?1463647460_PsL8QdDqInYxiSq88e2NrkDOoLBpNF71q5kfXKh/h4c= 
+07:44:20.508 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:44:20.578 I [cdn_chunk_downloader.cpp:200    ] Request for file a329924ce193a28ffe38bc1f69ba995f1adb69f5 complete (code: 0)
+07:44:20.578 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/a329924ce193a28ffe38bc1f69ba995f1adb69f5?1463647460_PsL8QdDqInYxiSq88e2NrkDOoLBpNF71q5kfXKh/h4c= 
+07:44:20.591 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:44:20.656 I [cdn_chunk_downloader.cpp:200    ] Request for file a329924ce193a28ffe38bc1f69ba995f1adb69f5 complete (code: 0)
+07:44:20.656 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3145728) from CDN url: http://audio-sp-sto.spotify.com/audio/a329924ce193a28ffe38bc1f69ba995f1adb69f5?1463647460_PsL8QdDqInYxiSq88e2NrkDOoLBpNF71q5kfXKh/h4c= 
+07:44:20.671 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:44:20.728 I [cdn_chunk_downloader.cpp:200    ] Request for file a329924ce193a28ffe38bc1f69ba995f1adb69f5 complete (code: 0)
+07:44:20.729 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3145728 -> 3670016) from CDN url: http://audio-sp-sto.spotify.com/audio/a329924ce193a28ffe38bc1f69ba995f1adb69f5?1463647460_PsL8QdDqInYxiSq88e2NrkDOoLBpNF71q5kfXKh/h4c= 
+07:44:20.748 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:44:20.918 I [cdn_chunk_downloader.cpp:200    ] Request for file a329924ce193a28ffe38bc1f69ba995f1adb69f5 complete (code: 0)
+07:44:20.918 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3670016 -> 4194304) from CDN url: http://audio-sp-sto.spotify.com/audio/a329924ce193a28ffe38bc1f69ba995f1adb69f5?1463647460_PsL8QdDqInYxiSq88e2NrkDOoLBpNF71q5kfXKh/h4c= 
+07:44:20.943 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:44:21.015 I [cdn_chunk_downloader.cpp:200    ] Request for file a329924ce193a28ffe38bc1f69ba995f1adb69f5 complete (code: 0)
+07:44:21.016 I [cdn_chunk_downloader.cpp:72     ] Requesting data (4194304 -> 4718592) from CDN url: http://audio-sp-sto.spotify.com/audio/a329924ce193a28ffe38bc1f69ba995f1adb69f5?1463647460_PsL8QdDqInYxiSq88e2NrkDOoLBpNF71q5kfXKh/h4c= 
+07:44:21.031 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:44:21.093 I [cdn_chunk_downloader.cpp:200    ] Request for file a329924ce193a28ffe38bc1f69ba995f1adb69f5 complete (code: 0)
+07:44:21.093 I [cdn_chunk_downloader.cpp:72     ] Requesting data (4718592 -> 5142656) from CDN url: http://audio-sp-sto.spotify.com/audio/a329924ce193a28ffe38bc1f69ba995f1adb69f5?1463647460_PsL8QdDqInYxiSq88e2NrkDOoLBpNF71q5kfXKh/h4c= 
+07:44:21.110 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:44:21.172 I [cdn_chunk_downloader.cpp:200    ] Request for file a329924ce193a28ffe38bc1f69ba995f1adb69f5 complete (code: 0)
+07:44:21.172 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  Outcast : 812bbb2b2c53dde9912483dd939530a61f74a892
+07:44:21.172 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file 812bbb2b2c53dde9912483dd939530a61f74a892
+07:44:21.192 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/812bbb2b2c53dde9912483dd939530a61f74a892?1463647461_eTTTycmqJfMX/C5885LAqitkqCuFz48tQ2IS6iIeQXo= 
+07:44:21.379 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:44:21.745 I [cdn_chunk_downloader.cpp:200    ] Request for file 812bbb2b2c53dde9912483dd939530a61f74a892 complete (code: 0)
+07:44:21.745 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/812bbb2b2c53dde9912483dd939530a61f74a892?1463647461_eTTTycmqJfMX/C5885LAqitkqCuFz48tQ2IS6iIeQXo= 
+07:44:21.787 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:44:21.914 I [cdn_chunk_downloader.cpp:200    ] Request for file 812bbb2b2c53dde9912483dd939530a61f74a892 complete (code: 0)
+07:44:21.914 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/812bbb2b2c53dde9912483dd939530a61f74a892?1463647461_eTTTycmqJfMX/C5885LAqitkqCuFz48tQ2IS6iIeQXo= 
+07:44:21.926 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:44:22.012 I [cdn_chunk_downloader.cpp:200    ] Request for file 812bbb2b2c53dde9912483dd939530a61f74a892 complete (code: 0)
+07:44:22.012 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/812bbb2b2c53dde9912483dd939530a61f74a892?1463647461_eTTTycmqJfMX/C5885LAqitkqCuFz48tQ2IS6iIeQXo= 
+07:44:22.026 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:44:22.088 I [cdn_chunk_downloader.cpp:200    ] Request for file 812bbb2b2c53dde9912483dd939530a61f74a892 complete (code: 0)
+07:44:22.088 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/812bbb2b2c53dde9912483dd939530a61f74a892?1463647461_eTTTycmqJfMX/C5885LAqitkqCuFz48tQ2IS6iIeQXo= 
+07:44:22.104 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:44:22.166 I [cdn_chunk_downloader.cpp:200    ] Request for file 812bbb2b2c53dde9912483dd939530a61f74a892 complete (code: 0)
+07:44:22.166 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3145728) from CDN url: http://audio-sp-sto.spotify.com/audio/812bbb2b2c53dde9912483dd939530a61f74a892?1463647461_eTTTycmqJfMX/C5885LAqitkqCuFz48tQ2IS6iIeQXo= 
+07:44:22.185 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:44:22.253 I [cdn_chunk_downloader.cpp:200    ] Request for file 812bbb2b2c53dde9912483dd939530a61f74a892 complete (code: 0)
+07:44:22.253 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3145728 -> 3670016) from CDN url: http://audio-sp-sto.spotify.com/audio/812bbb2b2c53dde9912483dd939530a61f74a892?1463647461_eTTTycmqJfMX/C5885LAqitkqCuFz48tQ2IS6iIeQXo= 
+07:44:22.272 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:44:22.325 I [cdn_chunk_downloader.cpp:200    ] Request for file 812bbb2b2c53dde9912483dd939530a61f74a892 complete (code: 0)
+07:44:22.325 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3670016 -> 3976428) from CDN url: http://audio-sp-sto.spotify.com/audio/812bbb2b2c53dde9912483dd939530a61f74a892?1463647461_eTTTycmqJfMX/C5885LAqitkqCuFz48tQ2IS6iIeQXo= 
+07:44:22.345 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:44:22.383 I [cdn_chunk_downloader.cpp:200    ] Request for file 812bbb2b2c53dde9912483dd939530a61f74a892 complete (code: 0)
+07:44:22.383 I [sliding_window_prefetch_strategy.cpp:252] Prefetch window maxed and full, waiting for 0 track changes
+07:47:15.148 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:5WkvnsBPzjlMP4GGnntoiR, index=294, position=0, paused=0
+07:47:15.149 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:47:15.149 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -939813377
+07:47:15.172 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -939813354
+07:47:15.375 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file 2487f5dbdba96f0a9edac9eeb2f62ab324015c42
+07:47:15.375 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  Ser Du Stjärnan I Det Grå? : 2487f5dbdba96f0a9edac9eeb2f62ab324015c42
+07:47:15.386 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/2487f5dbdba96f0a9edac9eeb2f62ab324015c42?1463647635_NAFhVtoGGT27yOqqKYG8WAiwiXo4nt8a6XSgMtGim14= 
+07:47:15.397 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:47:15.494 I [cdn_chunk_downloader.cpp:200    ] Request for file 2487f5dbdba96f0a9edac9eeb2f62ab324015c42 complete (code: 0)
+07:47:15.494 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/2487f5dbdba96f0a9edac9eeb2f62ab324015c42?1463647635_NAFhVtoGGT27yOqqKYG8WAiwiXo4nt8a6XSgMtGim14= 
+07:47:15.521 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:47:15.606 I [cdn_chunk_downloader.cpp:200    ] Request for file 2487f5dbdba96f0a9edac9eeb2f62ab324015c42 complete (code: 0)
+07:47:15.606 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/2487f5dbdba96f0a9edac9eeb2f62ab324015c42?1463647635_NAFhVtoGGT27yOqqKYG8WAiwiXo4nt8a6XSgMtGim14= 
+07:47:15.663 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:47:15.741 I [cdn_chunk_downloader.cpp:200    ] Request for file 2487f5dbdba96f0a9edac9eeb2f62ab324015c42 complete (code: 0)
+07:47:15.741 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/2487f5dbdba96f0a9edac9eeb2f62ab324015c42?1463647635_NAFhVtoGGT27yOqqKYG8WAiwiXo4nt8a6XSgMtGim14= 
+07:47:15.754 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:47:15.912 I [cdn_chunk_downloader.cpp:200    ] Request for file 2487f5dbdba96f0a9edac9eeb2f62ab324015c42 complete (code: 0)
+07:47:15.912 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/2487f5dbdba96f0a9edac9eeb2f62ab324015c42?1463647635_NAFhVtoGGT27yOqqKYG8WAiwiXo4nt8a6XSgMtGim14= 
+07:47:15.926 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:47:15.983 I [cdn_chunk_downloader.cpp:200    ] Request for file 2487f5dbdba96f0a9edac9eeb2f62ab324015c42 complete (code: 0)
+07:47:15.983 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3145728) from CDN url: http://audio-sp-sto.spotify.com/audio/2487f5dbdba96f0a9edac9eeb2f62ab324015c42?1463647635_NAFhVtoGGT27yOqqKYG8WAiwiXo4nt8a6XSgMtGim14= 
+07:47:15.999 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:47:16.189 I [cdn_chunk_downloader.cpp:200    ] Request for file 2487f5dbdba96f0a9edac9eeb2f62ab324015c42 complete (code: 0)
+07:47:16.189 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3145728 -> 3670016) from CDN url: http://audio-sp-sto.spotify.com/audio/2487f5dbdba96f0a9edac9eeb2f62ab324015c42?1463647635_NAFhVtoGGT27yOqqKYG8WAiwiXo4nt8a6XSgMtGim14= 
+07:47:16.209 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:47:16.293 I [cdn_chunk_downloader.cpp:200    ] Request for file 2487f5dbdba96f0a9edac9eeb2f62ab324015c42 complete (code: 0)
+07:47:16.294 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3670016 -> 4194304) from CDN url: http://audio-sp-sto.spotify.com/audio/2487f5dbdba96f0a9edac9eeb2f62ab324015c42?1463647635_NAFhVtoGGT27yOqqKYG8WAiwiXo4nt8a6XSgMtGim14= 
+07:47:16.308 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:47:16.396 I [cdn_chunk_downloader.cpp:200    ] Request for file 2487f5dbdba96f0a9edac9eeb2f62ab324015c42 complete (code: 0)
+07:47:16.397 I [cdn_chunk_downloader.cpp:72     ] Requesting data (4194304 -> 4537688) from CDN url: http://audio-sp-sto.spotify.com/audio/2487f5dbdba96f0a9edac9eeb2f62ab324015c42?1463647635_NAFhVtoGGT27yOqqKYG8WAiwiXo4nt8a6XSgMtGim14= 
+07:47:16.407 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+07:47:16.456 I [cdn_chunk_downloader.cpp:200    ] Request for file 2487f5dbdba96f0a9edac9eeb2f62ab324015c42 complete (code: 0)
+07:47:16.456 I [sliding_window_prefetch_strategy.cpp:252] Prefetch window maxed and full, waiting for 0 track changes
+07:51:46.841 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:7tB0ahD6IFOWrOMqlKLRS6, index=150, position=0, paused=0
+07:51:46.841 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+07:51:46.845 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -939541700
+07:51:46.870 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -939541674
+07:53:11.569 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -939456975
+08:26:16.757 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+08:26:16.757 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -937471846
+08:28:15.647 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:2dbbzth3F2xkmlN1vZU4Z1, index=538, position=0, paused=0
+08:28:15.647 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+08:28:15.648 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -937352956
+08:28:15.671 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -937352933
+08:31:54.154 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:7pephXPlN6c4z6nHFYdGa1, index=111, position=0, paused=0
+08:31:54.154 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+08:31:54.155 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -937134453
+08:31:54.179 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -937134429
+08:31:54.421 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  Under The Bridge : ccfb6d67bf9df35b587418bd2cef69522d9fe225
+08:31:54.421 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file ccfb6d67bf9df35b587418bd2cef69522d9fe225
+08:31:54.437 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/ccfb6d67bf9df35b587418bd2cef69522d9fe225?1463650314_1IY+aubrq5DMBA1isO+nG1r4j4zyqvC0ui75aVjRmE0= 
+08:31:54.460 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:31:54.616 I [cdn_chunk_downloader.cpp:200    ] Request for file ccfb6d67bf9df35b587418bd2cef69522d9fe225 complete (code: 0)
+08:31:54.616 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/ccfb6d67bf9df35b587418bd2cef69522d9fe225?1463650314_1IY+aubrq5DMBA1isO+nG1r4j4zyqvC0ui75aVjRmE0= 
+08:31:54.627 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:31:54.720 I [cdn_chunk_downloader.cpp:200    ] Request for file ccfb6d67bf9df35b587418bd2cef69522d9fe225 complete (code: 0)
+08:31:54.720 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/ccfb6d67bf9df35b587418bd2cef69522d9fe225?1463650314_1IY+aubrq5DMBA1isO+nG1r4j4zyqvC0ui75aVjRmE0= 
+08:31:54.733 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:31:54.907 I [cdn_chunk_downloader.cpp:200    ] Request for file ccfb6d67bf9df35b587418bd2cef69522d9fe225 complete (code: 0)
+08:31:54.907 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/ccfb6d67bf9df35b587418bd2cef69522d9fe225?1463650314_1IY+aubrq5DMBA1isO+nG1r4j4zyqvC0ui75aVjRmE0= 
+08:31:54.918 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:31:55.000 I [cdn_chunk_downloader.cpp:200    ] Request for file ccfb6d67bf9df35b587418bd2cef69522d9fe225 complete (code: 0)
+08:31:55.000 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/ccfb6d67bf9df35b587418bd2cef69522d9fe225?1463650314_1IY+aubrq5DMBA1isO+nG1r4j4zyqvC0ui75aVjRmE0= 
+08:31:55.010 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:31:55.080 I [cdn_chunk_downloader.cpp:200    ] Request for file ccfb6d67bf9df35b587418bd2cef69522d9fe225 complete (code: 0)
+08:31:55.080 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3145728) from CDN url: http://audio-sp-sto.spotify.com/audio/ccfb6d67bf9df35b587418bd2cef69522d9fe225?1463650314_1IY+aubrq5DMBA1isO+nG1r4j4zyqvC0ui75aVjRmE0= 
+08:31:55.092 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:31:55.161 I [cdn_chunk_downloader.cpp:200    ] Request for file ccfb6d67bf9df35b587418bd2cef69522d9fe225 complete (code: 0)
+08:31:55.162 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3145728 -> 3670016) from CDN url: http://audio-sp-sto.spotify.com/audio/ccfb6d67bf9df35b587418bd2cef69522d9fe225?1463650314_1IY+aubrq5DMBA1isO+nG1r4j4zyqvC0ui75aVjRmE0= 
+08:31:55.178 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:31:55.266 I [cdn_chunk_downloader.cpp:200    ] Request for file ccfb6d67bf9df35b587418bd2cef69522d9fe225 complete (code: 0)
+08:31:55.266 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3670016 -> 4194304) from CDN url: http://audio-sp-sto.spotify.com/audio/ccfb6d67bf9df35b587418bd2cef69522d9fe225?1463650314_1IY+aubrq5DMBA1isO+nG1r4j4zyqvC0ui75aVjRmE0= 
+08:31:55.279 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:31:55.340 I [cdn_chunk_downloader.cpp:200    ] Request for file ccfb6d67bf9df35b587418bd2cef69522d9fe225 complete (code: 0)
+08:31:55.340 I [cdn_chunk_downloader.cpp:72     ] Requesting data (4194304 -> 4718592) from CDN url: http://audio-sp-sto.spotify.com/audio/ccfb6d67bf9df35b587418bd2cef69522d9fe225?1463650314_1IY+aubrq5DMBA1isO+nG1r4j4zyqvC0ui75aVjRmE0= 
+08:31:55.353 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:31:55.415 I [cdn_chunk_downloader.cpp:200    ] Request for file ccfb6d67bf9df35b587418bd2cef69522d9fe225 complete (code: 0)
+08:31:55.415 I [cdn_chunk_downloader.cpp:72     ] Requesting data (4718592 -> 5004432) from CDN url: http://audio-sp-sto.spotify.com/audio/ccfb6d67bf9df35b587418bd2cef69522d9fe225?1463650314_1IY+aubrq5DMBA1isO+nG1r4j4zyqvC0ui75aVjRmE0= 
+08:31:55.430 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:31:55.462 I [cdn_chunk_downloader.cpp:200    ] Request for file ccfb6d67bf9df35b587418bd2cef69522d9fe225 complete (code: 0)
+08:31:55.462 I [sliding_window_prefetch_strategy.cpp:252] Prefetch window maxed and full, waiting for 0 track changes
+08:34:37.647 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:1JgoW5yP7SCDMvRU8vM2Bb, index=1450, position=0, paused=0
+08:34:37.647 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+08:34:37.647 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -936970965
+08:34:37.668 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -936970944
+08:34:37.855 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  Arms : 5bfb75760ea59c35f0fe9375f7c10766af672951
+08:34:37.855 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file 5bfb75760ea59c35f0fe9375f7c10766af672951
+08:34:37.896 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/5bfb75760ea59c35f0fe9375f7c10766af672951?1463650477_nQt2HaTCO9zr0yACl+jFunxlW5s0b2cvPeyGkDoofuM= 
+08:34:37.913 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:34:38.072 I [cdn_chunk_downloader.cpp:200    ] Request for file 5bfb75760ea59c35f0fe9375f7c10766af672951 complete (code: 0)
+08:34:38.072 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/5bfb75760ea59c35f0fe9375f7c10766af672951?1463650477_nQt2HaTCO9zr0yACl+jFunxlW5s0b2cvPeyGkDoofuM= 
+08:34:38.179 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:34:38.246 I [cdn_chunk_downloader.cpp:200    ] Request for file 5bfb75760ea59c35f0fe9375f7c10766af672951 complete (code: 0)
+08:34:38.246 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/5bfb75760ea59c35f0fe9375f7c10766af672951?1463650477_nQt2HaTCO9zr0yACl+jFunxlW5s0b2cvPeyGkDoofuM= 
+08:34:38.256 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:34:38.441 I [cdn_chunk_downloader.cpp:200    ] Request for file 5bfb75760ea59c35f0fe9375f7c10766af672951 complete (code: 0)
+08:34:38.441 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/5bfb75760ea59c35f0fe9375f7c10766af672951?1463650477_nQt2HaTCO9zr0yACl+jFunxlW5s0b2cvPeyGkDoofuM= 
+08:34:38.483 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:34:38.744 I [cdn_chunk_downloader.cpp:200    ] Request for file 5bfb75760ea59c35f0fe9375f7c10766af672951 complete (code: 0)
+08:34:38.744 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/5bfb75760ea59c35f0fe9375f7c10766af672951?1463650477_nQt2HaTCO9zr0yACl+jFunxlW5s0b2cvPeyGkDoofuM= 
+08:34:38.791 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:34:38.868 I [cdn_chunk_downloader.cpp:200    ] Request for file 5bfb75760ea59c35f0fe9375f7c10766af672951 complete (code: 0)
+08:34:38.868 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3145728) from CDN url: http://audio-sp-sto.spotify.com/audio/5bfb75760ea59c35f0fe9375f7c10766af672951?1463650477_nQt2HaTCO9zr0yACl+jFunxlW5s0b2cvPeyGkDoofuM= 
+08:34:38.881 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:34:39.328 I [cdn_chunk_downloader.cpp:200    ] Request for file 5bfb75760ea59c35f0fe9375f7c10766af672951 complete (code: 0)
+08:34:39.328 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3145728 -> 3455652) from CDN url: http://audio-sp-sto.spotify.com/audio/5bfb75760ea59c35f0fe9375f7c10766af672951?1463650477_nQt2HaTCO9zr0yACl+jFunxlW5s0b2cvPeyGkDoofuM= 
+08:34:39.340 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:34:39.392 I [cdn_chunk_downloader.cpp:200    ] Request for file 5bfb75760ea59c35f0fe9375f7c10766af672951 complete (code: 0)
+08:34:39.392 I [sliding_window_prefetch_strategy.cpp:252] Prefetch window maxed and full, waiting for 0 track changes
+08:38:00.551 D [spirc_manager.cpp:710           ] GAIA: SpircManager::stpLoad, track=spotify:track:5WeMY5Yfd7LQmHhIQ0Qh39, index=1150, position=0, paused=0
+08:38:00.551 D [spirc_manager.cpp:1883          ] GAIA: SpircManager::becomeActiveDevice
+08:38:00.551 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -936768068
+08:38:00.580 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -936768039
+08:38:00.759 I [sliding_window_prefetch_strategy.cpp:285] Prefetch: start prefetching track  Buffalo Soldier : 7f7bda07c6613992e4dcfd1c557201773a9599eb
+08:38:00.759 I [ap_chunk_downloader.cpp:75      ] Requesting data (0 -> 524288) from AP for file 7f7bda07c6613992e4dcfd1c557201773a9599eb
+08:38:00.790 I [cdn_chunk_downloader.cpp:72     ] Requesting data (0 -> 524288) from CDN url: http://audio-sp-sto.spotify.com/audio/7f7bda07c6613992e4dcfd1c557201773a9599eb?1463650680_ZiupnbCG9+0rUcZIiqJWujBVScs3ro73mniziFWcK0M= 
+08:38:00.800 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:38:00.856 I [cdn_chunk_downloader.cpp:200    ] Request for file 7f7bda07c6613992e4dcfd1c557201773a9599eb complete (code: 0)
+08:38:00.856 I [cdn_chunk_downloader.cpp:72     ] Requesting data (524288 -> 1048576) from CDN url: http://audio-sp-sto.spotify.com/audio/7f7bda07c6613992e4dcfd1c557201773a9599eb?1463650680_ZiupnbCG9+0rUcZIiqJWujBVScs3ro73mniziFWcK0M= 
+08:38:00.874 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:38:00.926 I [cdn_chunk_downloader.cpp:200    ] Request for file 7f7bda07c6613992e4dcfd1c557201773a9599eb complete (code: 0)
+08:38:00.926 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1048576 -> 1572864) from CDN url: http://audio-sp-sto.spotify.com/audio/7f7bda07c6613992e4dcfd1c557201773a9599eb?1463650680_ZiupnbCG9+0rUcZIiqJWujBVScs3ro73mniziFWcK0M= 
+08:38:00.948 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:38:01.098 I [cdn_chunk_downloader.cpp:200    ] Request for file 7f7bda07c6613992e4dcfd1c557201773a9599eb complete (code: 0)
+08:38:01.098 I [cdn_chunk_downloader.cpp:72     ] Requesting data (1572864 -> 2097152) from CDN url: http://audio-sp-sto.spotify.com/audio/7f7bda07c6613992e4dcfd1c557201773a9599eb?1463650680_ZiupnbCG9+0rUcZIiqJWujBVScs3ro73mniziFWcK0M= 
+08:38:01.110 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:38:01.173 I [cdn_chunk_downloader.cpp:200    ] Request for file 7f7bda07c6613992e4dcfd1c557201773a9599eb complete (code: 0)
+08:38:01.173 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2097152 -> 2621440) from CDN url: http://audio-sp-sto.spotify.com/audio/7f7bda07c6613992e4dcfd1c557201773a9599eb?1463650680_ZiupnbCG9+0rUcZIiqJWujBVScs3ro73mniziFWcK0M= 
+08:38:01.188 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:38:01.246 I [cdn_chunk_downloader.cpp:200    ] Request for file 7f7bda07c6613992e4dcfd1c557201773a9599eb complete (code: 0)
+08:38:01.246 I [cdn_chunk_downloader.cpp:72     ] Requesting data (2621440 -> 3145728) from CDN url: http://audio-sp-sto.spotify.com/audio/7f7bda07c6613992e4dcfd1c557201773a9599eb?1463650680_ZiupnbCG9+0rUcZIiqJWujBVScs3ro73mniziFWcK0M= 
+08:38:01.259 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:38:01.322 I [cdn_chunk_downloader.cpp:200    ] Request for file 7f7bda07c6613992e4dcfd1c557201773a9599eb complete (code: 0)
+08:38:01.322 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3145728 -> 3670016) from CDN url: http://audio-sp-sto.spotify.com/audio/7f7bda07c6613992e4dcfd1c557201773a9599eb?1463650680_ZiupnbCG9+0rUcZIiqJWujBVScs3ro73mniziFWcK0M= 
+08:38:01.337 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:38:01.414 I [cdn_chunk_downloader.cpp:200    ] Request for file 7f7bda07c6613992e4dcfd1c557201773a9599eb complete (code: 0)
+08:38:01.414 I [cdn_chunk_downloader.cpp:72     ] Requesting data (3670016 -> 4194304) from CDN url: http://audio-sp-sto.spotify.com/audio/7f7bda07c6613992e4dcfd1c557201773a9599eb?1463650680_ZiupnbCG9+0rUcZIiqJWujBVScs3ro73mniziFWcK0M= 
+08:38:01.426 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:38:01.500 I [cdn_chunk_downloader.cpp:200    ] Request for file 7f7bda07c6613992e4dcfd1c557201773a9599eb complete (code: 0)
+08:38:01.500 I [cdn_chunk_downloader.cpp:72     ] Requesting data (4194304 -> 4718592) from CDN url: http://audio-sp-sto.spotify.com/audio/7f7bda07c6613992e4dcfd1c557201773a9599eb?1463650680_ZiupnbCG9+0rUcZIiqJWujBVScs3ro73mniziFWcK0M= 
+08:38:01.512 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:38:01.652 I [cdn_chunk_downloader.cpp:200    ] Request for file 7f7bda07c6613992e4dcfd1c557201773a9599eb complete (code: 0)
+08:38:01.652 I [cdn_chunk_downloader.cpp:72     ] Requesting data (4718592 -> 5023784) from CDN url: http://audio-sp-sto.spotify.com/audio/7f7bda07c6613992e4dcfd1c557201773a9599eb?1463650680_ZiupnbCG9+0rUcZIiqJWujBVScs3ro73mniziFWcK0M= 
+08:38:01.666 I [http_fetch_connection.cpp:376   ] Result 206 Partial Content
+08:38:01.704 I [cdn_chunk_downloader.cpp:200    ] Request for file 7f7bda07c6613992e4dcfd1c557201773a9599eb complete (code: 0)
+08:38:01.705 I [sliding_window_prefetch_strategy.cpp:252] Prefetch window maxed and full, waiting for 0 track changes
+08:39:52.759 D [spirc_manager.cpp:668           ] GAIA:   current state ID updated to -936655864
+09:05:31.466 I [kindling.js:6                   ] Success client-log

@@ -9,31 +9,41 @@
         layout="@layout/main_toolbar"
         android:id="@+id/main_toolbar" />
 
-    <fragment
-        android:layout_width="275dp"
-        android:layout_height="350dp"
-        android:name="android.support.v4.app.ListFragment"
-        android:id="@+id/courses_course_fragment"
-        android:layout_alignParentLeft="false"
-        android:layout_marginTop="60dp"
-        android:layout_centerHorizontal="true"></fragment>
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create"
         android:id="@+id/courses_create_button"
-        android:layout_below="@+id/courses_course_fragment"
-        android:layout_alignLeft="@+id/courses_course_fragment"
-        android:layout_alignStart="@+id/courses_course_fragment" />
+        android:layout_alignTop="@+id/courses_join_button"
+        android:layout_toRightOf="@+id/courses_status"
+        android:layout_toEndOf="@+id/courses_status" />
+
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Join"
         android:id="@+id/courses_join_button"
-        android:layout_alignTop="@+id/courses_create_button"
-        android:layout_alignRight="@+id/courses_course_fragment"
-        android:layout_alignEnd="@+id/courses_course_fragment" />
+        android:layout_marginBottom="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/courses_create_button"
+        android:layout_toStartOf="@+id/courses_create_button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/courses_status"
+        android:layout_below="@+id/courses_create_button"
+        android:layout_centerHorizontal="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:id="@+id/course_list"
+        android:layout_below="@+id/main_toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp" />
 
 </RelativeLayout>

@@ -17,11 +17,11 @@
         android:ems="10"
         android:id="@+id/login_password"
         android:layout_column="4"
-        android:text="password"
         android:padding="10dp"
         android:gravity="center_vertical|center_horizontal"
         android:layout_below="@+id/login_email"
-        android:layout_toRightOf="@+id/login_register" />
+        android:layout_toRightOf="@+id/login_register"
+        android:hint="password" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -30,12 +30,12 @@
         android:ems="10"
         android:id="@+id/login_email"
         android:layout_column="4"
-        android:text="admin@mail.com"
         android:padding="10dp"
         android:gravity="center_horizontal"
         android:layout_below="@+id/main_toolbar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="49dp" />
+        android:layout_marginTop="49dp"
+        android:hint="admin@mail.com" />
 
     <Button
         android:layout_width="wrap_content"

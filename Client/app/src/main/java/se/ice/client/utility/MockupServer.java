@@ -1,5 +1,6 @@
 package se.ice.client.utility;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +15,10 @@ public class MockupServer implements Domain {
 
     // Session specific data - Is this the best place?
     private Person currentP;
+    // Session specific data
+    public static String name;
+    public static String email;
+    public static boolean isAdmin;
     //--------------------------------------------------
 
     Map<String, User> users = new HashMap<>(); // All registered users
@@ -37,6 +42,12 @@ public class MockupServer implements Domain {
     public void init(){
         // Adding initial data to the server
         createAdmin("admin@mail.com","name","password");
+        // GCode is 1 for database course
+        Gcode g = createCourse("databases","admin@mail.com");
+        // test user
+        createUser("n","n","n");
+        // test user joins course
+        joinCourse(g.toString(),"n");
     }
 
     @Override
@@ -48,11 +59,22 @@ public class MockupServer implements Domain {
             return false;
         }else if(a == null){
             currentP = u;
-            return password.equals(u.getPassword());
+            if(password.equals(u.getPassword())){
+                email = currentP.getName();
+                name = currentP.getName();
+                isAdmin = false;
+                return true;
+            }
         }else{
             currentP = a;
-            return password.equals(a.getPassword());
+            if(password.equals(a.getPassword())){
+                email = currentP.getName();
+                name = currentP.getName();
+                isAdmin = true;
+                return true;
+            }
         }
+        return false;
     }
 
     @Override
@@ -78,6 +100,13 @@ public class MockupServer implements Domain {
     @Override
     public List<User> getNotMatchedWith(String email, String generatedCourseCode) {
         return null;
+    }
+
+    @Override
+    public List<Course> getEnrolledIn(String email) {
+        List<Course> enrolled = new ArrayList<>();
+        enrolled.add(getCourse("1"));
+        return enrolled;
     }
 
     @Override
@@ -187,7 +216,7 @@ public class MockupServer implements Domain {
 
     @Override
     public Course getCourse(String courseCode) {
-        return courses.get(courseCode);
+        return courses.get(Gcode.fromString(courseCode));
     }
 
 }

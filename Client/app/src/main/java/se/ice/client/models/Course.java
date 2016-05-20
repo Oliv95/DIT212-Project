@@ -21,6 +21,10 @@ public class Course {
         listed = new HashMap<>();
     }
 
+    public String getName(){
+        return new String(name);
+    }
+
     public Gcode getCode() {
         return code;
     }
