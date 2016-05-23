@@ -22,6 +22,7 @@ import java.util.List;
         if (!(new File(PATH + USERSFILENAME).exists()))
             try {
                 new File(PATH + USERSFILENAME).createNewFile();
+                users = new ArrayList<>();
                 saveState(USERSFILENAME, users);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -29,6 +30,7 @@ import java.util.List;
         if (!(new File(PATH + ADMINSFILENAME).exists()))
             try {
                 new File(PATH + ADMINSFILENAME).createNewFile();
+                admins = new ArrayList<>();
                 saveState(ADMINSFILENAME, users);
             } catch (IOException e) {
                 e.printStackTrace();

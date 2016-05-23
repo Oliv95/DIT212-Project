@@ -61,15 +61,18 @@ public class CourseDomain implements ICourse{
         }
 
         List<String> inCourse = courseRepo.getAllEnrolled(generatedCode);
+        if (inCourse == null) {
+            return false;
+        }
         if (inCourse.contains(email)) {
             return false;
         }
-
         Course c = courseRepo.getCourse(generatedCode);
         if(c == null) {
             return false;
         } else {
             c.registerUser(email);
+            courseRepo.saveCourses();
             return true;
         }
     }
@@ -133,6 +136,7 @@ public class CourseDomain implements ICourse{
             }
         }
         return  users;
+        //not sure what this is
         //return c.getMatchedWith(email);
     }
 
@@ -145,4 +149,30 @@ public class CourseDomain implements ICourse{
     public List<Gcode> getEnrolledIn(String user) {
         return courseRepo.getEnrolledIn(user);
     }
+
+    @Override
+    public List<Gcode> getAllAdministrating(String email) {
+
+        List<Course> allCourses = courseRepo.getAllCourses();
+        List<Gcode> result = new ArrayList<>();
+        boolean isAdmin = false;
+        for (Course course : allCourses) {
+            String adminMail = course.getAdmin();
+            if (adminMail.equals(email)){
+                result.add(course.getCode());
+                isAdmin = true;
+            }
+        }
+        if (!isAdmin) {
+            return null;
+        }
+        return result;
+    }
+
+    @Override
+    public List<Course> getAllCourses() {
+        return courseRepo.getAllCourses();
+    }
+
+
 }
