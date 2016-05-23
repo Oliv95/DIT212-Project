@@ -1,12 +1,13 @@
 package se.ice.client.utility;
 
 public class Gcode {
-    private static int counter = 0;
-    final private int id;
+    private int id;
 
     public Gcode(){
-        counter++;
-        id = counter;
+    }
+
+    public Gcode(int id) {
+        this.id = id;
     }
 
     @Override

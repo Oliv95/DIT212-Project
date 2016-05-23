@@ -12,6 +12,8 @@ public abstract class Person {
         this.email = email;
     }
 
+    public Person() {};
+
     public String getPassword() {
         return password;
     }

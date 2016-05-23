@@ -15,6 +15,7 @@ import se.ice.client.models.User;
 import se.ice.client.utility.Constants;
 import se.ice.client.utility.Domain;
 import se.ice.client.utility.MockupServer;
+import se.ice.client.utility.ServerRequestService;
 
 /**
  * Created by Simon on 2016-04-20.
@@ -37,7 +38,7 @@ public class UserSwipeActivity extends Activity {
     private int currentUser = 0;
     private String email;
 
-    private final Domain domain = MockupServer.getInstance();
+    private final Domain domain = new ServerRequestService();
 
     @Override
     public void onCreate(Bundle bundle) {

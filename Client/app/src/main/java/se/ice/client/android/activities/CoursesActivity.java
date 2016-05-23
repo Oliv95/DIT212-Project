@@ -11,11 +11,13 @@ import android.view.View;
 import android.widget.Button;
 
 import se.ice.client.R;
+import se.ice.client.utility.Domain;
 import se.ice.client.utility.MockupServer;
+import se.ice.client.utility.ServerRequestService;
 
 public class CoursesActivity extends AppCompatActivity implements View.OnClickListener {
 
-    MockupServer server = (MockupServer) MockupServer.getInstance();
+    Domain server = new ServerRequestService();
     Button createButton;
     Button joinButton;
     Toolbar t;

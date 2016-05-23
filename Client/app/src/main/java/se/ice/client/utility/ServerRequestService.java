@@ -3,11 +3,17 @@ package se.ice.client.utility;
 import android.app.Service;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.IBinder;
+import android.util.Log;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.nio.channels.UnsupportedAddressTypeException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,42 +21,73 @@ import se.ice.client.models.Admin;
 import se.ice.client.models.Course;
 import se.ice.client.models.User;
 
-public class ServerRequestService extends Service implements Domain {
+public class ServerRequestService implements Domain {
 
-    private final String server = "localhost:8080";
+    private final String server = "http://10.0.2.2:8080";
     private final String users = "/users";
     private final String courses = "/courses";
+    private final String course = "/course";
     private final String admins = "/admins";
+    private final String admin = "/admin";
     private final String charset = "UTF-8";
 
     public ServerRequestService() {
     }
 
-    @Override
-    public IBinder onBind(Intent intent) {
-        // TODO: Return the communication channel to the service.
-        throw new UnsupportedOperationException("Not yet implemented");
+    public class AsyncCall extends AsyncTask {
+
+        @Override
+        public Object doInBackground(Object... params) {
+            ObjectMapper mapper = new ObjectMapper();
+
+            Log.i("Object name: ", params[1].getClass().getName());
+
+            try {
+                return mapper.readValue((URL) params[0], params[1].getClass());
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
     }
+
+    @Override
+    public User getUser(String email) {
+        try {
+            URL url = new URL(String.format(server + users + "/%s",
+                    URLEncoder.encode(email, charset)));
+
+            AsyncTask execute = new AsyncCall().execute(url, new User());
+
+            User user = (User) execute.get();
+            return user;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
 
     @Override
     public String createUser(String email, String name, String password) {
         try {
-            URL url = new URL(String.format(server + users + "name=%s&email=%s&password=%s",
+            URL url = new URL(String.format(server + users + "?name=%s&email=%s&password=%s",
                     URLEncoder.encode(name, charset),
                     URLEncoder.encode(email, charset),
                     URLEncoder.encode(password, charset)));
 
-            ObjectMapper mapper = new ObjectMapper();
+            AsyncTask execute = new AsyncCall().execute(url, new String());
 
-            JsonNode node = mapper.readValue(url, JsonNode.class);
+            return (String) execute.get();
 
-            return node.path("email").asText();
 
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
 
-        return null;
     }
 
     @Override
@@ -79,22 +116,17 @@ public class ServerRequestService extends Service implements Domain {
     public Gcode createCourse(String courseName, String adminEmail) {
 
         try {
-           URL url = new URL(String.format(server + courses + "name=%s&email=%s",
+           URL url = new URL(String.format(server + course + "?name=%s&admin=%s",
                     URLEncoder.encode(courseName, charset),
                     URLEncoder.encode(adminEmail, charset)));
 
-
-        ObjectMapper mapper = new ObjectMapper();
-
-        Gcode courseCode = mapper.readValue(url, Gcode.class);
+        Gcode courseCode = (Gcode) new AsyncCall().execute(url, new Gcode()).get();
 
             return courseCode;
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
-
-        return null;
-
 
     }
 
@@ -105,10 +137,8 @@ public class ServerRequestService extends Service implements Domain {
                     URLEncoder.encode(user, charset),
                     URLEncoder.encode(generatedCourseCode, charset)));
 
-            ObjectMapper mapper = new ObjectMapper();
 
-
-            JsonNode node = mapper.readValue(url, JsonNode.class);
+            new AsyncCall().execute(url, new Boolean(true)).get();
 
             return true;
 
@@ -127,12 +157,8 @@ public class ServerRequestService extends Service implements Domain {
                     URLEncoder.encode(receiverEmail, charset),
                     URLEncoder.encode(generatedCourseCode, charset)));
 
-            ObjectMapper mapper = new ObjectMapper();
 
-
-            JsonNode node = mapper.readValue(url, JsonNode.class);
-
-            return true;
+            throw new UnsupportedOperationException("Not implemented");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -143,16 +169,14 @@ public class ServerRequestService extends Service implements Domain {
     @Override
     public List<User> getMatchedWith(String email, String generatedCourseCode) {
         try {
-            URL url = new URL(String.format(server + courses + "email=%sgcode=%s",
+            URL url = new URL(String.format(server + users + "/%s/%s/matched",
                     URLEncoder.encode(email, charset),
                     URLEncoder.encode(generatedCourseCode, charset)));
 
-            ObjectMapper mapper = new ObjectMapper();
 
-            // This should convert to a list with User
-            List<User> user = mapper.readValue(url, List.class);
+            AsyncTask execute = new AsyncCall().execute(url, new ArrayList<User>());
 
-            return user;
+            return (List<User>) execute.get();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -160,35 +184,16 @@ public class ServerRequestService extends Service implements Domain {
         }
     }
 
-    @Override
-    public User getUser(String email) {
-        try {
-            URL url = new URL(String.format(server + users + "name=%s",
-                    URLEncoder.encode(email, charset)));
-
-            ObjectMapper mapper = new ObjectMapper();
-
-
-            User user = mapper.readValue(url, User.class);
-
-            return user;
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
 
     @Override
     public List<User> getAllUsers(String generatedCourseCode) {
         try {
-            URL url = new URL(String.format(server + courses + "gcode=%s",
+            URL url = new URL(String.format(server + course + "/%s/getAllUsers/",
                     URLEncoder.encode(generatedCourseCode, charset)));
 
-            ObjectMapper mapper = new ObjectMapper();
 
-            // This should convert to a list with User
-            List<User> user = mapper.readValue(url, List.class);
+
+            List<User> user = (List<User>) new AsyncCall().execute(url, new ArrayList<User>()).get();
 
             return user;
 
@@ -203,12 +208,10 @@ public class ServerRequestService extends Service implements Domain {
     @Override
     public Course getCourse(String generatedCourseCode) {
         try {
-            URL url = new URL(String.format(server + courses + "gcode=%s",
+            URL url = new URL(String.format(server + course + "/%s",
                     URLEncoder.encode(generatedCourseCode, charset)));
 
-            ObjectMapper mapper = new ObjectMapper();
-
-            Course course = mapper.readValue(url, Course.class);
+            Course course = (Course) new AsyncCall().execute(url, new Course()).get();
 
             return course;
 
@@ -221,12 +224,12 @@ public class ServerRequestService extends Service implements Domain {
     @Override
     public Admin getAdmin(String email) {
         try {
-            URL url = new URL(String.format(server + admins + "email=%s",
+            URL url = new URL(String.format(server + admin + "/%s",
                     URLEncoder.encode(email, charset)));
 
             ObjectMapper mapper = new ObjectMapper();
 
-            Admin admin = mapper.readValue(url, Admin.class);
+            Admin admin = (Admin) new AsyncCall().execute(url, new Admin()).get();
 
             return admin;
 
@@ -248,12 +251,7 @@ public class ServerRequestService extends Service implements Domain {
                     URLEncoder.encode(email, charset),
                     URLEncoder.encode(password, charset)));
 
-            ObjectMapper mapper = new ObjectMapper();
-
-
-            JsonNode node = mapper.readValue(url, JsonNode.class);
-
-            return true;
+          throw new UnsupportedOperationException("This method is not implemented");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -269,12 +267,8 @@ public class ServerRequestService extends Service implements Domain {
                     URLEncoder.encode(toEmail, charset),
                     URLEncoder.encode(generatedCourseCode, charset)));
 
-            ObjectMapper mapper = new ObjectMapper();
 
-
-            JsonNode node = mapper.readValue(url, JsonNode.class);
-
-            return true;
+            throw new UnsupportedOperationException("This method is not implemented");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -289,12 +283,8 @@ public class ServerRequestService extends Service implements Domain {
                     URLEncoder.encode(email, charset),
                     URLEncoder.encode(generatedCourseCode, charset)));
 
-            ObjectMapper mapper = new ObjectMapper();
+            throw new UnsupportedOperationException("This method is not implemented");
 
-            // This should convert to a list with User
-            List<User> user = mapper.readValue(url, List.class);
-
-            return user;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -311,12 +301,7 @@ public class ServerRequestService extends Service implements Domain {
                     URLEncoder.encode(generatedCourseCode, charset),
                     URLEncoder.encode(Boolean.toString(response), charset)));
 
-            ObjectMapper mapper = new ObjectMapper();
-
-
-            JsonNode node = mapper.readValue(url, JsonNode.class);
-
-            return true;
+            throw new UnsupportedOperationException("This method is not implemented");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -331,12 +316,7 @@ public class ServerRequestService extends Service implements Domain {
                     URLEncoder.encode(email, charset),
                     URLEncoder.encode(generatedCourseCode, charset)));
 
-            ObjectMapper mapper = new ObjectMapper();
-
-            // This should convert to a list with User
-            User user = mapper.readValue(url, User.class);
-
-            return user;
+            throw new UnsupportedOperationException("This method is not implemented");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -347,16 +327,13 @@ public class ServerRequestService extends Service implements Domain {
     @Override
     public List<User> getNotMatchedWith(String email, String generatedCourseCode) {
         try {
-            URL url = new URL(String.format(server + courses + "email=%s&gcode=%s",
+            URL url = new URL(String.format(server + users + "/%s/%s/notmatched",
                     URLEncoder.encode(email, charset),
                     URLEncoder.encode(generatedCourseCode, charset)));
 
-            ObjectMapper mapper = new ObjectMapper();
+                AsyncTask execute = new AsyncCall().execute(url, new ArrayList<User>());
 
-            // This should convert to a list with User
-            List<User> user = mapper.readValue(url, List.class);
-
-            return user;
+            return (List<User>) execute.get();
 
         } catch (Exception e) {
             e.printStackTrace();
