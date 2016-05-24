@@ -33,4 +33,10 @@ public class Gcode {
     public String toString(){
         return this.id + "";
     }
+
+    public static Gcode fromString(String i){
+        Gcode result = new Gcode();
+        result.id = Integer.parseInt(i);
+        return result;
+    }
 }

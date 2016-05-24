@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.support.v7.widget.Toolbar.OnMenuItemClickListener;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,7 +12,6 @@ import android.widget.TextView;
 import se.ice.client.R;
 import se.ice.client.utility.CurrentSession;
 import se.ice.client.utility.Domain;
-import se.ice.client.utility.MockupServer;
 import se.ice.client.utility.ServerRequestService;
 
 public class ProfileActivity extends AppCompatActivity{
@@ -21,6 +19,7 @@ public class ProfileActivity extends AppCompatActivity{
     TextView emailView;
     TextView nameView;
     TextView phoneView;
+
     Domain server = new ServerRequestService();
     CurrentSession currentSession = CurrentSession.getInstance();
 

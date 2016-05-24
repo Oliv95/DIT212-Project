@@ -20,13 +20,7 @@ import se.ice.client.models.User;
 import se.ice.client.utility.Constants;
 import se.ice.client.utility.CurrentSession;
 import se.ice.client.utility.Domain;
-import se.ice.client.utility.MockupServer;
 import se.ice.client.utility.ServerRequestService;
-
-/*
-Main activity and login activity
- */
-
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -37,7 +31,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button registerButton;
     TextView statusView;
     Toolbar t;
-
+    CurrentSession currentSession = CurrentSession.getInstance();
 
     @Override
     public void onCreate(Bundle savedInstanceState){

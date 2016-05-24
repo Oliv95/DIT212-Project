@@ -1,12 +1,10 @@
 package se.ice.client.android.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,7 +23,7 @@ public class CreateCourseActivity extends AppCompatActivity implements View.OnCl
 
     EditText courseName;
     Button createButton;
-    TextView createSuccessful;
+    TextView status;
     Toolbar t;
     Domain server = new ServerRequestService();
     CurrentSession currentSession = CurrentSession.getInstance();
@@ -40,11 +38,10 @@ public class CreateCourseActivity extends AppCompatActivity implements View.OnCl
 
         courseName = (EditText) findViewById(R.id.create_course_textfield);
         createButton = (Button) findViewById(R.id.course_create_button);
-        createSuccessful = (TextView) findViewById(R.id.course_create_succesful);
+        status = (TextView) findViewById(R.id.course_create_status);
         createButton.setOnClickListener(this);
 
         t = (Toolbar) findViewById(R.id.main_toolbar);
-        t.setTitle("Create course");
         setSupportActionBar(t);
     }
 
@@ -52,17 +49,14 @@ public class CreateCourseActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View view) {
         Editable course = courseName.getText();
         if(view.equals(createButton)){
-            Log.i("CourseName", course.toString());
-            Log.i("email", currentSession.getEmail());
 
             Gcode code = server.createCourse(course.toString(),currentSession.getEmail());
 
             if(code == null) {
-                createSuccessful.setText(course.toString() + " was NOT created");
+                status.setText(course.toString() + " was NOT created");
             } else {
-                createSuccessful.setText(course.toString() + " was created with course code " + code.toString());
+                status.setText(course.toString() + " was created with course code " + code.toString());
             }
-
         }
     }
 

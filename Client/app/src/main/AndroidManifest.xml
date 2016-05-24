@@ -25,6 +25,8 @@
         </activity>
         <activity android:name="se.ice.client.android.activities.CoursesActivity" >
         </activity>
+        <activity android:name="se.ice.client.android.activities.UserSwipeActivity" >
+        </activity>
 
     </application>
 

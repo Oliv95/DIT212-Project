@@ -7,4 +7,5 @@ package se.ice.client.utility;
 public class Constants {
     public static final String SETTINGS_FILE = "settings";
     public static final String EMAIL_FIELD = "email";
+    public static final String IS_ADMIN = "admin";
 }
