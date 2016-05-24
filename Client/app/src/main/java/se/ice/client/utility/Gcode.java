@@ -1,6 +1,10 @@
 package se.ice.client.utility;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Gcode {
+    @JsonProperty("id")
     private int id;
 
     public Gcode(){

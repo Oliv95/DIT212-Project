@@ -15,8 +15,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import se.ice.client.R;
+import se.ice.client.models.Admin;
 import se.ice.client.models.User;
 import se.ice.client.utility.Constants;
+import se.ice.client.utility.CurrentSession;
 import se.ice.client.utility.Domain;
 import se.ice.client.utility.MockupServer;
 import se.ice.client.utility.ServerRequestService;
@@ -72,6 +74,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 editor.apply();
 
                 Log.i("Success: ", email);
+
+                CurrentSession currentSession = CurrentSession.getInstance();
+
+                User user = server.getUser(email);
+
+                if(user != null) {
+                    currentSession.setEmail(user.getEmail());
+                    currentSession.setName(user.getName());
+                    currentSession.setAdmin(false);
+                } else {
+                    Admin admin = server.getAdmin(email);
+                    currentSession.setEmail(admin.getEmail());
+                    currentSession.setName(admin.getName());
+                    currentSession.setAdmin(true);
+                }
 
                 Intent i = new Intent(this,ProfileActivity.class);
                 startActivity(i);

@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import se.ice.client.R;
+import se.ice.client.utility.CurrentSession;
 import se.ice.client.utility.Domain;
 import se.ice.client.utility.Gcode;
 import se.ice.client.utility.MockupServer;
@@ -27,6 +28,7 @@ public class CreateCourseActivity extends AppCompatActivity implements View.OnCl
     TextView createSuccessful;
     Toolbar t;
     Domain server = new ServerRequestService();
+    CurrentSession currentSession = CurrentSession.getInstance();
 
     // Used for loggin
     private static final String TAG = "CreateCourse";
@@ -50,9 +52,17 @@ public class CreateCourseActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View view) {
         Editable course = courseName.getText();
         if(view.equals(createButton)){
-            Gcode code = server.createCourse(course.toString(),"admin@mail.com");
-            createSuccessful.setText(course.toString() + " was created");
-            Log.d(TAG, code.toString() + " was created");
+            Log.i("CourseName", course.toString());
+            Log.i("email", currentSession.getEmail());
+
+            Gcode code = server.createCourse(course.toString(),currentSession.getEmail());
+
+            if(code == null) {
+                createSuccessful.setText(course.toString() + " was NOT created");
+            } else {
+                createSuccessful.setText(course.toString() + " was created with course code " + code.toString());
+            }
+
         }
     }
 
