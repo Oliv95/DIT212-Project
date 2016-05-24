@@ -122,14 +122,12 @@ public class ServerRequestService implements Domain {
     @Override
     public String createUser(String email, String name, String password) {
         try {
-
-
             String content = URLEncoder.encode(String.format("?name=%s&email=%s&password=%s",
                     URLEncoder.encode(name, charset),
                     URLEncoder.encode(email, charset),
                     URLEncoder.encode(password, charset)), charset);
 
-            URL url = new URL(String.format(server + users + content));
+            URL url = new URL(String.format(server + users + String.format("?name=%s&email=%s&password=%s", name, email, password)));
 
             AsyncTask execute = new AsyncPostCall().execute(url, content, new String());
 
@@ -145,12 +143,14 @@ public class ServerRequestService implements Domain {
     @Override
     public String createAdmin(String email, String name, String password) {
         try {
-            URL url = new URL(String.format(server + admin + "?name=%s&email=%s&password=%s",
+            URL url = new URL(String.format(server + admin + "?name=%s&email=%s&password=%s", name, email, password));
+
+            String content = URLEncoder.encode(String.format("?name=%s&email=%s&password=%s",
                     URLEncoder.encode(name, charset),
                     URLEncoder.encode(email, charset),
-                    URLEncoder.encode(password, charset)));
+                    URLEncoder.encode(password, charset)), charset);
 
-            String response = (String) new AsyncCall().execute(url, new String()).get();
+            String response = (String) new AsyncPostCall().execute(url, content, new String()).get();
 
             return response;
 
@@ -298,8 +298,12 @@ public class ServerRequestService implements Domain {
         try {
             User user = getUser(email);
 
-            return user.getPassword().equals(password);
+            if(user == null) {
+                return getAdmin(email).getPassword().equals(password);
+            } else {
 
+                return user.getPassword().equals(password);
+            }
         } catch (Exception e) {
             e.printStackTrace();
             return false;
