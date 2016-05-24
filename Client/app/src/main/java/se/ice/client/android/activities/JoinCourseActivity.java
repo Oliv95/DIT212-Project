@@ -1,6 +1,5 @@
 package se.ice.client.android.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,9 +11,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import se.ice.client.R;
+import se.ice.client.utility.CurrentSession;
 import se.ice.client.utility.MockupServer;
 
 public class JoinCourseActivity extends AppCompatActivity implements View.OnClickListener {
@@ -23,6 +22,7 @@ public class JoinCourseActivity extends AppCompatActivity implements View.OnClic
     EditText codeView;
     Button joinButton;
     Toolbar t;
+    CurrentSession currentSession = CurrentSession.getInstance();
 
     // Used for logging
     private static final String TAG = "JoinCourse";
@@ -30,10 +30,10 @@ public class JoinCourseActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_course_create);
+        setContentView(R.layout.activity_course_join);
 
         codeView = (EditText) findViewById(R.id.course_join_code);
-        joinButton = (Button) findViewById(R.id.course_create_button);
+        joinButton = (Button) findViewById(R.id.course_join_button);
         joinButton.setOnClickListener(this);
 
         t = (Toolbar) findViewById(R.id.main_toolbar);
@@ -45,7 +45,7 @@ public class JoinCourseActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         if(view.equals(joinButton)){
             Editable courseCode = codeView.getText();
-            boolean joined = server.joinCourse(courseCode.toString(),"admin@mail.com");
+            boolean joined = server.joinCourse(courseCode.toString(),currentSession.getEmail());
             Log.d(TAG, joined + " courseCode");
         }
     }

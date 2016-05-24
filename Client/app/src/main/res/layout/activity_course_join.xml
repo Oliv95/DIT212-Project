@@ -20,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Join"
-        android:id="@+id/course_create_button"
-        android:layout_gravity="center_horizontal" />
+        android:id="@+id/course_join_button"
+        android:layout_gravity="center_horizontal"
+        android:contextClickable="false" />
 </LinearLayout>

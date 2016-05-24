@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import se.ice.client.R;
+import se.ice.client.utility.CurrentSession;
 import se.ice.client.utility.Gcode;
 import se.ice.client.utility.MockupServer;
 
@@ -24,6 +24,7 @@ public class CreateCourseActivity extends AppCompatActivity implements View.OnCl
     TextView status;
     Toolbar t;
     MockupServer server = (MockupServer) MockupServer.getInstance();
+    CurrentSession currentSession = CurrentSession.getInstance();
 
     // Used for loggin
     private static final String TAG = "CreateCourse";
@@ -39,7 +40,6 @@ public class CreateCourseActivity extends AppCompatActivity implements View.OnCl
         createButton.setOnClickListener(this);
 
         t = (Toolbar) findViewById(R.id.main_toolbar);
-        t.setTitle("Create course");
         setSupportActionBar(t);
     }
 
@@ -47,7 +47,7 @@ public class CreateCourseActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View view) {
         Editable course = courseName.getText();
         if(view.equals(createButton)){
-            Gcode code = server.createCourse(course.toString(),"admin@mail.com");
+            Gcode code = server.createCourse(course.toString(),currentSession.getEmail());
             status.setText(code.toString());
         }
     }

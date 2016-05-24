@@ -13,12 +13,8 @@ import se.ice.client.models.User;
 
 public class MockupServer implements Domain {
 
-    // Session specific data - Is this the best place?
-    private Person currentP;
     // Session specific data
-    public static String name;
-    public static String email;
-    public static boolean isAdmin;
+    public static CurrentSession currentSession = CurrentSession.getInstance();
     //--------------------------------------------------
 
     Map<String, User> users = new HashMap<>(); // All registered users
@@ -26,10 +22,6 @@ public class MockupServer implements Domain {
     Map<Gcode, Course> courses = new HashMap<>();
 
     private static Domain instance;
-
-    public Person getCurrent(){
-        return currentP;
-    }
 
     public static Domain getInstance() {
         if(instance == null) {
@@ -58,19 +50,17 @@ public class MockupServer implements Domain {
         if(u == null && a == null){
             return false;
         }else if(a == null){
-            currentP = u;
             if(password.equals(u.getPassword())){
-                email = currentP.getName();
-                name = currentP.getName();
-                isAdmin = false;
+                currentSession.setEmail(u.getEmail());
+                currentSession.setName(u.getName());
+                currentSession.setAdmin(false);
                 return true;
             }
         }else{
-            currentP = a;
             if(password.equals(a.getPassword())){
-                email = currentP.getName();
-                name = currentP.getName();
-                isAdmin = true;
+                currentSession.setEmail(a.getEmail());
+                currentSession.setName(a.getName());
+                currentSession.setAdmin(true);
                 return true;
             }
         }
@@ -155,9 +145,8 @@ public class MockupServer implements Domain {
      */
     @Override
     public boolean joinCourse(String generatedCode, String email) {
-        if(admins.containsKey(email) || !(courses.containsKey(generatedCode))) { // admins can't join
-            return false;
-        } else if (users.containsKey(email)){ // User has to be registered
+        if (users.containsKey(email)){
+            // User has to be registered
             courses.get(generatedCode).registerUser(users.get(email));
             return true;
         } else {

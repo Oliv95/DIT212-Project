@@ -20,12 +20,14 @@ import java.util.List;
 
 import se.ice.client.R;
 import se.ice.client.models.Course;
+import se.ice.client.utility.CurrentSession;
 import se.ice.client.utility.Gcode;
 import se.ice.client.utility.MockupServer;
 
 public class CoursesActivity extends AppCompatActivity implements View.OnClickListener {
 
     MockupServer server = (MockupServer) MockupServer.getInstance();
+    CurrentSession currentSession = CurrentSession.getInstance();
     Button createButton;
     Button joinButton;
     ListView courseList;
@@ -52,8 +54,7 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
 
         List<Gcode> courses;
 
-
-        if(server.isAdmin){
+        if(currentSession.isAdmin()){
 
         }else{
             populateUserData();
@@ -62,7 +63,7 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
 
     private void populateUserData(){
 
-        List<Course> enrolled = server.getEnrolledIn(server.email);
+        List<Course> enrolled = server.getEnrolledIn(currentSession.getEmail());
         List<String> courseNames = new ArrayList<>();
         int counter = 0;
         itemToGcode.clear();
@@ -92,16 +93,16 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View view) {
         Intent i;
-        if(view.equals(createButton) && server.isAdmin){
+        if(view.equals(createButton) && currentSession.isAdmin()){
             i = new Intent(this, CreateCourseActivity.class);
             startActivity(i);
-        }else if(view.equals(createButton) && !server.isAdmin){
+        }else if(view.equals(createButton) && !currentSession.isAdmin()){
             status.setText("you need admin priviliges");
         }
-        else if(view.equals(joinButton) && !server.isAdmin){
+        else if(view.equals(joinButton) && !currentSession.isAdmin()){
             i = new Intent(this, JoinCourseActivity.class);
             startActivity(i);
-        } else if(view.equals(joinButton) && server.isAdmin){
+        } else if(view.equals(joinButton) && currentSession.isAdmin()){
             status.setText("admin can't join courses");
         }
     }

@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import se.ice.client.R;
+import se.ice.client.utility.CurrentSession;
 import se.ice.client.utility.MockupServer;
 
 public class ProfileActivity extends AppCompatActivity{
@@ -18,6 +19,7 @@ public class ProfileActivity extends AppCompatActivity{
     TextView nameView;
     TextView phoneView;
     MockupServer server = (MockupServer) MockupServer.getInstance();
+    CurrentSession currentSession = CurrentSession.getInstance();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,13 +33,13 @@ public class ProfileActivity extends AppCompatActivity{
         populateData();
 
         Toolbar t = (Toolbar)findViewById(R.id.main_toolbar);
-        t.setTitle(server.getCurrent().getName());
+        t.setTitle(currentSession.getName());
         setSupportActionBar(t);
     }
 
     public void populateData(){
-        emailView.setText(server.getCurrent().getEmail());
-        nameView.setText(server.getCurrent().getName());
+        emailView.setText(currentSession.getEmail());
+        nameView.setText(currentSession.getName());
     }
 
     @Override

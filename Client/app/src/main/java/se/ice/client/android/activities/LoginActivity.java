@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import se.ice.client.R;
 import se.ice.client.utility.Constants;
+import se.ice.client.utility.CurrentSession;
 import se.ice.client.utility.MockupServer;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -26,7 +27,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button registerButton;
     TextView statusView;
     Toolbar t;
-
+    CurrentSession currentSession = CurrentSession.getInstance();
 
     @Override
     public void onCreate(Bundle savedInstanceState){
