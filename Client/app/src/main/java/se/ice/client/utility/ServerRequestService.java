@@ -109,6 +109,7 @@ public class ServerRequestService implements Domain {
             AsyncTask execute = new AsyncCall().execute(url, new User());
 
             User user = (User) execute.get();
+            Log.i("getUser", "not crashed yet");
             return user;
 
         } catch (Exception e) {
@@ -143,12 +144,15 @@ public class ServerRequestService implements Domain {
     @Override
     public String createAdmin(String email, String name, String password) {
         try {
-            URL url = new URL(String.format(server + admin + "?name=%s&email=%s&password=%s", name, email, password));
 
             String content = URLEncoder.encode(String.format("?name=%s&email=%s&password=%s",
                     URLEncoder.encode(name, charset),
                     URLEncoder.encode(email, charset),
                     URLEncoder.encode(password, charset)), charset);
+
+            URL url = new URL(String.format(server + admin + String.format("?name=%s&email=%s&password=%s", name, email, password)));
+
+
 
             String response = (String) new AsyncPostCall().execute(url, content, new String()).get();
 
@@ -165,11 +169,13 @@ public class ServerRequestService implements Domain {
     public Gcode createCourse(String courseName, String adminEmail) {
 
         try {
-           URL url = new URL(String.format(server + course + "?name=%s&admin=%s",
-                    URLEncoder.encode(courseName, charset),
-                    URLEncoder.encode(adminEmail, charset)));
+           URL url = new URL(String.format(server + course + "?name=%s&admin=%s", courseName, adminEmail));
 
-        Gcode courseCode = (Gcode) new AsyncCall().execute(url, new Gcode()).get();
+            String content = URLEncoder.encode((String.format("?name=%s&admin=%s",
+                    URLEncoder.encode(courseName, charset),
+                    URLEncoder.encode(adminEmail, charset))), charset);
+
+        Gcode courseCode = (Gcode) new AsyncPostCall().execute(url, content, new Gcode()).get();
 
             return courseCode;
         } catch (Exception e) {
@@ -182,12 +188,12 @@ public class ServerRequestService implements Domain {
     @Override
     public boolean joinCourse(String generatedCourseCode, String user) {
         try {
-            URL url = new URL(String.format(server + users + "name=%s&gcode=%s",
-                    URLEncoder.encode(user, charset),
-                    URLEncoder.encode(generatedCourseCode, charset)));
+            URL url = new URL(String.format(server + course + "/%s/join?email=%s", generatedCourseCode, user));
 
-
-            new AsyncCall().execute(url, new Boolean(true)).get();
+            String content = URLEncoder.encode(String.format(server + course + "/%s/join?email=%s",
+                    URLEncoder.encode(generatedCourseCode, charset),
+                    URLEncoder.encode(user, charset)), charset);
+            new AsyncPostCall().execute(url, content, new Boolean(true)).get();
 
             return true;
 
@@ -201,10 +207,10 @@ public class ServerRequestService implements Domain {
     @Override
     public boolean sendMatchRequest(String senderEmail, String receiverEmail, String generatedCourseCode) {
         try {
-            URL url = new URL(String.format(server + users + "sender=%s&receiver=%s&gcode=%s",
+            URL url = new URL(String.format(server + course + "/%s/match?sender=asd&receiver=asd",
+                    URLEncoder.encode(generatedCourseCode, charset),
                     URLEncoder.encode(senderEmail, charset),
-                    URLEncoder.encode(receiverEmail, charset),
-                    URLEncoder.encode(generatedCourseCode, charset)));
+                    URLEncoder.encode(receiverEmail, charset)));
 
 
             throw new UnsupportedOperationException("Not implemented");
@@ -299,6 +305,7 @@ public class ServerRequestService implements Domain {
             User user = getUser(email);
 
             if(user == null) {
+                Log.i("getAdmin", "admin");
                 return getAdmin(email).getPassword().equals(password);
             } else {
 

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.Toolbar.OnMenuItemClickListener;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -25,8 +26,11 @@ public class ProfileActivity extends AppCompatActivity{
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        Log.i("START: ", "ProfileActivity");
 
         emailView = (TextView) findViewById(R.id.profile_email);
         nameView = (TextView) findViewById(R.id.profile_name);

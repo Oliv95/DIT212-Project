@@ -71,6 +71,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 editor.putString(Constants.EMAIL_FIELD,email);
                 editor.apply();
 
+                Log.i("Success: ", email);
+
                 Intent i = new Intent(this,ProfileActivity.class);
                 startActivity(i);
             }else{
