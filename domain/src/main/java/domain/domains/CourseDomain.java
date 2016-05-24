@@ -9,7 +9,9 @@ import domain.interfaces.IUserRepo;
 import domain.util.Gcode;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by oliv on 4/23/16.
@@ -172,6 +174,63 @@ public class CourseDomain implements ICourse{
     @Override
     public List<Course> getAllCourses() {
         return courseRepo.getAllCourses();
+    }
+
+    @Override
+    public boolean partnerRequest(String from, String to, Gcode gcode) {
+        Course c = courseRepo.getCourse(gcode);
+        if (c == null) {
+            return false;
+        }
+        List<Matched> matcheds = courseRepo.getAllMatches(gcode);
+        //used to check the collection
+        Matched tmp = new Matched(from,to);
+        boolean isMatched = matcheds.contains(tmp);
+        if (!isMatched) {
+            return false;
+        }
+        List<PartnerRequest> partnerRequests = c.getPartnerRequests();
+        for (PartnerRequest partnerRequest : partnerRequests) {
+            boolean isOpposite = false;
+            isOpposite = partnerRequest.getFrom().equals(to);
+            isOpposite = isOpposite && partnerRequest.getTo().equals(from);
+            if (isOpposite) {
+                partnerRequests.remove(partnerRequest);
+                Partner p = new Partner(from,to);
+                c.getPartners().add(p);
+                return true;
+            }
+        }
+        c.makePartnerRequst(from,to);
+        courseRepo.saveCourses();
+        return true;
+    }
+
+    @Override
+    public String getPartner(String from, Gcode gcode) {
+        Course c = courseRepo.getCourse(gcode);
+        if (c == null) {
+            return null;
+        }
+        List<String> listed = c.getRegisteredEmails();
+        if (!(listed.contains(from))){
+            return null;
+        }
+        List<Partner> partners = c.getPartners();
+        for (Partner partner : partners) {
+            //if this is the partner group im in
+            if (partner.getMembers().contains(from)){
+                List<String> members = partner.getMembers();
+                for (String member : members) {
+                    //find the guy who is not me
+                    if (!(member.equals(from))) {
+                        return member;
+                    }
+                }
+
+            }
+        }
+        return null;
     }
 
 
