@@ -10,8 +10,13 @@ import android.util.Log;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.nio.channels.UnsupportedAddressTypeException;
 import java.util.ArrayList;
@@ -25,6 +30,7 @@ public class ServerRequestService implements Domain {
 
     private final String server = "http://10.0.2.2:8080";
     private final String users = "/users";
+    private final String user = "/user";
     private final String courses = "/courses";
     private final String course = "/course";
     private final String admins = "/admins";
@@ -34,7 +40,7 @@ public class ServerRequestService implements Domain {
     public ServerRequestService() {
     }
 
-    public class AsyncCall extends AsyncTask {
+    private class AsyncCall extends AsyncTask {
 
         @Override
         public Object doInBackground(Object... params) {
@@ -45,6 +51,49 @@ public class ServerRequestService implements Domain {
             try {
                 return mapper.readValue((URL) params[0], params[1].getClass());
             } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
+    }
+
+    private class AsyncPostCall extends AsyncTask {
+
+        @Override
+        protected Object doInBackground(Object[] params) {
+            try {
+                URL url = (URL) params[0];
+                String content = (String) params[1];
+                Object currentClass = params[2];
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+                String type = "application/x-www-form-urlencoded; charset=UTF-8";
+
+                connection.setRequestProperty( "Content-Type", type );
+                connection.setRequestProperty( "Content-Length", String.valueOf(content.length()));
+
+
+                connection.setRequestMethod("POST");
+
+                connection.setDoOutput(true);
+
+                DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
+
+                ObjectMapper mapper = new ObjectMapper();
+                wr.write(content.getBytes());
+
+                wr.flush();
+
+                wr.close();
+
+            // 6. Get the response
+            int responseCode = connection.getResponseCode();
+            Log.i("AsyncPostCall: ", "Sending 'POST' request to URL : " + url);
+            Log.i("Response Code : ", String.valueOf(responseCode));
+
+            return mapper.readValue(connection.getInputStream(), currentClass.getClass());
+
+            } catch (IOException e) {
                 e.printStackTrace();
                 return null;
             }
@@ -73,15 +122,18 @@ public class ServerRequestService implements Domain {
     @Override
     public String createUser(String email, String name, String password) {
         try {
-            URL url = new URL(String.format(server + users + "?name=%s&email=%s&password=%s",
+
+
+            String content = URLEncoder.encode(String.format("?name=%s&email=%s&password=%s",
                     URLEncoder.encode(name, charset),
                     URLEncoder.encode(email, charset),
-                    URLEncoder.encode(password, charset)));
+                    URLEncoder.encode(password, charset)), charset);
 
-            AsyncTask execute = new AsyncCall().execute(url, new String());
+            URL url = new URL(String.format(server + users + content));
+
+            AsyncTask execute = new AsyncPostCall().execute(url, content, new String());
 
             return (String) execute.get();
-
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -93,19 +145,16 @@ public class ServerRequestService implements Domain {
     @Override
     public String createAdmin(String email, String name, String password) {
         try {
-            URL url = new URL(String.format(server + admins + "name=%s&email=%s&password=%s",
+            URL url = new URL(String.format(server + admin + "?name=%s&email=%s&password=%s",
                     URLEncoder.encode(name, charset),
                     URLEncoder.encode(email, charset),
                     URLEncoder.encode(password, charset)));
 
-            ObjectMapper mapper = new ObjectMapper();
+            String response = (String) new AsyncCall().execute(url, new String()).get();
 
-            JsonNode node = mapper.readValue(url, JsonNode.class);
-
-            return node.path("email").asText();
+            return response;
 
         } catch (Exception e) {
-            e.printStackTrace();
             return null;
         }
 
@@ -247,11 +296,9 @@ public class ServerRequestService implements Domain {
     @Override
     public boolean login(String email, String password) {
         try {
-            URL url = new URL(String.format(server + users + "email=%s&password=%s",
-                    URLEncoder.encode(email, charset),
-                    URLEncoder.encode(password, charset)));
+            User user = getUser(email);
 
-          throw new UnsupportedOperationException("This method is not implemented");
+            return user.getPassword().equals(password);
 
         } catch (Exception e) {
             e.printStackTrace();
