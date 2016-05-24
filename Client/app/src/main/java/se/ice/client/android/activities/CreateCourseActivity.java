@@ -14,8 +14,10 @@ import android.widget.TextView;
 
 import se.ice.client.R;
 import se.ice.client.utility.CurrentSession;
+import se.ice.client.utility.Domain;
 import se.ice.client.utility.Gcode;
 import se.ice.client.utility.MockupServer;
+import se.ice.client.utility.ServerRequestService;
 
 public class CreateCourseActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -23,8 +25,8 @@ public class CreateCourseActivity extends AppCompatActivity implements View.OnCl
     Button createButton;
     TextView status;
     Toolbar t;
-    MockupServer server = (MockupServer) MockupServer.getInstance();
     CurrentSession currentSession = CurrentSession.getInstance();
+    Domain server = new ServerRequestService();
 
     // Used for loggin
     private static final String TAG = "CreateCourse";

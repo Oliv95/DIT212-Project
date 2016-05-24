@@ -22,13 +22,14 @@ import se.ice.client.R;
 import se.ice.client.models.Course;
 import se.ice.client.utility.CurrentSession;
 import se.ice.client.utility.Gcode;
+import se.ice.client.utility.Domain;
 import se.ice.client.utility.MockupServer;
+import se.ice.client.utility.ServerRequestService;
 
 public class CoursesActivity extends AppCompatActivity implements View.OnClickListener {
 
-    MockupServer server = (MockupServer) MockupServer.getInstance();
     CurrentSession currentSession = CurrentSession.getInstance();
-    Button createButton;
+    Domain server = new ServerRequestService();Button createButton;
     Button joinButton;
     ListView courseList;
     TextView status;

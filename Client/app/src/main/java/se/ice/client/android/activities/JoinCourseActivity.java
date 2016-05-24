@@ -14,11 +14,13 @@ import android.widget.EditText;
 
 import se.ice.client.R;
 import se.ice.client.utility.CurrentSession;
+import se.ice.client.utility.Domain;
 import se.ice.client.utility.MockupServer;
+import se.ice.client.utility.ServerRequestService;
 
 public class JoinCourseActivity extends AppCompatActivity implements View.OnClickListener {
 
-    MockupServer server = (MockupServer) MockupServer.getInstance();
+    Domain server = new ServerRequestService();
     EditText codeView;
     Button joinButton;
     Toolbar t;

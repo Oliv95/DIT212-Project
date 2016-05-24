@@ -14,6 +14,8 @@ public class Course {
 
     private Map<String,User> listed;
 
+    public Course(){}
+
     public Course(String name, String admin, Gcode gcode) {
         this.name = name;
         this.admin = admin;

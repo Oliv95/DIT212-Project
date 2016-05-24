@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -14,14 +15,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import se.ice.client.R;
+import se.ice.client.models.User;
 import se.ice.client.utility.Constants;
 import se.ice.client.utility.CurrentSession;
-import se.ice.client.utility.MockupServer;
+import se.ice.client.utility.Domain;
+import se.ice.client.utility.ServerRequestService;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button loginButton;
-    MockupServer server = (MockupServer) MockupServer.getInstance();
+    Domain server = new ServerRequestService();
     EditText emailField;
     EditText passwordField;
     Button registerButton;
@@ -63,11 +66,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 editor.putString(Constants.EMAIL_FIELD,email);
                 editor.apply();
 
+                Log.i("Success: ", email);
+
                 Intent i = new Intent(this,ProfileActivity.class);
                 startActivity(i);
             }else{
                 statusView.setText("incorrect username or password");
             }
+
         }
         if(view.equals(registerButton)){
             Intent i = new Intent(this,RegisterActivity.class);
