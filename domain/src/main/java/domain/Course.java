@@ -28,6 +28,10 @@ public class Course implements Serializable{
         matches = new ArrayList<>();
     }
 
+    public String getName() {
+        return name;
+    }
+
     /**
      * @return the generated code associated with this course object
      */

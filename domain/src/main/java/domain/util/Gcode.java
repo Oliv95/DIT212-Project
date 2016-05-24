@@ -15,6 +15,14 @@ public class Gcode implements Serializable{
         id = counter;
     }
 
+    public static void setCounter(int c) {
+        counter = c;
+    }
+
+    public static int getCounter() {
+        return counter;
+    }
+
     public int getId() {
         return id;
     }
