@@ -18,6 +18,8 @@ public class Course implements Serializable{
     private List<String> listed;
     private List<MatchRequest> match_requests; // Map<From,To>
     private List<Matched> matches;
+    private List<Partner> partners;
+    private List<PartnerRequest> partnerRequests;
 
     public Course(String name, String admin, Gcode gcode) {
         this.name = name;
@@ -26,6 +28,8 @@ public class Course implements Serializable{
         listed = new ArrayList<>();
         match_requests = new ArrayList<>();
         matches = new ArrayList<>();
+        partners = new ArrayList<>();
+        partnerRequests = new ArrayList<>();
     }
 
     public String getName() {
@@ -101,4 +105,18 @@ public class Course implements Serializable{
     public List<Matched> returnMatched() {
         return matches;
     }
+
+    public List<Partner> getPartners() {
+        return partners;
+    }
+
+    public List<PartnerRequest> getPartnerRequests() {
+        return partnerRequests;
+    }
+
+    public void makePartnerRequst(String from,String to){
+        PartnerRequest partnerRequest = new PartnerRequest(from,to);
+        partnerRequests.add(partnerRequest);
+    }
+
 }
