@@ -389,9 +389,16 @@ public class ServerRequestService implements Domain {
                     URLEncoder.encode(email, charset),
                     URLEncoder.encode(generatedCourseCode, charset)));
 
-                AsyncTask execute = new AsyncCall().execute(url, new ArrayList<User>());
+                AsyncTask execute = new AsyncCall().execute(url, new String[0]);
+                String[] userNames = (String[]) execute.get();
 
-            return (List<User>) execute.get();
+            List<User> users = new ArrayList<>();
+
+            for (String name : userNames) {
+                users.add(getUser(name));
+            }
+
+            return users;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -401,6 +408,27 @@ public class ServerRequestService implements Domain {
 
     @Override
     public List<Course> getEnrolledIn(String user) {
-        return null;
+        try {
+            URL url = new URL(String.format(server + users + "/%s/enrolledin",
+                    URLEncoder.encode(user, charset)));
+
+            AsyncTask execute = new AsyncCall().execute(url, new Gcode[0]);
+
+            Gcode[] gcodes = (Gcode[]) execute.get();
+
+            List<Course> courses = new ArrayList<>();
+
+            for (Gcode gcode : gcodes) {
+                courses.add(getCourse(gcode.toString()));
+            }
+
+            Log.i("number og courses", courses.get(0).getName());
+
+            return courses;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
     }
 }

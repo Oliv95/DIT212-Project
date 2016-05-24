@@ -69,7 +69,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 Log.i("Success: ", email);
 
-                CurrentSession currentSession = CurrentSession.getInstance();
 
                 User user = server.getUser(email);
 

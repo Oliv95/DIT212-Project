@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -77,6 +78,7 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
             {
+                Log.i("onItemClick", String.valueOf(position));
                 startCourse(itemToGcode.get(position).toString());
             }
         });
@@ -137,6 +139,12 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
                 return super.onOptionsItemSelected(item);
 
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        populateUserData();
     }
 
 }

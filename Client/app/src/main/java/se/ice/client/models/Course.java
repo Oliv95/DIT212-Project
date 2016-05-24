@@ -1,4 +1,7 @@
 package se.ice.client.models;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.*;
 
 import se.ice.client.models.User;
@@ -8,18 +11,23 @@ import se.ice.client.utility.Gcode;
  * This class represents a course, or a 'circle' of people to be matched in groups.
  */
 public class Course {
+
     private Gcode code;
     private String name;
     private String admin; // email of admin
 
+    @JsonIgnore
     private Map<String,User> listed;
+
+    private List<String> registeredEmails;
 
     public Course(){}
 
-    public Course(String name, String admin, Gcode gcode) {
+    public Course(String name, String admin, Gcode gcode, List<String> registeredEmails) {
         this.name = name;
         this.admin = admin;
         code = gcode;
+        this.registeredEmails = registeredEmails;
         listed = new HashMap<>();
     }
 
@@ -42,5 +50,13 @@ public class Course {
 
     public String getAdmin() {
         return admin;
+    }
+
+    public List<String> getRegisteredEmails() {
+        return registeredEmails;
+    }
+
+    public void setRegisteredEmails(List<String> registeredEmails) {
+        this.registeredEmails = registeredEmails;
     }
 }

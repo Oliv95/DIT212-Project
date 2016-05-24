@@ -7,7 +7,6 @@ import java.util.Map;
 
 import se.ice.client.models.Admin;
 import se.ice.client.models.Course;
-import se.ice.client.models.Person;
 import se.ice.client.models.User;
 
 
@@ -131,7 +130,7 @@ public class MockupServer implements Domain {
 
         if (admins.get(admin) != null) {
             code = new Gcode();
-            courses.put(code, new Course(name, admin, code));
+            courses.put(code, new Course(name, admin, code, new ArrayList<String>()));
         }
 
         return code;
