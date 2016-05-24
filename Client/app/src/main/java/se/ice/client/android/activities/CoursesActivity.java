@@ -75,11 +75,17 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
             {
-                System.out.println(itemToGcode.get(position));
+                startCourse(itemToGcode.get(position).toString());
             }
         });
         arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, courseNames);
         courseList.setAdapter(arrayAdapter);
+    }
+
+    private void startCourse(String gcode){
+        Intent i = new Intent(this,UserSwipeActivity.class);
+        i.putExtra("gcode",gcode);
+        startActivity(i);
     }
 
 
