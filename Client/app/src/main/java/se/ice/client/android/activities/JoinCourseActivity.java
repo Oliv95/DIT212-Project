@@ -51,8 +51,10 @@ public class JoinCourseActivity extends AppCompatActivity implements View.OnClic
         if(view.equals(joinButton)){
             Editable courseCode = codeView.getText();
             if(server.joinCourse(courseCode.toString(),currentSession.getEmail())){
-                String courseName = server.getCourse(courseCode.toString()).toString();
-                joinStatus.setText("Sucessfuly joined course: " + courseName);
+                String courseName = (server.getCourse(courseCode.toString())).getName();
+                joinStatus.setText("Sucessfuly joined: " + courseName);
+            }else{
+                joinStatus.setText("No such course exist");
             }
 
         }
