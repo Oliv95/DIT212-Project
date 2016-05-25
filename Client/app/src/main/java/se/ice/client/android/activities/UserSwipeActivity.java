@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.Iterator;
 import java.util.List;
 
@@ -37,11 +39,13 @@ public class UserSwipeActivity extends AppCompatActivity {
     private Button noButton;
     private Button yesButton;
     private TextView name;
+    private TextView statusView;
 
     /**
      * Class variables
      */
     private String course;
+    private String courseName;
     private List<User> users;
     private Iterator<User> iterator;
     private User currentUser;
@@ -58,13 +62,19 @@ public class UserSwipeActivity extends AppCompatActivity {
         noButton = (Button) findViewById(R.id.noButton);
         yesButton = (Button) findViewById(R.id.yesButton);
         name = (TextView) findViewById(R.id.name);
+        statusView = (TextView) findViewById(R.id.user_swipe_status);
+        t = (Toolbar)findViewById(R.id.course_toolbar);
 
         Intent intent = getIntent();
 
         course =  (String) intent.getExtras().get("gcode");
+        courseName = (String) intent.getExtras().get("name");
 
-        t = (Toolbar)findViewById(R.id.course_toolbar);
-        t.setTitle(course);
+
+
+
+        t.setTitle(courseName + "     " + course);
+
         setSupportActionBar(t);
 
         populateData();
@@ -110,10 +120,6 @@ public class UserSwipeActivity extends AppCompatActivity {
         return true;
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -155,6 +161,11 @@ public class UserSwipeActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
 
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
     }
 
 }

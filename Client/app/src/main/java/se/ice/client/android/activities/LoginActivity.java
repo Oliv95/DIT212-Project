@@ -76,6 +76,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     currentSession.setEmail(user.getEmail());
                     currentSession.setName(user.getName());
                     currentSession.setAdmin(false);
+                    System.out.println("user logged in");
                 } else {
                     Admin admin = server.getAdmin(email);
                     currentSession.setEmail(admin.getEmail());

@@ -148,6 +148,7 @@ public class ServerRequestService implements Domain {
 
         } catch (Exception e) {
             return null;
+
         }
 
 
@@ -224,9 +225,16 @@ public class ServerRequestService implements Domain {
                     URLEncoder.encode(generatedCourseCode, charset)));
 
 
-            AsyncTask execute = new AsyncCall().execute(url, new ArrayList<User>());
+            AsyncTask execute = new AsyncCall().execute(url, new String[0]);
+            String[] userNames = (String[]) execute.get();
 
-            return (List<User>) execute.get();
+            List<User> users = new ArrayList<>();
+
+            for (String name : userNames) {
+                users.add(getUser(name));
+            }
+
+            return users;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -243,9 +251,15 @@ public class ServerRequestService implements Domain {
 
 
 
-            List<User> user = (List<User>) new AsyncCall().execute(url, new ArrayList<User>()).get();
+            String[] userStrings = (String[]) new AsyncCall().execute(url, new String[0]).get();
 
-            return user;
+            List<User> users = new ArrayList<>();
+
+            for(String u : userStrings) {
+                users.add(getUser(u));
+            }
+
+            return users;
 
         } catch (Exception e) {
             e.printStackTrace();

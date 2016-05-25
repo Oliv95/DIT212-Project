@@ -35,6 +35,7 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
     ArrayAdapter<String> arrayAdapter;
     HashMap<Integer,Gcode> itemToGcode = new HashMap<>();
     Toolbar t;
+    List<String> courseNames;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -64,7 +65,7 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
     private void populateUserData(){
 
         List<Course> enrolled = server.getEnrolledIn(currentSession.getEmail());
-        List<String> courseNames = new ArrayList<>();
+        final List<String> courseNames = new ArrayList<>();
         int counter = 0;
         itemToGcode.clear();
         for(Course c : enrolled){
@@ -78,7 +79,7 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
             {
-                startUserCourse(itemToGcode.get(position).toString());
+                startUserCourse(itemToGcode.get(position).toString(),courseNames.get(position));
             }
         });
         arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, courseNames);
@@ -87,12 +88,15 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
 
     private void populateAdminData(){
         List<Course> administrating = server.getAllAdministratingCourse(currentSession.getEmail());
-        List<String> courseNames = new ArrayList<>();
+        courseNames = new ArrayList<>();
         int counter = 0;
         itemToGcode.clear();
+        System.out.println(administrating.size());
         for(Course c : administrating){
+            System.out.println();
             courseNames.add(c.getName().toUpperCase());
             itemToGcode.put(counter,c.getCode());
+            System.out.println(courseNames.get(counter));
             counter++;
         }
 
@@ -101,22 +105,24 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
             {
-                startAdminCourse(itemToGcode.get(position).toString());
+                startAdminCourse(itemToGcode.get(position).toString(), courseNames.get(position));
             }
         });
         arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, courseNames);
         courseList.setAdapter(arrayAdapter);
     }
 
-    private void startUserCourse(String gcode){
+    private void startUserCourse(String gcode, String name){
         Intent i = new Intent(this,UserSwipeActivity.class);
         i.putExtra("gcode",gcode);
+        i.putExtra("name",name);
         startActivity(i);
     }
 
-    private void startAdminCourse(String gcode){
+    private void startAdminCourse(String gcode, String name){
         Intent i = new Intent(this,AdminViewJoined.class);
         i.putExtra("gcode",gcode);
+        i.putExtra("name",name);
         startActivity(i);
     }
 
@@ -171,7 +177,11 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onResume() {
         super.onResume();
-        populateUserData();
+        if(currentSession.isAdmin()){
+            populateAdminData();
+        }else{
+            populateUserData();
+        }
     }
 
 }

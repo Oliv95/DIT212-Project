@@ -39,18 +39,22 @@ public class PartnerRequestActivity extends AppCompatActivity implements View.On
     ArrayAdapter<String> arrayAdapter;
     HashMap<Integer,Gcode> itemToGcode = new HashMap<>();
     Toolbar t;
+
     private String course;
+    private String courseName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_courses);
+        setContentView(R.layout.activity_partner_request);
 
         Intent intent = getIntent();
 
         course =  (String) intent.getExtras().get("gcode");
+        courseName = (String) intent.getExtras().get("name");
 
         courseList = (ListView) findViewById(R.id.course_list);
+
 
         t = (Toolbar)findViewById(R.id.course_toolbar);
         t.setTitle("Courses");
@@ -77,7 +81,7 @@ public class PartnerRequestActivity extends AppCompatActivity implements View.On
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3)
             {
-
+                //TODO
             }
         });
         arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, courseNames);
@@ -140,6 +144,7 @@ public class PartnerRequestActivity extends AppCompatActivity implements View.On
     public void toSwipe(View view) {
         Intent intent = new Intent(this, UserSwipeActivity.class);
         intent.putExtra("gcode", course);
+        intent.putExtra("name", courseName);
         startActivity(intent);
     }
 
