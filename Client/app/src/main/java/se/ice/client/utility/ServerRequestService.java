@@ -148,6 +148,7 @@ public class ServerRequestService implements Domain {
 
         } catch (Exception e) {
             return null;
+
         }
 
 
