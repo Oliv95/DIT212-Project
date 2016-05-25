@@ -99,6 +99,11 @@ public class MockupServer implements Domain {
     }
 
     @Override
+    public List<Course> getAllAdministratingCourse(String email) {
+        return null;
+    }
+
+    @Override
     public String createUser(String email, String name, String password) {
         if (users.containsKey(email) || admins.containsKey(email)) {
             return "";
