@@ -64,6 +64,7 @@ public class UserSwipeActivity extends Activity {
         users = domain.getNotMatchedWith(currentSession.getEmail(), course);
 
         if(!users.isEmpty()) {
+            Log.d("Number of Users: ", String.valueOf(users.size()));
             yesButton.setVisibility(View.VISIBLE);
             noButton.setVisibility(View.VISIBLE);
             name.setText(users.get(0).getName());

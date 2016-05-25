@@ -16,8 +16,15 @@ public class Course {
     private String name;
     private String admin; // email of admin
 
+    @JsonProperty("partnerRequests")
+    private List<PartnerRequest> partnerRequests;
+
     @JsonIgnore
     private Map<String,User> listed;
+
+    @JsonProperty("partners")
+    private List<Partner> partners;
+
 
     private List<String> registeredEmails;
 

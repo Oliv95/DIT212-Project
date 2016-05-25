@@ -24,7 +24,6 @@ import se.ice.client.models.Course;
 import se.ice.client.utility.CurrentSession;
 import se.ice.client.utility.Gcode;
 import se.ice.client.utility.Domain;
-import se.ice.client.utility.MockupServer;
 import se.ice.client.utility.ServerRequestService;
 
 public class CoursesActivity extends AppCompatActivity implements View.OnClickListener {

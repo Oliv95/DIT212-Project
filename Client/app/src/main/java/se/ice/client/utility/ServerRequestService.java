@@ -282,8 +282,6 @@ public class ServerRequestService implements Domain {
             URL url = new URL(String.format(server + admin + "/%s",
                     URLEncoder.encode(email, charset)));
 
-            ObjectMapper mapper = new ObjectMapper();
-
             Admin admin = (Admin) new AsyncCall().execute(url, new Admin()).get();
 
             return admin;
