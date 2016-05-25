@@ -86,7 +86,7 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void populateAdminData(){
-        List<Course> administrating = server.getAllAdministratingCourses(currentSession.getEmail());
+        List<Course> administrating = server.getAllAdministratingCourse(currentSession.getEmail());
         List<String> courseNames = new ArrayList<>();
         int counter = 0;
         itemToGcode.clear();
