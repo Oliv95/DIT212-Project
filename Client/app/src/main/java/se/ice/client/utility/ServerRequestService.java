@@ -1,27 +1,15 @@
 package se.ice.client.utility;
 
-import android.app.Service;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.IBinder;
 import android.util.Log;
-
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
 import java.net.URLEncoder;
-import java.nio.channels.UnsupportedAddressTypeException;
 import java.util.ArrayList;
 import java.util.List;
-
 import se.ice.client.models.Admin;
 import se.ice.client.models.Course;
 import se.ice.client.models.User;
@@ -446,12 +434,11 @@ public class ServerRequestService implements Domain {
     @Override
     public List<Course> getAllAdministratingCourse(String email) {
         try {
-            URL url = new URL(String.format(server + admin + "/%s/administrating", email));
+            URL url = new URL(String.format(server + admin + "/%s/administrating",
+                    URLEncoder.encode(email, charset)));
 
-            String content = URLEncoder.encode(String.format(server +admin + "/%s/administrating",
-                    URLEncoder.encode(email, charset)), charset);
 
-            Course[] courses = (Course[]) new AsyncPostCall().execute(url, content, new Course[0]).get();
+            Course[] courses = (Course[]) new AsyncCall().execute(url, new Course[0]).get();
 
             List<Course> courseList = new ArrayList<>();
 
