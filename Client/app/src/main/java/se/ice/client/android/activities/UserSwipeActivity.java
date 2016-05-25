@@ -70,9 +70,6 @@ public class UserSwipeActivity extends AppCompatActivity {
         course =  (String) intent.getExtras().get("gcode");
         courseName = (String) intent.getExtras().get("name");
 
-
-
-
         t.setTitle(courseName + "     " + course);
 
         setSupportActionBar(t);
