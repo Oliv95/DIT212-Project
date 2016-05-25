@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Iterator;
 import java.util.List;
 
 import se.ice.client.R;
@@ -38,7 +39,8 @@ public class UserSwipeActivity extends Activity {
      */
     private String course;
     private List<User> users;
-    private int currentUser = 0;
+    private Iterator<User> iterator;
+    private User currentUser;
 
     private final Domain domain = new ServerRequestService();
     private CurrentSession currentSession = CurrentSession.getInstance();
@@ -67,8 +69,8 @@ public class UserSwipeActivity extends Activity {
             Log.d("Number of Users: ", String.valueOf(users.size()));
             yesButton.setVisibility(View.VISIBLE);
             noButton.setVisibility(View.VISIBLE);
-            name.setText(users.get(0).getName());
-            currentUser = 0;
+            iterator = users.iterator();
+            nextUser();
         } else {
             yesButton.setVisibility(View.INVISIBLE);
             noButton.setVisibility(View.INVISIBLE);
@@ -82,19 +84,18 @@ public class UserSwipeActivity extends Activity {
     }
 
     public void yes(View view) {
-        Log.i("currentUser", users.get(currentUser).getEmail());
-        domain.sendMatchRequest(currentSession.getEmail(), users.get(currentUser).getEmail(), course);
+        domain.sendMatchRequest(currentSession.getEmail(), currentUser.getEmail(), course);
         nextUser();
 
     }
 
     private boolean nextUser() {
 
-        if (currentUser+1 < users.size()) {
-            name.setText(users.get(currentUser+1).getName());
-            currentUser++;
+        if (iterator.hasNext()) {
+            User next = iterator.next();
+            name.setText(next.getName());
+            currentUser = next;
         } else {
-            currentUser = 0;
             populateData();
         }
         return true;

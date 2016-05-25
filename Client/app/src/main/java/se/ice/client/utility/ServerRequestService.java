@@ -207,13 +207,20 @@ public class ServerRequestService implements Domain {
     @Override
     public boolean sendMatchRequest(String senderEmail, String receiverEmail, String generatedCourseCode) {
         try {
-            URL url = new URL(String.format(server + course + "/%s/match?sender=asd&receiver=asd",
+            URL url = new URL(String.format(server + course + "/%s/match?sender=%s&receiver=%s",
+                    generatedCourseCode,
+                    senderEmail,
+                    receiverEmail));
+
+            String content = URLEncoder.encode(String.format(server + course + "/%s/match?sender=asd&receiver=asd",
                     URLEncoder.encode(generatedCourseCode, charset),
                     URLEncoder.encode(senderEmail, charset),
-                    URLEncoder.encode(receiverEmail, charset)));
+                    URLEncoder.encode(receiverEmail, charset)), charset);
 
 
-            throw new UnsupportedOperationException("Not implemented");
+           boolean secureRespone= (boolean) new AsyncPostCall().execute(url, content, new Boolean(true)).get();
+
+            return secureRespone;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -318,13 +325,19 @@ public class ServerRequestService implements Domain {
     @Override
     public boolean sendPartnerRequest(String generatedCourseCode, String fromEmail, String toEmail) {
         try {
-            URL url = new URL(String.format(server + users + "from=%s&to=%s&gcode=%s",
+            URL url = new URL(String.format(server + course + "/%s/partnerRequest?sender=%s&receiver=%s",
+                    generatedCourseCode,
+                    fromEmail,
+                    toEmail));
+
+            String content = URLEncoder.encode(String.format(server + course + "/%s/partnerRequest?sender=%s&receiver=%s",
+                    URLEncoder.encode(generatedCourseCode, charset),
                     URLEncoder.encode(fromEmail, charset),
-                    URLEncoder.encode(toEmail, charset),
-                    URLEncoder.encode(generatedCourseCode, charset)));
+                    URLEncoder.encode(toEmail, charset)),charset);
 
+            boolean secureResponse= (boolean) new AsyncPostCall().execute(url, content, new Boolean(true)).get();
 
-            throw new UnsupportedOperationException("This method is not implemented");
+            return secureResponse;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -368,11 +381,13 @@ public class ServerRequestService implements Domain {
     @Override
     public User getPartner(String email, String generatedCourseCode) {
         try {
-            URL url = new URL(String.format(server + users + "email=%s&gcode=%s",
-                    URLEncoder.encode(email, charset),
-                    URLEncoder.encode(generatedCourseCode, charset)));
+            URL url = new URL(String.format(server + course + "/%s/getPartner?from=%s", generatedCourseCode, email));
 
-            throw new UnsupportedOperationException("This method is not implemented");
+            String content = URLEncoder.encode(String.format(server + course + "/%s/getPartner?from=%s",
+                    URLEncoder.encode(generatedCourseCode, charset),
+                    URLEncoder.encode(email, charset)), charset);
+
+            return (User) new AsyncPostCall().execute(url, content, new User()).get();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -420,13 +435,36 @@ public class ServerRequestService implements Domain {
                 courses.add(getCourse(gcode.toString()));
             }
 
-            Log.i("number og courses", courses.get(0).getName());
 
             return courses;
 
         } catch (Exception e) {
             e.printStackTrace();
             return new ArrayList<>();
+        }
+    }
+
+    @Override
+    public List<Course> getAllAdministratingCourse(String email) {
+        try {
+            URL url = new URL(String.format(server + admin + "/%s/administrating", email));
+
+            String content = URLEncoder.encode(String.format(server +admin + "/%s/administrating",
+                    URLEncoder.encode(email, charset)), charset);
+
+            Course[] courses = (Course[]) new AsyncPostCall().execute(url, content, new Course[0]).get();
+
+            List<Course> courseList = new ArrayList<>();
+
+            for (Course c : courses) {
+                courseList.add(c);
+            }
+
+            return courseList;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }
