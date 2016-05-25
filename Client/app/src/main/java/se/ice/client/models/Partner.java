@@ -12,7 +12,7 @@ import java.util.List;
 public class Partner {
 
     @JsonProperty("members")
-    private String[] members;
+    private List<String> members;
 
     @JsonIgnore
     private String member1;
@@ -27,10 +27,7 @@ public class Partner {
     }
 
     public List<String> getMembers(){
-        List <String> result = new ArrayList<>();
-        result.add(member1);
-        result.add(member2);
-        return result;
+        return members;
     }
 
     @Override

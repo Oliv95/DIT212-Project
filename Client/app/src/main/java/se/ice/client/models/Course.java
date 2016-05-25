@@ -66,4 +66,8 @@ public class Course {
     public void setRegisteredEmails(List<String> registeredEmails) {
         this.registeredEmails = registeredEmails;
     }
+
+    public List<Partner> getPartners() {
+        return partners;
+    }
 }
