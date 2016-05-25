@@ -53,7 +53,6 @@ public class AdminViewJoined extends AppCompatActivity {
             userNames.add(u.getName() + "  " + u.getEmail());
         }
 
-
         arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, userNames);
         userList.setAdapter(arrayAdapter);
     }
