@@ -43,7 +43,7 @@ public class Matched implements Serializable{
 
         //It does not mather in what order the members are stored
         result = member1.equals(other.member1) || member1.equals(other.member2);
-        result = result || member2.equals(other.member2) || member2.equals(other.member2);
+        result = result && member2.equals(other.member1) || member2.equals(other.member2);
         return result;
     }
 

@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import se.ice.client.R;
 import se.ice.client.utility.CurrentSession;
@@ -23,6 +24,7 @@ public class JoinCourseActivity extends AppCompatActivity implements View.OnClic
     Domain server = new ServerRequestService();
     EditText codeView;
     Button joinButton;
+    TextView joinStatus;
     Toolbar t;
     CurrentSession currentSession = CurrentSession.getInstance();
 
@@ -37,6 +39,7 @@ public class JoinCourseActivity extends AppCompatActivity implements View.OnClic
         codeView = (EditText) findViewById(R.id.course_join_code);
         joinButton = (Button) findViewById(R.id.course_join_button);
         joinButton.setOnClickListener(this);
+        joinStatus = (TextView) findViewById(R.id.course_join_status);
 
         t = (Toolbar) findViewById(R.id.main_toolbar);
         t.setTitle("Join course");
@@ -47,8 +50,13 @@ public class JoinCourseActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         if(view.equals(joinButton)){
             Editable courseCode = codeView.getText();
-            boolean joined = server.joinCourse(courseCode.toString(),currentSession.getEmail());
-            Log.d(TAG, joined + " courseCode");
+            if(server.joinCourse(courseCode.toString(),currentSession.getEmail())){
+                String courseName = (server.getCourse(courseCode.toString())).getName();
+                joinStatus.setText("Sucessfuly joined: " + courseName);
+            }else{
+                joinStatus.setText("No such course exist");
+            }
+
         }
     }
 

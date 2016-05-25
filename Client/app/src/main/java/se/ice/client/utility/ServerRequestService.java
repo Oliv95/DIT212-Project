@@ -181,9 +181,9 @@ public class ServerRequestService implements Domain {
             String content = URLEncoder.encode(String.format(server + course + "/%s/join?email=%s",
                     URLEncoder.encode(generatedCourseCode, charset),
                     URLEncoder.encode(user, charset)), charset);
-            new AsyncPostCall().execute(url, content, new Boolean(true)).get();
+            boolean b = (boolean) new AsyncPostCall().execute(url, content, new Boolean(true)).get();
 
-            return true;
+            return b;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -422,7 +422,6 @@ public class ServerRequestService implements Domain {
             for (Gcode gcode : gcodes) {
                 courses.add(getCourse(gcode.toString()));
             }
-
 
             return courses;
 

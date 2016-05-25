@@ -61,7 +61,7 @@
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/register_password2"
-        android:text="Password"
+        android:hint="Password"
         android:layout_below="@+id/register_password1"
         android:layout_alignLeft="@+id/register_password1"
         android:layout_alignStart="@+id/register_password1" />
