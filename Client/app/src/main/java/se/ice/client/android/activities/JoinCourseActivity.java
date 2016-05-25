@@ -1,6 +1,5 @@
 package se.ice.client.android.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,14 +14,19 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import se.ice.client.R;
+import se.ice.client.utility.CurrentSession;
+import se.ice.client.utility.Domain;
 import se.ice.client.utility.MockupServer;
+import se.ice.client.utility.ServerRequestService;
 
 public class JoinCourseActivity extends AppCompatActivity implements View.OnClickListener {
 
-    MockupServer server = (MockupServer) MockupServer.getInstance();
+    Domain server = new ServerRequestService();
     EditText codeView;
     Button joinButton;
+    TextView joinStatus;
     Toolbar t;
+    CurrentSession currentSession = CurrentSession.getInstance();
 
     // Used for logging
     private static final String TAG = "JoinCourse";
@@ -30,11 +34,12 @@ public class JoinCourseActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_course_create);
+        setContentView(R.layout.activity_course_join);
 
         codeView = (EditText) findViewById(R.id.course_join_code);
-        joinButton = (Button) findViewById(R.id.course_create_button);
+        joinButton = (Button) findViewById(R.id.course_join_button);
         joinButton.setOnClickListener(this);
+        joinStatus = (TextView) findViewById(R.id.course_join_status);
 
         t = (Toolbar) findViewById(R.id.main_toolbar);
         t.setTitle("Join course");
@@ -45,8 +50,13 @@ public class JoinCourseActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         if(view.equals(joinButton)){
             Editable courseCode = codeView.getText();
-            boolean joined = server.joinCourse(courseCode.toString(),"admin@mail.com");
-            Log.d(TAG, joined + " courseCode");
+            if(server.joinCourse(courseCode.toString(),currentSession.getEmail())){
+                String courseName = (server.getCourse(courseCode.toString())).getName();
+                joinStatus.setText("Sucessfuly joined: " + courseName);
+            }else{
+                joinStatus.setText("No such course exist");
+            }
+
         }
     }
 

@@ -12,7 +12,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import se.ice.client.R;
+import se.ice.client.utility.Domain;
 import se.ice.client.utility.MockupServer;
+import se.ice.client.utility.ServerRequestService;
 
 public class RegisterActivity extends Activity implements View.OnClickListener {
 
@@ -24,10 +26,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
     Button registerButton;
     CheckBox adminBox;
 
-    // URL url = new URL("localhost:8080/users/");
-    // HttpURLConnection urlConnection;
-
-    MockupServer server = (MockupServer) MockupServer.getInstance();
+    Domain server = new ServerRequestService();
 
     // Used for log
     private static final String TAG = "Register";

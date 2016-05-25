@@ -4,25 +4,33 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.support.v7.widget.Toolbar.OnMenuItemClickListener;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 import se.ice.client.R;
-import se.ice.client.utility.MockupServer;
+import se.ice.client.utility.CurrentSession;
+import se.ice.client.utility.Domain;
+import se.ice.client.utility.ServerRequestService;
 
 public class ProfileActivity extends AppCompatActivity{
 
     TextView emailView;
     TextView nameView;
     TextView phoneView;
-    MockupServer server = (MockupServer) MockupServer.getInstance();
+
+    Domain server = new ServerRequestService();
+    CurrentSession currentSession = CurrentSession.getInstance();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+
+        Log.i("START: ", "ProfileActivity");
 
         emailView = (TextView) findViewById(R.id.profile_email);
         nameView = (TextView) findViewById(R.id.profile_name);
@@ -31,13 +39,13 @@ public class ProfileActivity extends AppCompatActivity{
         populateData();
 
         Toolbar t = (Toolbar)findViewById(R.id.main_toolbar);
-        t.setTitle(server.getCurrent().getName());
+        t.setTitle(currentSession.getName());
         setSupportActionBar(t);
     }
 
     public void populateData(){
-        emailView.setText(server.getCurrent().getEmail());
-        nameView.setText(server.getCurrent().getName());
+        emailView.setText(currentSession.getEmail());
+        nameView.setText(currentSession.getName());
     }
 
     @Override

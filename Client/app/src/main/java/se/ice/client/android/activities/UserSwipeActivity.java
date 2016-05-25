@@ -4,23 +4,34 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
+import java.util.Iterator;
 import java.util.List;
 
 import se.ice.client.R;
 import se.ice.client.models.User;
 import se.ice.client.utility.Constants;
+import se.ice.client.utility.CurrentSession;
 import se.ice.client.utility.Domain;
 import se.ice.client.utility.MockupServer;
+import se.ice.client.utility.ServerRequestService;
 
 /**
  * Created by Simon on 2016-04-20.
  * One must send an intent with a bundle that has the course the user is going to find a partner in.
  */
-public class UserSwipeActivity extends Activity {
+public class UserSwipeActivity extends AppCompatActivity {
 
     /**
      * View elements
@@ -28,38 +39,59 @@ public class UserSwipeActivity extends Activity {
     private Button noButton;
     private Button yesButton;
     private TextView name;
+    private TextView statusView;
 
     /**
      * Class variables
      */
     private String course;
+    private String courseName;
     private List<User> users;
-    private int currentUser = 0;
-    private String email;
+    private Iterator<User> iterator;
+    private User currentUser;
 
-    private final Domain domain = MockupServer.getInstance();
+    private final Domain domain = new ServerRequestService();
+    private CurrentSession currentSession = CurrentSession.getInstance();
+    Toolbar t;
 
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_user_swipe);
 
+        noButton = (Button) findViewById(R.id.noButton);
+        yesButton = (Button) findViewById(R.id.yesButton);
+        name = (TextView) findViewById(R.id.name);
+        statusView = (TextView) findViewById(R.id.user_swipe_status);
+        t = (Toolbar)findViewById(R.id.course_toolbar);
+
+        Intent intent = getIntent();
+
+        course =  (String) intent.getExtras().get("gcode");
+        courseName = (String) intent.getExtras().get("name");
+
+        t.setTitle(courseName + "     " + course);
+
+        setSupportActionBar(t);
+
         populateData();
     }
 
     private void populateData() {
 
-        Intent intent = getIntent();
+        users = domain.getNotMatchedWith(currentSession.getEmail(), course);
 
-        course =  (String) intent.getExtras().get("course");
-
-        users = domain.getAllUsers(course);
-
-        name.setText(users.get(0).getName());
-
-        SharedPreferences settings = getSharedPreferences(Constants.SETTINGS_FILE, 0);
-
-        email = settings.getString(Constants.EMAIL_FIELD, "");
+        if(!users.isEmpty()) {
+            Log.d("Number of Users: ", String.valueOf(users.size()));
+            yesButton.setVisibility(View.VISIBLE);
+            noButton.setVisibility(View.VISIBLE);
+            iterator = users.iterator();
+            nextUser();
+        } else {
+            yesButton.setVisibility(View.INVISIBLE);
+            noButton.setVisibility(View.INVISIBLE);
+            name.setText("You have no more possible matches");
+        }
 
     }
 
@@ -68,23 +100,68 @@ public class UserSwipeActivity extends Activity {
     }
 
     public void yes(View view) {
-        domain.sendMatchRequest(email, users.get(currentUser).getEmail(), course);
+        domain.sendMatchRequest(currentSession.getEmail(), currentUser.getEmail(), course);
         nextUser();
 
     }
 
     private boolean nextUser() {
-        if(currentUser < users.size()) {
-            name.setText(users.get(currentUser).getName());
-            currentUser++;
+
+        if (iterator.hasNext()) {
+            User next = iterator.next();
+            name.setText(next.getName());
+            currentUser = next;
         } else {
-            currentUser = 0;
-            name.setText(users.get(currentUser).getName());
-            currentUser++;
+            populateData();
         }
-        if (users.size() > 0) {
-            users.remove(currentUser - 1);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent i;
+        switch (item.getItemId()) {
+            case R.id.menu_profile:
+                i = new Intent(this, ProfileActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.menu_courses:
+                //When in course activity we don't want to start a new courses activity
+                i = new Intent(this, CoursesActivity.class);
+                startActivity(i);
+                finish();
+                return true;
+
+            case R.id.menu_log_out:
+                i= new Intent(getApplicationContext(), LoginActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
         }
+
+
+    }
+    public void toSwipe(View view) {
+
+    }
+
+    public void toPartner(View view) {
+        Intent intent = new Intent(this, PartnerRequestActivity.class);
+        intent.putExtra("gcode", course);
+        startActivity(intent);
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 
