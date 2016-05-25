@@ -25,8 +25,8 @@ public class CreateCourseActivity extends AppCompatActivity implements View.OnCl
     Button createButton;
     TextView status;
     Toolbar t;
-    CurrentSession currentSession = CurrentSession.getInstance();
     Domain server = new ServerRequestService();
+    CurrentSession currentSession = CurrentSession.getInstance();
 
     // Used for loggin
     private static final String TAG = "CreateCourse";
@@ -49,8 +49,14 @@ public class CreateCourseActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View view) {
         Editable course = courseName.getText();
         if(view.equals(createButton)){
+
             Gcode code = server.createCourse(course.toString(),currentSession.getEmail());
-            status.setText(code.toString());
+
+            if(code == null) {
+                status.setText(course.toString() + " was NOT created");
+            } else {
+                status.setText(course.toString() + " was created with course code " + code.toString());
+            }
         }
     }
 

@@ -29,6 +29,7 @@ public class ProfileActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+
         Log.i("START: ", "ProfileActivity");
 
         emailView = (TextView) findViewById(R.id.profile_email);
