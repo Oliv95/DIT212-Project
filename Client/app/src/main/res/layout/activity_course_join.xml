@@ -23,4 +23,11 @@
         android:id="@+id/course_join_button"
         android:layout_gravity="center_horizontal"
         android:contextClickable="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/course_join_status"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>
