@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +26,7 @@ import se.ice.client.utility.ServerRequestService;
  * Created by Simon on 2016-04-20.
  * One must send an intent with a bundle that has the course the user is going to find a partner in.
  */
-public class UserSwipeActivity extends Activity {
+public class UserSwipeActivity extends AppCompatActivity {
 
     /**
      * View elements
@@ -42,6 +44,7 @@ public class UserSwipeActivity extends Activity {
 
     private final Domain domain = new ServerRequestService();
     private CurrentSession currentSession = CurrentSession.getInstance();
+    Toolbar t;
 
     @Override
     public void onCreate(Bundle bundle) {
@@ -55,6 +58,10 @@ public class UserSwipeActivity extends Activity {
         Intent intent = getIntent();
 
         course =  (String) intent.getExtras().get("gcode");
+
+        t = (Toolbar)findViewById(R.id.main_toolbar);
+        t.setTitle(course);
+        setSupportActionBar(t);
 
         populateData();
     }

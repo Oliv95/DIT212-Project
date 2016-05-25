@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -56,7 +55,7 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
         List<Gcode> courses;
 
         if(currentSession.isAdmin()){
-
+            populateAdminData();
         }else{
             populateUserData();
         }
@@ -79,15 +78,44 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
             {
-                startCourse(itemToGcode.get(position).toString());
+                startUserCourse(itemToGcode.get(position).toString());
             }
         });
         arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, courseNames);
         courseList.setAdapter(arrayAdapter);
     }
 
-    private void startCourse(String gcode){
+    private void populateAdminData(){
+        List<Course> administrating = server.getAllAdministratingCourses(currentSession.getEmail());
+        List<String> courseNames = new ArrayList<>();
+        int counter = 0;
+        itemToGcode.clear();
+        for(Course c : administrating){
+            courseNames.add(c.getName().toUpperCase());
+            itemToGcode.put(counter,c.getCode());
+            counter++;
+        }
+
+        courseList.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
+            {
+                startAdminCourse(itemToGcode.get(position).toString());
+            }
+        });
+        arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, courseNames);
+        courseList.setAdapter(arrayAdapter);
+    }
+
+    private void startUserCourse(String gcode){
         Intent i = new Intent(this,UserSwipeActivity.class);
+        i.putExtra("gcode",gcode);
+        startActivity(i);
+    }
+
+    private void startAdminCourse(String gcode){
+        Intent i = new Intent(this,AdminViewJoined.class);
         i.putExtra("gcode",gcode);
         startActivity(i);
     }
