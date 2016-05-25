@@ -72,13 +72,14 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
         for(Course c : enrolled){
             courseNames.add(c.getName().toUpperCase());
             itemToGcode.put(counter,c.getCode());
+            counter++;
         }
+
         courseList.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
             {
-                Log.i("onItemClick", String.valueOf(position));
                 startCourse(itemToGcode.get(position).toString());
             }
         });
@@ -91,7 +92,6 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
         i.putExtra("gcode",gcode);
         startActivity(i);
     }
-
 
     @Override
     public void onClick(View view) {

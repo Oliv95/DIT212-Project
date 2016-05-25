@@ -103,8 +103,6 @@ public class UserSwipeActivity extends Activity {
     public void onResume() {
         super.onResume();
 
-
-
     }
 
 }
