@@ -1,0 +1,27 @@
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/admin_view_joined_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary"
+    android:weightSum="1">
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All"
+        android:id="@+id/admin_view_joined_all"
+        android:onClick="toSwipe"
+        android:layout_weight="0.08"
+        android:layout_gravity="center" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Partners"
+        android:id="@+id/admin_view_joined_partners"
+        android:onClick="toPartner"
+        android:layout_gravity="center" />
+</android.support.v7.widget.Toolbar>

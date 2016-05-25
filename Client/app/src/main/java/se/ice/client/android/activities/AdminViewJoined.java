@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -19,7 +22,7 @@ import se.ice.client.models.User;
 import se.ice.client.utility.Domain;
 import se.ice.client.utility.ServerRequestService;
 
-public class AdminViewJoined extends AppCompatActivity {
+public class AdminViewJoined extends AppCompatActivity implements View.OnClickListener{
 
     Domain server = new ServerRequestService();
 
@@ -27,7 +30,8 @@ public class AdminViewJoined extends AppCompatActivity {
     private  String courseName;
     ListView userList;
     ArrayAdapter<String> arrayAdapter;
-
+    Button allButton;
+    Button partnerButton;
     Toolbar t;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +42,16 @@ public class AdminViewJoined extends AppCompatActivity {
         courseCode =  (String) intent.getExtras().get("gcode");
         courseName = (String) intent.getExtras().get("name");
         userList = (ListView) findViewById(R.id.user_list);
+        allButton = (Button) findViewById(R.id.admin_view_joined_all);
+        partnerButton = (Button) findViewById(R.id.admin_view_joined_partners);
 
-        Toolbar t = (Toolbar)findViewById(R.id.main_toolbar);
+        allButton.setOnClickListener(this);
+        partnerButton.setOnClickListener(this);
+
+        t = (Toolbar)findViewById(R.id.admin_view_joined_toolbar);
         t.setTitle(courseName + "    " + courseCode);
         setSupportActionBar(t);
+
         populateAllUserData();
     }
 
@@ -73,6 +83,36 @@ public class AdminViewJoined extends AppCompatActivity {
         super.onResume();
     }
 
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent i;
+        switch (item.getItemId()) {
+            case R.id.menu_profile:
+                i = new Intent(this, ProfileActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.menu_courses:
+                i = new Intent(this, CoursesActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.menu_log_out:
+                i= new Intent(getApplicationContext(), LoginActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(view.equals(allButton)){
+            populateAllUserData();
+        }else if(view.equals(partnerButton)){
+            populatePartnerData();
+        }
+    }
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
