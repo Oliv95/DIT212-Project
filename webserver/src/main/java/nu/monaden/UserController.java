@@ -6,6 +6,8 @@ import domain.interfaces.ICourse;
 import domain.interfaces.IUser;
 import domain.util.Gcode;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -42,10 +44,16 @@ public class UserController {
     public List<String> getMatchedNotWithMe(@PathVariable String email,
                                             @PathVariable String gcode)
     {
+        //needs Deep copy
         List<String> users = course.getAllUsers(Gcode.fromString(gcode));
-        users.removeAll(course.getMatchedWithMe(email,Gcode.fromString(gcode)));
-        users.remove(email);
-        return users;
+        List<String> usersCopy = new ArrayList<>();
+        for (String s : users) {
+            usersCopy.add(s);
+        }
+
+        usersCopy.removeAll(course.getMatchedWithMe(email,Gcode.fromString(gcode)));
+        usersCopy.remove(email);
+        return usersCopy;
 
     }
 
