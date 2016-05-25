@@ -46,7 +46,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/profile_phone"
         android:layout_gravity="center_horizontal"
-        android:text="xxx-xxxxxxx"
+        android:text=""
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
