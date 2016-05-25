@@ -32,13 +32,13 @@ public class UserController {
         return course.getEnrolledIn(email);
     }
 
-    @RequestMapping(value = "/users/{email:.*}/{course}/matched", method = RequestMethod.GET)
+    @RequestMapping(value = "/users/{email:.*}/{gcode}/matched", method = RequestMethod.GET)
     public List<String> getMatchedWithMe(@PathVariable String email, @PathVariable String gcode)
     {
         return course.getMatchedWithMe(email, Gcode.fromString(gcode));
     }
 
-    @RequestMapping(value = "/users/{email:.*}/{course}/notmatched", method = RequestMethod.GET)
+    @RequestMapping(value = "/users/{email:.*}/{gcode}/notmatched", method = RequestMethod.GET)
     public List<String> getMatchedNotWithMe(@PathVariable String email,
                                             @PathVariable String gcode)
     {

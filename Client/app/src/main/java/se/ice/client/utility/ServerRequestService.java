@@ -422,7 +422,7 @@ public class ServerRequestService implements Domain {
                 courses.add(getCourse(gcode.toString()));
             }
 
-            Log.i("number og courses", courses.get(0).getName());
+            //Log.i("number og courses", courses.get(0).getName());
 
             return courses;
 

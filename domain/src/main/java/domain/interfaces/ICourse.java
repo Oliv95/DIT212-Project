@@ -6,6 +6,7 @@ import domain.User;
 import domain.util.Gcode;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by oliv on 4/21/16.
@@ -63,4 +64,10 @@ public interface ICourse {
     List<Gcode> getAllAdministrating(String email);
 
     List<Course> getAllCourses();
+
+    boolean partnerRequest(String from,String to, Gcode gcode);
+
+    String getPartner(String from, Gcode gcode);
+
+
 }

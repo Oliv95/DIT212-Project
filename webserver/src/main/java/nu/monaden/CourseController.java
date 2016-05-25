@@ -4,6 +4,7 @@ import domain.Course;
 import domain.domains.CourseDomain;
 import domain.interfaces.ICourse;
 import domain.util.Gcode;
+import org.springframework.core.GenericCollectionTypeResolver;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,6 +37,23 @@ public class CourseController {
                                 @PathVariable String gcode){
         return course.matchRequest(sender,receiver,Gcode.fromString(gcode));
     }
+    @RequestMapping(value = "/course/{gcode}/partnerRequest", method = RequestMethod.POST)
+    public boolean partnerRequest(@RequestParam(value = "sender") String sender,
+                                @RequestParam(value = "receiver") String receiver,
+                                @PathVariable String gcode){
+        return course.partnerRequest(sender, receiver, Gcode.fromString(gcode));
+    }
+
+    @RequestMapping(value = "/course/{gcode}/getPartner", method = RequestMethod.POST)
+    public String partnerRequest(@RequestParam(value = "from") String from,
+                                @PathVariable String gcode){
+        return course.getPartner(from, Gcode.fromString(gcode));
+    }
+
+
+
+
+
 
     @RequestMapping(value = "/course/{code}",method = RequestMethod.GET)
     public Course getCourse(@PathVariable String code) {

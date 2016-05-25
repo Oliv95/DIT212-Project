@@ -164,4 +164,37 @@ public class CourseTest {
 
         assertTrue(allUsers.contains(userEmail));
     }
+
+    @Test
+    public void makePartnerRequst() {
+        user.createUser("test","name","pw");
+        user.createUser("test2","name2","pw");
+        user.createAdmin("tofu","adder","pw");
+        Gcode gcode = course.createCourse("myCourse","tofu");
+        course.joinCourse(gcode,"test");
+        course.joinCourse(gcode,"test2");
+        course.matchRequest("test","test2",gcode);
+        course.matchRequest("test2","test",gcode);
+        course.partnerRequest("test","test2",gcode);
+        course.partnerRequest("test2","test",gcode);
+        boolean result = course.getPartner("test",gcode).equals("test2");
+        assertTrue(result);
+    }
+    @Test
+    public void makeBadPartnerRequst() {
+        user.createUser("test3","name","pw");
+        user.createUser("test4","name2","pw");
+        user.createAdmin("tofulife","adder","pw");
+        Gcode gcode = course.createCourse("myCourse","tofulife");
+        Gcode wrongCode = course.createCourse("myCourse","tofulife2");
+        course.joinCourse(gcode,"test3");
+        course.joinCourse(gcode,"test4");
+        course.matchRequest("test3","test4",gcode);
+        course.matchRequest("test4","test3",gcode);
+        course.partnerRequest("test3","test4",gcode);
+        course.partnerRequest("test4","test3",gcode);
+        String result = course.getPartner("test3",wrongCode);
+        assertNull(result);
+    }
+
 }
