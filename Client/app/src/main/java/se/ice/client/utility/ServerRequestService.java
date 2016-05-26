@@ -382,15 +382,19 @@ public class ServerRequestService implements Domain {
 
     @Override
     public User getPartner(String email, String generatedCourseCode) {
+        Log.i("METHOD", "getPartner");
         try {
             URL url = new URL(String.format(server + course + "/%s/getPartner?from=%s", generatedCourseCode, email));
 
             String content = URLEncoder.encode(String.format(server + course + "/%s/getPartner?from=%s",
                     URLEncoder.encode(generatedCourseCode, charset),
                     URLEncoder.encode(email, charset)), charset);
+            String partnerEmail = (String) new AsyncPostCall().execute(url, content, new String()).get();
 
-            return (User) new AsyncPostCall().execute(url, content, new User()).get();
-
+            if(partnerEmail != null) {
+                return getUser(partnerEmail);
+            } else
+                return null;
         } catch (Exception e) {
             e.printStackTrace();
             return null;

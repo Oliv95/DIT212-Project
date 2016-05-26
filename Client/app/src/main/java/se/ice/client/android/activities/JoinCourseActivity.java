@@ -72,14 +72,18 @@ public class JoinCourseActivity extends AppCompatActivity implements View.OnClic
             case R.id.menu_profile:
                 i = new Intent(this, ProfileActivity.class);
                 startActivity(i);
-                finish();
                 return true;
             case R.id.menu_courses:
-                finish();
+                i = new Intent(this, CoursesActivity.class);
+                startActivity(i);
                 return true;
             case R.id.menu_log_out:
                 i= new Intent(getApplicationContext(), LoginActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+                return true;
+            case R.id.menu_requests:
+                i = new Intent(this, ReceivedPartnerRequestActivity.class);
                 startActivity(i);
                 return true;
             default:

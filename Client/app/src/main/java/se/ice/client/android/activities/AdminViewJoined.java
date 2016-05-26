@@ -83,6 +83,12 @@ public class AdminViewJoined extends AppCompatActivity implements View.OnClickLi
         super.onResume();
     }
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent i;
         switch (item.getItemId()) {
@@ -99,6 +105,10 @@ public class AdminViewJoined extends AppCompatActivity implements View.OnClickLi
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
                 return true;
+            case R.id.menu_requests:
+                i = new Intent(this, ReceivedPartnerRequestActivity.class);
+                startActivity(i);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
 
@@ -112,9 +122,5 @@ public class AdminViewJoined extends AppCompatActivity implements View.OnClickLi
         }else if(view.equals(partnerButton)){
             populatePartnerData();
         }
-    }
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
     }
 }

@@ -66,15 +66,18 @@ public class PartnerRequestProfileActivity extends AppCompatActivity {
         }
     }
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent i;
         switch (item.getItemId()) {
             case R.id.menu_profile:
-                // When in profile we dont want to start a new profile activity
                 i = new Intent(this, ProfileActivity.class);
                 startActivity(i);
-                finish();
                 return true;
             case R.id.menu_courses:
                 i = new Intent(this, CoursesActivity.class);
@@ -85,15 +88,14 @@ public class PartnerRequestProfileActivity extends AppCompatActivity {
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
                 return true;
+            case R.id.menu_requests:
+                i = new Intent(this, ReceivedPartnerRequestActivity.class);
+                startActivity(i);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
 
         }
-    }
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
     }
 
     public void onRequestButtonClick(View view) {

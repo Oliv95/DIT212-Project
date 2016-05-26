@@ -19,8 +19,14 @@ public class Course {
     @JsonProperty("partnerRequests")
     private List<PartnerRequest> partnerRequests;
 
-    @JsonIgnore
-    private Map<String,User> listed;
+    @JsonProperty("listed")
+    private List<String> listed;
+
+    @JsonProperty("match_requests")
+    private List<MatchRequest> matchRequests;
+
+    @JsonProperty("matches")
+    private List<Matched> matches;
 
     @JsonProperty("partners")
     private List<Partner> partners;
@@ -35,7 +41,7 @@ public class Course {
         this.admin = admin;
         code = gcode;
         this.registeredEmails = registeredEmails;
-        listed = new HashMap<>();
+        listed = new ArrayList<>();
     }
 
     public String getName(){
@@ -47,12 +53,11 @@ public class Course {
     }
 
     public void registerUser(User user) {
-        listed.put(user.getEmail(), user);
+        listed.add(user.getEmail());
     }
 
     public User[] getRegistered() {
-        Collection<User> users = listed.values();
-        return users.toArray(new User[users.size()]);
+        return (User[]) registeredEmails.toArray();
     }
 
     public String getAdmin() {
@@ -73,5 +78,13 @@ public class Course {
 
     public List<PartnerRequest> getPartnerRequests() {
         return partnerRequests;
+    }
+
+    public List<MatchRequest> getMatchRequests() {
+        return matchRequests;
+    }
+
+    public List<Matched> getMatches() {
+        return matches;
     }
 }
