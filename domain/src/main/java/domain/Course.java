@@ -21,6 +21,7 @@ public class Course implements Serializable{
     private List<Partner> partners;
     private List<PartnerRequest> partnerRequests;
 
+
     public Course(String name, String admin, Gcode gcode) {
         this.name = name;
         this.admin = admin;
@@ -117,6 +118,18 @@ public class Course implements Serializable{
     public void makePartnerRequst(String from,String to){
         PartnerRequest partnerRequest = new PartnerRequest(from,to);
         partnerRequests.add(partnerRequest);
+    }
+
+    public List<String> getListed() {
+        return listed;
+    }
+
+    public List<MatchRequest> getMatch_requests() {
+        return match_requests;
+    }
+
+    public List<Matched> getMatches() {
+        return matches;
     }
 
 }
