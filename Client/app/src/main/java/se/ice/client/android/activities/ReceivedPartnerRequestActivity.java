@@ -71,6 +71,7 @@ public class ReceivedPartnerRequestActivity extends AppCompatActivity{
     }
     @Override
     public void onResume(){
+        super.onResume();
         populateData();
     }
 
