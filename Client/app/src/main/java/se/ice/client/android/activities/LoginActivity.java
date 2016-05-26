@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -95,10 +96,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             startActivityForResult(i,1);
         }
     }
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -108,6 +105,38 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 String status = data.getStringExtra("status");
                 statusView.setText(status);
             }
+        }
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent i;
+        switch (item.getItemId()) {
+            case R.id.menu_profile:
+                i = new Intent(this, ProfileActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.menu_courses:
+                i = new Intent(this, CoursesActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.menu_log_out:
+                i= new Intent(getApplicationContext(), LoginActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+                return true;
+            case R.id.menu_requests:
+                i = new Intent(this, ReceivedPartnerRequestActivity.class);
+                startActivity(i);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
         }
     }
 }
