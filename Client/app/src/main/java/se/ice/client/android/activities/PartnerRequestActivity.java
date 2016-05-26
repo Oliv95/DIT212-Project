@@ -1,6 +1,5 @@
 package se.ice.client.android.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,11 +18,9 @@ import java.util.HashMap;
 import java.util.List;
 
 import se.ice.client.R;
-import se.ice.client.models.Course;
 import se.ice.client.models.User;
 import se.ice.client.utility.CurrentSession;
 import se.ice.client.utility.Domain;
-import se.ice.client.utility.Gcode;
 import se.ice.client.utility.ServerRequestService;
 
 /**
@@ -37,20 +34,24 @@ public class PartnerRequestActivity extends AppCompatActivity implements View.On
     ListView courseList;
     TextView status;
     ArrayAdapter<String> arrayAdapter;
-    HashMap<Integer,Gcode> itemToGcode = new HashMap<>();
+    HashMap<Integer,User> itemToUser = new HashMap<>();
     Toolbar t;
+
     private String course;
+    private String courseName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_courses);
+        setContentView(R.layout.activity_partner_request);
 
         Intent intent = getIntent();
 
         course =  (String) intent.getExtras().get("gcode");
+        courseName = (String) intent.getExtras().get("name");
 
         courseList = (ListView) findViewById(R.id.course_list);
+
 
         t = (Toolbar)findViewById(R.id.course_toolbar);
         t.setTitle("Courses");
@@ -65,10 +66,10 @@ public class PartnerRequestActivity extends AppCompatActivity implements View.On
         List<User> enrolled = server.getMatchedWith(currentSession.getEmail(), course);
         List<String> courseNames = new ArrayList<>();
         int counter = 0;
-        itemToGcode.clear();
+        itemToUser.clear();
         for(User c : enrolled){
             courseNames.add(c.getName().toUpperCase());
-            itemToGcode.put(counter, new Gcode(Integer.parseInt(course)));
+            itemToUser.put(counter, c);
             counter++;
         }
 
@@ -77,7 +78,7 @@ public class PartnerRequestActivity extends AppCompatActivity implements View.On
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3)
             {
-
+                //TODO Create a new Profile with a button to click
             }
         });
         arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, courseNames);
@@ -140,6 +141,7 @@ public class PartnerRequestActivity extends AppCompatActivity implements View.On
     public void toSwipe(View view) {
         Intent intent = new Intent(this, UserSwipeActivity.class);
         intent.putExtra("gcode", course);
+        intent.putExtra("name", courseName);
         startActivity(intent);
     }
 

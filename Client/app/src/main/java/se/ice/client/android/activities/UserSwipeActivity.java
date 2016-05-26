@@ -63,6 +63,7 @@ public class UserSwipeActivity extends AppCompatActivity {
         yesButton = (Button) findViewById(R.id.yesButton);
         name = (TextView) findViewById(R.id.name);
         statusView = (TextView) findViewById(R.id.user_swipe_status);
+        t = (Toolbar)findViewById(R.id.course_toolbar);
 
         Intent intent = getIntent();
 
@@ -71,6 +72,7 @@ public class UserSwipeActivity extends AppCompatActivity {
 
         t = (Toolbar)findViewById(R.id.course_toolbar);
         t.setTitle(courseName + "     " + course);
+        setSupportActionBar(t);
 
         populateData();
     }
