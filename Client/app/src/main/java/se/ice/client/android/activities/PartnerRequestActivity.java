@@ -87,10 +87,11 @@ public class PartnerRequestActivity extends AppCompatActivity implements View.On
     }
 
     private void toPartnerRequest(User user) {
-        Intent intent = new Intent(this, PartnerRequestActivity.class);
+        Intent intent = new Intent(this, PartnerRequestProfileActivity.class);
         intent.putExtra("email", user.getEmail());
         intent.putExtra("gcode", course);
         intent.putExtra("button", "Send Request");
+        startActivity(intent);
     }
 
 
