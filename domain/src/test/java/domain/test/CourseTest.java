@@ -197,4 +197,75 @@ public class CourseTest {
         assertNull(result);
     }
 
+    @Test
+    public void makePartnerCannotSendMatchRequests() {
+        user.createUser("test","name","pw");
+        user.createUser("test2","name2","pw");
+        user.createUser("test3","name3","pw");
+        user.createAdmin("tofu","adder","pw");
+        Gcode gcode = course.createCourse("myCourse","tofu");
+        course.joinCourse(gcode,"test");
+        course.joinCourse(gcode,"test2");
+        course.joinCourse(gcode,"test3");
+        course.matchRequest("test","test2",gcode);
+        course.matchRequest("test2","test",gcode);
+        course.partnerRequest("test","test2",gcode);
+        course.partnerRequest("test2","test",gcode);
+        assertFalse(course.matchRequest("test3","test2",gcode));
+    }
+
+    @Test
+    public void makePartnerCannotSendMatchRequestsOtherUser() {
+        user.createUser("test","name","pw");
+        user.createUser("test2","name2","pw");
+        user.createUser("test3","name3","pw");
+        user.createAdmin("tofu","adder","pw");
+        Gcode gcode = course.createCourse("myCourse","tofu");
+        course.joinCourse(gcode,"test");
+        course.joinCourse(gcode,"test2");
+        course.joinCourse(gcode,"test3");
+        course.matchRequest("test","test2",gcode);
+        course.matchRequest("test2","test",gcode);
+        course.partnerRequest("test","test2",gcode);
+        course.partnerRequest("test2","test",gcode);
+        assertFalse(course.matchRequest("test3","test",gcode));
+    }
+
+    @Test
+    public void makePartnerPurgeMatchRequests() {
+        user.createUser("test","name","pw");
+        user.createUser("test2","name2","pw");
+        user.createUser("test3","name3","pw");
+        user.createAdmin("tofu","adder","pw");
+        Gcode gcode = course.createCourse("myCourse","tofu");
+        course.joinCourse(gcode,"test");
+        course.joinCourse(gcode,"test2");
+        course.joinCourse(gcode,"test3");
+        course.matchRequest("test","test2",gcode);
+        course.matchRequest("test2","test",gcode);
+        course.matchRequest("test3","test2",gcode);
+        course.partnerRequest("test","test2",gcode);
+        course.partnerRequest("test2","test",gcode);
+        assertFalse(course.getCourse(gcode).returnMatchRequests().size() == 0);
+    }
+
+    @Test
+    public void makePartnerPurgeMatched() {
+        user.createUser("test","name","pw");
+        user.createUser("test2","name2","pw");
+        user.createUser("test3","name3","pw");
+        user.createAdmin("tofu","adder","pw");
+        Gcode gcode = course.createCourse("myCourse","tofu");
+        course.joinCourse(gcode,"test");
+        course.joinCourse(gcode,"test2");
+        course.joinCourse(gcode,"test3");
+        course.matchRequest("test","test2",gcode);
+        course.matchRequest("test2","test",gcode);
+        course.matchRequest("test3","test2",gcode);
+        course.matchRequest("test","test3",gcode);
+        course.partnerRequest("test","test2",gcode);
+        course.partnerRequest("test2","test",gcode);
+        assertFalse(course.getCourse(gcode).returnMatched().size() == 0);
+    }
+
 }

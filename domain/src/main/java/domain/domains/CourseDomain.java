@@ -12,8 +12,10 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.MatchResult;
 
 /**
+ *
  * Created by oliv on 4/23/16.
  */
 public class CourseDomain implements ICourse{
@@ -86,6 +88,15 @@ public class CourseDomain implements ICourse{
         List<MatchRequest> match_requests = c.returnMatchRequests(); // Map<From,To>
         List<Matched> matches = c.returnMatched();
         boolean result = false;
+
+        /**
+         * If you are already a partner with someone in this course, cannot send any more requests.
+         */
+        for(Partner p : c.getPartners() ) {
+            if(p.getMembers().contains(sender) || p.getMembers().contains(receiver)) {
+                return result;
+            }
+        }
 
         //are they both in the domain.interfacessame course?
         if(listed.contains(sender) && listed.contains(receiver)) {
@@ -198,6 +209,28 @@ public class CourseDomain implements ICourse{
                 partnerRequests.remove(partnerRequest);
                 Partner p = new Partner(from,to);
                 c.getPartners().add(p);
+
+                /**
+                 * Remove any matchRequest containing either users
+                 */
+                List<MatchRequest> requestsToRemove = new ArrayList<>();
+                for(MatchRequest m : c.returnMatchRequests()) {
+                    if(m.getTo().equals(to) || m.getTo().equals(from) || m.getFrom().equals(from) || m.getFrom().equals(to)) {
+                        requestsToRemove.add(m);
+                    }
+                }
+                c.returnMatchRequests().removeAll(requestsToRemove);
+
+                /**
+                 * Remove any Matched containing either users
+                 */
+                List<Matched> matchesToRemove = new ArrayList<>();
+                for(Matched m : c.returnMatched()) {
+                    if(m.getMembers().contains(from) || m.getMembers().contains(to)) {
+                        matchesToRemove.add(m);
+                    }
+                }
+                c.returnMatched().removeAll(matchesToRemove);
                 return true;
             }
         }
