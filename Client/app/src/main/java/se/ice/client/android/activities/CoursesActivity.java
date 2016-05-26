@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +21,7 @@ import java.util.List;
 
 import se.ice.client.R;
 import se.ice.client.models.Course;
+import se.ice.client.models.User;
 import se.ice.client.utility.CurrentSession;
 import se.ice.client.utility.Gcode;
 import se.ice.client.utility.Domain;
@@ -114,7 +116,8 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
 
     private void startUserCourse(String gcode, String name){
         Intent i;
-        if(server.getPartner(currentSession.getEmail(),gcode) == null){
+        User partner = server.getPartner(currentSession.getEmail(), gcode);
+        if( partner == null){
             // If user does not have partner in course
             i = new Intent(this,UserSwipeActivity.class);
             i.putExtra("gcode",gcode);
