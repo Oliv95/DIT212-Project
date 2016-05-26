@@ -14,19 +14,13 @@
         android:showAsAction="ifRoom"
         android:visible="true"/>
 
-    <!-- Courses -->
+    <!-- Requests-->
     <item android:id="@+id/menu_requests"
         android:title="Requests"
         android:showAsAction="ifRoom"
         android:visible="true"/>
 
-    <!-- Courses -->
-    <item android:id="@+id/menu_matches"
-        android:title="Matches"
-        android:showAsAction="ifRoom"
-        android:visible="true"/>
-
-    <!-- Courses -->
+    <!-- LogOut -->
     <item android:id="@+id/menu_log_out"
         android:title="Log out"
         android:showAsAction="ifRoom"

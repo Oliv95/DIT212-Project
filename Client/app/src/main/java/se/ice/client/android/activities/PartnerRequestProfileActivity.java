@@ -59,7 +59,11 @@ public class PartnerRequestProfileActivity extends AppCompatActivity {
     public void populateData(){
         emailView.setText(toUser.getEmail());
         nameView.setText(toUser.getName());
-        requestButton.setText(buttonText);
+        if(!buttonText.equals("invisible")) {
+            requestButton.setText(buttonText);
+        } else {
+            requestButton.setVisibility(View.INVISIBLE);
+        }
     }
 
     @Override
