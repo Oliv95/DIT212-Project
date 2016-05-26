@@ -1,12 +1,17 @@
 package se.ice.client.utility;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Gcode {
-    private static int counter = 0;
-    final private int id;
+    @JsonProperty("id")
+    private int id;
 
     public Gcode(){
-        counter++;
-        id = counter;
+    }
+
+    public Gcode(int id) {
+        this.id = id;
     }
 
     @Override
@@ -27,5 +32,11 @@ public class Gcode {
     @Override
     public String toString(){
         return this.id + "";
+    }
+
+    public static Gcode fromString(String i){
+        Gcode result = new Gcode();
+        result.id = Integer.parseInt(i);
+        return result;
     }
 }

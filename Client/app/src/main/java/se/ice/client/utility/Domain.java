@@ -42,4 +42,8 @@ public interface Domain {
 
     List<User> getNotMatchedWith(String email, String generatedCourseCode);
 
+    List<Course> getEnrolledIn(String user);
+
+    List<Course> getAllAdministratingCourse(String email);
+
 }

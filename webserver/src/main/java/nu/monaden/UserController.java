@@ -1,5 +1,6 @@
 package nu.monaden;
 
+import domain.MatchRequest;
 import domain.domains.CourseDomain;
 import domain.domains.UserDomain;
 import domain.interfaces.ICourse;
@@ -52,6 +53,13 @@ public class UserController {
         }
 
         usersCopy.removeAll(course.getMatchedWithMe(email,Gcode.fromString(gcode)));
+        List<String> usersToRemove = new ArrayList<>();
+        for(MatchRequest m : course.getCourse(Gcode.fromString(gcode)).returnMatchRequests()) {
+            if(m.getFrom().equals(email)) {
+                usersToRemove.add(m.getTo());
+            }
+        }
+        usersCopy.removeAll(usersToRemove);
         usersCopy.remove(email);
         return usersCopy;
 

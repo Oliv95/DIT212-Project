@@ -1,19 +1,19 @@
 package se.ice.client.utility;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import se.ice.client.models.Admin;
 import se.ice.client.models.Course;
-import se.ice.client.models.Person;
 import se.ice.client.models.User;
 
 
 public class MockupServer implements Domain {
 
-    // Session specific data - Is this the best place?
-    private Person currentP;
+    // Session specific data
+    public static CurrentSession currentSession = CurrentSession.getInstance();
     //--------------------------------------------------
 
     Map<String, User> users = new HashMap<>(); // All registered users
@@ -21,10 +21,6 @@ public class MockupServer implements Domain {
     Map<Gcode, Course> courses = new HashMap<>();
 
     private static Domain instance;
-
-    public Person getCurrent(){
-        return currentP;
-    }
 
     public static Domain getInstance() {
         if(instance == null) {
@@ -37,6 +33,12 @@ public class MockupServer implements Domain {
     public void init(){
         // Adding initial data to the server
         createAdmin("admin@mail.com","name","password");
+        // GCode is 1 for database course
+        Gcode g = createCourse("databases","admin@mail.com");
+        // test user
+        createUser("n","n","n");
+        // test user joins course
+        joinCourse(g.toString(),"n");
     }
 
     @Override
@@ -47,12 +49,21 @@ public class MockupServer implements Domain {
         if(u == null && a == null){
             return false;
         }else if(a == null){
-            currentP = u;
-            return password.equals(u.getPassword());
+            if(password.equals(u.getPassword())){
+                currentSession.setEmail(u.getEmail());
+                currentSession.setName(u.getName());
+                currentSession.setAdmin(false);
+                return true;
+            }
         }else{
-            currentP = a;
-            return password.equals(a.getPassword());
+            if(password.equals(a.getPassword())){
+                currentSession.setEmail(a.getEmail());
+                currentSession.setName(a.getName());
+                currentSession.setAdmin(true);
+                return true;
+            }
         }
+        return false;
     }
 
     @Override
@@ -77,6 +88,18 @@ public class MockupServer implements Domain {
 
     @Override
     public List<User> getNotMatchedWith(String email, String generatedCourseCode) {
+        return null;
+    }
+
+    @Override
+    public List<Course> getEnrolledIn(String email) {
+        List<Course> enrolled = new ArrayList<>();
+        enrolled.add(getCourse("1"));
+        return enrolled;
+    }
+
+    @Override
+    public List<Course> getAllAdministratingCourse(String email) {
         return null;
     }
 
@@ -112,7 +135,7 @@ public class MockupServer implements Domain {
 
         if (admins.get(admin) != null) {
             code = new Gcode();
-            courses.put(code, new Course(name, admin, code));
+            courses.put(code, new Course(name, admin, code, new ArrayList<String>()));
         }
 
         return code;
@@ -126,9 +149,8 @@ public class MockupServer implements Domain {
      */
     @Override
     public boolean joinCourse(String generatedCode, String email) {
-        if(admins.containsKey(email) || !(courses.containsKey(generatedCode))) { // admins can't join
-            return false;
-        } else if (users.containsKey(email)){ // User has to be registered
+        if (users.containsKey(email)){
+            // User has to be registered
             courses.get(generatedCode).registerUser(users.get(email));
             return true;
         } else {
@@ -187,7 +209,7 @@ public class MockupServer implements Domain {
 
     @Override
     public Course getCourse(String courseCode) {
-        return courses.get(courseCode);
+        return courses.get(Gcode.fromString(courseCode));
     }
 
 }
