@@ -1,5 +1,6 @@
 package nu.monaden;
 
+import domain.MatchRequest;
 import domain.domains.CourseDomain;
 import domain.domains.UserDomain;
 import domain.interfaces.ICourse;

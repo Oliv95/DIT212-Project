@@ -1,4 +1,4 @@
-Requirements and Analysis Document for NNN
+﻿Requirements and Analysis Document for ICE
 
   Version: 
 
@@ -49,11 +49,10 @@ Swipe - To approve or disapprove the potenital match with another user
   1. A admin can create courses and recive the unique code for the new course
   2. A user can join for a course with a unique code
   3. A user can swipe other users
-  4. Matched users can chat with each other
-  5. Matched users can send partner request to each other
-  6. Users that have recived a parter request can aprrove or deny it
-  7. A admin can see which users have matched for all the courses they are administrating
-  8. A admin can see all users for all the courses they are administrating
+  4. Matched users can send partner request to each other
+  5. Users that have recived a parter request can aprrove or deny it
+  6. A admin can see which users have matched for all the courses they are administrating
+  7. A admin can see all users for all the courses they are administrating
 
 2.1 Functional requirements
 
@@ -75,16 +74,14 @@ Possible NA (not applicable).
   extensive tutorial should be required. The GUI should make it very clear how it works.
 
 2.2.2 Reliability 
-
+	NA
 2.2.3 Performance 
-
-  10 seconds.
-
+	NA
 2.2.4 Supportability
 
   The application will be developed for the android platform alone, no IOS version.
   If we however consider the posibility of two users using different systems, the type
-  of system should not affect anything when displaying users, matching and chatting etc.
+  of system should not affect anything when displaying users, matching etc
   All communication with the server should be tested through unit tests, and the GUI
   should be tested manually. A description of how the GUI was tested and how it went should
   be included in the final documentation.
@@ -176,8 +173,7 @@ Use case View Joined :
  1.1    | A admin have not created a course and is not able to select one
 
 Use case Partner request :
-  Summary: A user that has matched with someone can send a Partner request to that users, if accepted they will be
-  considered labpartners
+Summary: A user that has matched with someone can send a Partner request to that  users, if accepted they will be considered labpartners
   Extends - 
   Includes -
   Participators: Users
@@ -214,7 +210,7 @@ UML, possible some text.
 
 2.3.4 User interface 
 
-Text to motivate a picture.
+User interface will be an android app, the app will use standard android widgets.
 
 2.4 References
 

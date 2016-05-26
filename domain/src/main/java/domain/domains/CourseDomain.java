@@ -1,5 +1,6 @@
 package domain.domains;
 
+import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
 import domain.*;
 import domain.Repos.LocalCourseRepo;
 import domain.Repos.LocalUserRepo;
@@ -12,8 +13,10 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.MatchResult;
 
 /**
+ *
  * Created by oliv on 4/23/16.
  */
 public class CourseDomain implements ICourse{
@@ -87,30 +90,36 @@ public class CourseDomain implements ICourse{
         List<Matched> matches = c.returnMatched();
         boolean result = false;
 
-        //are they both in the domain.interfacessame course?
-        if(listed.contains(sender) && listed.contains(receiver)) {
-            for (Matched m : matches) {
-                //match users sending matchRequst?? to each other
-                if (m.getMembers().contains(sender)
-                    && m.getMembers().contains(receiver)) { // if users are matched, should not be able to send another request
-                    result = true;
-                    return result;
-                }
+        /**
+         * If you are already a partner with someone in this course, cannot send any more requests.
+         */
+        for(Partner p : c.getPartners() ) {
+            if(p.getMembers().contains(sender) || p.getMembers().contains(receiver)) {
+                return result;
             }
-            for (MatchRequest m : match_requests) {
-                if (m.getTo().equals(sender) && m.getTo().equals(sender)) {
-                    match_requests.remove(m);
-                    matches.add(new Matched(sender, receiver));
-                    result = true;
-                    return result;
-                }
+        }
+        boolean bothInCourse = listed.contains(sender) && listed.contains(receiver);
+        if (!bothInCourse) {
+            return false;
+        }
+
+        Matched match = new Matched(sender,receiver);
+        boolean allreadyMatched = matches.contains(match);
+        if (allreadyMatched) {
+            return false;
+        }
+
+        for (MatchRequest match_request : match_requests) {
+            boolean shouldMatch = match_request.getFrom().equals(receiver);
+            shouldMatch = shouldMatch && match_request.getTo().equals(sender);
+            if (shouldMatch) {
+                match_requests.remove(match_request);
+                matches.add(match);
+                return true;
             }
-            result = true;
-        } else {
-            result = false;
         }
         c.putMatchRequest(sender, receiver);
-        return result;
+        return true;
     }
 
     @Override
@@ -198,6 +207,36 @@ public class CourseDomain implements ICourse{
                 partnerRequests.remove(partnerRequest);
                 Partner p = new Partner(from,to);
                 c.getPartners().add(p);
+
+                //Remove the users matched and matchrequest entries
+                Matched matched = new Matched(from,to);
+                MatchRequest matchRequest1 = new MatchRequest(from,to);
+                MatchRequest matchRequest2 = new MatchRequest(to,from);
+                c.getMatches().remove(matched);
+                c.getMatch_requests().remove(matchRequest1);
+                c.getMatch_requests().remove(matchRequest2);
+                /**
+                 * Remove any matchRequest containing either users
+                 */
+                List<MatchRequest> requestsToRemove = new ArrayList<>();
+                for(MatchRequest m : c.returnMatchRequests()) {
+                    if(m.getTo().equals(to) || m.getTo().equals(from) || m.getFrom().equals(from) || m.getFrom().equals(to)) {
+                        requestsToRemove.add(m);
+                    }
+                }
+                c.returnMatchRequests().removeAll(requestsToRemove);
+
+                /**
+                 * Remove any Matched containing either users
+                 */
+                List<Matched> matchesToRemove = new ArrayList<>();
+                for(Matched m : c.returnMatched()) {
+                    if(m.getMembers().contains(from) || m.getMembers().contains(to)) {
+                        matchesToRemove.add(m);
+                    }
+                }
+                c.returnMatched().removeAll(matchesToRemove);
+                courseRepo.saveCourses();
                 return true;
             }
         }
