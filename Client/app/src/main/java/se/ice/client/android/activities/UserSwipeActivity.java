@@ -16,10 +16,13 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 import se.ice.client.R;
+import se.ice.client.models.Course;
+import se.ice.client.models.MatchRequest;
 import se.ice.client.models.User;
 import se.ice.client.utility.Constants;
 import se.ice.client.utility.CurrentSession;
@@ -80,6 +83,18 @@ public class UserSwipeActivity extends AppCompatActivity {
     private void populateData() {
 
         users = domain.getNotMatchedWith(currentSession.getEmail(), course);
+
+        Course currentCourse = domain.getCourse(course);
+
+        List<MatchRequest> matchRequests = currentCourse.getMatchRequests();
+
+        for (MatchRequest m : matchRequests) {
+            boolean bla = m.getFrom().equals(currentSession.getEmail());
+            if (bla) {
+                users.remove(domain.getUser(m.getTo()));
+            }
+        }
+
 
         if(!users.isEmpty()) {
             Log.d("Number of Users: ", String.valueOf(users.size()));

@@ -49,9 +49,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         registerButton.setOnClickListener(this);
         adminBox = (CheckBox) findViewById(R.id.register_admin_box);
 
-        Toolbar t = (Toolbar)findViewById(R.id.main_toolbar);
-        t.setTitle("Register");
-        setSupportActionBar(t);
     }
     @Override
     public void onClick(View view) {
@@ -77,9 +74,5 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         }
     }
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
+    
 }
