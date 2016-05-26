@@ -43,8 +43,6 @@ public class PartnerRequestProfileActivity extends AppCompatActivity {
         nameView = (TextView) findViewById(R.id.profile_name);
         requestButton = (Button) findViewById(R.id.requestButton);
 
-        populateData();
-
         Toolbar t = (Toolbar)findViewById(R.id.main_toolbar);
         t.setTitle(currentSession.getName());
         setSupportActionBar(t);
@@ -54,6 +52,8 @@ public class PartnerRequestProfileActivity extends AppCompatActivity {
         gcode = (String) intent.getExtras().get("gcode");
         buttonText = (String) intent.getExtras().get("button");
         toUser = server.getUser(email);
+
+        populateData();
     }
 
     public void populateData(){

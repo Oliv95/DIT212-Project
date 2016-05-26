@@ -70,8 +70,8 @@ public class UserSwipeActivity extends AppCompatActivity {
         course =  (String) intent.getExtras().get("gcode");
         courseName = (String) intent.getExtras().get("name");
 
+        t = (Toolbar)findViewById(R.id.course_toolbar);
         t.setTitle(courseName + "     " + course);
-
         setSupportActionBar(t);
 
         populateData();
@@ -117,7 +117,6 @@ public class UserSwipeActivity extends AppCompatActivity {
         return true;
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent i;
@@ -157,6 +156,7 @@ public class UserSwipeActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
+        populateData();
 
     }
 

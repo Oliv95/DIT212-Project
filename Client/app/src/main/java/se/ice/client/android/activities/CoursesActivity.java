@@ -113,10 +113,21 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void startUserCourse(String gcode, String name){
-        Intent i = new Intent(this,UserSwipeActivity.class);
-        i.putExtra("gcode",gcode);
-        i.putExtra("name",name);
-        startActivity(i);
+        Intent i;
+        if(server.getPartner(currentSession.getEmail(),gcode) == null){
+            // If user does not have partner in course
+            i = new Intent(this,UserSwipeActivity.class);
+            i.putExtra("gcode",gcode);
+            i.putExtra("name",name);
+            startActivity(i);
+        }else{
+            // User has partner and the partners profile should load
+            i = new Intent(this, PartnerRequestProfileActivity.class);
+            i.putExtra("gcode",gcode);
+            i.putExtra("email", currentSession.getEmail());
+            i.putExtra("button","invisible");
+        }
+
     }
 
     private void startAdminCourse(String gcode, String name){
@@ -157,15 +168,16 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
                 startActivity(i);
                 return true;
             case R.id.menu_courses:
-                //When in course activity we don't want to start a new courses activity
                 i = new Intent(this, CoursesActivity.class);
                 startActivity(i);
-                finish();
                 return true;
-
             case R.id.menu_log_out:
                 i= new Intent(getApplicationContext(), LoginActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+                return true;
+            case R.id.menu_requests:
+                i = new Intent(this, ReceivedPartnerRequestActivity.class);
                 startActivity(i);
                 return true;
             default:
