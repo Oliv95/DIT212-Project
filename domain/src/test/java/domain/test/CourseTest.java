@@ -246,7 +246,7 @@ public class CourseTest {
         course.matchRequest("test3","test2",gcode);
         course.partnerRequest("test","test2",gcode);
         course.partnerRequest("test2","test",gcode);
-        assertFalse(course.getCourse(gcode).returnMatchRequests().size() == 0);
+        assertTrue(course.getCourse(gcode).returnMatchRequests().size() == 0);
     }
 
     @Test
@@ -265,7 +265,7 @@ public class CourseTest {
         course.matchRequest("test","test3",gcode);
         course.partnerRequest("test","test2",gcode);
         course.partnerRequest("test2","test",gcode);
-        assertFalse(course.getCourse(gcode).returnMatched().size() == 0);
+        assertTrue(course.getCourse(gcode).returnMatched().size() == 0);
     }
 
 }
