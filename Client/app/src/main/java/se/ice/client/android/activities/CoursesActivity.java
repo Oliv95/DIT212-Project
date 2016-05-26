@@ -157,15 +157,16 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
                 startActivity(i);
                 return true;
             case R.id.menu_courses:
-                //When in course activity we don't want to start a new courses activity
                 i = new Intent(this, CoursesActivity.class);
                 startActivity(i);
-                finish();
                 return true;
-
             case R.id.menu_log_out:
                 i= new Intent(getApplicationContext(), LoginActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+                return true;
+            case R.id.menu_requests:
+                i = new Intent(this, ReceivedPartnerRequestActivity.class);
                 startActivity(i);
                 return true;
             default:

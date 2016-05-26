@@ -70,4 +70,8 @@ public class Course {
     public List<Partner> getPartners() {
         return partners;
     }
+
+    public List<PartnerRequest> getPartnerRequests() {
+        return partnerRequests;
+    }
 }
