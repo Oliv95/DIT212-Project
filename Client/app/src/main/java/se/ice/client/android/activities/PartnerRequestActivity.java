@@ -78,14 +78,20 @@ public class PartnerRequestActivity extends AppCompatActivity implements View.On
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3)
             {
-                //TODO Create a new Profile with a button to click
+                User user = itemToUser.get(position);
+                toPartnerRequest(user);
             }
         });
         arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, courseNames);
         courseList.setAdapter(arrayAdapter);
     }
 
-
+    private void toPartnerRequest(User user) {
+        Intent intent = new Intent(this, PartnerRequestActivity.class);
+        intent.putExtra("email", user.getEmail());
+        intent.putExtra("gcode", course);
+        intent.putExtra("button", "Send Request");
+    }
 
 
 

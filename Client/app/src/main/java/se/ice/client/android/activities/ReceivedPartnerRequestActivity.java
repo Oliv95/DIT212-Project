@@ -75,7 +75,7 @@ public class ReceivedPartnerRequestActivity extends AppCompatActivity{
     }
 
     public void startProfileActivity(String gcode, String email, String button){
-        Intent i = new Intent(this, PartnerRequestPartnerActivity.class);
+        Intent i = new Intent(this, PartnerRequestProfileActivity.class);
         i.putExtra("gcode", gcode);
         i.putExtra("email", email);
         i.putExtra("button", button);
