@@ -82,31 +82,4 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Intent i;
-        switch (item.getItemId()) {
-            case R.id.menu_profile:
-                i = new Intent(this, ProfileActivity.class);
-                startActivity(i);
-                return true;
-            case R.id.menu_courses:
-                i = new Intent(this, CoursesActivity.class);
-                startActivity(i);
-                return true;
-            case R.id.menu_log_out:
-                i= new Intent(getApplicationContext(), LoginActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(i);
-                return true;
-            case R.id.menu_requests:
-                i = new Intent(this, ReceivedPartnerRequestActivity.class);
-                startActivity(i);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-
-        }
-    }
 }
