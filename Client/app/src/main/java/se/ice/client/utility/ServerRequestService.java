@@ -9,9 +9,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import se.ice.client.models.Admin;
 import se.ice.client.models.Course;
+import se.ice.client.models.Partner;
 import se.ice.client.models.User;
 
 public class ServerRequestService implements Domain {
@@ -34,7 +36,7 @@ public class ServerRequestService implements Domain {
         public Object doInBackground(Object... params) {
             ObjectMapper mapper = new ObjectMapper();
 
-            Log.i("Object name: ", params[1].getClass().getName());
+            Log.i("AsyncCall obj: ", params[1].getClass().getName());
 
             try {
                 return mapper.readValue((URL) params[0], params[1].getClass());
@@ -78,6 +80,7 @@ public class ServerRequestService implements Domain {
             int responseCode = connection.getResponseCode();
             Log.i("AsyncPostCall: ", "Sending 'POST' request to URL : " + url);
             Log.i("Response Code : ", String.valueOf(responseCode));
+            Log.i("Class : ", params[1].getClass().getName());
 
             return mapper.readValue(connection.getInputStream(), currentClass.getClass());
 
@@ -384,17 +387,18 @@ public class ServerRequestService implements Domain {
     public User getPartner(String email, String generatedCourseCode) {
         Log.i("METHOD", "getPartner");
         try {
-            URL url = new URL(String.format(server + course + "/%s/getPartner?from=%s", generatedCourseCode, email));
+            Course course = getCourse(generatedCourseCode);
 
-            String content = URLEncoder.encode(String.format(server + course + "/%s/getPartner?from=%s",
-                    URLEncoder.encode(generatedCourseCode, charset),
-                    URLEncoder.encode(email, charset)), charset);
-            String partnerEmail = (String) new AsyncPostCall().execute(url, content, new String()).get();
+            for(Partner p : course.getPartners()) {
+                if(p.getMembers().get(0).equals(email)) {
+                        return getUser(p.getMembers().get(1));
+                } else if(p.getMembers().get(1).equals(email)) {
+                    return getUser(p.getMembers().get(0));
+                }
+            }
 
-            if(partnerEmail != null) {
-                return getUser(partnerEmail);
-            } else
-                return null;
+            return null;
+
         } catch (Exception e) {
             e.printStackTrace();
             return null;

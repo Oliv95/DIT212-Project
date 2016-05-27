@@ -17,10 +17,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import se.ice.client.R;
 import se.ice.client.models.Course;
+import se.ice.client.models.Partner;
 import se.ice.client.models.User;
 import se.ice.client.utility.CurrentSession;
 import se.ice.client.utility.Gcode;
@@ -30,7 +32,8 @@ import se.ice.client.utility.ServerRequestService;
 public class CoursesActivity extends AppCompatActivity implements View.OnClickListener {
 
     CurrentSession currentSession = CurrentSession.getInstance();
-    Domain server = new ServerRequestService();Button createButton;
+    Domain server = new ServerRequestService();
+    Button createButton;
     Button joinButton;
     ListView courseList;
     TextView status;
@@ -116,9 +119,11 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
 
     private void startUserCourse(String gcode, String name){
         Intent i;
+
         User partner = server.getPartner(currentSession.getEmail(), gcode);
-        if( partner == null){
-            // If user does not have partner in course
+
+        // If user does not have partner in course
+        if(partner == null){
             i = new Intent(this,UserSwipeActivity.class);
             i.putExtra("gcode",gcode);
             i.putExtra("name",name);
@@ -129,6 +134,7 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
             i.putExtra("gcode",gcode);
             i.putExtra("email", currentSession.getEmail());
             i.putExtra("button","invisible");
+            startActivity(i);
         }
 
     }
