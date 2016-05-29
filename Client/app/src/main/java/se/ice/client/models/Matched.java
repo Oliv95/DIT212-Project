@@ -1,5 +1,7 @@
 package se.ice.client.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,8 +9,14 @@ import java.util.List;
  * Created by Simon on 2016-05-25.
  */
 public class Matched {
+
+    @JsonProperty("members")
+    private List<String> members;
+
     private String member1;
     private String member2;
+
+    public Matched() {}
 
     public Matched(String user1, String user2) {
         member1 = user1;

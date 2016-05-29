@@ -3,8 +3,12 @@ package se.ice.client.android.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -16,7 +20,7 @@ import se.ice.client.utility.Domain;
 import se.ice.client.utility.MockupServer;
 import se.ice.client.utility.ServerRequestService;
 
-public class RegisterActivity extends Activity implements View.OnClickListener {
+public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText mail;
     EditText name;
@@ -44,6 +48,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
         passwordNotMatch = (TextView) findViewById(R.id.register_password_incorrect);
         registerButton.setOnClickListener(this);
         adminBox = (CheckBox) findViewById(R.id.register_admin_box);
+
     }
     @Override
     public void onClick(View view) {
@@ -69,4 +74,5 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
 
         }
     }
+    
 }

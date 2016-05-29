@@ -17,8 +17,7 @@
         android:layout_gravity="center_horizontal"
         android:src="#ff00b9ff"
         android:layout_above="@+id/profile_name"
-        android:layout_alignRight="@+id/profile_phone"
-        android:layout_alignEnd="@+id/profile_phone" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -27,8 +26,8 @@
         android:id="@+id/profile_name"
         android:layout_gravity="center_horizontal"
         android:text="NAME"
-        android:layout_above="@+id/profile_phone"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,17 +36,19 @@
         android:id="@+id/profile_email"
         android:layout_gravity="center_horizontal"
         android:text="name@mail.com"
-        android:layout_below="@+id/profile_phone"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/profile_name"/>
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/profile_phone"
-        android:layout_gravity="center_horizontal"
-        android:text=""
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:text="New Button"
+        android:id="@+id/requestButton"
+        android:layout_below="@+id/profile_email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:onClick="onRequestButtonClick"
+        android:background="#e7e7e6" />
 
 </RelativeLayout>

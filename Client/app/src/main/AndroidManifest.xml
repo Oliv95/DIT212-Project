@@ -35,6 +35,10 @@
         </activity>
         <activity android:name="se.ice.client.android.activities.AdminViewJoined" >
         </activity>
+        <activity android:name="se.ice.client.android.activities.ReceivedPartnerRequestActivity" >
+        </activity>
+        <activity android:name="se.ice.client.android.activities.PartnerRequestProfileActivity" >
+        </activity>
 
     </application>
 

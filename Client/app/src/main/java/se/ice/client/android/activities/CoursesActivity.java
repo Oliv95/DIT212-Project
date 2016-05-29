@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,10 +17,13 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import se.ice.client.R;
 import se.ice.client.models.Course;
+import se.ice.client.models.Partner;
+import se.ice.client.models.User;
 import se.ice.client.utility.CurrentSession;
 import se.ice.client.utility.Gcode;
 import se.ice.client.utility.Domain;
@@ -28,7 +32,8 @@ import se.ice.client.utility.ServerRequestService;
 public class CoursesActivity extends AppCompatActivity implements View.OnClickListener {
 
     CurrentSession currentSession = CurrentSession.getInstance();
-    Domain server = new ServerRequestService();Button createButton;
+    Domain server = new ServerRequestService();
+    Button createButton;
     Button joinButton;
     ListView courseList;
     TextView status;
@@ -113,10 +118,25 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void startUserCourse(String gcode, String name){
-        Intent i = new Intent(this,UserSwipeActivity.class);
-        i.putExtra("gcode",gcode);
-        i.putExtra("name",name);
-        startActivity(i);
+        Intent i;
+
+        User partner = server.getPartner(currentSession.getEmail(), gcode);
+
+        // If user does not have partner in course
+        if(partner == null){
+            i = new Intent(this,UserSwipeActivity.class);
+            i.putExtra("gcode",gcode);
+            i.putExtra("name",name);
+            startActivity(i);
+        }else{
+            // User has partner and the partners profile should load
+            i = new Intent(this, PartnerRequestProfileActivity.class);
+            i.putExtra("gcode",gcode);
+            i.putExtra("email", currentSession.getEmail());
+            i.putExtra("button","invisible");
+            startActivity(i);
+        }
+
     }
 
     private void startAdminCourse(String gcode, String name){
@@ -157,15 +177,16 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
                 startActivity(i);
                 return true;
             case R.id.menu_courses:
-                //When in course activity we don't want to start a new courses activity
                 i = new Intent(this, CoursesActivity.class);
                 startActivity(i);
-                finish();
                 return true;
-
             case R.id.menu_log_out:
                 i= new Intent(getApplicationContext(), LoginActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+                return true;
+            case R.id.menu_requests:
+                i = new Intent(this, ReceivedPartnerRequestActivity.class);
                 startActivity(i);
                 return true;
             default:

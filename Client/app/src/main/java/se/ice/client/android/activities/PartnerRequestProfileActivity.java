@@ -4,59 +4,65 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import se.ice.client.R;
+import se.ice.client.models.User;
 import se.ice.client.utility.CurrentSession;
 import se.ice.client.utility.Domain;
-import se.ice.client.utility.Gcode;
-import se.ice.client.utility.MockupServer;
 import se.ice.client.utility.ServerRequestService;
 
-public class CreateCourseActivity extends AppCompatActivity implements View.OnClickListener {
+/**
+ * Created by Simon on 2016-05-26.
+ * This activity Requires an intent with 3 extras: a String named "email" and String with a gcode named "gcode" and String with button text named "button"
+ */
+public class PartnerRequestProfileActivity extends AppCompatActivity {
 
-    EditText courseName;
-    Button createButton;
-    TextView status;
-    Toolbar t;
+    TextView emailView;
+    TextView nameView;
+    Button requestButton;
+    private User toUser;
+    private String gcode;
+
     Domain server = new ServerRequestService();
     CurrentSession currentSession = CurrentSession.getInstance();
-
-    // Used for loggin
-    private static final String TAG = "CreateCourse";
+    private String buttonText;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_course_create);
+        setContentView(R.layout.activity_partner_request_profile);
 
-        courseName = (EditText) findViewById(R.id.create_course_textfield);
-        createButton = (Button) findViewById(R.id.course_create_button);
-        status = (TextView) findViewById(R.id.course_create_status);
-        createButton.setOnClickListener(this);
+        emailView = (TextView) findViewById(R.id.profile_email);
+        nameView = (TextView) findViewById(R.id.profile_name);
+        requestButton = (Button) findViewById(R.id.requestButton);
 
-        t = (Toolbar) findViewById(R.id.main_toolbar);
+        Toolbar t = (Toolbar)findViewById(R.id.main_toolbar);
+        t.setTitle(currentSession.getName());
         setSupportActionBar(t);
+
+        Intent intent = getIntent();
+        String email = (String) intent.getExtras().get("email");
+        gcode = (String) intent.getExtras().get("gcode");
+        buttonText = (String) intent.getExtras().get("button");
+        toUser = server.getUser(email);
+
+        populateData();
     }
 
-    @Override
-    public void onClick(View view) {
-        Editable course = courseName.getText();
-        if(view.equals(createButton)){
-
-            Gcode code = server.createCourse(course.toString(),currentSession.getEmail());
-
-            if(code == null) {
-                status.setText(course.toString() + " was NOT created");
-            } else {
-                status.setText(course.toString() + " was created with course code " + code.toString());
-            }
+    public void populateData(){
+        emailView.setText(toUser.getEmail());
+        nameView.setText(toUser.getName());
+        if(!buttonText.equals("invisible")) {
+            requestButton.setText(buttonText);
+        } else {
+            requestButton.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -92,4 +98,8 @@ public class CreateCourseActivity extends AppCompatActivity implements View.OnCl
         }
     }
 
+    public void onRequestButtonClick(View view) {
+        server.sendPartnerRequest(gcode, currentSession.getEmail(), toUser.getEmail());
+        onBackPressed();
+    }
 }

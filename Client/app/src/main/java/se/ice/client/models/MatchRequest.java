@@ -5,6 +5,8 @@ package se.ice.client.models;
  */
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 
 /**
@@ -12,7 +14,10 @@ import java.io.Serializable;
  * Created by robert on 4/19/16.
  */
 public class MatchRequest{
+
+    @JsonProperty("from")
     private String from; // this user says he's willing to work with
+    @JsonProperty("to")
     private String to; // this user
 
     public MatchRequest() {}

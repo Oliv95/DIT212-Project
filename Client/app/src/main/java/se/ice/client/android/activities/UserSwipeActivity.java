@@ -16,10 +16,13 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 import se.ice.client.R;
+import se.ice.client.models.Course;
+import se.ice.client.models.MatchRequest;
 import se.ice.client.models.User;
 import se.ice.client.utility.Constants;
 import se.ice.client.utility.CurrentSession;
@@ -70,8 +73,8 @@ public class UserSwipeActivity extends AppCompatActivity {
         course =  (String) intent.getExtras().get("gcode");
         courseName = (String) intent.getExtras().get("name");
 
+        t = (Toolbar)findViewById(R.id.course_toolbar);
         t.setTitle(courseName + "     " + course);
-
         setSupportActionBar(t);
 
         populateData();
@@ -80,6 +83,18 @@ public class UserSwipeActivity extends AppCompatActivity {
     private void populateData() {
 
         users = domain.getNotMatchedWith(currentSession.getEmail(), course);
+
+        Course currentCourse = domain.getCourse(course);
+
+        List<MatchRequest> matchRequests = currentCourse.getMatchRequests();
+
+        for (MatchRequest m : matchRequests) {
+            boolean bla = m.getFrom().equals(currentSession.getEmail());
+            if (bla) {
+                users.remove(domain.getUser(m.getTo()));
+            }
+        }
+
 
         if(!users.isEmpty()) {
             Log.d("Number of Users: ", String.valueOf(users.size()));
@@ -117,34 +132,6 @@ public class UserSwipeActivity extends AppCompatActivity {
         return true;
     }
 
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Intent i;
-        switch (item.getItemId()) {
-            case R.id.menu_profile:
-                i = new Intent(this, ProfileActivity.class);
-                startActivity(i);
-                return true;
-            case R.id.menu_courses:
-                //When in course activity we don't want to start a new courses activity
-                i = new Intent(this, CoursesActivity.class);
-                startActivity(i);
-                finish();
-                return true;
-
-            case R.id.menu_log_out:
-                i= new Intent(getApplicationContext(), LoginActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(i);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-
-        }
-
-
-    }
     public void toSwipe(View view) {
 
     }
@@ -157,6 +144,7 @@ public class UserSwipeActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
+        populateData();
 
     }
 
@@ -165,4 +153,30 @@ public class UserSwipeActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent i;
+        switch (item.getItemId()) {
+            case R.id.menu_profile:
+                i = new Intent(this, ProfileActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.menu_courses:
+                i = new Intent(this, CoursesActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.menu_log_out:
+                i= new Intent(getApplicationContext(), LoginActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+                return true;
+            case R.id.menu_requests:
+                i = new Intent(this, ReceivedPartnerRequestActivity.class);
+                startActivity(i);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
 }

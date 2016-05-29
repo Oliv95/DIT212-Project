@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -76,7 +77,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     currentSession.setEmail(user.getEmail());
                     currentSession.setName(user.getName());
                     currentSession.setAdmin(false);
-                    System.out.println("user logged in");
                 } else {
                     Admin admin = server.getAdmin(email);
                     currentSession.setEmail(admin.getEmail());
@@ -96,10 +96,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             startActivityForResult(i,1);
         }
     }
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -110,5 +106,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 statusView.setText(status);
             }
         }
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
     }
 }

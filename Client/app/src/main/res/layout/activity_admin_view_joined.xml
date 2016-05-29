@@ -5,8 +5,8 @@
     android:weightSum="1">
 
     <include
-        layout="@layout/main_toolbar"
-        android:id="@+id/main_toolbar" />
+        layout="@layout/admin_view_joined_toolbar"
+        android:id="@+id/admin_view_joined_toolbar" />
 
     <TextView
         android:layout_width="wrap_content"
