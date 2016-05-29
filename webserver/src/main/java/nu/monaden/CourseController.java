@@ -44,7 +44,7 @@ public class CourseController {
         return course.partnerRequest(sender, receiver, Gcode.fromString(gcode));
     }
 
-    @RequestMapping(value = "/course/{gcode}/getPartner", method = RequestMethod.POST)
+    @RequestMapping(value = "/course/{gcode}/getPartner", method = RequestMethod.GET)
     public String partnerRequest(@RequestParam(value = "from") String from,
                                 @PathVariable String gcode){
         return course.getPartner(from, Gcode.fromString(gcode));
