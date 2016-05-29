@@ -356,7 +356,6 @@ public class ServerRequestService implements Domain {
 
             throw new UnsupportedOperationException("This method is not implemented");
 
-
         } catch (Exception e) {
             e.printStackTrace();
             return new ArrayList<>();
@@ -389,7 +388,7 @@ public class ServerRequestService implements Domain {
             String content = URLEncoder.encode(String.format(server + course + "/%s/getPartner?from=%s",
                     URLEncoder.encode(generatedCourseCode, charset),
                     URLEncoder.encode(email, charset)), charset);
-            String partnerEmail = (String) new AsyncPostCall().execute(url, content, new String()).get();
+            String partnerEmail = (String) new AsyncCall().execute(url,content,new String()).get();
 
             if(partnerEmail != null) {
                 return getUser(partnerEmail);
