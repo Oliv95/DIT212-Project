@@ -127,16 +127,15 @@ public class CoursesActivity extends AppCompatActivity implements View.OnClickLi
             i = new Intent(this,UserSwipeActivity.class);
             i.putExtra("gcode",gcode);
             i.putExtra("name",name);
-            startActivity(i);
         }else{
             // User has partner and the partners profile should load
             i = new Intent(this, PartnerRequestProfileActivity.class);
             i.putExtra("gcode",gcode);
-            i.putExtra("email", currentSession.getEmail());
+            i.putExtra("email", partner.getEmail());
             i.putExtra("button","invisible");
             startActivity(i);
         }
-
+        startActivity(i);
     }
 
     private void startAdminCourse(String gcode, String name){

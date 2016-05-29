@@ -23,6 +23,7 @@ import java.util.List;
 import se.ice.client.R;
 import se.ice.client.models.Course;
 import se.ice.client.models.MatchRequest;
+import se.ice.client.models.Partner;
 import se.ice.client.models.User;
 import se.ice.client.utility.Constants;
 import se.ice.client.utility.CurrentSession;
@@ -74,7 +75,6 @@ public class UserSwipeActivity extends AppCompatActivity {
         courseName = (String) intent.getExtras().get("name");
 
         t = (Toolbar)findViewById(R.id.course_toolbar);
-        t.setTitle(courseName + "     " + course);
         setSupportActionBar(t);
 
         populateData();
@@ -85,6 +85,16 @@ public class UserSwipeActivity extends AppCompatActivity {
         users = domain.getNotMatchedWith(currentSession.getEmail(), course);
 
         Course currentCourse = domain.getCourse(course);
+
+        List<Partner> partners = currentCourse.getPartners();
+        for (Partner p: partners) {
+            User member1 = domain.getUser(p.getMembers().get(0));
+            User member2 = domain.getUser(p.getMembers().get(1));
+
+            users.remove(member1);
+            users.remove(member2);
+
+        }
 
         List<MatchRequest> matchRequests = currentCourse.getMatchRequests();
 

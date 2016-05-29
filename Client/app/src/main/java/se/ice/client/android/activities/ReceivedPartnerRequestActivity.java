@@ -41,7 +41,7 @@ public class ReceivedPartnerRequestActivity extends AppCompatActivity{
         userList = (ListView) findViewById(R.id.received_partner_request_list);
 
         Toolbar t = (Toolbar)findViewById(R.id.main_toolbar);
-        t.setTitle(currentSession.getName());
+        t.setTitle("Partner Requests");
         setSupportActionBar(t);
     }
 

@@ -359,7 +359,6 @@ public class ServerRequestService implements Domain {
 
             throw new UnsupportedOperationException("This method is not implemented");
 
-
         } catch (Exception e) {
             e.printStackTrace();
             return new ArrayList<>();
