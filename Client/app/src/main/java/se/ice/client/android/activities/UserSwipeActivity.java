@@ -74,7 +74,6 @@ public class UserSwipeActivity extends AppCompatActivity {
         courseName = (String) intent.getExtras().get("name");
 
         t = (Toolbar)findViewById(R.id.course_toolbar);
-        t.setTitle(courseName + "     " + course);
         setSupportActionBar(t);
 
         populateData();
